@@ -1,6 +1,6 @@
 ﻿namespace TC_Riveros_Paula
 {
-    partial class NuevaHerramienta
+    partial class NuevaHerramientaForm
     {
         /// <summary>
         /// Required designer variable.
@@ -50,15 +50,15 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // NuevaHerramienta
+            // NuevaHerramientaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Name = "NuevaHerramienta";
-            this.Text = "NuevaHerramienta";
+            this.Name = "NuevaHerramientaForm";
+            this.Text = "NuevaHerramientaForm";
             this.ResumeLayout(false);
 
         }

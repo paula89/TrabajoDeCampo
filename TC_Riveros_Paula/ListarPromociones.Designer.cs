@@ -1,6 +1,6 @@
 ﻿namespace TC_Riveros_Paula
 {
-    partial class ListarPromociones
+    partial class ListarPromocionesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -40,14 +40,14 @@
             this.dataGridViewPromociones.Size = new System.Drawing.Size(725, 404);
             this.dataGridViewPromociones.TabIndex = 0;
             // 
-            // ListarPromociones
+            // ListarPromocionesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridViewPromociones);
-            this.Name = "ListarPromociones";
-            this.Text = "Promociones";
+            this.Name = "ListarPromocionesForm";
+            this.Text = "ListarPromocionesForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPromociones)).EndInit();
             this.ResumeLayout(false);
 

@@ -1,6 +1,6 @@
 ﻿namespace TC_Riveros_Paula
 {
-    partial class NuevaPromocion
+    partial class NuevaPromocionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // NuevaPromocion
+            // NuevaPromocionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "NuevaPromocion";
-            this.Text = "Nueva Promocion";
+            this.Name = "NuevaPromocionForm";
+            this.Text = "NuevaPromocionForm";
             this.ResumeLayout(false);
 
         }

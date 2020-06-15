@@ -97,7 +97,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="nuevo" xml:space="preserve">
+  <data name="MenuItemNuevoProducto" xml:space="preserve">
     <value>New</value>
   </data>
   <data name="btnCancelar" xml:space="preserve">
@@ -108,5 +108,107 @@
   </data>
   <data name="labelComentario" xml:space="preserve">
     <value>Comment</value>
+  </data>
+  <data name="MenuItemCatalogo" xml:space="preserve">
+    <value>Catalog</value>
+  </data>
+  <data name="MenuItemNuevoMateriaPrima" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="MenuItemVerMateriaPrima" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="nuevaHerramientaToolStripMenuItem" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="listarHerramientasToolStripMenuItem" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="MenuItemNuevaPromocion" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="nuevaVentaToolStripMenuItem" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="MenuItemReportesVentas" xml:space="preserve">
+    <value>Sale report</value>
+  </data>
+  <data name="MenuItemCalcularPresupuesto" xml:space="preserve">
+    <value>Calculate Budget</value>
+  </data>
+  <data name="CalcularPerdidasToolStripMenuItem" xml:space="preserve">
+    <value>Calculate losses</value>
+  </data>
+  <data name="ayudaToolStripMenuItem" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="calcularToolStripMenuItem" xml:space="preserve">
+    <value>Calculate</value>
+  </data>
+  <data name="reportesToolStripMenuItem" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="ventasToolStripMenuItem" xml:space="preserve">
+    <value>Sales</value>
+  </data>
+  <data name="promocionesToolStripMenuItem" xml:space="preserve">
+    <value>Promotions</value>
+  </data>
+  <data name="herramientasToolStripMenuItem" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="MateriaPrimaToolStripMenuItem" xml:space="preserve">
+    <value>Raw material</value>
+  </data>
+  <data name="productosToolStripMenuItem" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="InicioForm" xml:space="preserve">
+    <value>Init</value>
+  </data>
+  <data name="MenuItemVerPromociones" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="labelProveedor" xml:space="preserve">
+    <value>Provider</value>
+  </data>
+  <data name="labelNombre" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="labelStockHerramientas" xml:space="preserve">
+    <value>Choose the raw material and tools necessary to make the product</value>
+  </data>
+  <data name="NuevoProductoForm" xml:space="preserve">
+    <value>New Product</value>
+  </data>
+  <data name="btnGuardar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="CatalogoForm" xml:space="preserve">
+    <value>Catalog</value>
+  </data>
+  <data name="NuevoMateriaPrimaForm" xml:space="preserve">
+    <value>New raw material</value>
+  </data>
+  <data name="ListarMateriaPrimaForm" xml:space="preserve">
+    <value>Raw material</value>
+  </data>
+  <data name="NuevaPromocionForm" xml:space="preserve">
+    <value>New promotion</value>
+  </data>
+  <data name="ListarPromocionesForm" xml:space="preserve">
+    <value>Promotions</value>
+  </data>
+  <data name="CalcularPresupuestoForm" xml:space="preserve">
+    <value>Calculate budget</value>
+  </data>
+  <data name="NuevaHerramientaForm" xml:space="preserve">
+    <value>New tool</value>
+  </data>
+  <data name="CalcularPerdidasForm" xml:space="preserve">
+    <value>Calculate losses</value>
+  </data>
+  <data name="NuevaVentaForm" xml:space="preserve">
+    <value>New sale</value>
   </data>
 </root>

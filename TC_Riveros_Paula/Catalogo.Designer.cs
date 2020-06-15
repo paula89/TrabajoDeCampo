@@ -1,6 +1,6 @@
 ﻿namespace TC_Riveros_Paula
 {
-    partial class Catalogo
+    partial class CatalogoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -40,14 +40,15 @@
             this.dataGridViewCatalogo.Size = new System.Drawing.Size(730, 386);
             this.dataGridViewCatalogo.TabIndex = 0;
             // 
-            // Catalogo
+            // CatalogoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridViewCatalogo);
-            this.Name = "Catalogo";
-            this.Text = "Catalogo";
+            this.Name = "CatalogoForm";
+            this.Text = "CatalogoForm";
+            this.Load += new System.EventHandler(this.CatalogoForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCatalogo)).EndInit();
             this.ResumeLayout(false);
 

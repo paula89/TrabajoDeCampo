@@ -1,0 +1,20 @@
+*.vs
+ipch/
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+*.cachefile
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+
+#NuGet
+packages/
+
+bin/
+obj/
+*.suo
+*.user

@@ -1,6 +1,6 @@
 ﻿namespace TC_Riveros_Paula
 {
-    partial class CalcularPresupuesto
+    partial class CalcularPresupuestoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // CalcularPresupuesto
+            // CalcularPresupuestoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "CalcularPresupuesto";
-            this.Text = "Presupuesto";
+            this.Name = "CalcularPresupuestoForm";
+            this.Text = "CalcularPresupuestoForm";
             this.ResumeLayout(false);
 
         }

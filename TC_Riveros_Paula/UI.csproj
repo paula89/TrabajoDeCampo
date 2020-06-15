@@ -112,11 +112,11 @@
     <Compile Include="NuevoProducto.Designer.cs">
       <DependentUpon>NuevoProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="NuevoStock.cs">
+    <Compile Include="NuevoMateriaPrima.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NuevoStock.Designer.cs">
-      <DependentUpon>NuevoStock.cs</DependentUpon>
+    <Compile Include="NuevoMateriaPrima.Designer.cs">
+      <DependentUpon>NuevoMateriaPrima.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,6 +126,9 @@
     <Compile Include="ReporteVentas.Designer.cs">
       <DependentUpon>ReporteVentas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CalcularPerdidas.resx">
+      <DependentUpon>CalcularPerdidas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CalcularPresupuesto.resx">
       <DependentUpon>CalcularPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,8 +159,8 @@
     <EmbeddedResource Include="NuevoProducto.resx">
       <DependentUpon>NuevoProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NuevoStock.resx">
-      <DependentUpon>NuevoStock.cs</DependentUpon>
+    <EmbeddedResource Include="NuevoMateriaPrima.resx">
+      <DependentUpon>NuevoMateriaPrima.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

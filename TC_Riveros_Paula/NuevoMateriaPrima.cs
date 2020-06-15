@@ -11,12 +11,19 @@ using System.Windows.Forms;
 
 namespace TC_Riveros_Paula
 {
-    public partial class NuevaPromocionForm : Form
+    public partial class NuevoMateriaPrimaForm : Form
     {
-        public NuevaPromocionForm(ResourceManager idioma)
+        public NuevoMateriaPrimaForm(ResourceManager idioma)
         {
             InitializeComponent();
-            this.Text = idioma.GetString("NuevaPromocionForm");
+            this.Text = idioma.GetString("NuevoMateriaPrimaForm");
+
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Paula\\Desktop\\UAI\\Trabajo de campo\\Proyecto Final\\TC_Riveros_Paula\\Domain\\Domain.csproj": {}
+    "C:\\Users\\Paula\\Desktop\\UAI\\Trabajo de campo\\git\\repo Proyecto Final\\TrabajoDeCampo\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Paula\\Desktop\\UAI\\Trabajo de campo\\Proyecto Final\\TC_Riveros_Paula\\Domain\\Domain.csproj": {
+    "C:\\Users\\Paula\\Desktop\\UAI\\Trabajo de campo\\git\\repo Proyecto Final\\TrabajoDeCampo\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Paula\\Desktop\\UAI\\Trabajo de campo\\Proyecto Final\\TC_Riveros_Paula\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Paula\\Desktop\\UAI\\Trabajo de campo\\git\\repo Proyecto Final\\TrabajoDeCampo\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Paula\\Desktop\\UAI\\Trabajo de campo\\Proyecto Final\\TC_Riveros_Paula\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\Paula\\Desktop\\UAI\\Trabajo de campo\\git\\repo Proyecto Final\\TrabajoDeCampo\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Paula\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Paula\\Desktop\\UAI\\Trabajo de campo\\Proyecto Final\\TC_Riveros_Paula\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\Paula\\Desktop\\UAI\\Trabajo de campo\\git\\repo Proyecto Final\\TrabajoDeCampo\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

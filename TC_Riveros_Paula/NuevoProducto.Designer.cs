@@ -1,6 +1,6 @@
 ﻿namespace TC_Riveros_Paula
 {
-    partial class NuevoProducto
+    partial class NuevoProductoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,10 +31,8 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
-            this.textBoxProveedor = new System.Windows.Forms.TextBox();
             this.textBoxComentario = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelProveedor = new System.Windows.Forms.Label();
+            this.labelNombre = new System.Windows.Forms.Label();
             this.labelComentario = new System.Windows.Forms.Label();
             this.dataGridViewListarStockHerramientas = new System.Windows.Forms.DataGridView();
             this.labelStockHerramientas = new System.Windows.Forms.Label();
@@ -47,7 +45,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 0;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Text = "btnGuardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
@@ -56,7 +54,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 1;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "btnCancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // textBoxNombre
@@ -65,13 +63,7 @@
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(197, 20);
             this.textBoxNombre.TabIndex = 2;
-            // 
-            // textBoxProveedor
-            // 
-            this.textBoxProveedor.Location = new System.Drawing.Point(29, 74);
-            this.textBoxProveedor.Name = "textBoxProveedor";
-            this.textBoxProveedor.Size = new System.Drawing.Size(197, 20);
-            this.textBoxProveedor.TabIndex = 3;
+            this.textBoxNombre.TextChanged += new System.EventHandler(this.textBoxNombre_TextChanged);
             // 
             // textBoxComentario
             // 
@@ -81,32 +73,23 @@
             this.textBoxComentario.Size = new System.Drawing.Size(190, 72);
             this.textBoxComentario.TabIndex = 7;
             // 
-            // label1
+            // labelNombre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(248, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Nombre";
-            // 
-            // labelProveedor
-            // 
-            this.labelProveedor.AutoSize = true;
-            this.labelProveedor.Location = new System.Drawing.Point(248, 81);
-            this.labelProveedor.Name = "labelProveedor";
-            this.labelProveedor.Size = new System.Drawing.Size(56, 13);
-            this.labelProveedor.TabIndex = 11;
-            this.labelProveedor.Text = "Proveedor";
+            this.labelNombre.AutoSize = true;
+            this.labelNombre.Location = new System.Drawing.Point(248, 28);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(66, 13);
+            this.labelNombre.TabIndex = 10;
+            this.labelNombre.Text = "labelNombre";
             // 
             // labelComentario
             // 
             this.labelComentario.AutoSize = true;
             this.labelComentario.Location = new System.Drawing.Point(244, 141);
             this.labelComentario.Name = "labelComentario";
-            this.labelComentario.Size = new System.Drawing.Size(60, 13);
+            this.labelComentario.Size = new System.Drawing.Size(82, 13);
             this.labelComentario.TabIndex = 15;
-            this.labelComentario.Text = "Comentario";
+            this.labelComentario.Text = "labelComentario";
             // 
             // dataGridViewListarStockHerramientas
             // 
@@ -121,11 +104,12 @@
             this.labelStockHerramientas.AutoSize = true;
             this.labelStockHerramientas.Location = new System.Drawing.Point(397, 24);
             this.labelStockHerramientas.Name = "labelStockHerramientas";
-            this.labelStockHerramientas.Size = new System.Drawing.Size(359, 13);
+            this.labelStockHerramientas.Size = new System.Drawing.Size(119, 13);
             this.labelStockHerramientas.TabIndex = 17;
-            this.labelStockHerramientas.Text = "Elija la materia prima y las herramientas necesarias para realizar el producto";
+            this.labelStockHerramientas.Text = "labelStockHerramientas";
+            this.labelStockHerramientas.Click += new System.EventHandler(this.labelStockHerramientas_Click);
             // 
-            // NuevoProducto
+            // NuevoProductoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -133,15 +117,13 @@
             this.Controls.Add(this.labelStockHerramientas);
             this.Controls.Add(this.dataGridViewListarStockHerramientas);
             this.Controls.Add(this.labelComentario);
-            this.Controls.Add(this.labelProveedor);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.textBoxComentario);
-            this.Controls.Add(this.textBoxProveedor);
             this.Controls.Add(this.textBoxNombre);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
-            this.Name = "NuevoProducto";
-            this.Text = "Nuevo Producto";
+            this.Name = "NuevoProductoForm";
+            this.Text = "NuevoProductoForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListarStockHerramientas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -153,10 +135,8 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox textBoxNombre;
-        private System.Windows.Forms.TextBox textBoxProveedor;
         private System.Windows.Forms.TextBox textBoxComentario;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelProveedor;
+        private System.Windows.Forms.Label labelNombre;
         private System.Windows.Forms.Label labelComentario;
         private System.Windows.Forms.DataGridView dataGridViewListarStockHerramientas;
         private System.Windows.Forms.Label labelStockHerramientas;

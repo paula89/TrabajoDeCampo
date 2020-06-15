@@ -1,6 +1,6 @@
 ﻿namespace TC_Riveros_Paula
 {
-    partial class ListarMateriaPrima
+    partial class ListarMateriaPrimaForm
     {
         /// <summary>
         /// Required designer variable.
@@ -40,14 +40,15 @@
             this.dataGridViewMateriaPrima.Size = new System.Drawing.Size(739, 402);
             this.dataGridViewMateriaPrima.TabIndex = 0;
             // 
-            // ListarMateriaPrima
+            // ListarMateriaPrimaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridViewMateriaPrima);
-            this.Name = "ListarMateriaPrima";
-            this.Text = "Stock";
+            this.Name = "ListarMateriaPrimaForm";
+            this.Text = "ListarMateriaPrimaForm";
+            this.Load += new System.EventHandler(this.ListarMateriaPrimaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMateriaPrima)).EndInit();
             this.ResumeLayout(false);
 

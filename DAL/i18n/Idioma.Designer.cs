@@ -61,6 +61,15 @@ namespace DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Help.
+        /// </summary>
+        public static string ayudaToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("ayudaToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Ok.
         /// </summary>
         public static string btnAceptar {
@@ -79,6 +88,78 @@ namespace DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Save.
+        /// </summary>
+        public static string btnGuardar {
+            get {
+                return ResourceManager.GetString("btnGuardar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Calculate losses.
+        /// </summary>
+        public static string CalcularPerdidasForm {
+            get {
+                return ResourceManager.GetString("CalcularPerdidasForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Calculate losses.
+        /// </summary>
+        public static string CalcularPerdidasToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("CalcularPerdidasToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Calculate budget.
+        /// </summary>
+        public static string CalcularPresupuestoForm {
+            get {
+                return ResourceManager.GetString("CalcularPresupuestoForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Calculate.
+        /// </summary>
+        public static string calcularToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("calcularToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Catalog.
+        /// </summary>
+        public static string CatalogoForm {
+            get {
+                return ResourceManager.GetString("CatalogoForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tools.
+        /// </summary>
+        public static string herramientasToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("herramientasToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Init.
+        /// </summary>
+        public static string InicioForm {
+            get {
+                return ResourceManager.GetString("InicioForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Comment.
         /// </summary>
         public static string labelComentario {
@@ -88,11 +169,236 @@ namespace DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Name.
+        /// </summary>
+        public static string labelNombre {
+            get {
+                return ResourceManager.GetString("labelNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Provider.
+        /// </summary>
+        public static string labelProveedor {
+            get {
+                return ResourceManager.GetString("labelProveedor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Choose the raw material and tools necessary to make the product.
+        /// </summary>
+        public static string labelStockHerramientas {
+            get {
+                return ResourceManager.GetString("labelStockHerramientas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a List.
+        /// </summary>
+        public static string listarHerramientasToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("listarHerramientasToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Raw material.
+        /// </summary>
+        public static string ListarMateriaPrimaForm {
+            get {
+                return ResourceManager.GetString("ListarMateriaPrimaForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Promotions.
+        /// </summary>
+        public static string ListarPromocionesForm {
+            get {
+                return ResourceManager.GetString("ListarPromocionesForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Raw material.
+        /// </summary>
+        public static string MateriaPrimaToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("MateriaPrimaToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Calculate Budget.
+        /// </summary>
+        public static string MenuItemCalcularPresupuesto {
+            get {
+                return ResourceManager.GetString("MenuItemCalcularPresupuesto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Catalog.
+        /// </summary>
+        public static string MenuItemCatalogo {
+            get {
+                return ResourceManager.GetString("MenuItemCatalogo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a New.
         /// </summary>
-        public static string nuevo {
+        public static string MenuItemNuevaPromocion {
             get {
-                return ResourceManager.GetString("nuevo", resourceCulture);
+                return ResourceManager.GetString("MenuItemNuevaPromocion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a New.
+        /// </summary>
+        public static string MenuItemNuevoMateriaPrima {
+            get {
+                return ResourceManager.GetString("MenuItemNuevoMateriaPrima", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a New.
+        /// </summary>
+        public static string MenuItemNuevoProducto {
+            get {
+                return ResourceManager.GetString("MenuItemNuevoProducto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sale report.
+        /// </summary>
+        public static string MenuItemReportesVentas {
+            get {
+                return ResourceManager.GetString("MenuItemReportesVentas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a List.
+        /// </summary>
+        public static string MenuItemVerMateriaPrima {
+            get {
+                return ResourceManager.GetString("MenuItemVerMateriaPrima", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a List.
+        /// </summary>
+        public static string MenuItemVerPromociones {
+            get {
+                return ResourceManager.GetString("MenuItemVerPromociones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a New tool.
+        /// </summary>
+        public static string NuevaHerramientaForm {
+            get {
+                return ResourceManager.GetString("NuevaHerramientaForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a New.
+        /// </summary>
+        public static string nuevaHerramientaToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("nuevaHerramientaToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a New promotion.
+        /// </summary>
+        public static string NuevaPromocionForm {
+            get {
+                return ResourceManager.GetString("NuevaPromocionForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a New sale.
+        /// </summary>
+        public static string NuevaVentaForm {
+            get {
+                return ResourceManager.GetString("NuevaVentaForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a New.
+        /// </summary>
+        public static string nuevaVentaToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("nuevaVentaToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a New raw material.
+        /// </summary>
+        public static string NuevoMateriaPrimaForm {
+            get {
+                return ResourceManager.GetString("NuevoMateriaPrimaForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a New Product.
+        /// </summary>
+        public static string NuevoProductoForm {
+            get {
+                return ResourceManager.GetString("NuevoProductoForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Products.
+        /// </summary>
+        public static string productosToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("productosToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Promotions.
+        /// </summary>
+        public static string promocionesToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("promocionesToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Reports.
+        /// </summary>
+        public static string reportesToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("reportesToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sales.
+        /// </summary>
+        public static string ventasToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("ventasToolStripMenuItem", resourceCulture);
             }
         }
     }

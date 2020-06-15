@@ -5,10 +5,8 @@ C:\Users\Paula\Desktop\UAI\Trabajo de campo\Proyecto Final\TC_Riveros_Paula\TC_R
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\Proyecto Final\TC_Riveros_Paula\TC_Riveros_Paula\bin\Debug\BLL.pdb
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\Proyecto Final\TC_Riveros_Paula\TC_Riveros_Paula\obj\Debug\UI.csprojAssemblyReference.cache
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\Proyecto Final\TC_Riveros_Paula\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.CalcularPresupuesto.resources
-C:\Users\Paula\Desktop\UAI\Trabajo de campo\Proyecto Final\TC_Riveros_Paula\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.Inicio.resources
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\Proyecto Final\TC_Riveros_Paula\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ListarPromociones.resources
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\Proyecto Final\TC_Riveros_Paula\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.NuevaPromocion.resources
-C:\Users\Paula\Desktop\UAI\Trabajo de campo\Proyecto Final\TC_Riveros_Paula\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.NuevoProducto.resources
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\Proyecto Final\TC_Riveros_Paula\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.NuevoStock.resources
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\Proyecto Final\TC_Riveros_Paula\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.Properties.Resources.resources
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\Proyecto Final\TC_Riveros_Paula\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ReporteVentas.resources
@@ -28,3 +26,36 @@ C:\Users\Paula\Desktop\UAI\Trabajo de campo\Proyecto Final\TC_Riveros_Paula\TC_R
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\Proyecto Final\TC_Riveros_Paula\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ListarMateriaPrima.resources
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\Proyecto Final\TC_Riveros_Paula\TC_Riveros_Paula\bin\Debug\Services.dll
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\Proyecto Final\TC_Riveros_Paula\TC_Riveros_Paula\bin\Debug\Services.pdb
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\Proyecto Final\TC_Riveros_Paula\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.InicioForm.resources
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\Proyecto Final\TC_Riveros_Paula\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.NuevoProductoForm.resources
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\TC_Riveros_Paula.exe.config
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\TC_Riveros_Paula.exe
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\TC_Riveros_Paula.pdb
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\BLL.dll
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\Services.dll
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DAL.dll
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\Domain.dll
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\BLL.pdb
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\Services.pdb
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DAL.pdb
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\Domain.pdb
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\es-ES\DAL.resources.dll
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\UI.csprojAssemblyReference.cache
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.CalcularPerdidasForm.resources
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.CalcularPresupuestoForm.resources
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.CatalogoForm.resources
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.InicioForm.resources
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ListarHerramientasForm.resources
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ListarPromocionesForm.resources
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ListarMateriaPrimaForm.resources
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.NuevaHerramientaForm.resources
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.NuevaPromocionForm.resources
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.NuevaVentaForm.resources
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.NuevoProductoForm.resources
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.NuevoMateriaPrimaForm.resources
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.Properties.Resources.resources
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ReporteVentasForm.resources
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\UI.csproj.GenerateResource.cache
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\UI.csproj.CopyComplete
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.exe
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.pdb

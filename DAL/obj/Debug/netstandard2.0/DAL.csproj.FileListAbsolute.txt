@@ -14,3 +14,19 @@ C:\Users\Paula\Desktop\UAI\Trabajo de campo\Proyecto Final\TC_Riveros_Paula\DAL\
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\Proyecto Final\TC_Riveros_Paula\DAL\bin\Debug\netstandard2.0\Domain.dll
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\Proyecto Final\TC_Riveros_Paula\DAL\bin\Debug\netstandard2.0\Domain.pdb
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\Proyecto Final\TC_Riveros_Paula\DAL\obj\Debug\netstandard2.0\DAL.csproj.CopyComplete
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\DAL\bin\Debug\netstandard2.0\DAL.deps.json
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\DAL\bin\Debug\netstandard2.0\DAL.dll
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\DAL\bin\Debug\netstandard2.0\DAL.pdb
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\DAL\bin\Debug\netstandard2.0\es-ES\DAL.resources.dll
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\DAL\bin\Debug\netstandard2.0\Domain.dll
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\DAL\bin\Debug\netstandard2.0\Domain.pdb
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\DAL\obj\Debug\netstandard2.0\DAL.csprojAssemblyReference.cache
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\DAL\obj\Debug\netstandard2.0\DAL.i18n.Idioma.resources
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\DAL\obj\Debug\netstandard2.0\DAL.i18n.Idioma.es-ES.resources
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\DAL\obj\Debug\netstandard2.0\DAL.csproj.GenerateResource.cache
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfoInputs.cache
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\DAL\obj\Debug\netstandard2.0\es-ES\DAL.resources.dll
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\DAL\obj\Debug\netstandard2.0\DAL.csproj.CopyComplete
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\DAL\obj\Debug\netstandard2.0\DAL.dll
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\DAL\obj\Debug\netstandard2.0\DAL.pdb

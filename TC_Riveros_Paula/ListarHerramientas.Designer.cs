@@ -1,6 +1,6 @@
 ﻿namespace TC_Riveros_Paula
 {
-    partial class ListarHerramientas
+    partial class ListarHerramientasForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,8 @@
         {
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.dataGridViewListarHerramientas = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListarHerramientas)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAceptar
@@ -50,15 +52,25 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // ListarHerramientas
+            // dataGridViewListarHerramientas
+            // 
+            this.dataGridViewListarHerramientas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListarHerramientas.Location = new System.Drawing.Point(39, 33);
+            this.dataGridViewListarHerramientas.Name = "dataGridViewListarHerramientas";
+            this.dataGridViewListarHerramientas.Size = new System.Drawing.Size(720, 308);
+            this.dataGridViewListarHerramientas.TabIndex = 2;
+            // 
+            // ListarHerramientasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridViewListarHerramientas);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Name = "ListarHerramientas";
-            this.Text = "ListarHerramientas";
+            this.Name = "ListarHerramientasForm";
+            this.Text = "ListarHerramientasForm";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListarHerramientas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -67,5 +79,6 @@
 
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.DataGridView dataGridViewListarHerramientas;
     }
 }

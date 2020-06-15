@@ -12,73 +12,96 @@ using System.Windows.Forms;
 
 namespace TC_Riveros_Paula
 {
-    public partial class Inicio : Form
+    public partial class InicioForm : Form
     {
         string cultureInfo = Thread.CurrentThread.CurrentUICulture.Name; 
         BLLRepositories bllRepositories = new BLLRepositories();
         ResourceManager idioma;
 
 
-        public Inicio()
+        public InicioForm()
         {
             InitializeComponent();
             idioma = Services.BLL.LanguageManager.Current.Translate(cultureInfo);
+            this.Text = idioma.GetString("InicioForm");
             CargarTraducciones(idioma);
 
        }
 
         private void CargarTraducciones(ResourceManager idioma) {
-            //idioma = ServicesBLL.Translate("en-US");
+            //idioma = Services.BLL.LanguageManager.Current.Translate.Translate("en-US");
 
-            MenuItemNuevoProducto.Text = idioma.GetString("nuevo");
+            productosToolStripMenuItem.Text = idioma.GetString("productosToolStripMenuItem");
+            MateriaPrimaToolStripMenuItem.Text = idioma.GetString("MateriaPrimaToolStripMenuItem");
+            herramientasToolStripMenuItem.Text = idioma.GetString("herramientasToolStripMenuItem");
+            promocionesToolStripMenuItem.Text = idioma.GetString("promocionesToolStripMenuItem");
+            ventasToolStripMenuItem.Text = idioma.GetString("ventasToolStripMenuItem");
+            reportesToolStripMenuItem.Text = idioma.GetString("reportesToolStripMenuItem");
+            calcularToolStripMenuItem.Text = idioma.GetString("calcularToolStripMenuItem");
+            ayudaToolStripMenuItem.Text = idioma.GetString("ayudaToolStripMenuItem");
+
+            MenuItemNuevoProducto.Text = idioma.GetString("MenuItemNuevoProducto");
+            MenuItemCatalogo.Text = idioma.GetString("MenuItemCatalogo");
+            MenuItemNuevoMateriaPrima.Text = idioma.GetString("MenuItemNuevoMateriaPrima");
+            MenuItemVerMateriaPrima.Text = idioma.GetString("MenuItemVerMateriaPrima");
+            nuevaHerramientaToolStripMenuItem.Text = idioma.GetString("nuevaHerramientaToolStripMenuItem");
+            listarHerramientasToolStripMenuItem.Text = idioma.GetString("listarHerramientasToolStripMenuItem");
+            MenuItemNuevaPromocion.Text = idioma.GetString("MenuItemNuevaPromocion");
+            MenuItemVerPromociones.Text = idioma.GetString("MenuItemVerPromociones");
+            nuevaVentaToolStripMenuItem.Text = idioma.GetString("nuevaVentaToolStripMenuItem");
+            MenuItemReportesVentas.Text = idioma.GetString("MenuItemReportesVentas");
+            MenuItemCalcularPresupuesto.Text = idioma.GetString("MenuItemCalcularPresupuesto");
+            CalcularPerdidasToolStripMenuItem.Text = idioma.GetString("CalcularPerdidasToolStripMenuItem");
+
+
         }
 
         //nuevo producto
         private void nuevoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            NuevoProducto nuevoProducto = new NuevoProducto(idioma);
+            NuevoProductoForm nuevoProducto = new NuevoProductoForm(idioma);
             nuevoProducto.ShowDialog();
         }
 
         private void MenuItemCatalogo_Click(object sender, EventArgs e)
         {
-            Catalogo catalogo = new Catalogo();
+            CatalogoForm catalogo = new CatalogoForm(idioma);
             catalogo.ShowDialog();
         }
 
         private void MenuItemNuevoStock_Click(object sender, EventArgs e)
         {
-            NuevoStock nuevoStock = new NuevoStock();
+            NuevoMateriaPrimaForm nuevoStock = new NuevoMateriaPrimaForm(idioma);
             nuevoStock.ShowDialog();
         }
 
         private void MenuItemVerStock_Click(object sender, EventArgs e)
         {
-            ListarMateriaPrima listarStock = new ListarMateriaPrima();
+            ListarMateriaPrimaForm listarStock = new ListarMateriaPrimaForm(idioma);
             listarStock.ShowDialog();
         }
 
         private void MenuItemNuevaPromocion_Click(object sender, EventArgs e)
         {
-            NuevaPromocion nuevaPromocion = new NuevaPromocion();
+            NuevaPromocionForm nuevaPromocion = new NuevaPromocionForm(idioma);
             nuevaPromocion.ShowDialog();
         }
 
         private void MenuItemVerPromociones_Click(object sender, EventArgs e)
         {
-            ListarPromociones listarPromociones = new ListarPromociones();
+            ListarPromocionesForm listarPromociones = new ListarPromocionesForm(idioma);
             listarPromociones.ShowDialog();
         }
 
         private void MenuItemReportesVentas_Click(object sender, EventArgs e)
         {
-            ReporteVentas reporteVentas = new ReporteVentas();
+            ReporteVentasForm reporteVentas = new ReporteVentasForm(idioma);
             reporteVentas.ShowDialog();
         }
 
         private void MenuItemCalcularPresupuesto_Click(object sender, EventArgs e)
         {
-            CalcularPresupuesto calcularPresupuesto = new CalcularPresupuesto();
+            CalcularPresupuestoForm calcularPresupuesto = new CalcularPresupuestoForm(idioma);
             calcularPresupuesto.ShowDialog();
         }
 
@@ -89,26 +112,31 @@ namespace TC_Riveros_Paula
         //nueva herramienta
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NuevaHerramienta nuevaHerramienta = new NuevaHerramienta();
+            NuevaHerramientaForm nuevaHerramienta = new NuevaHerramientaForm(idioma);
             nuevaHerramienta.ShowDialog();
         }
 
         private void listarHerramientasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ListarHerramientas listarHerramientas = new ListarHerramientas();
+            ListarHerramientasForm listarHerramientas = new ListarHerramientasForm(idioma);
             listarHerramientas.ShowDialog();
         }
 
         private void CalcularPerdidasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CalcularPerdidas calcularPerdidas = new CalcularPerdidas();
+            CalcularPerdidasForm calcularPerdidas = new CalcularPerdidasForm(idioma);
             calcularPerdidas.ShowDialog();
         }
 
         private void nuevaVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NuevaVenta nuevaVenta = new NuevaVenta();
+            NuevaVentaForm nuevaVenta = new NuevaVentaForm(idioma);
             nuevaVenta.ShowDialog();
+        }
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
