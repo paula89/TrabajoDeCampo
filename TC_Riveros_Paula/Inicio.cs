@@ -1,4 +1,6 @@
 ﻿using BLL;
+using Domain;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,7 +54,7 @@ namespace TC_Riveros_Paula
             MenuItemReportesVentas.Text = idioma.GetString("MenuItemReportesVentas");
             MenuItemCalcularPresupuesto.Text = idioma.GetString("MenuItemCalcularPresupuesto");
             CalcularPerdidasToolStripMenuItem.Text = idioma.GetString("CalcularPerdidasToolStripMenuItem");
-
+            BitacoraToolStripMenuItem.Text = idioma.GetString("BitacoraToolStripMenuItem");
 
         }
 
@@ -134,7 +136,20 @@ namespace TC_Riveros_Paula
             nuevaVenta.ShowDialog();
         }
 
+        private void BitacoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormBitacora bitacora = new FormBitacora(idioma);
+            bitacora.ShowDialog();
+        }
+
+        
+
         private void Inicio_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void herramientasToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

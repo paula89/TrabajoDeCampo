@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "CalcularPerdidasForm";
             this.Text = "CalcularPerdidasForm";
+            this.Load += new System.EventHandler(this.CalcularPerdidasForm_Load);
             this.ResumeLayout(false);
 
         }

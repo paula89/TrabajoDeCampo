@@ -211,4 +211,10 @@
   <data name="NuevaVentaForm" xml:space="preserve">
     <value>New sale</value>
   </data>
+  <data name="FormBitacora" xml:space="preserve">
+    <value>Binnacle</value>
+  </data>
+  <data name="BitacoraToolStripMenuItem" xml:space="preserve">
+    <value>Binnacle</value>
+  </data>
 </root>

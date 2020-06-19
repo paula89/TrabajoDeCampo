@@ -18,5 +18,10 @@ namespace TC_Riveros_Paula
             InitializeComponent();
             this.Text = idioma.GetString("CalcularPerdidasForm");
         }
+
+        private void CalcularPerdidasForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

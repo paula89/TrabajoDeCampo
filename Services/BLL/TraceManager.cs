@@ -4,7 +4,28 @@ using System.Text;
 
 namespace Services.BLL
 {
-    public class TraceManager
+    public sealed class TraceManager
     {
+        #region Singleton
+        private readonly static TraceManager _instance = new TraceManager();
+
+        public static TraceManager Current
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+        private TraceManager()
+        {
+            //Implement here the initialization code
+        }
+        #endregion
+
+        public void Write(string message)
+        {
+
+        }
     }
 }

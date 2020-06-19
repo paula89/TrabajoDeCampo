@@ -26,13 +26,21 @@ namespace DAL.Factory
         }
         #endregion
 
-        public IGenericRepository<Producto> GetCustomerRepository()
+        public IGenericRepository<Bitacora> GetBitacoraRepository()
         {
+            try
+            {
+                System.Console.WriteLine("nombreNamespaceClaseAccesoDatos:: " + "entre");
+                string nombreNamespaceClaseAccesoDatos = ConfigurationManager.AppSettings["AccesoDatos"] + ".Repositories";
+                System.Console.WriteLine("nombreNamespaceClaseAccesoDatos:: " + nombreNamespaceClaseAccesoDatos);
+                object instancia = Activator.CreateInstance(Type.GetType(nombreNamespaceClaseAccesoDatos));
 
-            string nombreNamespaceClaseAccesoDatos = ConfigurationManager.AppSettings["AccesoDatos"] + ".Repositories";
-            object instancia = Activator.CreateInstance(Type.GetType(nombreNamespaceClaseAccesoDatos));
-
-            return (IGenericRepository<Producto>)instancia;
+                return (IGenericRepository<Bitacora>)instancia;
+            }
+            catch (Exception exc) {
+                System.Console.WriteLine("exc :::" + exc.Message);
+                return null;
+            }
         }
         
     }

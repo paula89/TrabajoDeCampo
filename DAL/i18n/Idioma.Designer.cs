@@ -70,6 +70,15 @@ namespace DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Binnacle.
+        /// </summary>
+        public static string BitacoraToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("BitacoraToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Ok.
         /// </summary>
         public static string btnAceptar {
@@ -138,6 +147,15 @@ namespace DAL.i18n {
         public static string CatalogoForm {
             get {
                 return ResourceManager.GetString("CatalogoForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Binnacle.
+        /// </summary>
+        public static string FormBitacora {
+            get {
+                return ResourceManager.GetString("FormBitacora", resourceCulture);
             }
         }
         
