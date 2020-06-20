@@ -52,6 +52,7 @@
             this.Controls.Add(this.BitacoraDataGridView);
             this.Name = "FormBitacora";
             this.Text = "BitacoraForm";
+            this.Load += new System.EventHandler(this.FormBitacora_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BitacoraDataGridView)).EndInit();
             this.ResumeLayout(false);
 

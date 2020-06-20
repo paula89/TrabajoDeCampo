@@ -1,6 +1,5 @@
-﻿using BLL;
-using Domain;
-using Services;
+﻿using BLLTest;
+using ServicesTest;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +23,7 @@ namespace TC_Riveros_Paula
         public InicioForm()
         {
             InitializeComponent();
-            idioma = Services.BLL.LanguageManager.Current.Translate(cultureInfo);
+            idioma = ServicesTest.BLL.LanguageManager.Current.Translate(cultureInfo);
             this.Text = idioma.GetString("InicioForm");
             CargarTraducciones(idioma);
 

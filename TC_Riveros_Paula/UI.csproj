@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -197,16 +198,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{9165823C-590D-47DC-A310-EF858A6A47AE}</Project>
+    <ProjectReference Include="..\BLLTest\BLL.csproj">
+      <Project>{0a67d223-2682-47d3-b798-0289180ef691}</Project>
       <Name>BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Domain\Domain.csproj">
-      <Project>{3B94D82D-D215-41AC-9A80-9E5533687E61}</Project>
+    <ProjectReference Include="..\DomainTest\Domain.csproj">
+      <Project>{ceccc08f-dc28-4d06-89cd-af04bd73dc6a}</Project>
       <Name>Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Services\Services.csproj">
-      <Project>{329c63ba-4d50-41aa-b58d-786fcbb3fce4}</Project>
+    <ProjectReference Include="..\ServicesTest\Services.csproj">
+      <Project>{3bc1f293-6899-461c-807d-0c90feda02a9}</Project>
       <Name>Services</Name>
     </ProjectReference>
   </ItemGroup>
