@@ -19,7 +19,7 @@ namespace DomainTest
         public String Descripcion { get; set; }
         public CriticidadEnum Criticidad { get; set; }
 
-        public String Usuaro { get; set; }
+        public String Usuario { get; set; }
 
 
     }

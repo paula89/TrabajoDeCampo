@@ -237,4 +237,7 @@
   <data name="BitacoraToolStripMenuItem" xml:space="preserve">
     <value>Bitacora</value>
   </data>
+  <data name="SeguridadToolStripMenuItem" xml:space="preserve">
+    <value>Seguridad</value>
+  </data>
 </root>

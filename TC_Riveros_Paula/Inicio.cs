@@ -39,6 +39,7 @@ namespace TC_Riveros_Paula
             ventasToolStripMenuItem.Text = idioma.GetString("ventasToolStripMenuItem");
             reportesToolStripMenuItem.Text = idioma.GetString("reportesToolStripMenuItem");
             calcularToolStripMenuItem.Text = idioma.GetString("calcularToolStripMenuItem");
+            SeguridadToolStripMenuItem.Text = idioma.GetString("SeguridadToolStripMenuItem");
             ayudaToolStripMenuItem.Text = idioma.GetString("ayudaToolStripMenuItem");
 
             MenuItemNuevoProducto.Text = idioma.GetString("MenuItemNuevoProducto");

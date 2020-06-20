@@ -24,7 +24,7 @@ namespace DalTest.Repositories.SQL
 
         private string SelectLimitStatement
         {
-            get => "SELECT Fecha, Descripcion, Criticidad, Usuario FROM [dbo].[Bitacora] limit 100";
+            get => "SELECT Fecha, Descripcion, Criticidad, Usuario FROM [dbo].[Bitacora] order by Fecha desc limit 100";
         }
 
         private string SelectAllStatement
@@ -52,10 +52,23 @@ namespace DalTest.Repositories.SQL
                         dr.GetValues(values);
                         //Adaptar los values que vienen en el array a un objeto Customer.
                         Bitacora bita = new Bitacora();
-                        bita.Fecha = values[1];
-                        bita.Descripcion = values[2].ToString();
-                        bita.Criticidad = values[3].ToString(); 
-                        bita.Usuaro = values[4].ToString();
+                        bita.Fecha = (DateTime)values[0];
+                        bita.Descripcion = values[1].ToString();
+                      /*  switch (values[2].ToString())
+                        {
+                            case "Menor": 
+                                bita.Criticidad = Bitacora.CriticidadEnum.Menor;
+                                break;
+                            case "Medio":
+                                bita.Criticidad = Bitacora.CriticidadEnum.Medio;
+                                break;
+                            case "Mayor":
+                                bita.Criticidad = Bitacora.CriticidadEnum.Mayor;
+                                break;
+
+                        }
+                        */
+                        bita.Usuario = values[3].ToString();
                        
                         bitacora.Add(bita);
                     }

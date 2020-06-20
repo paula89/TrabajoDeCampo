@@ -217,4 +217,7 @@
   <data name="BitacoraToolStripMenuItem" xml:space="preserve">
     <value>Binnacle</value>
   </data>
+  <data name="SeguridadToolStripMenuItem" xml:space="preserve">
+    <value>Security</value>
+  </data>
 </root>

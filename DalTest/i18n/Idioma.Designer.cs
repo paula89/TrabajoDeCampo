@@ -412,6 +412,15 @@ namespace DalTest.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Security.
+        /// </summary>
+        public static string SeguridadToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("SeguridadToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Sales.
         /// </summary>
         public static string ventasToolStripMenuItem {
