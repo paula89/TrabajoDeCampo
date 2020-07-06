@@ -45,5 +45,20 @@ namespace ServicesTest.DAL.Factory
             }
         }
 
+        public IGenericRepository<Backup> GetBackupRepository() {
+            try {
+                string nombreNamespaceClaseAccesoDatos = ConfigurationManager.AppSettings["AccesoDatos"] + ".BackupRepository";
+                object instancia = Activator.CreateInstance(Type.GetType(nombreNamespaceClaseAccesoDatos));
+
+                return instancia as IGenericRepository<Backup>;
+                
+            }
+            catch (Exception ex) {
+                System.Console.WriteLine("exc :::" + ex.Message);
+                return null;
+            }
+        
+        }
+
     }
 }

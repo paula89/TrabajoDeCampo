@@ -15,11 +15,13 @@ namespace ServicesTest.DAL.Tools
 {
     internal static class SqlHelper
     {
-        static string conString, segString;
+        static string conString, segString, bkpString, bkpStringPath;
         static SqlHelper()
         {
             conString = ConfigurationManager.ConnectionStrings["MainConString"].ConnectionString;
             segString = ConfigurationManager.ConnectionStrings["SecurityConString"].ConnectionString;
+            bkpString = ConfigurationManager.ConnectionStrings["BackupConnection"].ConnectionString;
+            bkpStringPath = bkpString + DateTime.Now + ".bak";
         }
 
         public static Int32 ExecuteNonQuery(String commandText,
@@ -52,6 +54,60 @@ namespace ServicesTest.DAL.Tools
                 }
             }
         }
+
+
+        public static Int32 ExecuteNonQuery(String commandText,
+           CommandType commandType, string connection, Backup parameters)
+        {
+            parameters.Fecha = DateTime.Now;
+            parameters.Descripcion = "Backup automatico";
+            parameters.Path = bkpString;
+
+
+            using (var trxScope = new TransactionScope())
+            {
+                SqlConnection conn = getConnection(connection);
+
+                try
+                {
+                    conn.Open();
+                    var comm = new SqlCommand($"BACKUP DATABASE TCSecurity TO DISK ={bkpString}");
+                    var resultado = comm.ExecuteNonQuery();
+                    trxScope.Complete();
+
+                }
+                catch (DALException ex)
+                {
+                    FacadeService.ManageException(ex);
+                    Console.WriteLine("error ::: " + ex.Message);
+                    return 0;
+                }
+
+
+                    try
+                {
+                    conn.Open();
+                    var comm = new SqlCommand(commandText);
+                    comm.Connection = conn;
+
+                    comm.Parameters.AddWithValue("Fecha", parameters.Fecha);
+                    comm.Parameters.AddWithValue("Descripcion", parameters.Descripcion);
+                    comm.Parameters.AddWithValue("Path", bkpStringPath);
+
+                    var resultado = comm.ExecuteNonQuery();
+                    trxScope.Complete();
+
+                    return resultado;
+                }
+                catch (DALException ex)
+                {
+                    FacadeService.ManageException(ex);
+                    Console.WriteLine("error ::: " + ex.Message);
+                    return 0;
+                }
+            }
+        }
+
 
         public static SqlConnection getConnection(string connection) {
             SqlConnection conn;

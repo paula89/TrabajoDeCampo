@@ -28,5 +28,9 @@ namespace ServicesTest.Facade
             return LanguageManager.Current.Translate(cultureInfo);
         }
 
+        public static void ManageBackup() {
+            BackupManager.Current.Registrar();
+        }
+
     }
 }

@@ -12,6 +12,7 @@ using System.Threading;
 using System.Windows.Forms;
 using ServicesTest.Domain.Exceptions;
 using ServicesTest.Facade;
+using ServicesTest.Domain;
 
 namespace TC_Riveros_Paula
 {
@@ -28,8 +29,12 @@ namespace TC_Riveros_Paula
             idioma = FacadeService.Translate(cultureInfo);
             this.Text = idioma.GetString("InicioForm");
             CargarTraducciones(idioma);
-
+            RegistrarBackup();
        }
+
+        private void RegistrarBackup() {
+            FacadeService.ManageBackup();
+        }
 
         private void CargarTraducciones(ResourceManager idioma) {
             //idioma = Services.BLL.LanguageManager.Current.Translate.Translate("en-US");

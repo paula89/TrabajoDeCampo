@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BackupManager.cs" />
     <Compile Include="BLL\BitacoraManager.cs" />
     <Compile Include="BLL\ExceptionManager.cs" />
     <Compile Include="BLL\LenguageManager.cs" />
@@ -54,8 +55,10 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="DAL\Repositories\SQL\BackupRepository.cs" />
     <Compile Include="DAL\Repositories\SQL\BitacoraRepository.cs" />
     <Compile Include="DAL\Tools\SqlHelper.cs" />
+    <Compile Include="Domain\Backup.cs" />
     <Compile Include="Domain\Bitacora.cs" />
     <Compile Include="Domain\Exceptions\BLLException.cs" />
     <Compile Include="Domain\Exceptions\DALException.cs" />
