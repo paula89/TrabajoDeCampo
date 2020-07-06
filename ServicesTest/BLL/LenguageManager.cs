@@ -1,4 +1,6 @@
-﻿using DalTest.i18n;
+﻿using ServicesTest.DAL.i18n;
+using ServicesTest.Domain.Exceptions;
+using ServicesTest.Facade;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -37,10 +39,17 @@ namespace ServicesTest.BLL
 
         public ResourceManager Translate(string cultureInfo)
         {
-            Idioma.Culture = new CultureInfo(cultureInfo);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultureInfo);
+            try
+            {
+                Idioma.Culture = new CultureInfo(cultureInfo);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultureInfo);
 
-            return Idioma.ResourceManager;
+                return Idioma.ResourceManager;
+            }
+            catch(BLLException ex) {
+                FacadeService.ManageException(ex);
+                return null;
+            }
 
         }
     }

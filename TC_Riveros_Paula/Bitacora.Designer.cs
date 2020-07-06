@@ -36,6 +36,9 @@
             // 
             this.BitacoraDataGridView.AllowUserToAddRows = false;
             this.BitacoraDataGridView.AllowUserToDeleteRows = false;
+            this.BitacoraDataGridView.AllowUserToOrderColumns = true;
+            this.BitacoraDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.BitacoraDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.BitacoraDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BitacoraDataGridView.Location = new System.Drawing.Point(43, 51);
             this.BitacoraDataGridView.Name = "BitacoraDataGridView";

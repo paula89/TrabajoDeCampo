@@ -1,4 +1,4 @@
-﻿using DalTest.Contracts;
+﻿using DALTest.Contracts;
 using DomainTest;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DalTest.Repositories.SQL
+namespace DALTest.Repositories.SQL
 {
     public class Repositories : IGenericRepository<Producto>
     {
@@ -20,7 +20,7 @@ namespace DalTest.Repositories.SQL
             throw new NotImplementedException();
         }
 
-        public void Insert(Producto o)
+        public int Insert(Producto o)
         {
             throw new NotImplementedException();
         }

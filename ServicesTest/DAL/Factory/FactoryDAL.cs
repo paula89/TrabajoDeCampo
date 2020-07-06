@@ -1,5 +1,5 @@
-﻿using DALTest.Contracts;
-using DomainTest;
+﻿using ServicesTest.DAL.Contracts;
+using ServicesTest.Domain;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DALTest.Factory
+namespace ServicesTest.DAL.Factory
 {
     public class FactoryDAL
     {
@@ -29,14 +29,14 @@ namespace DALTest.Factory
         }
 #endregion
 
-        public IGenericRepository<Producto> GetBitacoraRepository()
+        public IGenericRepository<Bitacora> GetBitacoraRepository()
         {
             try
             {
                 string nombreNamespaceClaseAccesoDatos = ConfigurationManager.AppSettings["AccesoDatos"] + ".BitacoraRepository";
                 object instancia = Activator.CreateInstance(Type.GetType(nombreNamespaceClaseAccesoDatos));
 
-                return instancia as IGenericRepository<Producto>;
+                return instancia as IGenericRepository<Bitacora>;
             }
             catch (Exception exc)
             {

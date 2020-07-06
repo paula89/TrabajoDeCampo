@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DalTest.i18n {
+namespace ServicesTest.DAL.i18n {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace DalTest.i18n {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DalTest.i18n.Idioma", typeof(Idioma).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ServicesTest.DAL.i18n.Idioma", typeof(Idioma).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

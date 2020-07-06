@@ -1,4 +1,4 @@
-﻿using BLLTest;
+﻿using ServicesTest.BLL;
 using ServicesTest;
 using System;
 using System.Collections.Generic;
@@ -10,20 +10,22 @@ using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using ServicesTest.Domain.Exceptions;
+using ServicesTest.Facade;
 
 namespace TC_Riveros_Paula
 {
     public partial class InicioForm : Form
     {
         string cultureInfo = Thread.CurrentThread.CurrentUICulture.Name; 
-        BLLRepositories bllRepositories = new BLLRepositories();
+        //BLLRepositories bllRepositories = new BLLRepositories();
         ResourceManager idioma;
 
 
         public InicioForm()
         {
             InitializeComponent();
-            idioma = ServicesTest.BLL.LanguageManager.Current.Translate(cultureInfo);
+            idioma = FacadeService.Translate(cultureInfo);
             this.Text = idioma.GetString("InicioForm");
             CargarTraducciones(idioma);
 
@@ -31,31 +33,38 @@ namespace TC_Riveros_Paula
 
         private void CargarTraducciones(ResourceManager idioma) {
             //idioma = Services.BLL.LanguageManager.Current.Translate.Translate("en-US");
+            try
+            {
+               // Exception ex = new Exception();
+                // FacadeService.ManageException(new UIException(ex));
+                productosToolStripMenuItem.Text = idioma.GetString("productosToolStripMenuItem");
+                MateriaPrimaToolStripMenuItem.Text = idioma.GetString("MateriaPrimaToolStripMenuItem");
+                herramientasToolStripMenuItem.Text = idioma.GetString("herramientasToolStripMenuItem");
+                promocionesToolStripMenuItem.Text = idioma.GetString("promocionesToolStripMenuItem");
+                ventasToolStripMenuItem.Text = idioma.GetString("ventasToolStripMenuItem");
+                reportesToolStripMenuItem.Text = idioma.GetString("reportesToolStripMenuItem");
+                calcularToolStripMenuItem.Text = idioma.GetString("calcularToolStripMenuItem");
+                SeguridadToolStripMenuItem.Text = idioma.GetString("SeguridadToolStripMenuItem");
+                ayudaToolStripMenuItem.Text = idioma.GetString("ayudaToolStripMenuItem");
 
-            productosToolStripMenuItem.Text = idioma.GetString("productosToolStripMenuItem");
-            MateriaPrimaToolStripMenuItem.Text = idioma.GetString("MateriaPrimaToolStripMenuItem");
-            herramientasToolStripMenuItem.Text = idioma.GetString("herramientasToolStripMenuItem");
-            promocionesToolStripMenuItem.Text = idioma.GetString("promocionesToolStripMenuItem");
-            ventasToolStripMenuItem.Text = idioma.GetString("ventasToolStripMenuItem");
-            reportesToolStripMenuItem.Text = idioma.GetString("reportesToolStripMenuItem");
-            calcularToolStripMenuItem.Text = idioma.GetString("calcularToolStripMenuItem");
-            SeguridadToolStripMenuItem.Text = idioma.GetString("SeguridadToolStripMenuItem");
-            ayudaToolStripMenuItem.Text = idioma.GetString("ayudaToolStripMenuItem");
-
-            MenuItemNuevoProducto.Text = idioma.GetString("MenuItemNuevoProducto");
-            MenuItemCatalogo.Text = idioma.GetString("MenuItemCatalogo");
-            MenuItemNuevoMateriaPrima.Text = idioma.GetString("MenuItemNuevoMateriaPrima");
-            MenuItemVerMateriaPrima.Text = idioma.GetString("MenuItemVerMateriaPrima");
-            nuevaHerramientaToolStripMenuItem.Text = idioma.GetString("nuevaHerramientaToolStripMenuItem");
-            listarHerramientasToolStripMenuItem.Text = idioma.GetString("listarHerramientasToolStripMenuItem");
-            MenuItemNuevaPromocion.Text = idioma.GetString("MenuItemNuevaPromocion");
-            MenuItemVerPromociones.Text = idioma.GetString("MenuItemVerPromociones");
-            nuevaVentaToolStripMenuItem.Text = idioma.GetString("nuevaVentaToolStripMenuItem");
-            MenuItemReportesVentas.Text = idioma.GetString("MenuItemReportesVentas");
-            MenuItemCalcularPresupuesto.Text = idioma.GetString("MenuItemCalcularPresupuesto");
-            CalcularPerdidasToolStripMenuItem.Text = idioma.GetString("CalcularPerdidasToolStripMenuItem");
-            BitacoraToolStripMenuItem.Text = idioma.GetString("BitacoraToolStripMenuItem");
-
+                MenuItemNuevoProducto.Text = idioma.GetString("MenuItemNuevoProducto");
+                MenuItemCatalogo.Text = idioma.GetString("MenuItemCatalogo");
+                MenuItemNuevoMateriaPrima.Text = idioma.GetString("MenuItemNuevoMateriaPrima");
+                MenuItemVerMateriaPrima.Text = idioma.GetString("MenuItemVerMateriaPrima");
+                nuevaHerramientaToolStripMenuItem.Text = idioma.GetString("nuevaHerramientaToolStripMenuItem");
+                listarHerramientasToolStripMenuItem.Text = idioma.GetString("listarHerramientasToolStripMenuItem");
+                MenuItemNuevaPromocion.Text = idioma.GetString("MenuItemNuevaPromocion");
+                MenuItemVerPromociones.Text = idioma.GetString("MenuItemVerPromociones");
+                nuevaVentaToolStripMenuItem.Text = idioma.GetString("nuevaVentaToolStripMenuItem");
+                MenuItemReportesVentas.Text = idioma.GetString("MenuItemReportesVentas");
+                MenuItemCalcularPresupuesto.Text = idioma.GetString("MenuItemCalcularPresupuesto");
+                CalcularPerdidasToolStripMenuItem.Text = idioma.GetString("CalcularPerdidasToolStripMenuItem");
+                BitacoraToolStripMenuItem.Text = idioma.GetString("BitacoraToolStripMenuItem");
+            }
+            catch (UIException ex) {
+                FacadeService.ManageException(ex);
+                MessageBox.Show("Error al cargar las traducciones");
+            }
         }
 
         //nuevo producto
@@ -79,8 +88,8 @@ namespace TC_Riveros_Paula
 
         private void MenuItemVerStock_Click(object sender, EventArgs e)
         {
-            ListarMateriaPrimaForm listarStock = new ListarMateriaPrimaForm(idioma);
-            listarStock.ShowDialog();
+            ListarMateriaPrimaForm listarMateriaPrima = new ListarMateriaPrimaForm(idioma);
+            listarMateriaPrima.ShowDialog();
         }
 
         private void MenuItemNuevaPromocion_Click(object sender, EventArgs e)

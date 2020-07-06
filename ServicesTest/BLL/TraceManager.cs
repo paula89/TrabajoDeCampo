@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,12 +22,12 @@ namespace ServicesTest.BLL
 
         private TraceManager()
         {
-            //Implement here the initialization code
         }
         #endregion
 
-        public void Write(string message)
+        public void Write(string message, EventLevel level )
         {
+            Console.WriteLine($"[Exception] Fecha: { DateTime.Now.ToString() }, {message}, {level} ");
 
         }
     }

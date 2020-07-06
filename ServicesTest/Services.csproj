@@ -32,7 +32,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +47,20 @@
     <Compile Include="BLL\ExceptionManager.cs" />
     <Compile Include="BLL\LenguageManager.cs" />
     <Compile Include="BLL\TraceManager.cs" />
+    <Compile Include="DAL\Contracts\IGenericRepository.cs" />
+    <Compile Include="DAL\Factory\FactoryDAL.cs" />
+    <Compile Include="DAL\i18n\Idioma.Designer.cs">
+      <DependentUpon>Idioma.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DAL\Repositories\SQL\BitacoraRepository.cs" />
+    <Compile Include="DAL\Tools\SqlHelper.cs" />
+    <Compile Include="Domain\Bitacora.cs" />
+    <Compile Include="Domain\Exceptions\BLLException.cs" />
+    <Compile Include="Domain\Exceptions\DALException.cs" />
+    <Compile Include="Domain\Exceptions\UIException.cs" />
+    <Compile Include="Facade\FacadeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +76,13 @@
       <Project>{ceccc08f-dc28-4d06-89cd-af04bd73dc6a}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DAL\i18n\Idioma.es-ES.resx" />
+    <EmbeddedResource Include="DAL\i18n\Idioma.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Idioma.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

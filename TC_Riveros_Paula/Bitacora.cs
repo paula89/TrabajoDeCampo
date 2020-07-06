@@ -1,4 +1,5 @@
-﻿using DomainTest;
+﻿using ServicesTest.Domain;
+using ServicesTest.BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ServicesTest;
+using ServicesTest.Domain.Exceptions;
+using ServicesTest.Facade;
 
 namespace TC_Riveros_Paula
 {
@@ -23,8 +26,14 @@ namespace TC_Riveros_Paula
         }
 
         public void CargarTabla() {
-            IEnumerable<Bitacora> bitacora = ServicesTest.BLL.BitacoraManager.Current.ObtenerBitacoras();
-            BitacoraDataGridView.DataSource = bitacora.ToList();
+            try
+            {
+                IEnumerable<Bitacora> bitacora = BitacoraManager.Current.ObtenerBitacoras();
+                BitacoraDataGridView.DataSource = bitacora.ToList();
+            }
+            catch (UIException ex) {
+                FacadeService.ManageException(ex);
+            }
 
         }
         private void BitacoraDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -1,9 +1,10 @@
-﻿using DomainTest;
+﻿using ServicesTest.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ServicesTest.DAL.Factory;
 
 namespace ServicesTest.BLL
 {
@@ -24,20 +25,18 @@ namespace ServicesTest.BLL
 
         private BitacoraManager()
         {
-            //Implement here the initialization code
         }
         #endregion
 
 
         public void Registrar(Bitacora bitacora)
         {
-            DalTest.Factory.FactoryDAL.Current.GetBitacoraRepository();// = new DAL.BitacoraDAL();
-                                                               //  return .Registrar(bitacora);
+            FactoryDAL.Current.GetBitacoraRepository().Insert(bitacora);
         }
 
         public IEnumerable<Bitacora> ObtenerBitacoras()
         {
-            return DalTest.Factory.FactoryDAL.Current.GetBitacoraRepository().GetAll();
+            return FactoryDAL.Current.GetBitacoraRepository().GetAll();
         }
     }
 }
