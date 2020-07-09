@@ -63,28 +63,30 @@ namespace ServicesTest.DAL.Tools
             parameters.Descripcion = "Backup automatico";
             parameters.Path = bkpString;
 
-
+            
             using (var trxScope = new TransactionScope())
             {
                 SqlConnection conn = getConnection(connection);
+             /*    
+                  try
+                  {
+                      conn.Open();
+                      var comm = new SqlCommand($"BACKUP DATABASE TC TO DISK = @bkpString");
+                      comm.Connection = conn;
+                      comm.Parameters.AddWithValue("bkpString", parameters.Path);
+                      var resultado = comm.ExecuteNonQuery();
+                      trxScope.Complete();
+
+                  }
+                  catch (DALException ex)
+                  {
+                      FacadeService.ManageException(ex);
+                      Console.WriteLine("error ::: " + ex.Message);
+                      return 0;
+                  }
+             */ 
 
                 try
-                {
-                    conn.Open();
-                    var comm = new SqlCommand($"BACKUP DATABASE TCSecurity TO DISK ={bkpString}");
-                    var resultado = comm.ExecuteNonQuery();
-                    trxScope.Complete();
-
-                }
-                catch (DALException ex)
-                {
-                    FacadeService.ManageException(ex);
-                    Console.WriteLine("error ::: " + ex.Message);
-                    return 0;
-                }
-
-
-                    try
                 {
                     conn.Open();
                     var comm = new SqlCommand(commandText);

@@ -31,7 +31,7 @@ namespace ServicesTest.DAL.Repositories.SQL
 
         private string SelectAllStatement
         {
-            get => "SELECT Fecha, Descripcion, Criticidad, Usuario FROM [dbo].[Bitacora]";
+            get => "SELECT Fecha, Descripcion, Criticidad, Usuario FROM [dbo].[Bitacora] order by Fecha";
         }
         #endregion
         public void Delete(Guid id)
@@ -82,7 +82,7 @@ namespace ServicesTest.DAL.Repositories.SQL
 
         public int Insert(Bitacora bitacora)
         {
-            int inserted = Tools.SqlHelper.ExecuteNonQuery(InsertStatement, System.Data.CommandType.Text, "security", bitacora);
+            int inserted = SqlHelper.ExecuteNonQuery(InsertStatement, System.Data.CommandType.Text, "security", bitacora);
             return inserted;            
         }
 

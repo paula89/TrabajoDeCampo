@@ -11,7 +11,6 @@ namespace ServicesTest.Facade
 {
     public static class FacadeService
     {
-        //Definir contratos....
 
         public static void ManageException(Exception ex)
         {
@@ -28,7 +27,8 @@ namespace ServicesTest.Facade
             return LanguageManager.Current.Translate(cultureInfo);
         }
 
-        public static void ManageBackup() {
+        public static void ManageBackup() 
+        {
             BackupManager.Current.Registrar();
         }
 

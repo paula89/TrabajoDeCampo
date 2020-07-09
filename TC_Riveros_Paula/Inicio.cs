@@ -1,6 +1,4 @@
-﻿using ServicesTest.BLL;
-using ServicesTest;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +10,12 @@ using System.Threading;
 using System.Windows.Forms;
 using ServicesTest.Domain.Exceptions;
 using ServicesTest.Facade;
-using ServicesTest.Domain;
 
 namespace TC_Riveros_Paula
 {
     public partial class InicioForm : Form
     {
         string cultureInfo = Thread.CurrentThread.CurrentUICulture.Name; 
-        //BLLRepositories bllRepositories = new BLLRepositories();
         ResourceManager idioma;
 
 
@@ -40,8 +36,9 @@ namespace TC_Riveros_Paula
             //idioma = Services.BLL.LanguageManager.Current.Translate.Translate("en-US");
             try
             {
-               // Exception ex = new Exception();
-                // FacadeService.ManageException(new UIException(ex));
+                //Exception ex = new Exception();
+                //FacadeService.ManageException(new UIException(ex));
+               
                 productosToolStripMenuItem.Text = idioma.GetString("productosToolStripMenuItem");
                 MateriaPrimaToolStripMenuItem.Text = idioma.GetString("MateriaPrimaToolStripMenuItem");
                 herramientasToolStripMenuItem.Text = idioma.GetString("herramientasToolStripMenuItem");
@@ -65,6 +62,7 @@ namespace TC_Riveros_Paula
                 MenuItemCalcularPresupuesto.Text = idioma.GetString("MenuItemCalcularPresupuesto");
                 CalcularPerdidasToolStripMenuItem.Text = idioma.GetString("CalcularPerdidasToolStripMenuItem");
                 BitacoraToolStripMenuItem.Text = idioma.GetString("BitacoraToolStripMenuItem");
+                BackupToolStripMenuItem.Text = idioma.GetString("BackupToolStripMenuItem");
             }
             catch (UIException ex) {
                 FacadeService.ManageException(ex);
@@ -156,7 +154,12 @@ namespace TC_Riveros_Paula
             bitacora.ShowDialog();
         }
 
-        
+        private void BackupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BackupForm backup = new BackupForm(idioma);
+            backup.ShowDialog();
+        }
+
 
         private void Inicio_Load(object sender, EventArgs e)
         {

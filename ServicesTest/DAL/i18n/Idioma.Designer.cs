@@ -70,6 +70,24 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Backup.
+        /// </summary>
+        public static string BackupForm {
+            get {
+                return ResourceManager.GetString("BackupForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Backup.
+        /// </summary>
+        public static string BackupToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("BackupToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Binnacle.
         /// </summary>
         public static string BitacoraToolStripMenuItem {

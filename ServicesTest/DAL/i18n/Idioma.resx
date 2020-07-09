@@ -220,4 +220,10 @@
   <data name="SeguridadToolStripMenuItem" xml:space="preserve">
     <value>Security</value>
   </data>
+  <data name="BackupToolStripMenuItem" xml:space="preserve">
+    <value>Backup</value>
+  </data>
+  <data name="BackupForm" xml:space="preserve">
+    <value>Backup</value>
+  </data>
 </root>

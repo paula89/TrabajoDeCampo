@@ -51,6 +51,8 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SeguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -228,7 +230,7 @@
             // SeguridadToolStripMenuItem
             // 
             this.SeguridadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BitacoraToolStripMenuItem});
+            this.BitacoraToolStripMenuItem, this.BackupToolStripMenuItem});
             this.SeguridadToolStripMenuItem.Name = "SeguridadToolStripMenuItem";
             this.SeguridadToolStripMenuItem.Size = new System.Drawing.Size(151, 20);
             this.SeguridadToolStripMenuItem.Text = "SeguridadStripMenuItem";
@@ -239,6 +241,14 @@
             this.BitacoraToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.BitacoraToolStripMenuItem.Text = "BitacoraStripMenuItem";
             this.BitacoraToolStripMenuItem.Click += new System.EventHandler(this.BitacoraToolStripMenuItem_Click);
+            //
+            //Backup
+            //
+            this.BackupToolStripMenuItem.Name = "BackupToolStripMenuItem";
+            this.BackupToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.BackupToolStripMenuItem.Text = "BackupStripMenuItem";
+            this.BackupToolStripMenuItem.Click += new System.EventHandler(this.BackupToolStripMenuItem_Click);
+
             // 
             // InicioForm
             // 
@@ -282,6 +292,9 @@
         private System.Windows.Forms.ToolStripMenuItem nuevaVentaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SeguridadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem BitacoraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem BackupToolStripMenuItem;
+
+
     }
 }
 

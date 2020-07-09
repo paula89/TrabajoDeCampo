@@ -1,4 +1,4 @@
-﻿using DALTest.Contracts;
+﻿using ServicesTest.DAL.Contracts;
 using ServicesTest.DAL.Tools;
 using ServicesTest.Domain;
 using ServicesTest.Domain.Exceptions;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ServicesTest.DAL.Repositories.SQL
 {
-    public class BackupRepository : IGenericRepository<Backup>
+    public class BackupRepository: IGenericRepository<Backup>
     {
         #region Statements
         private string InsertStatement
@@ -69,7 +69,7 @@ namespace ServicesTest.DAL.Repositories.SQL
 
         public int Insert(Backup backup)
         {
-            int inserted = Tools.SqlHelper.ExecuteNonQuery(InsertStatement, System.Data.CommandType.Text, "security", backup);
+            int inserted = SqlHelper.ExecuteNonQuery(InsertStatement, System.Data.CommandType.Text, "security", backup);
             return inserted;
         }
 

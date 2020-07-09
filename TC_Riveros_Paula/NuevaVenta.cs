@@ -18,5 +18,15 @@ namespace TC_Riveros_Paula
             InitializeComponent();
             this.Text = idioma.GetString("NuevaVentaForm");
         }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

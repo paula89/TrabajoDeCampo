@@ -1,4 +1,5 @@
-﻿using ServicesTest.DAL.Factory;
+﻿using DALTest.Contracts;
+using ServicesTest.DAL.Factory;
 using ServicesTest.Domain;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace ServicesTest.BLL
     {
         #region Singleton
         private readonly static BackupManager _instance = new BackupManager();
+        private FactoryDAL instancia;
 
         public static BackupManager Current
         {
@@ -24,6 +26,7 @@ namespace ServicesTest.BLL
 
         private BackupManager()
         {
+            instancia = FactoryDAL.Current;
         }
         #endregion
 
@@ -31,12 +34,12 @@ namespace ServicesTest.BLL
         public void Registrar()
         {
             Backup backup = new Backup();
-            FactoryDAL.Current.GetBackupRepository().Insert(backup);
+            instancia.GetBackupRepository().Insert(backup);
         }
 
         public IEnumerable<Backup> ObtenerBackup()
         {
-            return FactoryDAL.Current.GetBackupRepository().GetAll();
+            return instancia.GetBackupRepository().GetAll();
         }
     
 }

@@ -58,5 +58,5 @@ C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCam
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.exe
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.pdb
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\es-ES\ServicesTest.resources.dll
-C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DalTest.dll
-C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DalTest.pdb
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.BackupForm.resources
+C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.StartForm.resources
