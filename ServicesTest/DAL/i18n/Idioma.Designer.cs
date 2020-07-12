@@ -115,11 +115,29 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Filter.
+        /// </summary>
+        public static string btnFiltrar {
+            get {
+                return ResourceManager.GetString("btnFiltrar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Save.
         /// </summary>
         public static string btnGuardar {
             get {
                 return ResourceManager.GetString("btnGuardar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Restore.
+        /// </summary>
+        public static string btnRestaurar {
+            get {
+                return ResourceManager.GetString("btnRestaurar", resourceCulture);
             }
         }
         
@@ -232,6 +250,33 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Level.
+        /// </summary>
+        public static string lblCriticidad {
+            get {
+                return ResourceManager.GetString("lblCriticidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Since.
+        /// </summary>
+        public static string lblDesde {
+            get {
+                return ResourceManager.GetString("lblDesde", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a To.
+        /// </summary>
+        public static string lblHasta {
+            get {
+                return ResourceManager.GetString("lblHasta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a List.
         /// </summary>
         public static string listarHerramientasToolStripMenuItem {
@@ -340,6 +385,33 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Do you want restore the backup selected?.
+        /// </summary>
+        public static string msgConfirm {
+            get {
+                return ResourceManager.GetString("msgConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error in the backup restore. Call administrator system..
+        /// </summary>
+        public static string msgError {
+            get {
+                return ResourceManager.GetString("msgError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Restore completed successfully.
+        /// </summary>
+        public static string msgOk {
+            get {
+                return ResourceManager.GetString("msgOk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a New tool.
         /// </summary>
         public static string NuevaHerramientaForm {
@@ -435,6 +507,15 @@ namespace ServicesTest.DAL.i18n {
         public static string SeguridadToolStripMenuItem {
             get {
                 return ResourceManager.GetString("SeguridadToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Restore.
+        /// </summary>
+        public static string titleConfirm {
+            get {
+                return ResourceManager.GetString("titleConfirm", resourceCulture);
             }
         }
         

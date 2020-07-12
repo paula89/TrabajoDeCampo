@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DomainTest
 {
-    public class Reporte
+    public class Alerta
     {
-        DetalleVenta detalleVenta { get; set; }
-        Venta venta { get; set; }
+        string detalle { get; set; }
+        List<MateriaPrima>materiasPrimas { get; set; }
     }
 }

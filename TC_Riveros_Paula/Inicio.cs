@@ -29,7 +29,7 @@ namespace TC_Riveros_Paula
        }
 
         private void RegistrarBackup() {
-            FacadeService.ManageBackup();
+            //FacadeService.ManageBackup();
         }
 
         private void CargarTraducciones(ResourceManager idioma) {

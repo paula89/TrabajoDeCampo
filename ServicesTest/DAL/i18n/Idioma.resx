@@ -226,4 +226,31 @@
   <data name="BackupForm" xml:space="preserve">
     <value>Backup</value>
   </data>
+  <data name="lblDesde" xml:space="preserve">
+    <value>Since</value>
+  </data>
+  <data name="lblHasta" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="lblCriticidad" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="btnFiltrar" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="btnRestaurar" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="msgConfirm" xml:space="preserve">
+    <value>Do you want restore the backup selected?</value>
+  </data>
+  <data name="titleConfirm" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="msgOk" xml:space="preserve">
+    <value>Restore completed successfully</value>
+  </data>
+  <data name="msgError" xml:space="preserve">
+    <value>Error in the backup restore. Call administrator system.</value>
+  </data>
 </root>

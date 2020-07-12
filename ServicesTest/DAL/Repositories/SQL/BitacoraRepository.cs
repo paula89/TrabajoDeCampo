@@ -8,6 +8,7 @@ using ServicesTest.Domain;
 using ServicesTest.DAL.Tools;
 using ServicesTest.Facade;
 using ServicesTest.Domain.Exceptions;
+using System.Data.SqlClient;
 
 namespace ServicesTest.DAL.Repositories.SQL
 {
@@ -29,6 +30,14 @@ namespace ServicesTest.DAL.Repositories.SQL
             get => "SELECT Fecha, Descripcion, Criticidad, Usuario FROM [dbo].[Bitacora] order by Fecha desc limit 100";
         }
 
+        private string SelectFilterStatement
+        {
+            get => "SELECT Fecha, Descripcion, Criticidad, Usuario FROM [dbo].[Bitacora] " +
+                "WHERE Fecha >= @desde " +
+                "and Fecha <= @hasta ";
+            set { }
+        }
+       
         private string SelectAllStatement
         {
             get => "SELECT Fecha, Descripcion, Criticidad, Usuario FROM [dbo].[Bitacora] order by Fecha";
@@ -39,12 +48,28 @@ namespace ServicesTest.DAL.Repositories.SQL
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Bitacora> GetAll()
+        public IEnumerable<Bitacora> GetAll(Array filtros)
         {
             try
             {
                 List<Bitacora> bitacora = new List<Bitacora>();
-                using (var dr = SqlHelper.ExecuteReader(SelectAllStatement, System.Data.CommandType.Text, "security"))
+                List<SqlParameter> parametros = new List<SqlParameter>();
+                string finalStatementString;
+                if (filtros.GetValue(0) != null)
+                {
+                    finalStatementString = String.Concat(SelectFilterStatement, "and Criticidad = @Criticidad order by Fecha");
+                    parametros.Add(new SqlParameter("@criticidad", filtros.GetValue(0)));
+                }
+                else {
+                    finalStatementString = String.Concat(SelectFilterStatement, "order by Fecha");
+                }
+
+                parametros.Add(new SqlParameter("@desde",Convert.ToDateTime(filtros.GetValue(1))));
+                parametros.Add(new SqlParameter("@hasta", Convert.ToDateTime(filtros.GetValue(2))));
+                System.Console.WriteLine(finalStatementString);
+                System.Console.WriteLine(parametros.ToArray().ToString());
+
+                using (var dr = SqlHelper.ExecuteReader(finalStatementString, System.Data.CommandType.Text, "security", parametros.ToArray()))
                 {
                     Object[] values = new Object[dr.FieldCount];
 

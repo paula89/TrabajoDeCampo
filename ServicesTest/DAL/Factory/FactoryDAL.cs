@@ -1,4 +1,5 @@
 ﻿using ServicesTest.DAL.Contracts;
+using ServicesTest.DAL.Repositories.SQL;
 using ServicesTest.Domain;
 using System;
 using System.Collections.Generic;
@@ -59,6 +60,26 @@ namespace ServicesTest.DAL.Factory
             }
         
         }
+
+        public BackupRepository GetBackupRestoreRepository()
+        {
+            try
+            {
+                string nombreNamespaceClaseAccesoDatos = ConfigurationManager.AppSettings["AccesoDatos"] + ".BackupRepository";
+                object instancia = Activator.CreateInstance(Type.GetType(nombreNamespaceClaseAccesoDatos));
+
+                return instancia as BackupRepository;
+
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("exc :::" + ex.Message);
+                return null;
+            }
+
+        }
+
+
 
     }
 }

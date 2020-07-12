@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DomainTest
 {
-    public class Presupuesto
+    public class FichaPedido
     {
-        int nroDetalle { get; set; }
         int nroFichaPedido { get; set; }
-        int nroPresupuesto { get; set; }
-        int vigencia { get; set; } // nro de dias de vigencia
-
+        string estado { get; set; }
+        DateTime fecha { get; set; }
+        string descripcion { get; set; }
+        List<Producto> productos { get; set; }
     }
 }

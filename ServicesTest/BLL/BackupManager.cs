@@ -37,9 +37,13 @@ namespace ServicesTest.BLL
             instancia.GetBackupRepository().Insert(backup);
         }
 
-        public IEnumerable<Backup> ObtenerBackup()
+        public IEnumerable<Backup> ObtenerBackup(string[] filtros)
         {
-            return instancia.GetBackupRepository().GetAll();
+            return instancia.GetBackupRepository().GetAll(filtros);
+        }
+
+        public int RestaurarBackup(string path) {
+            return instancia.GetBackupRestoreRepository().RestoreBackup(path);
         }
     
 }

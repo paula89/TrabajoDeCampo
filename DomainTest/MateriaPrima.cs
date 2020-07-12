@@ -6,17 +6,14 @@ using System.Threading.Tasks;
 
 namespace DomainTest
 {
-   public class Herramientas
+    public class MateriaPrima
     {
         int cantidad { get; set; }
-        string comentario { get; set; }
+        string comentatio { get; set; }
         bool estado { get; set; }
         string marca { get; set; }
         string nombre { get; set; }
-        int  NroHerramienta { get; set; }        
+        int nroMateriaPrima { get; set; }
         string proveedor { get; set; }
-        int tiempoDeUso { get; set; }
-
-
-}
+    }
 }

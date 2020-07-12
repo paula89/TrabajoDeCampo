@@ -5,6 +5,7 @@ using ServicesTest.Domain.Exceptions;
 using ServicesTest.Facade;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,23 +27,43 @@ namespace ServicesTest.DAL.Repositories.SQL
         {
             get => "SELECT Fecha, Descripcion, Path FROM [dbo].[Backup] order by Fecha desc limit 100";
         }
-
+        private string SelectFilterStatement
+        {
+            get => "SELECT Fecha, Descripcion, Path FROM [dbo].[Backup] " +
+                "WHERE Fecha >= @desde " +
+                "and Fecha <= @hasta " +
+                "order by Fecha";
+            set { }
+        }
         private string SelectAllStatement
         {
             get => "SELECT Fecha, Descripcion, Path FROM [dbo].[Backup]";
         }
+        private string RestoreBackupStatement 
+        { 
+            get => "dbo.spRestoreBackup";
+        }
         #endregion
+
         public void Delete(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Backup> GetAll()
+        public IEnumerable<Backup> GetAll(Array filtros)
         {
             try
             {
                 List<Backup> backup = new List<Backup>();
-                using (var dr = SqlHelper.ExecuteReader(SelectAllStatement, System.Data.CommandType.Text, "security"))
+
+                List<SqlParameter> parametros = new List<SqlParameter>();
+
+                parametros.Add(new SqlParameter("@desde", Convert.ToDateTime(filtros.GetValue(0))));
+                parametros.Add(new SqlParameter("@hasta", Convert.ToDateTime(filtros.GetValue(1))));
+                System.Console.WriteLine(SelectFilterStatement);
+                System.Console.WriteLine(parametros.ToArray().ToString());
+
+                using (var dr = SqlHelper.ExecuteReader(SelectFilterStatement, System.Data.CommandType.Text, "security",parametros.ToArray()))
                 {
                     Object[] values = new Object[dr.FieldCount];
 
@@ -72,6 +93,18 @@ namespace ServicesTest.DAL.Repositories.SQL
             int inserted = SqlHelper.ExecuteNonQuery(InsertStatement, System.Data.CommandType.Text, "security", backup);
             return inserted;
         }
+
+
+        public int RestoreBackup(string path) {
+
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@ruta", path));
+
+            int restored = SqlHelper.ExecuteNonQuery(RestoreBackupStatement, System.Data.CommandType.StoredProcedure, "security", parametros.ToArray());
+
+            return restored;
+        }
+
 
         public void Update(Backup o)
         {

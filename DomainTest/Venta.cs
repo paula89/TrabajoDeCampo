@@ -8,5 +8,8 @@ namespace DomainTest
 {
     public class Venta
     {
+        int nroFactura { get; set; }
+        int nroDetalle { get; set; }
+        int nroPresupuesto { get; set; }
     }
 }

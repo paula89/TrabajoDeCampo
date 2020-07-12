@@ -34,9 +34,9 @@ namespace ServicesTest.BLL
             FactoryDAL.Current.GetBitacoraRepository().Insert(bitacora);
         }
 
-        public IEnumerable<Bitacora> ObtenerBitacoras()
+        public IEnumerable<Bitacora> ObtenerBitacoras(string[] filtros)
         {
-            return FactoryDAL.Current.GetBitacoraRepository().GetAll();
+            return FactoryDAL.Current.GetBitacoraRepository().GetAll(filtros);
         }
     }
 }

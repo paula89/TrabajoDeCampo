@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace DomainTest
 {
-    public class Stock
+    public class Perdidas
     {
+        List<Herramientas> herramientas { get; set; }
+        float monto { get; set; }
     }
 }

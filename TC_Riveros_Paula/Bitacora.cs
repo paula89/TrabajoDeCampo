@@ -22,13 +22,31 @@ namespace TC_Riveros_Paula
         {
             InitializeComponent();
             this.Text = idioma.GetString("FormBitacora");
-            CargarTabla();
+            this.CargarTraducciones(idioma);
         }
 
+        public void CargarTraducciones(ResourceManager idioma) 
+        {
+            this.btnFiltrar.Text = idioma.GetString("btnFiltrar");
+            this.lblCriticidad.Text = idioma.GetString("lblCriticidad");
+            this.lblHasta.Text = idioma.GetString("lblHasta");
+            this.lblDesde.Text = idioma.GetString("lblDesde");
+
+            this.comboBoxCriticidad.Items.Add(Bitacora.CriticidadEnum.Menor);
+            this.comboBoxCriticidad.Items.Add(Bitacora.CriticidadEnum.Medio);
+            this.comboBoxCriticidad.Items.Add(Bitacora.CriticidadEnum.Mayor);
+        }
         public void CargarTabla() {
             try
             {
-                IEnumerable<Bitacora> bitacora = BitacoraManager.Current.ObtenerBitacoras();
+                string criticidad = (this.comboBoxCriticidad.Text != "") ?
+                   this.comboBoxCriticidad.Text: null ;
+                string desde = this.dateTimePickerDesde.Value.ToString();
+                string hasta = this.dateTimePickerHasta.Value.ToString();
+                String[] filtros = new string[] { criticidad, desde, hasta };
+            
+
+                IEnumerable<Bitacora> bitacora = BitacoraManager.Current.ObtenerBitacoras(filtros);
                 BitacoraDataGridView.DataSource = bitacora.ToList();
             }
             catch (UIException ex) {
@@ -44,6 +62,11 @@ namespace TC_Riveros_Paula
         private void FormBitacora_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            CargarTabla();
         }
     }
 }
