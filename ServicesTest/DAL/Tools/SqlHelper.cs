@@ -52,10 +52,16 @@ namespace ServicesTest.DAL.Tools
         {
             SqlConnection conn = getConnection(connection);
             int response = 0;
+
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                CommandPrepare(cmd, conn, (SqlTransaction)null, commandType, commandText, parameters);
+
+                conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = commandText;
+                cmd.CommandType = commandType;
+                cmd.Parameters.Add(new SqlParameter("@ruta", @bkpStringPath));
            
                 response = cmd.ExecuteNonQuery();
 
@@ -71,10 +77,7 @@ namespace ServicesTest.DAL.Tools
             }
             
         }
-
-
-
-
+                     
         public static Int32 ExecuteNonQuery(String commandText,
             CommandType commandType, string connection, Bitacora parameters)
         {
@@ -104,7 +107,7 @@ namespace ServicesTest.DAL.Tools
                 }
             }
         }
-
+        // do backup
         public static Int32 ExecuteNonQuery(String commandText,
            CommandType commandType, string connection, Backup parameters)
         {
@@ -113,11 +116,13 @@ namespace ServicesTest.DAL.Tools
             // crea el .bak
             try
             {
+                conn.Open();
                 cmd = new SqlCommand();
-                List<SqlParameter> parametros = new List<SqlParameter>();
-                parametros.Add(new SqlParameter("@ruta", @bkpStringPath));            
-                CommandPrepare(cmd, conn, (SqlTransaction)null, CommandType.StoredProcedure, "dbo.spFull_Backup", parametros.ToArray());
-            
+                cmd.Connection = conn;
+                cmd.CommandText = "dbo.spFull_Backup";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@ruta", @bkpStringPath));
+
                 cmd.ExecuteNonQuery();
                 cmd.Parameters.Clear();
                 cmd.Dispose();
@@ -155,45 +160,6 @@ namespace ServicesTest.DAL.Tools
                 {
                     FacadeService.ManageException((DALException)ex);
                     return 0;
-                }
-            }
-        }
-
-        private static void CommandPrepare(SqlCommand command, SqlConnection connection, SqlTransaction transaction, 
-            CommandType commandType, String commandText, SqlParameter[] commandParameters)
-        {
-            if (connection.State != ConnectionState.Open)
-            {
-                connection.Open();
-            }
-            command.Connection = connection;
-            command.CommandText = commandText;
-            command.Transaction = transaction;
-            command.CommandType = commandType;
-
-            if (commandParameters != null)
-            {
-                AddParams(command, commandParameters);
-            }
-            return;
-        }
-
-        private static void AddParams(SqlCommand command, SqlParameter[] commandParameters)
-        {
-            if (commandParameters != null)
-            {
-                foreach (SqlParameter parameter in commandParameters)
-                {
-                    if (parameter != null)
-                    {
-                        if ((parameter.Direction == ParameterDirection.InputOutput ||
-                            parameter.Direction == ParameterDirection.Input) &&
-                            (parameter.Value == null))
-                        {
-                            parameter.Value = DBNull.Value;
-                        }
-                        command.Parameters.Add(parameter);
-                    }
                 }
             }
         }

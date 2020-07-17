@@ -78,7 +78,7 @@
             this.dateTimePickerDesde.Name = "dateTimePickerDesde";
             this.dateTimePickerDesde.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerDesde.TabIndex = 4;
-            this.dateTimePickerDesde.Value = new System.DateTime(2020, 7, 11, 0, 0, 0, 0);
+            this.dateTimePickerDesde.Value = new System.DateTime(2020, 7, 16, 23, 46, 36, 0);
             // 
             // dateTimePickerHasta
             // 
@@ -86,7 +86,7 @@
             this.dateTimePickerHasta.Name = "dateTimePickerHasta";
             this.dateTimePickerHasta.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerHasta.TabIndex = 5;
-            this.dateTimePickerHasta.Value = new System.DateTime(2020, 7, 11, 0, 0, 0, 0);
+            this.dateTimePickerHasta.Value = new System.DateTime(2020, 7, 16, 23, 46, 50, 0);
             // 
             // lblDesde
             // 

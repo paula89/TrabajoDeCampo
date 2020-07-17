@@ -35,6 +35,7 @@ namespace TC_Riveros_Paula
             this.titleConfirm = idioma.GetString("titleConfirm");
             this.msgOk = idioma.GetString("msgOk");
             this.msgError = idioma.GetString("msgError");
+            this.btnRestaurar.Enabled = false;
         }
         public void CargarTabla()
         {
@@ -47,8 +48,8 @@ namespace TC_Riveros_Paula
                 IEnumerable<Backup> backup = BackupManager.Current.ObtenerBackup(filtros);
                 BackupDataGridView.DataSource = backup.ToList();
 
-                if (backup.ToList().Count == 0) {
-                    this.btnRestaurar.Enabled = false;
+                if (backup.ToList().Count > 0) {
+                    this.btnRestaurar.Enabled = true;
                 }
 
             }
