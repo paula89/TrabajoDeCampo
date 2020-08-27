@@ -91,7 +91,7 @@ namespace ServicesTest.DAL.Tools
                     comm.Connection = conn;
 
                     comm.Parameters.AddWithValue("Fecha", parameters.Fecha);
-                    comm.Parameters.AddWithValue("Descripcion", parameters.Descripcion);
+                    comm.Parameters.AddWithValue("Descripcion", parameters.Descripcion.Substring(0,512));
                     comm.Parameters.AddWithValue("Criticidad", Convert.ToString(parameters.Criticidad));
                     comm.Parameters.AddWithValue("Usuario", parameters.Usuario);
 
@@ -102,7 +102,7 @@ namespace ServicesTest.DAL.Tools
                 }
                 catch (Exception ex)
                 {
-                    FacadeService.ManageException((DALException)ex);
+                    FacadeService.ManageException(new DALException(ex));
                     return 0;
                 }
             }
@@ -127,10 +127,12 @@ namespace ServicesTest.DAL.Tools
                 cmd.Parameters.Clear();
                 cmd.Dispose();
                 conn.Close();
+
+                //////////  AGREGAR EL BACKUP DE SECURITY
             }
             catch (Exception ex)
             {
-                FacadeService.ManageException((DALException)ex);
+                FacadeService.ManageException(new DALException(ex));
                 return 0;
             }   
 
@@ -158,6 +160,7 @@ namespace ServicesTest.DAL.Tools
                 }
                 catch (Exception ex)
                 {
+                    Console.WriteLine(ex);
                     FacadeService.ManageException((DALException)ex);
                     return 0;
                 }
