@@ -48,6 +48,7 @@
     <Compile Include="BLL\ExceptionManager.cs" />
     <Compile Include="BLL\LenguageManager.cs" />
     <Compile Include="BLL\TraceManager.cs" />
+    <Compile Include="BLL\UsersManager.cs" />
     <Compile Include="DAL\Contracts\IGenericRepository.cs" />
     <Compile Include="DAL\Factory\FactoryDAL.cs" />
     <Compile Include="DAL\i18n\Idioma.Designer.cs">
@@ -57,9 +58,14 @@
     </Compile>
     <Compile Include="DAL\Repositories\SQL\BackupRepository.cs" />
     <Compile Include="DAL\Repositories\SQL\BitacoraRepository.cs" />
+    <Compile Include="DAL\Repositories\SQL\UsersRepository.cs" />
     <Compile Include="DAL\Tools\SqlHelper.cs" />
     <Compile Include="Domain\Backup.cs" />
     <Compile Include="Domain\Bitacora.cs" />
+    <Compile Include="Domain\Composite\Familia.cs" />
+    <Compile Include="Domain\Composite\FamiliaComponent.cs" />
+    <Compile Include="Domain\Composite\Patente.cs" />
+    <Compile Include="Domain\Composite\Usuario.cs" />
     <Compile Include="Domain\Exceptions\BLLException.cs" />
     <Compile Include="Domain\Exceptions\DALException.cs" />
     <Compile Include="Domain\Exceptions\UIException.cs" />

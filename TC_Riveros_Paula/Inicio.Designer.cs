@@ -49,6 +49,7 @@
             this.MenuItemCalcularPresupuesto = new System.Windows.Forms.ToolStripMenuItem();
             this.CalcularPerdidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.UsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SeguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,6 +68,7 @@
             this.reportesToolStripMenuItem,
             this.calcularToolStripMenuItem,
             this.ayudaToolStripMenuItem,
+            this.UsuariosToolStripMenuItem,
             this.SeguridadToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -226,6 +228,13 @@
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(154, 20);
             this.ayudaToolStripMenuItem.Text = "ayudaToolStripMenuItem";
+            //
+            //UsuariosToolStripMenuItem
+            //
+            this.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem";
+            this.UsuariosToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.UsuariosToolStripMenuItem.Text = "UsuariosToolStripMenuItem";
+            this.UsuariosToolStripMenuItem.Click += new System.EventHandler(this.UsuariosToolStripMenuItem_Click);
             // 
             // SeguridadToolStripMenuItem
             // 
@@ -290,6 +299,7 @@
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaVentaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem UsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SeguridadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem BitacoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem BackupToolStripMenuItem;

@@ -1,4 +1,6 @@
 ﻿using ServicesTest.BLL;
+using ServicesTest.DAL.Repositories.SQL;
+using ServicesTest.Domain.Composite;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
@@ -30,6 +32,11 @@ namespace ServicesTest.Facade
         public static void ManageBackup() 
         {
             BackupManager.Current.Registrar();
+        }
+
+        public static int RegistrarUsuario(Usuario usuario) 
+        {
+            return UsersManager.Current.RegistrarUsuario(usuario);
         }
 
     }

@@ -46,6 +46,7 @@ namespace TC_Riveros_Paula
                 ventasToolStripMenuItem.Text = idioma.GetString("ventasToolStripMenuItem");
                 reportesToolStripMenuItem.Text = idioma.GetString("reportesToolStripMenuItem");
                 calcularToolStripMenuItem.Text = idioma.GetString("calcularToolStripMenuItem");
+                UsuariosToolStripMenuItem.Text = idioma.GetString("SeguridadToolStripMenuItem");
                 SeguridadToolStripMenuItem.Text = idioma.GetString("SeguridadToolStripMenuItem");
                 ayudaToolStripMenuItem.Text = idioma.GetString("ayudaToolStripMenuItem");
 
@@ -147,7 +148,11 @@ namespace TC_Riveros_Paula
             NuevaVentaForm nuevaVenta = new NuevaVentaForm(idioma);
             nuevaVenta.ShowDialog();
         }
-
+        private void UsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UsuariosForm usuarios = new UsuariosForm(idioma);
+            usuarios.ShowDialog();
+        }
         private void BitacoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormBitacora bitacora = new FormBitacora(idioma);

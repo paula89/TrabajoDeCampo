@@ -133,6 +133,24 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Enter.
+        /// </summary>
+        public static string btnLogin {
+            get {
+                return ResourceManager.GetString("btnLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Register.
+        /// </summary>
+        public static string btnNuevoUsuario {
+            get {
+                return ResourceManager.GetString("btnNuevoUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Restore.
         /// </summary>
         public static string btnRestaurar {
@@ -250,6 +268,15 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Last name.
+        /// </summary>
+        public static string lblApellido {
+            get {
+                return ResourceManager.GetString("lblApellido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Level.
         /// </summary>
         public static string lblCriticidad {
@@ -268,11 +295,65 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Address.
+        /// </summary>
+        public static string lblDireccion {
+            get {
+                return ResourceManager.GetString("lblDireccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a E-mail.
+        /// </summary>
+        public static string lblEmail {
+            get {
+                return ResourceManager.GetString("lblEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a To.
         /// </summary>
         public static string lblHasta {
             get {
                 return ResourceManager.GetString("lblHasta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Password.
+        /// </summary>
+        public static string lblPassword {
+            get {
+                return ResourceManager.GetString("lblPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Repeat password.
+        /// </summary>
+        public static string lblPassword2 {
+            get {
+                return ResourceManager.GetString("lblPassword2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Phone.
+        /// </summary>
+        public static string lblTelefono {
+            get {
+                return ResourceManager.GetString("lblTelefono", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a User.
+        /// </summary>
+        public static string lblUsuario {
+            get {
+                return ResourceManager.GetString("lblUsuario", resourceCulture);
             }
         }
         
@@ -516,6 +597,15 @@ namespace ServicesTest.DAL.i18n {
         public static string titleConfirm {
             get {
                 return ResourceManager.GetString("titleConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a User Management.
+        /// </summary>
+        public static string UsuariosForm {
+            get {
+                return ResourceManager.GetString("UsuariosForm", resourceCulture);
             }
         }
         

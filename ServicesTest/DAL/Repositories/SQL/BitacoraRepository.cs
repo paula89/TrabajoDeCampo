@@ -107,7 +107,7 @@ namespace ServicesTest.DAL.Repositories.SQL
 
         public int Insert(Bitacora bitacora)
         {
-            int inserted = SqlHelper.ExecuteNonQuery(InsertStatement, System.Data.CommandType.Text, "security", bitacora);
+            int inserted = SqlHelper.ExecuteNonQueryBitacora(InsertStatement, System.Data.CommandType.Text, "security", bitacora);
             return inserted;            
         }
 

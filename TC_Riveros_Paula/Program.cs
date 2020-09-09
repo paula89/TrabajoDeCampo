@@ -16,7 +16,7 @@ namespace TC_Riveros_Paula
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InicioForm());
+            Application.Run(new InicioSesionForm());
         }
     }
 }

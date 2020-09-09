@@ -273,4 +273,34 @@
   <data name="msgError" xml:space="preserve">
     <value>Error al restaurar el backup. Comuniquese con el administrador del sistema</value>
   </data>
+  <data name="lblPassword" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="lblUsuario" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="UsuariosForm" xml:space="preserve">
+    <value>Gestion de Usuarios</value>
+  </data>
+  <data name="lblApellido" xml:space="preserve">
+    <value>Apellido</value>
+  </data>
+  <data name="lblDireccion" xml:space="preserve">
+    <value>Dirección</value>
+  </data>
+  <data name="lblEmail" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="lblPassword2" xml:space="preserve">
+    <value>Repita la contraseña</value>
+  </data>
+  <data name="lblTelefono" xml:space="preserve">
+    <value>Telefono</value>
+  </data>
+  <data name="btnLogin" xml:space="preserve">
+    <value>Ingresar</value>
+  </data>
+  <data name="btnNuevoUsuario" xml:space="preserve">
+    <value>Registrarse</value>
+  </data>
 </root>

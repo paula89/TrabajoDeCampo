@@ -1,4 +1,5 @@
 ﻿using ServicesTest.Domain;
+using ServicesTest.Domain.Composite;
 using ServicesTest.Domain.Exceptions;
 using ServicesTest.Facade;
 using System;
@@ -77,8 +78,50 @@ namespace ServicesTest.DAL.Tools
             }
             
         }
-                     
-        public static Int32 ExecuteNonQuery(String commandText,
+        public static Int32 ExecuteNonQueryUsers(String commandText,
+            CommandType commandType, string connection, Usuario parameters)
+        {
+            using (var trxScope = new TransactionScope())
+            {
+                SqlConnection conn = getConnection(connection);
+                try
+                {
+                    conn.Open();
+                    var comm = new SqlCommand(commandText);
+                    comm.Connection = conn;
+
+                    comm.Parameters.AddWithValue("Usuario", parameters.Cod_Usuario);
+                    comm.Parameters.AddWithValue("Nombre", parameters.Nombre);
+                    comm.Parameters.AddWithValue("Apellido", parameters.Apellido);
+                    comm.Parameters.AddWithValue("Direccion", parameters.Direccion);
+                    comm.Parameters.AddWithValue("Telefono", parameters.Telefono);
+                    comm.Parameters.AddWithValue("Email", parameters.Email);
+                    comm.Parameters.AddWithValue("Contraseña", parameters.Password);
+                    comm.Parameters.AddWithValue("FechaAlta", parameters.FechaAlta);
+
+                    String permiso = "";
+                    foreach (var item in parameters.Permisos)
+                    {
+                        permiso = permiso + item.Nombre + " ";
+                    }                    
+                    comm.Parameters.AddWithValue("Permisos", permiso);
+
+                    var resultado = comm.ExecuteNonQuery();
+                    trxScope.Complete();
+
+                    return resultado;
+                }
+                catch (Exception ex)
+                {
+                    FacadeService.ManageException(new DALException(ex));
+                    return 0;
+                }
+
+            }
+        }
+
+
+            public static Int32 ExecuteNonQueryBitacora(String commandText,
             CommandType commandType, string connection, Bitacora parameters)
         {
             using (var trxScope = new TransactionScope())
@@ -108,7 +151,7 @@ namespace ServicesTest.DAL.Tools
             }
         }
         // do backup
-        public static Int32 ExecuteNonQuery(String commandText,
+        public static Int32 ExecuteNonQueryBackup(String commandText,
            CommandType commandType, string connection, Backup parameters)
         {
             SqlCommand cmd;

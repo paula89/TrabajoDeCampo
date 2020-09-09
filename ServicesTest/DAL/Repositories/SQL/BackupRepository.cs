@@ -33,7 +33,6 @@ namespace ServicesTest.DAL.Repositories.SQL
                 "WHERE Fecha >= @desde " +
                 "and Fecha <= @hasta " +
                 "order by Fecha";
-            set { }
         }
         private string SelectAllStatement
         {
@@ -90,7 +89,7 @@ namespace ServicesTest.DAL.Repositories.SQL
 
         public int Insert(Backup backup)
         {
-            int inserted = SqlHelper.ExecuteNonQuery(InsertStatement, System.Data.CommandType.Text, "security", backup);
+            int inserted = SqlHelper.ExecuteNonQueryBackup(InsertStatement, System.Data.CommandType.Text, "security", backup);
             return inserted;
         }
 

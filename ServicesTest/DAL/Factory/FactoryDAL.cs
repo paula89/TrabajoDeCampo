@@ -79,6 +79,13 @@ namespace ServicesTest.DAL.Factory
 
         }
 
+        public UsersRepository GetUsersRepository() {
+            string nombreNamespaceClaseAccesoDatos = ConfigurationManager.AppSettings["AccesoDatos"] + ".UsersRepository";
+            object instancia = Activator.CreateInstance(Type.GetType(nombreNamespaceClaseAccesoDatos));
+
+            return instancia as UsersRepository;
+        }
+
 
 
     }
