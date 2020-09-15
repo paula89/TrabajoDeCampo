@@ -8,12 +8,15 @@ namespace DomainTest
 {
     public class MateriaPrima
     {
-        int cantidad { get; set; }
-        string comentatio { get; set; }
-        bool estado { get; set; }
-        string marca { get; set; }
-        string nombre { get; set; }
-        int nroMateriaPrima { get; set; }
-        string proveedor { get; set; }
+        public Guid IdMateriaPrima { get; set; }
+        public string nombre { get; set; }
+        public string proveedor { get; set; }
+        public float cantidad { get; set; }
+        public string marca { get; set; }
+        public string usuario { get; set; }
+        public string comentario { get; set; }
+        public DateTime fechaAlta { get; set; }
+        public DateTime vencimiento { get; set; }
+        public bool habilitada { get; set; }
     }
 }

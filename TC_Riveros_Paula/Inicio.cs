@@ -8,6 +8,7 @@ using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using ServicesTest.Domain.Composite;
 using ServicesTest.Domain.Exceptions;
 using ServicesTest.Facade;
 
@@ -17,14 +18,15 @@ namespace TC_Riveros_Paula
     {
         string cultureInfo = Thread.CurrentThread.CurrentUICulture.Name; 
         ResourceManager idioma;
+        string usuario;
 
-
-        public InicioForm()
+        public InicioForm(List<String> permiso, String Cod_Usuario)
         {
-            InitializeComponent();
+            InitializeComponent(permiso);
             idioma = FacadeService.Translate(cultureInfo);
+            usuario = Cod_Usuario;
             this.Text = idioma.GetString("InicioForm");
-            CargarTraducciones(idioma);
+            CargarTraducciones(idioma, permiso);
             RegistrarBackup();
        }
 
@@ -32,7 +34,7 @@ namespace TC_Riveros_Paula
             FacadeService.ManageBackup();
         }
 
-        private void CargarTraducciones(ResourceManager idioma) {
+        private void CargarTraducciones(ResourceManager idioma, List<String> permiso) {
             //idioma = Services.BLL.LanguageManager.Current.Translate.Translate("en-US");
             try
             {
@@ -46,8 +48,6 @@ namespace TC_Riveros_Paula
                 ventasToolStripMenuItem.Text = idioma.GetString("ventasToolStripMenuItem");
                 reportesToolStripMenuItem.Text = idioma.GetString("reportesToolStripMenuItem");
                 calcularToolStripMenuItem.Text = idioma.GetString("calcularToolStripMenuItem");
-                UsuariosToolStripMenuItem.Text = idioma.GetString("SeguridadToolStripMenuItem");
-                SeguridadToolStripMenuItem.Text = idioma.GetString("SeguridadToolStripMenuItem");
                 ayudaToolStripMenuItem.Text = idioma.GetString("ayudaToolStripMenuItem");
 
                 MenuItemNuevoProducto.Text = idioma.GetString("MenuItemNuevoProducto");
@@ -62,14 +62,26 @@ namespace TC_Riveros_Paula
                 MenuItemReportesVentas.Text = idioma.GetString("MenuItemReportesVentas");
                 MenuItemCalcularPresupuesto.Text = idioma.GetString("MenuItemCalcularPresupuesto");
                 CalcularPerdidasToolStripMenuItem.Text = idioma.GetString("CalcularPerdidasToolStripMenuItem");
-                BitacoraToolStripMenuItem.Text = idioma.GetString("BitacoraToolStripMenuItem");
-                BackupToolStripMenuItem.Text = idioma.GetString("BackupToolStripMenuItem");
+               
+                if (isAdmin(permiso)) {
+                    UsuariosToolStripMenuItem.Text = idioma.GetString("UsuariosToolStripMenuItem");
+                    SeguridadToolStripMenuItem.Text = idioma.GetString("SeguridadToolStripMenuItem");
+
+                    BitacoraToolStripMenuItem.Text = idioma.GetString("BitacoraToolStripMenuItem");
+                    BackupToolStripMenuItem.Text = idioma.GetString("BackupToolStripMenuItem");
+                    MenuItemNuevoUsuario.Text = idioma.GetString("MenuItemNuevoUsuario"); 
+                    MenuItemVerUsuarios.Text = idioma.GetString("MenuItemVerUsuarios");
+
+                }
+
             }
             catch (UIException ex) {
                 FacadeService.ManageException(ex);
                 MessageBox.Show("Error al cargar las traducciones");
             }
         }
+
+        
 
         //nuevo producto
         private void nuevoToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -86,7 +98,7 @@ namespace TC_Riveros_Paula
 
         private void MenuItemNuevoStock_Click(object sender, EventArgs e)
         {
-            NuevoMateriaPrimaForm nuevoStock = new NuevoMateriaPrimaForm(idioma);
+            NuevoMateriaPrimaForm nuevoStock = new NuevoMateriaPrimaForm(idioma, usuario);
             nuevoStock.ShowDialog();
         }
 
@@ -151,6 +163,11 @@ namespace TC_Riveros_Paula
         private void UsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UsuariosForm usuarios = new UsuariosForm(idioma);
+            usuarios.ShowDialog();
+        }
+        private void VerUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListarUsuariosForm usuarios = new ListarUsuariosForm(idioma);
             usuarios.ShowDialog();
         }
         private void BitacoraToolStripMenuItem_Click(object sender, EventArgs e)

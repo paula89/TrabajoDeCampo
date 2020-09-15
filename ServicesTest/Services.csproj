@@ -71,20 +71,7 @@
     <Compile Include="Domain\Exceptions\UIException.cs" />
     <Compile Include="Facade\FacadeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BLLTest\BLL.csproj">
-      <Project>{0a67d223-2682-47d3-b798-0289180ef691}</Project>
-      <Name>BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DalTest\DAL.csproj">
-      <Project>{3191e6e5-5d37-4b5d-9678-584e108efb06}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DomainTest\Domain.csproj">
-      <Project>{ceccc08f-dc28-4d06-89cd-af04bd73dc6a}</Project>
-      <Name>Domain</Name>
-    </ProjectReference>
+    <Compile Include="Tools\Encrypt.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DAL\i18n\Idioma.es-ES.resx" />

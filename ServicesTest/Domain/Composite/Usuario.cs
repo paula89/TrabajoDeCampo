@@ -22,5 +22,8 @@ namespace ServicesTest.Domain.Composite
 		public String Password { get; set; }
 		public List<FamiliaComponent> Permisos { get; set; }
 		public DateTime FechaAlta { get; set; }
+
+		public bool Habilitado { get; set; }
+		public decimal DVH { get; set; }
 	}
 }

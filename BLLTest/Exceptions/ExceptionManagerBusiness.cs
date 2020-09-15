@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLLTest
+namespace BLLTest.Exceptions
 {
-    public class BLLRepositories
+    public class ExceptionManagerBusiness
     {
     }
 }

@@ -38,9 +38,25 @@ namespace ServicesTest.BLL
             return instancia.GetUsersRepository().GetAllRoles();
         }
 
-        public IEnumerable<Usuario> ObtenerUsuarios(string[] filtros)
+        public IEnumerable<Usuario> ObtenerUsuariosLogin(string[] filtros)
         {
-            return instancia.GetUsersRepository().GetAll(filtros);
+            //return instancia.GetUsersRepository().GetLogin(filtros);
+
+                var usuarioSesion = instancia.GetUsersRepository().GetAll(filtros);
+            return usuarioSesion.ToList();
+        }
+
+        public IEnumerable<Usuario> ListarUsuarios(string[] filtros)
+        {
+            //return instancia.GetUsersRepository().GetLogin(filtros);
+
+            var usuarioSesion = instancia.GetUsersRepository().GetAll(filtros);
+            return usuarioSesion.ToList();
+        }
+
+        public bool GetLogin(string[] filtros)
+        {
+            return instancia.GetUsersRepository().GetLogin(filtros);
         }
 
     }

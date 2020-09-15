@@ -37,6 +37,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,12 +50,17 @@
     <Compile Include="DAL.cs" />
     <Compile Include="Factory\FactoryDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\SQL\Repositories.cs" />
+    <Compile Include="Repositories\SQL\MateriaPrimaRepositories.cs" />
+    <Compile Include="Tools\SqlHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DomainTest\Domain.csproj">
       <Project>{CECCC08F-DC28-4D06-89CD-AF04BD73DC6A}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServicesTest\Services.csproj">
+      <Project>{3bc1f293-6899-461c-807d-0c90feda02a9}</Project>
+      <Name>Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

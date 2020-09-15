@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace ServicesTest.BLL
 {
 
-        internal sealed class ExceptionManager
+        public sealed class ExceptionManager
         {
             #region Singleton
             private readonly static ExceptionManager _instance = new ExceptionManager();

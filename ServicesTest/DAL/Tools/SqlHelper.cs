@@ -42,7 +42,7 @@ namespace ServicesTest.DAL.Tools
             } 
             catch (Exception ex)
             {
-                FacadeService.ManageException((DALException)ex);
+                FacadeService.ManageException(new DALException(ex));
                 return null;
             }
         }
@@ -73,7 +73,7 @@ namespace ServicesTest.DAL.Tools
             }
             catch (Exception ex)
             {
-                FacadeService.ManageException((DALException)ex);
+                FacadeService.ManageException(new DALException(ex));
                 return response;
             }
             
@@ -98,6 +98,8 @@ namespace ServicesTest.DAL.Tools
                     comm.Parameters.AddWithValue("Email", parameters.Email);
                     comm.Parameters.AddWithValue("Contraseña", parameters.Password);
                     comm.Parameters.AddWithValue("FechaAlta", parameters.FechaAlta);
+                    comm.Parameters.AddWithValue("Habilitado", 1);
+                    comm.Parameters.AddWithValue("DVH", parameters.DVH);
 
                     String permiso = "";
                     foreach (var item in parameters.Permisos)
@@ -204,7 +206,7 @@ namespace ServicesTest.DAL.Tools
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex);
-                    FacadeService.ManageException((DALException)ex);
+                    FacadeService.ManageException(new DALException(ex));
                     return 0;
                 }
             }
@@ -227,7 +229,7 @@ namespace ServicesTest.DAL.Tools
                 }
             }
             catch (Exception ex) {
-                FacadeService.ManageException((DALException)ex);
+                FacadeService.ManageException(new DALException(ex));
                 return null;
             }
         }

@@ -1,4 +1,5 @@
 ﻿using DALTest.Contracts;
+using DALTest.Repositories.SQL;
 using DomainTest;
 using System;
 using System.Collections.Generic;
@@ -29,14 +30,14 @@ namespace DALTest.Factory
         }
 #endregion
 
-        public IGenericRepository<Producto> GetBitacoraRepository()
+        public MateriaPrimaRepositories GetMateriaPrimaRepository()
         {
             try
             {
-                string nombreNamespaceClaseAccesoDatos = ConfigurationManager.AppSettings["AccesoDatos"] + ".BitacoraRepository";
+                string nombreNamespaceClaseAccesoDatos = ConfigurationManager.AppSettings["AccesoDatosBusiness"] + ".MateriaPrimaRepositories";
                 object instancia = Activator.CreateInstance(Type.GetType(nombreNamespaceClaseAccesoDatos));
 
-                return instancia as IGenericRepository<Producto>;
+                return instancia as MateriaPrimaRepositories;
             }
             catch (Exception exc)
             {

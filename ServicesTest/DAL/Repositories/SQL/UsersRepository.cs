@@ -17,20 +17,29 @@ namespace ServicesTest.DAL.Repositories.SQL
         #region Statements
         private string SelectAllStatement
         {
-            get => "SELECT * FROM [dbo].[Usuarios]";
+            get => "SELECT Usuario, Nombre, Apellido, Direccion, Telefono, Email, Permisos, FechaAlta, Habilitado " +
+                "FROM [dbo].[Usuarios]";
         }
         private string InsertStatement
         {
-            get => "INSERT INTO [dbo].[Usuarios] (Usuario, Nombre, Apellido, Direccion, Telefono, Email, Contraseña, Permisos, FechaAlta)" +
-                " VALUES (@Usuario, @Nombre, @Apellido, @Direccion, @Telefono, @Email, @Contraseña, @Permisos, @FechaAlta)";
+            get => "INSERT INTO [dbo].[Usuarios] (Usuario, Nombre, Apellido, Direccion, Telefono, Email, Contraseña, Permisos, FechaAlta, Habilitado, DVH)" +
+                " VALUES (@Usuario, @Nombre, @Apellido, @Direccion, @Telefono, @Email, @Contraseña, @Permisos, @FechaAlta, @Habilitado, @DVH)";
         }
-        private string SelectFilterStatement
+        private string LoginSelectFilterStatement
         {
             get => "SELECT * FROM [dbo].[Usuarios] " +
-                "WHERE Role = @ " +
-                "and Fecha <= @ " +
-                "order by Fecha";
+                "WHERE Usuario = @Usuario " +
+                "and Contraseña = @Contraseña ";
         }
+
+        private string SelectFilterStatement
+        {
+            get => "SELECT Usuario, Nombre, Apellido, Direccion, Telefono, Email, Permisos, FechaAlta, Habilitado" +
+                " FROM [dbo].[Usuarios] " +
+                "WHERE FechaAlta >= @FechaAltaDesde " +
+                "AND FechaAlta <= @FechaAltaHasta ";                
+        }
+
 
         private string SelectRolesStatement {
             get => "Select * FROM [dbo].[Roles]";  // id, roles
@@ -70,50 +79,39 @@ namespace ServicesTest.DAL.Repositories.SQL
 
         }
 
-        public IEnumerable<Usuario> GetAll(Array filtros)
+        public bool GetLogin(Array filtros)
         {
+            bool encontrado = false;
+
             try
             {
-                List<Usuario> usuarios = new List<Usuario>();
-
                 List<SqlParameter> parametros = new List<SqlParameter>();
 
-                parametros.Add(new SqlParameter("@desde", Convert.ToDateTime(filtros.GetValue(0))));
-                parametros.Add(new SqlParameter("@hasta", Convert.ToDateTime(filtros.GetValue(1))));
+                parametros.Add(new SqlParameter("@Usuario", filtros.GetValue(0)));
+                parametros.Add(new SqlParameter("@Contraseña", filtros.GetValue(1)));
                 System.Console.WriteLine(SelectFilterStatement);
                 System.Console.WriteLine(parametros.ToArray().ToString());
 
-                using (var dr = SqlHelper.ExecuteReader(SelectFilterStatement, System.Data.CommandType.Text, "security", parametros.ToArray()))
+                using (var dr = SqlHelper.ExecuteReader(LoginSelectFilterStatement, System.Data.CommandType.Text, "security", parametros.ToArray()))
                 {
                     Object[] values = new Object[dr.FieldCount];
-
                     while (dr.Read())
                     {
                         dr.GetValues(values);
-                        Usuario usuario = new Usuario();
-                        usuario.Cod_Usuario = values[0].ToString();
-                        usuario.Nombre = values[1].ToString();
-                        usuario.Apellido = values[2].ToString();
-                        usuario.Direccion = values[3].ToString();
-                        usuario.Telefono = values[4].ToString();
-                        usuario.Email = values[5].ToString();
-                        //usuario.Permisos.Add(recorrerPermisos((FamiliaComponent)values[3]));
-
-                        usuarios.Add(usuario);
+                        encontrado = true;
                     }
                 }
 
-                return usuarios;
+                return encontrado;
             }
             catch (Exception ex)
             {
-
                 FacadeService.ManageException(new DALException(ex));
-                return null;
+                return encontrado;
             }
         }
 
-
+        
         public List<FamiliaComponent> recorrerPermisos(List<FamiliaComponent> permisos, string separator = "") {
             separator = separator + "-";
             List<FamiliaComponent> permisoUsuario = new List<FamiliaComponent>();
@@ -145,6 +143,77 @@ namespace ServicesTest.DAL.Repositories.SQL
         public void Update(Usuario usuario)
         {
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<Usuario> GetAll(Array filtros)
+        {
+            try
+            {
+                List<Usuario> usuarios = new List<Usuario>();
+                List<SqlParameter> parametros = new List<SqlParameter>();
+                string statement; 
+                switch (filtros.Length) {
+                    case 2:
+                        parametros.Add(new SqlParameter("@Usuario",filtros.GetValue(0)));
+                        parametros.Add(new SqlParameter("@Contraseña", filtros.GetValue(1)));
+                        statement = LoginSelectFilterStatement;
+                        break;
+                    case 0:
+                        parametros.Add(new SqlParameter("", ""));
+                        statement = SelectAllStatement;
+                        break;
+                    default:
+                        parametros.Add(new SqlParameter("@FechaAltaDesde", Convert.ToDateTime(filtros.GetValue(0))));
+                        parametros.Add(new SqlParameter("@FechaAltaHasta", Convert.ToDateTime(filtros.GetValue(1))));
+                        if (filtros.GetValue(2).ToString().Length > 0)
+                        {
+                            parametros.Add(new SqlParameter("@Nombre", filtros.GetValue(2)));
+                            statement = SelectFilterStatement + "AND Nombre LIKE '%@Nombre%';";
+                        }
+                        else {
+                            statement = SelectFilterStatement;
+                        }
+                        break;
+                }
+                
+                
+                System.Console.WriteLine(statement);
+                System.Console.WriteLine(parametros.ToArray().ToString());
+               /* List<SqlParameter> param;
+                if (parametros.ToArray().Length > 0)
+                {
+                    param = parametros;
+                } */
+                using (var dr = SqlHelper.ExecuteReader(statement, System.Data.CommandType.Text, "security", parametros.ToArray()))
+                {
+                    Object[] values = new Object[dr.FieldCount];
+                    while (dr.Read())
+                    {
+                        dr.GetValues(values);
+                        Usuario usuario = new Usuario();
+                        Familia familia = new Familia();
+                        usuario.Cod_Usuario = values[0].ToString();
+                        usuario.Nombre = values[1].ToString();
+                        usuario.Apellido = values[2].ToString();
+                        usuario.Direccion = values[3].ToString();
+                        usuario.Telefono = values[4].ToString();
+                        usuario.Email = values[5].ToString();
+                        Patente permisoUsuario = new Patente();
+                        permisoUsuario.Nombre = values[7].ToString();
+                        familia.Permisos.Add(permisoUsuario);
+                        usuario.Permisos.Add(familia);
+                        usuario.FechaAlta = Convert.ToDateTime(values[8].ToString());
+                        usuario.Habilitado = Convert.ToBoolean(values[9]);
+                        usuarios.Add(usuario);
+                    }
+                }
+                return usuarios;
+            }
+            catch (Exception ex)
+            {
+                FacadeService.ManageException(new DALException(ex));
+                return null;
+            }
         }
     }
 }

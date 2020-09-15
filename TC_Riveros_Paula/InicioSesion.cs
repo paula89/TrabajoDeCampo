@@ -9,7 +9,10 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ServicesTest.BLL;
+using ServicesTest.Domain.Composite;
 using ServicesTest.Facade;
+using ServicesTest.Tools;
 
 namespace TC_Riveros_Paula
 {
@@ -28,14 +31,24 @@ namespace TC_Riveros_Paula
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            List<String> permiso = new List<string>();
             bool verificar = verificarCampos();
             if (verificar)
             {
-                this.Hide();
-                InicioForm inicio = new InicioForm();
-                inicio.ShowDialog();
-                this.Close();
-                this.Dispose();
+                String[] filtros = new string[] { this.txtUsuario.Text, Encrypt.encryptPass(this.txtPassword.Text) };
+
+                if (VerificarDatos(filtros))
+                {
+                    permiso = (List<string>)getPermisos(filtros);
+                    this.Hide();
+                    InicioForm inicio = new InicioForm(permiso, txtUsuario.Text);
+                    inicio.ShowDialog();
+                    this.Close();
+                    this.Dispose();
+                }
+                else {
+                    MessageBox.Show("El usuario y/o contraseña no son correctos", "Error", MessageBoxButtons.OK);
+                }
             }
             else {
                 // agregar traducciones
@@ -51,6 +64,47 @@ namespace TC_Riveros_Paula
             lblPassword.Text = idioma.GetString("lblPassword");
         }
 
+        private bool VerificarDatos(String[] filtros) {
+
+            bool existe = UsersManager.Current.GetLogin(filtros);
+            return existe;
+        }
+
+        private IEnumerable<String> getPermisos(String[] filtros) {
+            //bool existe = UsersManager.Current.ObtenerUsuariosLogin(filtros);
+            var usuarios = UsersManager.Current.ObtenerUsuariosLogin(filtros);
+
+            List<String> permiso = new List<string>();
+            foreach (var user in usuarios)
+            {
+               var result = RecorrerListado(user.Permisos);
+               foreach (var item in result)
+               {
+                    permiso.Add(item);
+               }
+            }
+            return permiso;
+        }
+
+
+        private static IEnumerable<String> RecorrerListado(List<FamiliaComponent> permisos)
+        {
+            List<String> permiso = new List<string>();
+            foreach (var listPermisos in permisos)
+            {
+                    dynamic value = listPermisos;
+                    foreach (var item in value.Permisos)
+                    {
+                        if (item.GetChilds() == 0)
+                        {
+                            permiso.Add(item.Nombre);
+                        }
+                    }
+
+            }
+            return permiso;
+         }
+       
         private bool verificarCampos() {
             if ((txtUsuario.Text.Length == 0) || (txtPassword.Text.Length == 0))
             {

@@ -52,6 +52,7 @@
             this.btnAceptar.TabIndex = 0;
             this.btnAceptar.Text = "btnAceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -61,6 +62,7 @@
             this.btnCancelar.TabIndex = 1;
             this.btnCancelar.Text = "btnCancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // textBoxNombre
             // 
@@ -106,7 +108,7 @@
             // labelComentario
             // 
             this.labelComentario.AutoSize = true;
-            this.labelComentario.Location = new System.Drawing.Point(224, 240);
+            this.labelComentario.Location = new System.Drawing.Point(240, 240);
             this.labelComentario.Name = "labelComentario";
             this.labelComentario.Size = new System.Drawing.Size(82, 13);
             this.labelComentario.TabIndex = 7;
@@ -117,13 +119,13 @@
             // 
             this.textBoxCantidad.Location = new System.Drawing.Point(413, 33);
             this.textBoxCantidad.Name = "textBoxCantidad";
-            this.textBoxCantidad.Size = new System.Drawing.Size(170, 20);
+            this.textBoxCantidad.Size = new System.Drawing.Size(200, 20);
             this.textBoxCantidad.TabIndex = 8;
             // 
             // labelCantidad
             // 
             this.labelCantidad.AutoSize = true;
-            this.labelCantidad.Location = new System.Drawing.Point(614, 40);
+            this.labelCantidad.Location = new System.Drawing.Point(645, 36);
             this.labelCantidad.Name = "labelCantidad";
             this.labelCantidad.Size = new System.Drawing.Size(71, 13);
             this.labelCantidad.TabIndex = 10;

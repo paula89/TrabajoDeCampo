@@ -77,6 +77,7 @@ C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Rivero
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.CalcularPresupuestoForm.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.CatalogoForm.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.InicioForm.resources
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.InicioSesionForm.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ListarHerramientasForm.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ListarPromocionesForm.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ListarMateriaPrimaForm.resources
@@ -88,10 +89,12 @@ C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Rivero
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.Properties.Resources.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ReporteVentasForm.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.StartForm.resources
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.UsuariosForm.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\UI.csproj.GenerateResource.cache
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\UI.csproj.CoreCompileInputs.cache
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\UI.csproj.CopyComplete
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.exe
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.pdb
-C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.InicioSesionForm.resources
-C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.UsuariosForm.resources
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ListarUsuariosForm.resources
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DalTest.dll
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DalTest.pdb

@@ -1,4 +1,7 @@
-﻿namespace TC_Riveros_Paula
+﻿using System;
+using System.Collections.Generic;
+
+namespace TC_Riveros_Paula
 {
     partial class InicioForm
     {
@@ -26,7 +29,7 @@
         /// Método necesario para admitir el Diseñador. No se puede modificar
         /// el contenido de este método con el editor de código.
         /// </summary>
-        private void InitializeComponent()
+        private void InitializeComponent(List<String> permiso)
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,17 +52,25 @@
             this.MenuItemCalcularPresupuesto = new System.Windows.Forms.ToolStripMenuItem();
             this.CalcularPerdidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.UsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SeguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.BitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.BackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
+            if (isAdmin(permiso)) {
+                this.UsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+                this.MenuItemNuevoUsuario = new System.Windows.Forms.ToolStripMenuItem();
+                this.MenuItemVerUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+                this.SeguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+                this.BitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+                this.BackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            }
+           
 
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            if (isAdmin(permiso))
+            {
+                this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.productosToolStripMenuItem,
             this.MateriaPrimaToolStripMenuItem,
             this.herramientasToolStripMenuItem,
@@ -70,6 +81,20 @@
             this.ayudaToolStripMenuItem,
             this.UsuariosToolStripMenuItem,
             this.SeguridadToolStripMenuItem});
+            }
+            else
+            {
+                this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productosToolStripMenuItem,
+            this.MateriaPrimaToolStripMenuItem,
+            this.herramientasToolStripMenuItem,
+            this.promocionesToolStripMenuItem,
+            this.ventasToolStripMenuItem,
+            this.reportesToolStripMenuItem,
+            this.calcularToolStripMenuItem,
+            this.ayudaToolStripMenuItem });
+            }
+
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(762, 24);
@@ -228,35 +253,53 @@
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(154, 20);
             this.ayudaToolStripMenuItem.Text = "ayudaToolStripMenuItem";
-            //
-            //UsuariosToolStripMenuItem
-            //
-            this.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem";
-            this.UsuariosToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
-            this.UsuariosToolStripMenuItem.Text = "UsuariosToolStripMenuItem";
-            this.UsuariosToolStripMenuItem.Click += new System.EventHandler(this.UsuariosToolStripMenuItem_Click);
-            // 
-            // SeguridadToolStripMenuItem
-            // 
-            this.SeguridadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BitacoraToolStripMenuItem, this.BackupToolStripMenuItem});
-            this.SeguridadToolStripMenuItem.Name = "SeguridadToolStripMenuItem";
-            this.SeguridadToolStripMenuItem.Size = new System.Drawing.Size(151, 20);
-            this.SeguridadToolStripMenuItem.Text = "SeguridadStripMenuItem";
-            // 
-            // BitacoraToolStripMenuItem
-            // 
-            this.BitacoraToolStripMenuItem.Name = "BitacoraToolStripMenuItem";
-            this.BitacoraToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.BitacoraToolStripMenuItem.Text = "BitacoraStripMenuItem";
-            this.BitacoraToolStripMenuItem.Click += new System.EventHandler(this.BitacoraToolStripMenuItem_Click);
-            //
-            //Backup
-            //
-            this.BackupToolStripMenuItem.Name = "BackupToolStripMenuItem";
-            this.BackupToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.BackupToolStripMenuItem.Text = "BackupStripMenuItem";
-            this.BackupToolStripMenuItem.Click += new System.EventHandler(this.BackupToolStripMenuItem_Click);
+
+            if (isAdmin(permiso)) {
+                //
+                //UsuariosToolStripMenuItem
+                //
+                this.UsuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                this.MenuItemNuevoUsuario, this.MenuItemVerUsuarios });
+                this.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem";
+                this.UsuariosToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+                this.UsuariosToolStripMenuItem.Text = "UsuariosToolStripMenuItem";
+
+
+
+                this.MenuItemNuevoUsuario.Name = "NuevoUsuarioToolStripMenuItem";
+                this.MenuItemNuevoUsuario.Size = new System.Drawing.Size(196, 22);
+                this.MenuItemNuevoUsuario.Text = "NuevoUsuarioStripMenuItem";
+                this.MenuItemNuevoUsuario.Click += new System.EventHandler(this.UsuariosToolStripMenuItem_Click);
+
+                this.MenuItemVerUsuarios.Name = "VerUsuarioToolStripMenuItem";
+                this.MenuItemVerUsuarios.Size = new System.Drawing.Size(196, 22);
+                this.MenuItemVerUsuarios.Text = "VerUsuarioStripMenuItem";
+                this.MenuItemVerUsuarios.Click += new System.EventHandler(this.VerUsuariosToolStripMenuItem_Click);
+
+                // 
+                // SeguridadToolStripMenuItem
+                // 
+                this.SeguridadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                this.BitacoraToolStripMenuItem, this.BackupToolStripMenuItem});
+                this.SeguridadToolStripMenuItem.Name = "SeguridadToolStripMenuItem";
+                this.SeguridadToolStripMenuItem.Size = new System.Drawing.Size(151, 20);
+                this.SeguridadToolStripMenuItem.Text = "SeguridadStripMenuItem";
+                // 
+                // BitacoraToolStripMenuItem
+                // 
+                this.BitacoraToolStripMenuItem.Name = "BitacoraToolStripMenuItem";
+                this.BitacoraToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+                this.BitacoraToolStripMenuItem.Text = "BitacoraStripMenuItem";
+                this.BitacoraToolStripMenuItem.Click += new System.EventHandler(this.BitacoraToolStripMenuItem_Click);
+                //
+                //Backup
+                //
+                this.BackupToolStripMenuItem.Name = "BackupToolStripMenuItem";
+                this.BackupToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+                this.BackupToolStripMenuItem.Text = "BackupStripMenuItem";
+                this.BackupToolStripMenuItem.Click += new System.EventHandler(this.BackupToolStripMenuItem_Click);
+
+            }
 
             // 
             // InicioForm
@@ -276,7 +319,21 @@
 
         }
 
-        #endregion
+        private bool isAdmin(List<String> permiso) {
+            bool admin = false;
+            foreach (var item in permiso)
+            {
+                if (item == "ADMIN")
+                {
+                    admin = true;
+                }
+            }
+
+            return admin;
+        }
+       
+
+    #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
@@ -300,6 +357,8 @@
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaVentaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem UsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemNuevoUsuario;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemVerUsuarios;
         private System.Windows.Forms.ToolStripMenuItem SeguridadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem BitacoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem BackupToolStripMenuItem;

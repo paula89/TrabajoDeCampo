@@ -1,5 +1,4 @@
-﻿using DALTest.Contracts;
-using ServicesTest.DAL.Factory;
+﻿using ServicesTest.DAL.Factory;
 using ServicesTest.Domain;
 using System;
 using System.Collections.Generic;

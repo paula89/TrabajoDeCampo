@@ -41,12 +41,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLLRepositories.cs" />
-    <Compile Include="BLLServices.cs" />
+    <Compile Include="BLL.cs" />
+    <Compile Include="Exceptions\ExceptionManagerBusiness.cs" />
+    <Compile Include="Facade\FacadeServiceBusiness.cs" />
+    <Compile Include="MateriaPrimaManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Exceptions\" />
+    <ProjectReference Include="..\DalTest\DAL.csproj">
+      <Project>{3191E6E5-5D37-4B5D-9678-584E108EFB06}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainTest\Domain.csproj">
+      <Project>{CECCC08F-DC28-4D06-89CD-AF04BD73DC6A}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServicesTest\Services.csproj">
+      <Project>{3bc1f293-6899-461c-807d-0c90feda02a9}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

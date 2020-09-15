@@ -15,8 +15,8 @@ namespace DALTest.Contracts
 
             void Delete(Guid id);
 
-            IEnumerable<T> GetAll();
+        IEnumerable<T> GetAll(Array filtros);
 
-        }
-    
+    }
+
 }

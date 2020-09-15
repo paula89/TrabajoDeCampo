@@ -277,6 +277,15 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a User code.
+        /// </summary>
+        public static string lblCodUsuario {
+            get {
+                return ResourceManager.GetString("lblCodUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Level.
         /// </summary>
         public static string lblCriticidad {
@@ -439,6 +448,15 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a New User.
+        /// </summary>
+        public static string MenuItemNuevoUsuario {
+            get {
+                return ResourceManager.GetString("MenuItemNuevoUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Sale report.
         /// </summary>
         public static string MenuItemReportesVentas {
@@ -462,6 +480,15 @@ namespace ServicesTest.DAL.i18n {
         public static string MenuItemVerPromociones {
             get {
                 return ResourceManager.GetString("MenuItemVerPromociones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Users list.
+        /// </summary>
+        public static string MenuItemVerUsuarios {
+            get {
+                return ResourceManager.GetString("MenuItemVerUsuarios", resourceCulture);
             }
         }
         
@@ -606,6 +633,15 @@ namespace ServicesTest.DAL.i18n {
         public static string UsuariosForm {
             get {
                 return ResourceManager.GetString("UsuariosForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Users.
+        /// </summary>
+        public static string UsuariosToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("UsuariosToolStripMenuItem", resourceCulture);
             }
         }
         

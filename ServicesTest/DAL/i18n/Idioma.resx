@@ -303,4 +303,16 @@
   <data name="btnNuevoUsuario" xml:space="preserve">
     <value>Register</value>
   </data>
+  <data name="UsuariosToolStripMenuItem" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="MenuItemNuevoUsuario" xml:space="preserve">
+    <value>New User</value>
+  </data>
+  <data name="MenuItemVerUsuarios" xml:space="preserve">
+    <value>Users list</value>
+  </data>
+  <data name="lblCodUsuario" xml:space="preserve">
+    <value>User code</value>
+  </data>
 </root>

@@ -2,6 +2,7 @@
 using ServicesTest.Domain.Composite;
 using ServicesTest.Domain.Exceptions;
 using ServicesTest.Facade;
+using ServicesTest.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Resources;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -81,28 +83,13 @@ namespace TC_Riveros_Paula
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Patente permisoUsuario = new Patente();
-            permisoUsuario.Nombre = comboBoxRoles.SelectedItem.ToString();
-
-            Familia familia = new Familia();
-            familia.Nombre = comboBoxRoles.SelectedItem.ToString();
-            familia.Permisos.Add(permisoUsuario);
-
-            Usuario usuario = new Usuario();
-            usuario.Cod_Usuario = this.textBoxCodUsuario.Text;
-            usuario.Nombre = this.txtNombre.Text;
-            usuario.Apellido = this.txtApellido.Text;
-            usuario.Direccion = this.txtDireccion.Text;
-            usuario.Email = this.txtEmail.Text;
-            usuario.Telefono = this.txtTelefono.Text;
-            usuario.Password = this.txtPassword.Text;
-            usuario.Permisos.Add(familia);
-            usuario.FechaAlta = DateTime.Now;
+            Usuario usuario = CrearUsuario();
 
             bool valido = ValidarUsuario(usuario);
             if (valido)
             {
                 RegistrarUsuario(usuario);
+                this.Close();
             }
             else
             {
@@ -111,6 +98,37 @@ namespace TC_Riveros_Paula
 
         }
 
+
+        public Usuario CrearUsuario() {
+            Usuario usuario = new Usuario();
+
+            try
+            {
+                Patente permisoUsuario = new Patente();
+                permisoUsuario.Nombre = comboBoxRoles.SelectedItem.ToString();
+
+                Familia familia = new Familia();
+                familia.Nombre = comboBoxRoles.SelectedItem.ToString();
+                familia.Permisos.Add(permisoUsuario);
+
+                usuario.Cod_Usuario = this.textBoxCodUsuario.Text.ToUpper();
+                usuario.Nombre = this.txtNombre.Text;
+                usuario.Apellido = this.txtApellido.Text;
+                usuario.Direccion = this.txtDireccion.Text;
+                usuario.Email = this.txtEmail.Text;
+                usuario.Telefono = this.txtTelefono.Text;
+                usuario.Password = Encrypt.encryptPass(this.txtPassword.Text);
+                usuario.Permisos.Add(familia);
+                usuario.FechaAlta = DateTime.Now;
+                usuario.DVH = Encrypt.DVHCalculate(usuario.Cod_Usuario + usuario.Nombre + usuario.FechaAlta);
+
+                return usuario;
+            }
+            catch (Exception ex) {
+                FacadeService.ManageException(new UIException(ex));
+                return usuario;
+            }
+        }
         private bool ValidarUsuario(Usuario usuario) {
 
             return true;
@@ -123,17 +141,17 @@ namespace TC_Riveros_Paula
                 int result = FacadeService.RegistrarUsuario(usuario);
                 if (result == 1)
                 {
-                    MessageBox.Show("Usuario Registrado OK");
+                    Encrypt.DVVCalculate(usuario.DVH);
+                    DialogResult response = MessageBox.Show("El Usuario fue registrado exitosamente", "OK", MessageBoxButtons.OK);
                 }
                 else
                 {
-                    MessageBox.Show("El usuario no pudo registrarse");
+                    MessageBox.Show("El usuario no pudo registrarse","Error", MessageBoxButtons.OK);
                 }
-                //System.Console.WriteLine("resultado usuarios ::: " + result);
             }
             catch (Exception ex)
             {
-
+                FacadeService.ManageException(new UIException(ex));
             }
 
         }
