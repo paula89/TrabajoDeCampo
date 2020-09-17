@@ -31,13 +31,14 @@
             this.dataGridViewMateriaPrima = new System.Windows.Forms.DataGridView();
             this.dateTimePickerVencimientoHasta = new System.Windows.Forms.DateTimePicker();
             this.textBoxProveedor = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblFechaVencimiento = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblProveedor = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnFiltrar = new System.Windows.Forms.Button();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMateriaPrima)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -67,47 +68,55 @@
             this.textBoxProveedor.Size = new System.Drawing.Size(138, 20);
             this.textBoxProveedor.TabIndex = 3;
             // 
-            // label1
+            // lblFechaVencimiento
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "label1";
+            this.lblFechaVencimiento.AutoSize = true;
+            this.lblFechaVencimiento.Location = new System.Drawing.Point(15, 32);
+            this.lblFechaVencimiento.Name = "lblFechaVencimiento";
+            this.lblFechaVencimiento.Size = new System.Drawing.Size(105, 13);
+            this.lblFechaVencimiento.TabIndex = 4;
+            this.lblFechaVencimiento.Text = "lblFechaVencimiento";
             // 
-            // label2
+            // lblNombre
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(282, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "label2";
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(282, 32);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(54, 13);
+            this.lblNombre.TabIndex = 5;
+            this.lblNombre.Text = "lblNombre";
             // 
-            // label3
+            // lblProveedor
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(524, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "label3";
+            this.lblProveedor.AutoSize = true;
+            this.lblProveedor.Location = new System.Drawing.Point(524, 32);
+            this.lblProveedor.Name = "lblProveedor";
+            this.lblProveedor.Size = new System.Drawing.Size(66, 13);
+            this.lblProveedor.TabIndex = 6;
+            this.lblProveedor.Text = "lblProveedor";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.textBoxNombre);
             this.groupBox1.Controls.Add(this.btnFiltrar);
             this.groupBox1.Controls.Add(this.dateTimePickerVencimientoHasta);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lblProveedor);
+            this.groupBox1.Controls.Add(this.lblNombre);
             this.groupBox1.Controls.Add(this.textBoxProveedor);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lblFechaVencimiento);
             this.groupBox1.Location = new System.Drawing.Point(28, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(739, 127);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
+            // 
+            // textBoxNombre
+            // 
+            this.textBoxNombre.Location = new System.Drawing.Point(285, 51);
+            this.textBoxNombre.Name = "textBoxNombre";
+            this.textBoxNombre.Size = new System.Drawing.Size(143, 20);
+            this.textBoxNombre.TabIndex = 8;
             // 
             // btnFiltrar
             // 
@@ -119,13 +128,6 @@
             this.btnFiltrar.UseVisualStyleBackColor = true;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
-            // textBoxNombre
-            // 
-            this.textBoxNombre.Location = new System.Drawing.Point(285, 51);
-            this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(143, 20);
-            this.textBoxNombre.TabIndex = 8;
-            // 
             // btnActualizar
             // 
             this.btnActualizar.Location = new System.Drawing.Point(692, 446);
@@ -134,6 +136,16 @@
             this.btnActualizar.TabIndex = 8;
             this.btnActualizar.Text = "btnActualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(527, 98);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 9;
+            this.btnBuscar.Text = "btnBuscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // ListarMateriaPrimaForm
             // 
@@ -158,12 +170,13 @@
         private System.Windows.Forms.DataGridView dataGridViewMateriaPrima;
         private System.Windows.Forms.DateTimePicker dateTimePickerVencimientoHasta;
         private System.Windows.Forms.TextBox textBoxProveedor;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblFechaVencimiento;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblProveedor;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

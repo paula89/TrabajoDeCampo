@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using ServicesTest.Facade;
+using ServicesTest.BLL;
 
 namespace ServicesTest.Tools
 {
@@ -52,10 +54,9 @@ namespace ServicesTest.Tools
 
         public static decimal DVVCalculate(decimal DVH)
         {
-            
-            return 1;
-
-
+            decimal DVV_Original = UsersManager.Current.GetDVV();
+            decimal DVV_new = DVH + DVV_Original;
+            return DVV_new;
         }
 
 

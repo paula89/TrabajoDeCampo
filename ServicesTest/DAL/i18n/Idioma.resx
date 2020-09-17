@@ -315,4 +315,7 @@
   <data name="lblCodUsuario" xml:space="preserve">
     <value>User code</value>
   </data>
+  <data name="btnBuscar" xml:space="preserve">
+    <value>Search</value>
+  </data>
 </root>

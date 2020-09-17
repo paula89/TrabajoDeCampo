@@ -48,7 +48,7 @@ namespace ServicesTest.DAL.Tools
         }
 
         // restore
-        public static Int32 ExecuteNonQuery(String commandText,
+        public static Int32 ExecuteNonQueryRestore(String commandText,
             CommandType commandType, string connection, SqlParameter[] parameters)           
         {
             SqlConnection conn = getConnection(connection);
@@ -78,6 +78,39 @@ namespace ServicesTest.DAL.Tools
             }
             
         }
+
+        public static Int32 ExecuteNonQueryUpdateDVV(String commandText,
+            CommandType commandType, string connection, string parameters)
+        {
+            SqlConnection conn = getConnection(connection);
+            int response = 0;
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = commandText;
+                cmd.CommandType = commandType;
+                cmd.Parameters.Add(new SqlParameter("@DVV", parameters));
+
+                response = cmd.ExecuteNonQuery();
+
+                conn.Close();
+                cmd.Dispose();
+
+                return response;
+            }
+            catch (Exception ex)
+            {
+                FacadeService.ManageException(new DALException(ex));
+                return response;
+            }
+
+        }
+
+
         public static Int32 ExecuteNonQueryUsers(String commandText,
             CommandType commandType, string connection, Usuario parameters)
         {

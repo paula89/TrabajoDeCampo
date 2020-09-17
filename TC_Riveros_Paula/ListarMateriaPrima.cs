@@ -35,7 +35,12 @@ namespace TC_Riveros_Paula
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
             try {
-                CargarTabla();
+                MateriaPrima materiaPrima = new MateriaPrima();
+                string desde = this.dateTimePickerVencimientoHasta.Value.ToString();
+                string nombre = textBoxNombre.Text;
+                string proveedor = textBoxProveedor.Text;
+                String[] filtros = new string[] { desde, nombre, proveedor };
+                CargarTabla(filtros);
             }
             catch (Exception ex) {
                 FacadeServiceBusiness.ManageException(new UIException(ex));
@@ -43,21 +48,46 @@ namespace TC_Riveros_Paula
             }
         }
 
-        private void CargarTabla() {
-            MateriaPrima materiaPrima = new MateriaPrima();
-            string desde = this.dateTimePickerVencimientoHasta.Value.ToString();
-            string nombre = textBoxNombre.Text;
-            string proveedor = textBoxProveedor.Text;
-            String[] filtros = new string[] { desde, nombre, proveedor };
+        private void CargarTabla(String[] filtros) {
+            
             try
             {
-                IEnumerable<MateriaPrima> materiaPrimas = MateriaPrimaManager.Current.ListarMateriaPrima(filtros);
+                IEnumerable<MateriaPrima> materiaPrimas = MateriaPrimaManager.Current.ListarMateriaPrimaFilters(filtros);
                 dataGridViewMateriaPrima.DataSource = materiaPrimas.ToList();
             }
             catch (Exception ex) {
                 FacadeServiceBusiness.ManageException(new UIException(ex));
             }
         
+        }
+
+        private void CargarTabla()
+        {
+
+            try
+            {
+                IEnumerable<MateriaPrima> materiaPrimas = MateriaPrimaManager.Current.ListarMateriaPrima();
+                dataGridViewMateriaPrima.DataSource = materiaPrimas.ToList();
+            }
+            catch (Exception ex)
+            {
+                FacadeServiceBusiness.ManageException(new UIException(ex));
+            }
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MateriaPrima materiaPrima = new MateriaPrima();
+                CargarTabla();
+            }
+            catch (Exception ex)
+            {
+                FacadeServiceBusiness.ManageException(new UIException(ex));
+
+            }
         }
     }
 }

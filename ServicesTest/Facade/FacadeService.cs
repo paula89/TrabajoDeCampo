@@ -39,5 +39,15 @@ namespace ServicesTest.Facade
             return UsersManager.Current.RegistrarUsuario(usuario);
         }
 
+        public static void GetUsers() { 
+        
+        
+        }
+
+
+        public static int RegistrarDVV(decimal DVV) {
+            return UsersManager.Current.RegistrarDVV(DVV);
+        }
+
     }
 }

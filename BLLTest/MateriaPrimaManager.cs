@@ -37,7 +37,7 @@ namespace BLLTest
         }
 
 
-        public IEnumerable<MateriaPrima> ListarMateriaPrima(string[] filtros)
+        public IEnumerable<MateriaPrima> ListarMateriaPrimaFilters(string[] filtros)
         {
             IEnumerable<MateriaPrima> materiasPrimas = new List<MateriaPrima>();
             try
@@ -52,7 +52,23 @@ namespace BLLTest
 
         }
 
-       
+        public IEnumerable<MateriaPrima> ListarMateriaPrima()
+        {
+            IEnumerable<MateriaPrima> materiasPrimas = new List<MateriaPrima>();
+            try
+            {
+                materiasPrimas = instancia.GetMateriaPrimaRepository().GetAll();
+                return materiasPrimas.ToList();
+            }
+            catch (Exception ex)
+            {
+                FacadeServiceBusiness.ManageException(new DALException(ex));
+                return materiasPrimas;
+            }
+
+        }
+
+
 
     }
 }

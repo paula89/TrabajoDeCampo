@@ -43,10 +43,25 @@ namespace TC_Riveros_Paula
             
             try
             {
-                IEnumerable<Usuario> usuarios = UsersManager.Current.ListarUsuarios(filtros);
+                IEnumerable<Usuario> usuarios = UsersManager.Current.ListarUsuariosFilter(filtros);
                 dataGridViewUsuarios.DataSource = usuarios.ToList();
             }
             catch (UIException ex) {
+                FacadeService.ManageException(ex);
+
+            }
+        }
+
+        private void CargarTabla()
+        {
+
+            try
+            {
+                IEnumerable<Usuario> usuarios = UsersManager.Current.ListarUsuarios();
+                dataGridViewUsuarios.DataSource = usuarios.ToList();
+            }
+            catch (UIException ex)
+            {
                 FacadeService.ManageException(ex);
 
             }
@@ -59,8 +74,7 @@ namespace TC_Riveros_Paula
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            String[] filtros = new string[0];
-            CargarTabla(filtros);
+            CargarTabla();
         }
     }
 }

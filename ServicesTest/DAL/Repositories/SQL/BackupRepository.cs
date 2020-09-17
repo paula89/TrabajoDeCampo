@@ -99,7 +99,7 @@ namespace ServicesTest.DAL.Repositories.SQL
             List<SqlParameter> parametros = new List<SqlParameter>();
             parametros.Add(new SqlParameter("@ruta", path));
 
-            int restored = SqlHelper.ExecuteNonQuery(RestoreBackupStatement, System.Data.CommandType.StoredProcedure, "security", parametros.ToArray());
+            int restored = SqlHelper.ExecuteNonQueryRestore(RestoreBackupStatement, System.Data.CommandType.StoredProcedure, "security", parametros.ToArray());
 
             return restored;
         }

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.BitacoraDataGridView = new System.Windows.Forms.DataGridView();
-            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.comboBoxCriticidad = new System.Windows.Forms.ComboBox();
-            this.dateTimePickerDesde = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerHasta = new System.Windows.Forms.DateTimePicker();
             this.lblDesde = new System.Windows.Forms.Label();
             this.lblHasta = new System.Windows.Forms.Label();
             this.lblCriticidad = new System.Windows.Forms.Label();
+            this.dateTimePickerHasta = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerDesde = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.BitacoraDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,15 +54,15 @@
             this.BitacoraDataGridView.TabIndex = 0;
             this.BitacoraDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BitacoraDataGridView_CellContentClick);
             // 
-            // btnFiltrar
+            // btnBuscar
             // 
-            this.btnFiltrar.Location = new System.Drawing.Point(684, 97);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(75, 23);
-            this.btnFiltrar.TabIndex = 2;
-            this.btnFiltrar.Text = "btnFiltrar";
-            this.btnFiltrar.UseVisualStyleBackColor = true;
-            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            this.btnBuscar.Location = new System.Drawing.Point(684, 97);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.Text = "btnBuscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // comboBoxCriticidad
             // 
@@ -71,22 +71,6 @@
             this.comboBoxCriticidad.Name = "comboBoxCriticidad";
             this.comboBoxCriticidad.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCriticidad.TabIndex = 3;
-            // 
-            // dateTimePickerDesde
-            // 
-            this.dateTimePickerDesde.Location = new System.Drawing.Point(55, 71);
-            this.dateTimePickerDesde.Name = "dateTimePickerDesde";
-            this.dateTimePickerDesde.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerDesde.TabIndex = 4;
-            this.dateTimePickerDesde.Value = new System.DateTime(2020, 7, 16, 23, 46, 36, 0);
-            // 
-            // dateTimePickerHasta
-            // 
-            this.dateTimePickerHasta.Location = new System.Drawing.Point(298, 71);
-            this.dateTimePickerHasta.Name = "dateTimePickerHasta";
-            this.dateTimePickerHasta.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerHasta.TabIndex = 5;
-            this.dateTimePickerHasta.Value = new System.DateTime(2020, 7, 16, 23, 46, 50, 0);
             // 
             // lblDesde
             // 
@@ -115,18 +99,32 @@
             this.lblCriticidad.TabIndex = 8;
             this.lblCriticidad.Text = "lblCriticidad";
             // 
+            // dateTimePickerHasta
+            // 
+            this.dateTimePickerHasta.Location = new System.Drawing.Point(298, 69);
+            this.dateTimePickerHasta.Name = "dateTimePickerHasta";
+            this.dateTimePickerHasta.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerHasta.TabIndex = 9;
+            // 
+            // dateTimePickerDesde
+            // 
+            this.dateTimePickerDesde.Location = new System.Drawing.Point(55, 69);
+            this.dateTimePickerDesde.Name = "dateTimePickerDesde";
+            this.dateTimePickerDesde.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerDesde.TabIndex = 10;
+            // 
             // FormBitacora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 525);
+            this.Controls.Add(this.dateTimePickerDesde);
+            this.Controls.Add(this.dateTimePickerHasta);
             this.Controls.Add(this.lblCriticidad);
             this.Controls.Add(this.lblHasta);
             this.Controls.Add(this.lblDesde);
-            this.Controls.Add(this.dateTimePickerHasta);
-            this.Controls.Add(this.dateTimePickerDesde);
             this.Controls.Add(this.comboBoxCriticidad);
-            this.Controls.Add(this.btnFiltrar);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.BitacoraDataGridView);
             this.Name = "FormBitacora";
             this.Text = "BitacoraForm";
@@ -140,12 +138,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView BitacoraDataGridView;
-        private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ComboBox comboBoxCriticidad;
-        private System.Windows.Forms.DateTimePicker dateTimePickerDesde;
-        private System.Windows.Forms.DateTimePicker dateTimePickerHasta;
         private System.Windows.Forms.Label lblDesde;
         private System.Windows.Forms.Label lblHasta;
         private System.Windows.Forms.Label lblCriticidad;
+        private System.Windows.Forms.DateTimePicker dateTimePickerHasta;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDesde;
     }
 }

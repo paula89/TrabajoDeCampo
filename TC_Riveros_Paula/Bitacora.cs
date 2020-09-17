@@ -27,7 +27,7 @@ namespace TC_Riveros_Paula
 
         public void CargarTraducciones(ResourceManager idioma) 
         {
-            this.btnFiltrar.Text = idioma.GetString("btnFiltrar");
+            this.btnBuscar.Text = idioma.GetString("btnBuscar");
             this.lblCriticidad.Text = idioma.GetString("lblCriticidad");
             this.lblHasta.Text = idioma.GetString("lblHasta");
             this.lblDesde.Text = idioma.GetString("lblDesde");

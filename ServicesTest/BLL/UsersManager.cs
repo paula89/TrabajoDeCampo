@@ -28,12 +28,15 @@ namespace ServicesTest.BLL
         }
         #endregion
 
-
+        IEnumerable<Usuario> currentUser;
         public int RegistrarUsuario(Usuario usuario)
         {
             return instancia.GetUsersRepository().Insert(usuario);
         }
 
+        public int RegistrarDVV(decimal DVV) {
+            return instancia.GetUsersRepository().UpdateDVV(DVV);
+        }
         public IEnumerable<String> ObtenerRoles() {
             return instancia.GetUsersRepository().GetAllRoles();
         }
@@ -46,7 +49,7 @@ namespace ServicesTest.BLL
             return usuarioSesion.ToList();
         }
 
-        public IEnumerable<Usuario> ListarUsuarios(string[] filtros)
+        public IEnumerable<Usuario> ListarUsuariosFilter(string[] filtros)
         {
             //return instancia.GetUsersRepository().GetLogin(filtros);
 
@@ -54,9 +57,27 @@ namespace ServicesTest.BLL
             return usuarioSesion.ToList();
         }
 
-        public bool GetLogin(string[] filtros)
+        public IEnumerable<Usuario> ListarDVH()
         {
-            return instancia.GetUsersRepository().GetLogin(filtros);
+            var usuarioSesion = instancia.GetUsersRepository().GetAllDVH();
+            return usuarioSesion.ToList();
+        }
+        
+
+        public IEnumerable<Usuario> ListarUsuarios()
+        {
+            var usuarioSesion = instancia.GetUsersRepository().GetAll();
+            return usuarioSesion.ToList();
+        }
+
+        public IEnumerable<Usuario> GetLogin(string[] filtros)
+        {
+            currentUser = instancia.GetUsersRepository().GetLogin(filtros); ;
+            return currentUser;
+        }
+
+        public decimal GetDVV() {
+            return instancia.GetUsersRepository().GetDVV();
         }
 
     }

@@ -105,19 +105,19 @@ namespace TC_Riveros_Paula
             try
             {
                 Patente permisoUsuario = new Patente();
-                permisoUsuario.Nombre = comboBoxRoles.SelectedItem.ToString();
+                permisoUsuario.Nombre = comboBoxRoles.SelectedItem.ToString().Trim();
 
                 Familia familia = new Familia();
                 familia.Nombre = comboBoxRoles.SelectedItem.ToString();
                 familia.Permisos.Add(permisoUsuario);
 
-                usuario.Cod_Usuario = this.textBoxCodUsuario.Text.ToUpper();
-                usuario.Nombre = this.txtNombre.Text;
-                usuario.Apellido = this.txtApellido.Text;
-                usuario.Direccion = this.txtDireccion.Text;
-                usuario.Email = this.txtEmail.Text;
-                usuario.Telefono = this.txtTelefono.Text;
-                usuario.Password = Encrypt.encryptPass(this.txtPassword.Text);
+                usuario.Cod_Usuario = this.textBoxCodUsuario.Text.Trim().ToUpper();
+                usuario.Nombre = this.txtNombre.Text.Trim();
+                usuario.Apellido = this.txtApellido.Text.Trim();
+                usuario.Direccion = this.txtDireccion.Text.Trim();
+                usuario.Email = this.txtEmail.Text.Trim();
+                usuario.Telefono = this.txtTelefono.Text.Trim();
+                usuario.Password = Encrypt.encryptPass(this.txtPassword.Text.Trim());
                 usuario.Permisos.Add(familia);
                 usuario.FechaAlta = DateTime.Now;
                 usuario.DVH = Encrypt.DVHCalculate(usuario.Cod_Usuario + usuario.Nombre + usuario.FechaAlta);
@@ -134,15 +134,15 @@ namespace TC_Riveros_Paula
             return true;
 
         }
+        
         private static void RegistrarUsuario(Usuario usuario) {
             try
             {
-                //guardar
                 int result = FacadeService.RegistrarUsuario(usuario);
                 if (result == 1)
                 {
-                    Encrypt.DVVCalculate(usuario.DVH);
-                    DialogResult response = MessageBox.Show("El Usuario fue registrado exitosamente", "OK", MessageBoxButtons.OK);
+                    RegistrarDVV(usuario.DVH);
+                    MessageBox.Show("El Usuario fue registrado exitosamente", "OK", MessageBoxButtons.OK);
                 }
                 else
                 {
@@ -154,6 +154,18 @@ namespace TC_Riveros_Paula
                 FacadeService.ManageException(new UIException(ex));
             }
 
+        }
+
+        private static int RegistrarDVV(decimal DVH) {
+            try
+            {
+                decimal DVV = Encrypt.DVVCalculate(DVH);
+                return FacadeService.RegistrarDVV(DVV);
+            }
+            catch (Exception ex) {
+                FacadeService.ManageException(new UIException(ex));
+                return 0;
+            }
         }
         private static void RecorrerListado(List<FamiliaComponent> permisos, string separator = "")
         {

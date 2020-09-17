@@ -35,19 +35,26 @@ namespace TC_Riveros_Paula
             bool verificar = verificarCampos();
             if (verificar)
             {
-                String[] filtros = new string[] { this.txtUsuario.Text, Encrypt.encryptPass(this.txtPassword.Text) };
-
-                if (VerificarDatos(filtros))
+                if (VerificarDV())
                 {
-                    permiso = (List<string>)getPermisos(filtros);
-                    this.Hide();
-                    InicioForm inicio = new InicioForm(permiso, txtUsuario.Text);
-                    inicio.ShowDialog();
-                    this.Close();
-                    this.Dispose();
+                    String[] filtros = new string[] { this.txtUsuario.Text.ToUpper(), Encrypt.encryptPass(this.txtPassword.Text) };
+                    IEnumerable<Usuario> usuarios = VerificarDatos(filtros);
+                    if (usuarios.Any())
+                    {
+                        permiso = (List<string>)getPermisos(usuarios);
+
+                        this.Hide();
+                        InicioForm inicio = new InicioForm(permiso, txtUsuario.Text.ToUpper());
+                        inicio.ShowDialog();
+                        this.Close();
+                        this.Dispose();
+                    }
+                    else {
+                        MessageBox.Show("El usuario y/o contraseña no son correctos", "Error", MessageBoxButtons.OK);
+                    }
                 }
                 else {
-                    MessageBox.Show("El usuario y/o contraseña no son correctos", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Inconsistencia de datos en la base de datos. Comuniquese con el administrador del sistema.");
                 }
             }
             else {
@@ -55,6 +62,28 @@ namespace TC_Riveros_Paula
                 MessageBox.Show("Debe ingresar usuario y contraseña para iniciar sesion en el sistema", "Error", MessageBoxButtons.OK);
             }
         }
+
+        private bool VerificarDV() {
+            bool verificar = true;
+            decimal DVV = 0;
+            decimal currentDVV = UsersManager.Current.GetDVV();
+            IEnumerable<Usuario> usuarios = UsersManager.Current.ListarDVH();
+
+            foreach (var item in usuarios)
+            {
+                decimal DVH = Encrypt.DVHCalculate(item.Cod_Usuario.Trim() + item.Nombre.Trim() + item.FechaAlta);
+                DVV = DVV + DVH;
+                if (item.DVH != DVH) {
+                    verificar = false;
+                }
+            }
+            if (DVV != currentDVV) {
+                verificar = false;
+            }
+            return verificar;
+
+        }
+
 
         private void CargarTraducciones(ResourceManager idioma)
         {
@@ -64,18 +93,27 @@ namespace TC_Riveros_Paula
             lblPassword.Text = idioma.GetString("lblPassword");
         }
 
-        private bool VerificarDatos(String[] filtros) {
-
-            bool existe = UsersManager.Current.GetLogin(filtros);
-            return existe;
+        private IEnumerable<Usuario> VerificarDatos(String[] filtros) {
+            var usuarios = UsersManager.Current.GetLogin(filtros);
+            return usuarios;
         }
 
-        private IEnumerable<String> getPermisos(String[] filtros) {
-            //bool existe = UsersManager.Current.ObtenerUsuariosLogin(filtros);
+        private IEnumerable<Usuario> getUsuario(String[] filtros) {
             var usuarios = UsersManager.Current.ObtenerUsuariosLogin(filtros);
+            return usuarios;
+        }
+
+
+
+
+        private IEnumerable<String> getPermisos(IEnumerable<Usuario> users) {
+            //bool existe = UsersManager.Current.ObtenerUsuariosLogin(filtros);
+
+            //String[] cod_usuario = new string[] { this.txtUsuario.Text.ToUpper() };
+            //IEnumerable<Usuario> usuarios = users;//getUsuario(cod_usuario);
 
             List<String> permiso = new List<string>();
-            foreach (var user in usuarios)
+            foreach (var user in users)
             {
                var result = RecorrerListado(user.Permisos);
                foreach (var item in result)
@@ -100,7 +138,6 @@ namespace TC_Riveros_Paula
                             permiso.Add(item.Nombre);
                         }
                     }
-
             }
             return permiso;
          }

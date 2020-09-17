@@ -17,7 +17,12 @@ namespace ServicesTest.DAL.Repositories.SQL
         #region Statements
         private string SelectAllStatement
         {
-            get => "SELECT Usuario, Nombre, Apellido, Direccion, Telefono, Email, Permisos, FechaAlta, Habilitado " +
+            get => "SELECT Usuario, Nombre, Apellido, Direccion, Telefono, Email, Permisos, FechaAlta, Habilitado, DVH " +
+                "FROM [dbo].[Usuarios]";
+        }
+        private string SelectAllDVHStatement
+        {
+            get => "SELECT Usuario, Nombre,FechaAlta, DVH " +
                 "FROM [dbo].[Usuarios]";
         }
         private string InsertStatement
@@ -25,11 +30,19 @@ namespace ServicesTest.DAL.Repositories.SQL
             get => "INSERT INTO [dbo].[Usuarios] (Usuario, Nombre, Apellido, Direccion, Telefono, Email, Contraseña, Permisos, FechaAlta, Habilitado, DVH)" +
                 " VALUES (@Usuario, @Nombre, @Apellido, @Direccion, @Telefono, @Email, @Contraseña, @Permisos, @FechaAlta, @Habilitado, @DVH)";
         }
+        private string LoginSelectStatement
+        {
+            get => "SELECT Usuario, Nombre, Permisos, FechaAlta, DVH FROM [dbo].[Usuarios] " +
+                "WHERE Usuario = @Usuario " +
+                "AND Contraseña = @Contraseña " +
+                "AND Habilitado = 1";
+        }
+
         private string LoginSelectFilterStatement
         {
-            get => "SELECT * FROM [dbo].[Usuarios] " +
-                "WHERE Usuario = @Usuario " +
-                "and Contraseña = @Contraseña ";
+            get => "SELECT Usuario, Nombre, Apellido, Direccion, Telefono, Email, Permisos, FechaAlta, Habilitado" +
+                " FROM [dbo].[Usuarios] " +
+                "WHERE Usuario = @Usuario ";
         }
 
         private string SelectFilterStatement
@@ -44,6 +57,18 @@ namespace ServicesTest.DAL.Repositories.SQL
         private string SelectRolesStatement {
             get => "Select * FROM [dbo].[Roles]";  // id, roles
         }
+
+        private string SelectConfigurationStatement
+        {
+            get => "Select Value FROM [dbo].[Configuracion] where Clave = @Clave";  // id, roles
+        }
+
+        private string UpdateDVVStatement {
+            get => "UPDATE [dbo].[Configuracion] " +
+                "SET Value = @DVV " +
+                "WHERE Clave = 'DVV'";
+        }
+
         #endregion
 
         public void Delete(Guid id)
@@ -79,35 +104,80 @@ namespace ServicesTest.DAL.Repositories.SQL
 
         }
 
-        public bool GetLogin(Array filtros)
-        {
-            bool encontrado = false;
+        public decimal GetDVV() {
 
             try
             {
+                decimal dvv = 0;
                 List<SqlParameter> parametros = new List<SqlParameter>();
+                parametros.Add(new SqlParameter("@Clave", "DVV"));
 
-                parametros.Add(new SqlParameter("@Usuario", filtros.GetValue(0)));
-                parametros.Add(new SqlParameter("@Contraseña", filtros.GetValue(1)));
-                System.Console.WriteLine(SelectFilterStatement);
-                System.Console.WriteLine(parametros.ToArray().ToString());
-
-                using (var dr = SqlHelper.ExecuteReader(LoginSelectFilterStatement, System.Data.CommandType.Text, "security", parametros.ToArray()))
+                using (var dr = SqlHelper.ExecuteReader(SelectConfigurationStatement, System.Data.CommandType.Text, "security", parametros.ToArray()))
                 {
                     Object[] values = new Object[dr.FieldCount];
                     while (dr.Read())
                     {
                         dr.GetValues(values);
-                        encontrado = true;
+                        dvv =  Convert.ToDecimal(values[0]);
+
                     }
                 }
 
-                return encontrado;
+                return dvv;
             }
             catch (Exception ex)
             {
                 FacadeService.ManageException(new DALException(ex));
-                return encontrado;
+                return 0;
+            }
+        }
+
+
+        /// <summary>
+        ///  ok ok 
+        /// </summary>
+        /// <param name="filtros"></param>
+        /// <returns></returns>
+        public IEnumerable<Usuario> GetLogin(Array filtros)
+        {
+
+            try
+            {
+                List<SqlParameter> parametros = new List<SqlParameter>();
+                List<Usuario> usuarios = new List<Usuario>();
+
+                parametros.Add(new SqlParameter("@Usuario", filtros.GetValue(0)));
+                parametros.Add(new SqlParameter("@Contraseña", filtros.GetValue(1)));
+                System.Console.WriteLine(LoginSelectStatement);
+                System.Console.WriteLine(parametros.ToArray().ToString());
+
+                using (var dr = SqlHelper.ExecuteReader(LoginSelectStatement, System.Data.CommandType.Text, "security", parametros.ToArray()))
+                {
+                    Object[] values = new Object[dr.FieldCount];
+                    Usuario usuario = new Usuario();
+                    while (dr.Read())
+                    {
+                        dr.GetValues(values);
+                        usuario.Cod_Usuario = values[0].ToString();
+                        usuario.Nombre = values[1].ToString();
+                        Patente permisoUsuario = new Patente();
+                        Familia familia = new Familia();
+                        permisoUsuario.Nombre = values[2].ToString();
+                        familia.Permisos.Add(permisoUsuario);
+                        usuario.Permisos.Add(familia);
+                        usuario.FechaAlta = Convert.ToDateTime(values[3].ToString());
+                        usuario.DVH = Convert.ToDecimal(values[4].ToString());
+
+                        usuarios.Add(usuario);
+                    }
+                }
+
+                return usuarios;
+            }
+            catch (Exception ex)
+            {
+                FacadeService.ManageException(new DALException(ex));
+                return null;
             }
         }
 
@@ -140,6 +210,12 @@ namespace ServicesTest.DAL.Repositories.SQL
             return inserted;
         }
 
+        public int UpdateDVV(decimal DVV)
+        {
+            int updated = SqlHelper.ExecuteNonQueryUpdateDVV(UpdateDVVStatement, System.Data.CommandType.Text, "security", DVV.ToString());
+            return updated;
+        }
+
         public void Update(Usuario usuario)
         {
             throw new NotImplementedException();
@@ -153,14 +229,9 @@ namespace ServicesTest.DAL.Repositories.SQL
                 List<SqlParameter> parametros = new List<SqlParameter>();
                 string statement; 
                 switch (filtros.Length) {
-                    case 2:
+                    case 1:
                         parametros.Add(new SqlParameter("@Usuario",filtros.GetValue(0)));
-                        parametros.Add(new SqlParameter("@Contraseña", filtros.GetValue(1)));
                         statement = LoginSelectFilterStatement;
-                        break;
-                    case 0:
-                        parametros.Add(new SqlParameter("", ""));
-                        statement = SelectAllStatement;
                         break;
                     default:
                         parametros.Add(new SqlParameter("@FechaAltaDesde", Convert.ToDateTime(filtros.GetValue(0))));
@@ -179,11 +250,7 @@ namespace ServicesTest.DAL.Repositories.SQL
                 
                 System.Console.WriteLine(statement);
                 System.Console.WriteLine(parametros.ToArray().ToString());
-               /* List<SqlParameter> param;
-                if (parametros.ToArray().Length > 0)
-                {
-                    param = parametros;
-                } */
+            
                 using (var dr = SqlHelper.ExecuteReader(statement, System.Data.CommandType.Text, "security", parametros.ToArray()))
                 {
                     Object[] values = new Object[dr.FieldCount];
@@ -199,11 +266,88 @@ namespace ServicesTest.DAL.Repositories.SQL
                         usuario.Telefono = values[4].ToString();
                         usuario.Email = values[5].ToString();
                         Patente permisoUsuario = new Patente();
-                        permisoUsuario.Nombre = values[7].ToString();
+                        permisoUsuario.Nombre = values[6].ToString();
                         familia.Permisos.Add(permisoUsuario);
                         usuario.Permisos.Add(familia);
-                        usuario.FechaAlta = Convert.ToDateTime(values[8].ToString());
-                        usuario.Habilitado = Convert.ToBoolean(values[9]);
+                        usuario.FechaAlta = Convert.ToDateTime(values[7].ToString());
+                        usuario.Habilitado = Convert.ToBoolean(values[8]);
+                        usuarios.Add(usuario);
+                    }
+
+                }
+                return usuarios;
+            }
+            catch (Exception ex)
+            {
+                FacadeService.ManageException(new DALException(ex));
+                return null;
+            }
+        }
+
+        public IEnumerable<Usuario> GetAllDVH()
+        {
+            try
+            {
+                List<Usuario> usuarios = new List<Usuario>();
+                string statement = SelectAllDVHStatement;
+
+
+                System.Console.WriteLine(statement);
+
+                using (var dr = SqlHelper.ExecuteReader(statement, System.Data.CommandType.Text, "security"))
+                {
+                    Object[] values = new Object[dr.FieldCount];
+                    while (dr.Read())
+                    {
+                        dr.GetValues(values);
+                        Usuario usuario = new Usuario();
+                        usuario.Cod_Usuario = values[0].ToString();
+                        usuario.Nombre = values[1].ToString();
+                        usuario.FechaAlta = Convert.ToDateTime(values[2]);
+                        usuario.DVH = Convert.ToDecimal(values[3]);
+                        usuarios.Add(usuario);
+                    }
+                }
+                return usuarios;
+            }
+            catch (Exception ex)
+            {
+                FacadeService.ManageException(new DALException(ex));
+                return null;
+            }
+        }
+    
+    public IEnumerable<Usuario> GetAll()
+        {
+            try
+            {
+                List<Usuario> usuarios = new List<Usuario>();
+                string statement = SelectAllStatement;
+
+
+                System.Console.WriteLine(statement);
+
+                using (var dr = SqlHelper.ExecuteReader(statement, System.Data.CommandType.Text, "security"))
+                {
+                    Object[] values = new Object[dr.FieldCount];
+                    while (dr.Read())
+                    {
+                        dr.GetValues(values);
+                        Usuario usuario = new Usuario();
+                        Familia familia = new Familia();
+                        usuario.Cod_Usuario = values[0].ToString();
+                        usuario.Nombre = values[1].ToString();
+                        usuario.Apellido = values[2].ToString();
+                        usuario.Direccion = values[3].ToString();
+                        usuario.Telefono = values[4].ToString();
+                        usuario.Email = values[5].ToString();
+                        Patente permisoUsuario = new Patente();
+                        permisoUsuario.Nombre = values[6].ToString();
+                        familia.Permisos.Add(permisoUsuario);
+                        usuario.Permisos.Add(familia);
+                        usuario.FechaAlta = Convert.ToDateTime(values[7].ToString());
+                        usuario.Habilitado = Convert.ToBoolean(values[8]);
+                        usuario.DVH = Convert.ToDecimal(values[9]);
                         usuarios.Add(usuario);
                     }
                 }
@@ -216,4 +360,8 @@ namespace ServicesTest.DAL.Repositories.SQL
             }
         }
     }
+
+
+
+
 }

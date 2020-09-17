@@ -51,17 +51,19 @@ namespace DALTest.Repositories.SQL
                 List<MateriaPrima> materiaPrimas = new List<MateriaPrima>();
                 List<SqlParameter> parametros = new List<SqlParameter>();
                 string statement = SelectFilterStatement;
-
-                parametros.Add(new SqlParameter("@FechaVencimiento", Convert.ToDateTime(filtros.GetValue(0))));
-                if (filtros.GetValue(1).ToString() != "") {
-                    parametros.Add(new SqlParameter("@Nombre", filtros.GetValue(0)));
-                    statement = statement + "AND Nombre LIKE '%@Nombre%'";
-                }
-                if (filtros.GetValue(2).ToString() != "") {
-                    parametros.Add(new SqlParameter("@Proveedor", filtros.GetValue(0)));
-                    statement = statement + "AND Proveedor LIKE '%@Proveedor%'";
-                }
-
+                
+                    parametros.Add(new SqlParameter("@FechaVencimiento", Convert.ToDateTime(filtros.GetValue(0))));
+                    if (filtros.GetValue(1).ToString() != "")
+                    {
+                        parametros.Add(new SqlParameter("@Nombre", filtros.GetValue(0)));
+                        statement = statement + "AND Nombre LIKE '%@Nombre%'";
+                    }
+                    if (filtros.GetValue(2).ToString() != "")
+                    {
+                        parametros.Add(new SqlParameter("@Proveedor", filtros.GetValue(0)));
+                        statement = statement + "AND Proveedor LIKE '%@Proveedor%'";
+                    }
+                
                 System.Console.WriteLine(statement);
                 System.Console.WriteLine(parametros.ToArray().ToString());
 
@@ -97,7 +99,39 @@ namespace DALTest.Repositories.SQL
 
         public IEnumerable<MateriaPrima> GetAll()
         {
-            throw new NotImplementedException();
+            try
+            {
+                List<MateriaPrima> materiaPrimas = new List<MateriaPrima>();
+                string statement = SelectAllStatement;               
+
+                System.Console.WriteLine(statement);
+
+                using (var dr = SqlHelper.ExecuteReader(statement, System.Data.CommandType.Text, "security"))
+                {
+                    Object[] values = new Object[dr.FieldCount];
+                    while (dr.Read())
+                    {
+                        dr.GetValues(values);
+                        MateriaPrima materiaPrima = new MateriaPrima();
+                        materiaPrima.IdMateriaPrima = new Guid(values[0].ToString());
+                        materiaPrima.nombre = values[1].ToString();
+                        materiaPrima.proveedor = values[2].ToString();
+                        materiaPrima.cantidad = Convert.ToInt32(values[3]);
+                        materiaPrima.marca = values[4].ToString();
+                        materiaPrima.usuario = values[5].ToString();
+                        materiaPrima.comentario = values[6].ToString();
+                        materiaPrima.fechaAlta = Convert.ToDateTime(values[7].ToString());
+                        materiaPrima.vencimiento = Convert.ToDateTime(values[8].ToString());
+                        materiaPrima.habilitada = Convert.ToBoolean(values[9]);
+                        materiaPrimas.Add(materiaPrima);
+                    }
+                }
+                return materiaPrimas;
+            }
+            catch (Exception ex)
+            {
+                throw (new DALException(ex));
+            }
         }
 
 
