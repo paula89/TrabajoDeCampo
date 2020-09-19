@@ -318,4 +318,7 @@
   <data name="btnBuscar" xml:space="preserve">
     <value>Search</value>
   </data>
+  <data name="TrackingToolStripMenuItem" xml:space="preserve">
+    <value>Tracking DataBase</value>
+  </data>
 </root>

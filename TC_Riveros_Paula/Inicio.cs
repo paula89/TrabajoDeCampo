@@ -16,14 +16,14 @@ namespace TC_Riveros_Paula
 {
     public partial class InicioForm : Form
     {
-        string cultureInfo = Thread.CurrentThread.CurrentUICulture.Name; 
+        //string cultureInfo = Thread.CurrentThread.CurrentUICulture.Name; 
         ResourceManager idioma;
         string usuario;
 
-        public InicioForm(List<String> permiso, String Cod_Usuario)
+        public InicioForm(List<String> permiso, String Cod_Usuario, ResourceManager idiomaElegido)
         {
             InitializeComponent(permiso);
-            idioma = FacadeService.Translate(cultureInfo);
+            idioma = idiomaElegido;
             usuario = Cod_Usuario;
             this.Text = idioma.GetString("InicioForm");
             CargarTraducciones(idioma, permiso);
@@ -71,6 +71,7 @@ namespace TC_Riveros_Paula
                     BackupToolStripMenuItem.Text = idioma.GetString("BackupToolStripMenuItem");
                     MenuItemNuevoUsuario.Text = idioma.GetString("MenuItemNuevoUsuario"); 
                     MenuItemVerUsuarios.Text = idioma.GetString("MenuItemVerUsuarios");
+                    TrackingToolStripMenuItem.Text = idioma.GetString("TrackingToolStripMenuItem");
 
                 }
 
@@ -180,6 +181,12 @@ namespace TC_Riveros_Paula
         {
             BackupForm backup = new BackupForm(idioma);
             backup.ShowDialog();
+        }
+
+        private void TrackingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TrackingForm tracking = new TrackingForm(idioma);
+            tracking.ShowDialog();
         }
 
 

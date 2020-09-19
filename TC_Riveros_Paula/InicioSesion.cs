@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Resources;
 using System.Text;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ServicesTest.BLL;
 using ServicesTest.Domain.Composite;
+using ServicesTest.Domain.Exceptions;
 using ServicesTest.Facade;
 using ServicesTest.Tools;
 
@@ -19,18 +21,33 @@ namespace TC_Riveros_Paula
     public partial class InicioSesionForm : Form
     {
         string cultureInfo = Thread.CurrentThread.CurrentUICulture.Name;
-        ResourceManager idioma;
+        ResourceManager idioma; 
 
         public InicioSesionForm()
         {
             InitializeComponent();
             idioma = FacadeService.Translate(cultureInfo);
+            CargarComboIdioma();
             CargarTraducciones(idioma);
-            verificarCampos();
+
+        }
+
+        public void CargarComboIdioma() {
+            try {
+                IEnumerable<String> idiomas = UsersManager.Current.ObtenerIdiomas();
+                comboBoxIdioma.DataSource = idiomas.ToList();
+            }
+            catch (UIException ex)
+            {
+                FacadeService.ManageException(ex);
+            }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+
+            idioma = FacadeService.Translate(comboBoxIdioma.SelectedItem.ToString());
+
             List<String> permiso = new List<string>();
             bool verificar = verificarCampos();
             if (verificar)
@@ -44,7 +61,7 @@ namespace TC_Riveros_Paula
                         permiso = (List<string>)getPermisos(usuarios);
 
                         this.Hide();
-                        InicioForm inicio = new InicioForm(permiso, txtUsuario.Text.ToUpper());
+                        InicioForm inicio = new InicioForm(permiso, txtUsuario.Text.ToUpper(), idioma);
                         inicio.ShowDialog();
                         this.Close();
                         this.Dispose();
@@ -109,9 +126,6 @@ namespace TC_Riveros_Paula
         private IEnumerable<String> getPermisos(IEnumerable<Usuario> users) {
             //bool existe = UsersManager.Current.ObtenerUsuariosLogin(filtros);
 
-            //String[] cod_usuario = new string[] { this.txtUsuario.Text.ToUpper() };
-            //IEnumerable<Usuario> usuarios = users;//getUsuario(cod_usuario);
-
             List<String> permiso = new List<string>();
             foreach (var user in users)
             {
@@ -157,6 +171,11 @@ namespace TC_Riveros_Paula
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxIdioma_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

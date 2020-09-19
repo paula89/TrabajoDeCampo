@@ -41,6 +41,11 @@ namespace ServicesTest.BLL
             return instancia.GetUsersRepository().GetAllRoles();
         }
 
+        public IEnumerable<String> ObtenerIdiomas()
+        {
+            return instancia.GetUsersRepository().GetAllIdiomas();
+        }
+
         public IEnumerable<Usuario> ObtenerUsuariosLogin(string[] filtros)
         {
             //return instancia.GetUsersRepository().GetLogin(filtros);

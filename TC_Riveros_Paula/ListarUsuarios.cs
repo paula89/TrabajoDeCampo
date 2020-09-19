@@ -45,6 +45,8 @@ namespace TC_Riveros_Paula
             {
                 IEnumerable<Usuario> usuarios = UsersManager.Current.ListarUsuariosFilter(filtros);
                 dataGridViewUsuarios.DataSource = usuarios.ToList();
+                dataGridViewUsuarios.Columns.Remove("Password");
+                dataGridViewUsuarios.Columns.Remove("DVH");
             }
             catch (UIException ex) {
                 FacadeService.ManageException(ex);
@@ -59,6 +61,8 @@ namespace TC_Riveros_Paula
             {
                 IEnumerable<Usuario> usuarios = UsersManager.Current.ListarUsuarios();
                 dataGridViewUsuarios.DataSource = usuarios.ToList();
+                dataGridViewUsuarios.Columns.Remove("Password");
+                dataGridViewUsuarios.Columns.Remove("DVH");
             }
             catch (UIException ex)
             {

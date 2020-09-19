@@ -57,10 +57,9 @@ namespace ServicesTest.DAL.Repositories.SQL
         private string SelectRolesStatement {
             get => "Select * FROM [dbo].[Roles]";  // id, roles
         }
-
         private string SelectConfigurationStatement
         {
-            get => "Select Value FROM [dbo].[Configuracion] where Clave = @Clave";  // id, roles
+            get => "Select Value FROM [dbo].[Configuracion] where Clave = @Clave";  
         }
 
         private string UpdateDVVStatement {
@@ -76,6 +75,37 @@ namespace ServicesTest.DAL.Repositories.SQL
             throw new NotImplementedException();
         }
 
+        public IEnumerable<String> GetAllIdiomas()
+        {
+            try
+            {
+                List<String> idiomas = new List<String>();
+                List<SqlParameter> parametros = new List<SqlParameter>();
+                parametros.Add(new SqlParameter("@Clave", "Idioma"));
+
+                using (var dr = SqlHelper.ExecuteReader(SelectConfigurationStatement, System.Data.CommandType.Text, "security", parametros.ToArray()))
+                {
+                    Object[] values = new Object[dr.FieldCount];
+
+                    while (dr.Read())
+                    {
+                        dr.GetValues(values);
+                        String idioma = values[0].ToString();
+
+                        idiomas.Add(idioma);
+                    }
+                }
+
+                return idiomas;
+            }
+            catch (Exception ex)
+            {
+
+                FacadeService.ManageException(new DALException(ex));
+                return null;
+            }
+
+        }
         public IEnumerable<String> GetAllRoles() {
             try { 
                 List<String> roles = new List<String>();

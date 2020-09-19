@@ -98,3 +98,4 @@ C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Rivero
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ListarUsuariosForm.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DalTest.dll
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DalTest.pdb
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.TrackingForm.resources

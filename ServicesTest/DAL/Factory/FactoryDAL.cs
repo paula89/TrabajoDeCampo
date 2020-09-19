@@ -85,7 +85,13 @@ namespace ServicesTest.DAL.Factory
 
             return instancia as UsersRepository;
         }
+        public TrackingRepository GetTrackingRepository()
+        {
+            string nombreNamespaceClaseAccesoDatos = ConfigurationManager.AppSettings["AccesoDatos"] + ".TrackingRepository";
+            object instancia = Activator.CreateInstance(Type.GetType(nombreNamespaceClaseAccesoDatos));
 
+            return instancia as TrackingRepository;
+        }
 
 
     }

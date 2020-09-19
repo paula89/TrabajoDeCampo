@@ -60,6 +60,7 @@ namespace TC_Riveros_Paula
                 this.SeguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
                 this.BitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
                 this.BackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+                this.TrackingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             }
            
 
@@ -280,7 +281,7 @@ namespace TC_Riveros_Paula
                 // SeguridadToolStripMenuItem
                 // 
                 this.SeguridadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-                this.BitacoraToolStripMenuItem, this.BackupToolStripMenuItem});
+                this.BitacoraToolStripMenuItem, this.BackupToolStripMenuItem,this.TrackingToolStripMenuItem});
                 this.SeguridadToolStripMenuItem.Name = "SeguridadToolStripMenuItem";
                 this.SeguridadToolStripMenuItem.Size = new System.Drawing.Size(151, 20);
                 this.SeguridadToolStripMenuItem.Text = "SeguridadStripMenuItem";
@@ -298,7 +299,13 @@ namespace TC_Riveros_Paula
                 this.BackupToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
                 this.BackupToolStripMenuItem.Text = "BackupStripMenuItem";
                 this.BackupToolStripMenuItem.Click += new System.EventHandler(this.BackupToolStripMenuItem_Click);
-
+                //
+                //Tracking
+                //
+                this.TrackingToolStripMenuItem.Name = "TrackingToolStripMenuItem";
+                this.TrackingToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+                this.TrackingToolStripMenuItem.Text = "TrackingStripMenuItem";
+                this.TrackingToolStripMenuItem.Click += new System.EventHandler(this.TrackingToolStripMenuItem_Click);
             }
 
             // 
@@ -362,7 +369,7 @@ namespace TC_Riveros_Paula
         private System.Windows.Forms.ToolStripMenuItem SeguridadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem BitacoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem BackupToolStripMenuItem;
-
+        private System.Windows.Forms.ToolStripMenuItem TrackingToolStripMenuItem;
 
     }
 }

@@ -637,6 +637,15 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Tracking DataBase.
+        /// </summary>
+        public static string TrackingToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("TrackingToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a User Management.
         /// </summary>
         public static string UsuariosForm {
