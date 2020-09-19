@@ -33,6 +33,10 @@ namespace ServicesTest.BLL
         {
             return instancia.GetUsersRepository().Insert(usuario);
         }
+        public int ActualizarUsuario(Usuario usuario)
+        {
+            return instancia.GetUsersRepository().Update(usuario);
+        }
 
         public int RegistrarDVV(decimal DVV) {
             return instancia.GetUsersRepository().UpdateDVV(DVV);

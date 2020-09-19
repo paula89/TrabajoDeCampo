@@ -33,7 +33,10 @@ namespace ServicesTest.Facade
         {
             BackupManager.Current.Registrar();
         }
-
+        public static int ActualizarUsuario(Usuario usuario)
+        {
+            return UsersManager.Current.ActualizarUsuario(usuario);
+        }
         public static int RegistrarUsuario(Usuario usuario) 
         {
             return UsersManager.Current.RegistrarUsuario(usuario);

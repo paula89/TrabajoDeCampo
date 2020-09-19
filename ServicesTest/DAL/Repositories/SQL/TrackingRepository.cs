@@ -71,7 +71,7 @@ namespace ServicesTest.DAL.Repositories.SQL
             throw new NotImplementedException();
         }
 
-        public void Update(Tracking o)
+        public int Update(Tracking o)
         {
             throw new NotImplementedException();
         }

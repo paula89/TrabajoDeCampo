@@ -57,6 +57,7 @@ namespace TC_Riveros_Paula
                 this.UsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
                 this.MenuItemNuevoUsuario = new System.Windows.Forms.ToolStripMenuItem();
                 this.MenuItemVerUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+                this.MenuItemActualizarUsuario = new System.Windows.Forms.ToolStripMenuItem();
                 this.SeguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
                 this.BitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
                 this.BackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -260,12 +261,10 @@ namespace TC_Riveros_Paula
                 //UsuariosToolStripMenuItem
                 //
                 this.UsuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-                this.MenuItemNuevoUsuario, this.MenuItemVerUsuarios });
+                this.MenuItemNuevoUsuario, this.MenuItemVerUsuarios, this.MenuItemActualizarUsuario });
                 this.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem";
                 this.UsuariosToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
                 this.UsuariosToolStripMenuItem.Text = "UsuariosToolStripMenuItem";
-
-
 
                 this.MenuItemNuevoUsuario.Name = "NuevoUsuarioToolStripMenuItem";
                 this.MenuItemNuevoUsuario.Size = new System.Drawing.Size(196, 22);
@@ -277,6 +276,12 @@ namespace TC_Riveros_Paula
                 this.MenuItemVerUsuarios.Text = "VerUsuarioStripMenuItem";
                 this.MenuItemVerUsuarios.Click += new System.EventHandler(this.VerUsuariosToolStripMenuItem_Click);
 
+                this.MenuItemActualizarUsuario.Name = "MenuItemActualizarUsuario";
+                this.MenuItemActualizarUsuario.Size = new System.Drawing.Size(196, 22);
+                this.MenuItemActualizarUsuario.Text = "MenuItemActualizarUsuario";
+                this.MenuItemActualizarUsuario.Click += new System.EventHandler(this.MenuItemActualizarUsuario_Click);
+
+                
                 // 
                 // SeguridadToolStripMenuItem
                 // 
@@ -366,6 +371,7 @@ namespace TC_Riveros_Paula
         private System.Windows.Forms.ToolStripMenuItem UsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuItemNuevoUsuario;
         private System.Windows.Forms.ToolStripMenuItem MenuItemVerUsuarios;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemActualizarUsuario;
         private System.Windows.Forms.ToolStripMenuItem SeguridadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem BitacoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem BackupToolStripMenuItem;

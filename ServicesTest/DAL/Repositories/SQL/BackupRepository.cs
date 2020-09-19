@@ -105,7 +105,7 @@ namespace ServicesTest.DAL.Repositories.SQL
         }
 
 
-        public void Update(Backup o)
+        public int Update(Backup o)
         {
             throw new NotImplementedException();
         }

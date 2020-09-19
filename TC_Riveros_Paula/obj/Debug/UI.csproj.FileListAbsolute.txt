@@ -60,16 +60,6 @@ C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCam
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\es-ES\ServicesTest.resources.dll
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.BackupForm.resources
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.StartForm.resources
-C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\TC_Riveros_Paula.exe.config
-C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\TC_Riveros_Paula.exe
-C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\TC_Riveros_Paula.pdb
-C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\BLLTest.dll
-C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DomainTest.dll
-C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\ServicesTest.dll
-C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\BLLTest.pdb
-C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DomainTest.pdb
-C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\ServicesTest.pdb
-C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\es-ES\ServicesTest.resources.dll
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\UI.csprojAssemblyReference.cache
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.BackupForm.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.FormBitacora.resources
@@ -81,6 +71,7 @@ C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Rivero
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ListarHerramientasForm.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ListarPromocionesForm.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ListarMateriaPrimaForm.resources
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ListarUsuariosForm.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.NuevaHerramientaForm.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.NuevaPromocionForm.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.NuevaVentaForm.resources
@@ -89,13 +80,23 @@ C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Rivero
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.Properties.Resources.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ReporteVentasForm.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.StartForm.resources
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.TrackingForm.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.UsuariosForm.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\UI.csproj.GenerateResource.cache
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\UI.csproj.CoreCompileInputs.cache
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\TC_Riveros_Paula.exe.config
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\TC_Riveros_Paula.exe
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\TC_Riveros_Paula.pdb
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\BLLTest.dll
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DomainTest.dll
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\ServicesTest.dll
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DalTest.dll
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\BLLTest.pdb
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DomainTest.pdb
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\ServicesTest.pdb
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DalTest.pdb
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\es-ES\ServicesTest.resources.dll
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\UI.csproj.CopyComplete
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.exe
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.pdb
-C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ListarUsuariosForm.resources
-C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DalTest.dll
-C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DalTest.pdb
-C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.TrackingForm.resources
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ActualizarUsuarioForm.resources

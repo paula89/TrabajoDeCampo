@@ -12,6 +12,7 @@ using System.Linq;
 using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -85,17 +86,12 @@ namespace TC_Riveros_Paula
         {
             Usuario usuario = CrearUsuario();
 
-            bool valido = ValidarUsuario(usuario);
+            bool valido = ValidarUsuario();
             if (valido)
             {
                 RegistrarUsuario(usuario);
                 this.Close();
             }
-            else
-            {
-                MessageBox.Show("Debe completar todos los campos");
-            }
-
         }
 
 
@@ -129,12 +125,71 @@ namespace TC_Riveros_Paula
                 return usuario;
             }
         }
-        private bool ValidarUsuario(Usuario usuario) {
+        private bool ValidarUsuario()
+        {
+            if (textBoxCodUsuario.Text.Length == 0 || txtNombre.Text.Length == 0 || txtApellido.Text.Length == 0 || txtDireccion.Text.Length == 0 ||
+                txtEmail.Text.Length == 0 || txtTelefono.Text.Length == 0 || txtPassword.Text.Length == 0)
+            {
+                MessageBox.Show("Debe completar todos los campos obligatorios.", "", MessageBoxButtons.OK);
+                return false;
+            }
+            else
+            {
+                string pattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|" + @"([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)" + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
+                var regex = new Regex(pattern, RegexOptions.IgnoreCase);
+
+                if (!regex.IsMatch(txtEmail.Text))
+                {
+                    MessageBox.Show("Debe ingresa un mail valido", "Error", MessageBoxButtons.OK);
+                    return false;
+                }
+                if (!Regex.IsMatch(txtNombre.Text, @"^[a-zA-Z\s]+$"))
+                {
+                    MessageBox.Show("Debe ingresa un nombre valido", "Error", MessageBoxButtons.OK);
+                    return false;
+                }
+                if (!Regex.IsMatch(txtApellido.Text, @"^[a-zA-Z\s]+$"))
+                {
+                    MessageBox.Show("Debe ingresa un apellido valido", "Error", MessageBoxButtons.OK);
+                    return false;
+                }
+                if (!Regex.IsMatch(txtDireccion.Text, @"^[A-Za-z0-9\s]+$"))
+                {
+                    MessageBox.Show("Debe ingresa una direccion valida", "Error", MessageBoxButtons.OK);
+                    return false;
+                }
+                if (!Regex.IsMatch(txtTelefono.Text, @"^[0-9\s]+$"))
+                {
+                    MessageBox.Show("Debe ingresa un telefono valido", "Error", MessageBoxButtons.OK);
+                    return false;
+                }
+                if (txtPassword.Text != txtPassword2.Text)
+                {
+                    MessageBox.Show("Las contraseñas no coinciden", "Error", MessageBoxButtons.OK);
+                    return false;
+                }
+                bool userValidRegex = Regex.IsMatch(textBoxCodUsuario.Text, @"^[A-Za-z0-9]+$");
+                if (!userValidRegex)
+                {
+                    MessageBox.Show("Debe ingresa un codigo de usuario valido", "Error", MessageBoxButtons.OK);
+                    return false;
+                }
+                else {
+                    string nombre = this.textBoxCodUsuario.Text;
+                    String[] filtros = new string[] { nombre };
+                    IEnumerable<Usuario> usuarios = UsersManager.Current.ListarUsuariosFilter(filtros);
+                    if (usuarios.Count() > 0) {
+                        MessageBox.Show("El usuario ya existe", "Error", MessageBoxButtons.OK);
+                        return false;
+                    }
+                }
+                
+            }
 
             return true;
 
         }
-        
+
         private static void RegistrarUsuario(Usuario usuario) {
             try
             {
@@ -180,6 +235,16 @@ namespace TC_Riveros_Paula
                     RecorrerListado(value.Permisos, separator);
                 }
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void textBoxCodUsuario_TextChanged(object sender, EventArgs e)
+        {
+            textBoxCodUsuario.CharacterCasing = CharacterCasing.Upper;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace ServicesTest.DAL.Contracts
         {
             int Insert(T o);
 
-            void Update(T o);
+            int Update(T o);
 
             void Delete(Guid id);
 

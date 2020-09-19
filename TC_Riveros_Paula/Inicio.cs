@@ -171,6 +171,12 @@ namespace TC_Riveros_Paula
             ListarUsuariosForm usuarios = new ListarUsuariosForm(idioma);
             usuarios.ShowDialog();
         }
+        private void MenuItemActualizarUsuario_Click(object sender, EventArgs e)
+        {
+            ActualizarUsuarioForm actualizarUsuarios = new ActualizarUsuarioForm(idioma);
+            actualizarUsuarios.ShowDialog();
+        }
+        
         private void BitacoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormBitacora bitacora = new FormBitacora(idioma);

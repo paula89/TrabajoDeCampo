@@ -55,15 +55,18 @@ namespace DALTest.Repositories.SQL
                     parametros.Add(new SqlParameter("@FechaVencimiento", Convert.ToDateTime(filtros.GetValue(0))));
                     if (filtros.GetValue(1).ToString() != "")
                     {
-                        parametros.Add(new SqlParameter("@Nombre", filtros.GetValue(0)));
-                        statement = statement + "AND Nombre LIKE '%@Nombre%'";
-                    }
-                    if (filtros.GetValue(2).ToString() != "")
+                        parametros.Add(new SqlParameter("@Nombre", filtros.GetValue(1)));
+                        statement = statement + "AND Nombre = @Nombre ";
+                    //statement = statement + "AND Nombre LIKE '%@Nombre%'";
+                }
+                if (filtros.GetValue(2).ToString() != "")
                     {
-                        parametros.Add(new SqlParameter("@Proveedor", filtros.GetValue(0)));
-                        statement = statement + "AND Proveedor LIKE '%@Proveedor%'";
-                    }
-                
+                        parametros.Add(new SqlParameter("@Proveedor", filtros.GetValue(2)));
+                        statement = statement + "AND Proveedor = @Proveedor";
+                    // statement = statement + "AND Proveedor LIKE '%@Proveedor%'";
+
+                }
+
                 System.Console.WriteLine(statement);
                 System.Console.WriteLine(parametros.ToArray().ToString());
 

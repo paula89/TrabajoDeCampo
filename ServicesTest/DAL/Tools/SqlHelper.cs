@@ -78,7 +78,53 @@ namespace ServicesTest.DAL.Tools
             }
             
         }
+        public static Int32 ExecuteNonQueryUpdateUser(String commandText,
+            CommandType commandType, string connection, Usuario parameters)
+        {
+            SqlConnection conn = getConnection(connection);
+            int response = 0;
 
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = commandText;
+                cmd.CommandType = commandType;
+                cmd.Parameters.Add(new SqlParameter("@Nombre", parameters.Nombre));
+                cmd.Parameters.Add(new SqlParameter("@Apellido", parameters.Apellido));
+                cmd.Parameters.Add(new SqlParameter("@Direccion", parameters.Direccion));
+                cmd.Parameters.Add(new SqlParameter("@Telefono", parameters.Telefono));
+                cmd.Parameters.Add(new SqlParameter("@Email", parameters.Email));
+                cmd.Parameters.Add(new SqlParameter("@Contraseña", parameters.Password));
+                cmd.Parameters.Add(new SqlParameter("@Hablitado", Convert.ToByte(parameters.Habilitado)));
+                cmd.Parameters.Add(new SqlParameter("@DVH", parameters.DVH));
+                cmd.Parameters.Add(new SqlParameter("@Usuario", parameters.Cod_Usuario));
+
+                String permiso = "";
+                foreach (var item in parameters.Permisos)
+                {
+                    permiso = permiso + item.Nombre + " ";
+                }
+                cmd.Parameters.AddWithValue("Permisos", permiso);
+
+
+
+                response = cmd.ExecuteNonQuery();
+
+                conn.Close();
+                cmd.Dispose();
+
+                return response;
+            }
+            catch (Exception ex)
+            {
+                FacadeService.ManageException(new DALException(ex));
+                return response;
+            }
+
+        }
         public static Int32 ExecuteNonQueryUpdateDVV(String commandText,
             CommandType commandType, string connection, string parameters)
         {

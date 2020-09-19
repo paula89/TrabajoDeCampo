@@ -37,8 +37,8 @@ namespace TC_Riveros_Paula
             try {
                 MateriaPrima materiaPrima = new MateriaPrima();
                 string desde = this.dateTimePickerVencimientoHasta.Value.ToString();
-                string nombre = textBoxNombre.Text;
-                string proveedor = textBoxProveedor.Text;
+                string nombre = textBoxNombre.Text.Trim();
+                string proveedor = textBoxProveedor.Text.Trim();
                 String[] filtros = new string[] { desde, nombre, proveedor };
                 CargarTabla(filtros);
             }

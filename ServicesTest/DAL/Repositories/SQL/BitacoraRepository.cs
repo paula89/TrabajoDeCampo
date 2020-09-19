@@ -111,7 +111,7 @@ namespace ServicesTest.DAL.Repositories.SQL
             return inserted;            
         }
 
-        public void Update(Bitacora o)
+        public int Update(Bitacora o)
         {
             throw new NotImplementedException();
         }

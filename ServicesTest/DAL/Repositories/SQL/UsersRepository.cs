@@ -30,6 +30,20 @@ namespace ServicesTest.DAL.Repositories.SQL
             get => "INSERT INTO [dbo].[Usuarios] (Usuario, Nombre, Apellido, Direccion, Telefono, Email, Contraseña, Permisos, FechaAlta, Habilitado, DVH)" +
                 " VALUES (@Usuario, @Nombre, @Apellido, @Direccion, @Telefono, @Email, @Contraseña, @Permisos, @FechaAlta, @Habilitado, @DVH)";
         }
+        private string UpdateUserStatement
+        {
+            get => "UPDATE [dbo].[Usuarios] " +
+                "SET Nombre = @Nombre, " +
+                "Apellido = @Apellido, " +
+                "Direccion = @Direccion, " +
+                "Telefono = @Telefono, " +
+                "Email = @Email, " +
+                "Contraseña = @Contraseña, " +
+                "Permisos = @Permisos, " +
+                "Habilitado = @Hablitado, " +
+                "DVH = @DVH " +
+                "WHERE Usuario = @Usuario";
+        }
         private string LoginSelectStatement
         {
             get => "SELECT Usuario, Nombre, Permisos, FechaAlta, DVH FROM [dbo].[Usuarios] " +
@@ -40,14 +54,14 @@ namespace ServicesTest.DAL.Repositories.SQL
 
         private string LoginSelectFilterStatement
         {
-            get => "SELECT Usuario, Nombre, Apellido, Direccion, Telefono, Email, Permisos, FechaAlta, Habilitado" +
+            get => "SELECT Usuario, Nombre, Apellido, Direccion, Telefono, Email, Permisos, FechaAlta, Habilitado, DVH, Contraseña" +
                 " FROM [dbo].[Usuarios] " +
                 "WHERE Usuario = @Usuario ";
         }
 
         private string SelectFilterStatement
         {
-            get => "SELECT Usuario, Nombre, Apellido, Direccion, Telefono, Email, Permisos, FechaAlta, Habilitado" +
+            get => "SELECT Usuario, Nombre, Apellido, Direccion, Telefono, Email, Permisos, FechaAlta, Habilitado, DVH, Contraseña" +
                 " FROM [dbo].[Usuarios] " +
                 "WHERE FechaAlta >= @FechaAltaDesde " +
                 "AND FechaAlta <= @FechaAltaHasta ";                
@@ -246,9 +260,10 @@ namespace ServicesTest.DAL.Repositories.SQL
             return updated;
         }
 
-        public void Update(Usuario usuario)
+        public int Update(Usuario usuario)
         {
-            throw new NotImplementedException();
+            int updated = SqlHelper.ExecuteNonQueryUpdateUser(UpdateUserStatement, System.Data.CommandType.Text, "security",usuario);
+            return updated;
         }
 
         public IEnumerable<Usuario> GetAll(Array filtros)
@@ -301,6 +316,8 @@ namespace ServicesTest.DAL.Repositories.SQL
                         usuario.Permisos.Add(familia);
                         usuario.FechaAlta = Convert.ToDateTime(values[7].ToString());
                         usuario.Habilitado = Convert.ToBoolean(values[8]);
+                        usuario.DVH = Convert.ToDecimal(values[9]);
+                        usuario.Password = values[10].ToString();
                         usuarios.Add(usuario);
                     }
 
