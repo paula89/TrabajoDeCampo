@@ -21,16 +21,41 @@ namespace TC_Riveros_Paula
     {
         static decimal actualDVH;
         IEnumerable<Usuario> usuarios;
+        ResourceManager language;
+
         public ActualizarUsuarioForm(ResourceManager idioma)
         {
             InitializeComponent();
-            CargarTraducciones(idioma);
-            this.Text = idioma.GetString("ActualizarUsuarioForm");
+            language = idioma;
+            CargarTraducciones();
+            this.Text = language.GetString("ActualizarUsuarioForm");
             btnActualizar.Enabled = false;
         }
-        private void CargarTraducciones(ResourceManager idioma)
+        private void CargarTraducciones()
         {
-            
+            try
+            {
+                lblCodUsuario.Text = language.GetString("lblCodUsuario");
+                lblNombre.Text = language.GetString("labelNombre");
+                lblApellido.Text = language.GetString("lblApellido");
+                lblDireccion.Text = language.GetString("lblDireccion");
+                lblEmail.Text = language.GetString("lblEmail");
+                lblPassword.Text = language.GetString("lblPassword");
+                lblPassword2.Text = language.GetString("lblPassword2");
+                lblTelefono.Text = language.GetString("lblTelefono");
+                lblRoles.Text = language.GetString("lblRoles");
+                lblRolActual.Text = language.GetString("lblRolActual");
+
+                checkBoxHabilitado.Text = language.GetString("checkBoxHabilitado");
+                btnActualizar.Text = language.GetString("btnActualizar");
+                btnCancelar.Text = language.GetString("btnCancelar");
+                btnBuscar.Text = language.GetString("btnBuscar");
+            }
+            catch (UIException ex)
+            {
+                FacadeService.ManageException(ex);
+                System.Console.WriteLine("Error al cargar las traducciones : " + ex.Message);
+            }
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -40,7 +65,6 @@ namespace TC_Riveros_Paula
         }
         private void CargarTabla(String[] filtros)
         {
-
             try
             {
                 usuarios = UsersManager.Current.ObtenerUsuariosLogin(filtros);
@@ -54,23 +78,31 @@ namespace TC_Riveros_Paula
                         textBoxTelefono.Text = item.Telefono;
                         textBoxDireccion.Text = item.Direccion;
                         checkBoxHabilitado.Checked = item.Habilitado;
-                        String permiso = "";
-                        foreach (var permisos in item.Permisos)
-                        {
-                            permiso = permiso + permisos.Nombre + " ";
-                        }
-                        textBoxRolActual.Text = permiso;
+                        RecorrerListado(item.Permisos); // rol actual
                         actualDVH = item.DVH;
                     }
                     CargarRoles();
                     btnActualizar.Enabled = true;
-
                 }
             }
             catch (UIException ex)
             {
                 FacadeService.ManageException(ex);
-
+            }
+        }
+        private void RecorrerListado(List<FamiliaComponent> permisos, string separator = "")
+        {
+            separator = separator + "-";
+            foreach (var item in permisos)
+            {
+                if (item.GetChilds() == 0) {  
+                    textBoxRolActual.Text = item.Nombre; 
+                }
+                else
+                {
+                    dynamic value = item;
+                    RecorrerListado(value.Permisos, separator);
+                }
             }
         }
         private void CargarRoles()
@@ -102,9 +134,8 @@ namespace TC_Riveros_Paula
                 ActualizarUsuario(usuario);
                 this.Close();
             }
-            
         }
-        private static void ActualizarUsuario(Usuario usuario)
+        private void ActualizarUsuario(Usuario usuario)
         {
             try
             {
@@ -112,18 +143,17 @@ namespace TC_Riveros_Paula
                 if (result == 1)
                 {
                     RegistrarDVV(usuario.DVH);
-                    MessageBox.Show("El Usuario fue actualizado exitosamente", "OK", MessageBoxButtons.OK);
+                    MessageBox.Show(language.GetString("MsgOkUserActualizar"), "OK", MessageBoxButtons.OK);
                 }
                 else
                 {
-                    MessageBox.Show("El usuario no pudo actualizarse", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show(language.GetString("MsgErrorUserActualizar"), "Error", MessageBoxButtons.OK);
                 }
             }
             catch (Exception ex)
             {
                 FacadeService.ManageException(new UIException(ex));
             }
-
         }
         private static int RegistrarDVV(decimal DVH)
         {
@@ -144,7 +174,7 @@ namespace TC_Riveros_Paula
             if (textBoxNombre.Text.Length == 0 || textBoxApellido.Text.Length == 0 || textBoxDireccion.Text.Length == 0 ||
                 textBoxEmail.Text.Length == 0 || textBoxTelefono.Text.Length == 0)
             {
-                MessageBox.Show("Debe completar todos los campos obligatorios.", "", MessageBoxButtons.OK);
+                MessageBox.Show(language.GetString("MsgErrorCamposObligatorios"), language.GetString("Error"), MessageBoxButtons.OK);
                 return false;
             }
             else { 
@@ -152,32 +182,32 @@ namespace TC_Riveros_Paula
                 var regex = new Regex(pattern, RegexOptions.IgnoreCase);
 
                 if (!regex.IsMatch(textBoxEmail.Text)) {
-                    MessageBox.Show("Debe ingresa un mail valido", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show(language.GetString("MsgErrorEmail"), language.GetString("Error"), MessageBoxButtons.OK);
                     return false;
                 } 
                 if (!Regex.IsMatch(textBoxNombre.Text, @"^[a-zA-Z\s]+$"))
                 {
-                    MessageBox.Show("Debe ingresa un nombre valido", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show(language.GetString("MsgErrorNombre"), language.GetString("Error"), MessageBoxButtons.OK);
                     return false;
                 }
                 if (!Regex.IsMatch(textBoxApellido.Text, @"^[a-zA-Z\s]+$"))
                 {
-                    MessageBox.Show("Debe ingresa un apellido valido", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show(language.GetString("MsgErrorApellido"), language.GetString("Error"), MessageBoxButtons.OK);
                     return false;
                 }
                 if (!Regex.IsMatch(textBoxDireccion.Text, @"^[A-Za-z0-9\s]+$"))
                 {
-                    MessageBox.Show("Debe ingresa una direccion valida", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show(language.GetString("MsgErrorDireccion"), language.GetString("Error"), MessageBoxButtons.OK);
                     return false;
                 }
                 if (!Regex.IsMatch(textBoxTelefono.Text, @"^[0-9\s]+$"))
                 {
-                    MessageBox.Show("Debe ingresa un telefono valido", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show(language.GetString("MsgErrorTelefono"), language.GetString("Error"), MessageBoxButtons.OK);
                     return false;
                 }
                 if (textBoxPassword.Text != textBoxPassword2.Text)
                 {
-                    MessageBox.Show("Las contraseñas no coinciden", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show(language.GetString("MsgErrorPassword"), language.GetString("Error"), MessageBoxButtons.OK);
                     return false;
                 }
             }

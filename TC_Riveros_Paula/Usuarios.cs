@@ -20,10 +20,13 @@ namespace TC_Riveros_Paula
 {
     public partial class UsuariosForm : Form
     {
+        ResourceManager language;
         public UsuariosForm(ResourceManager idioma)
         {
             InitializeComponent();
-            CargarTraducciones(idioma);
+            language = idioma;
+            this.Text = language.GetString("UsuariosForm");
+            CargarTraducciones();
             CargarRoles();
         }
 
@@ -43,22 +46,22 @@ namespace TC_Riveros_Paula
         
         
         }
-        private void CargarTraducciones(ResourceManager idioma)
+        private void CargarTraducciones()
         {
             try
             {
-                lblCodUsuario.Text = idioma.GetString("lblCodUsuario");
-                labelNombre.Text = idioma.GetString("labelNombre");
-                lblApellido.Text = idioma.GetString("lblApellido");
-                lblDireccion.Text = idioma.GetString("lblDireccion");
-                lblEmail.Text = idioma.GetString("lblEmail");
-                lblPassword.Text = idioma.GetString("lblPassword");
-                lblPassword2.Text = idioma.GetString("lblPassword2");
-                lblTelefono.Text = idioma.GetString("lblTelefono");
-                lblRoles.Text = idioma.GetString("lblRoles");
+                lblCodUsuario.Text = language.GetString("lblCodUsuario");
+                labelNombre.Text = language.GetString("labelNombre");
+                lblApellido.Text = language.GetString("lblApellido");
+                lblDireccion.Text = language.GetString("lblDireccion");
+                lblEmail.Text = language.GetString("lblEmail");
+                lblPassword.Text = language.GetString("lblPassword");
+                lblPassword2.Text = language.GetString("lblPassword2");
+                lblTelefono.Text = language.GetString("lblTelefono");
+                lblRoles.Text = language.GetString("lblRoles");
 
-                btnAceptar.Text = idioma.GetString("btnAceptar");
-                btnCancelar.Text = idioma.GetString("btnCancelar");
+                btnAceptar.Text = language.GetString("btnAceptar");
+                btnCancelar.Text = language.GetString("btnCancelar");
 
             }
             catch (UIException ex)
@@ -130,7 +133,7 @@ namespace TC_Riveros_Paula
             if (textBoxCodUsuario.Text.Length == 0 || txtNombre.Text.Length == 0 || txtApellido.Text.Length == 0 || txtDireccion.Text.Length == 0 ||
                 txtEmail.Text.Length == 0 || txtTelefono.Text.Length == 0 || txtPassword.Text.Length == 0)
             {
-                MessageBox.Show("Debe completar todos los campos obligatorios.", "", MessageBoxButtons.OK);
+                MessageBox.Show(language.GetString("MsgErrorCamposObligatorios"), language.GetString("Error"), MessageBoxButtons.OK);
                 return false;
             }
             else
@@ -140,38 +143,38 @@ namespace TC_Riveros_Paula
 
                 if (!regex.IsMatch(txtEmail.Text))
                 {
-                    MessageBox.Show("Debe ingresa un mail valido", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show(language.GetString("MsgErrorEmail"), language.GetString("Error"), MessageBoxButtons.OK);
                     return false;
                 }
                 if (!Regex.IsMatch(txtNombre.Text, @"^[a-zA-Z\s]+$"))
                 {
-                    MessageBox.Show("Debe ingresa un nombre valido", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show(language.GetString("MsgErrorNombre"), language.GetString("Error"), MessageBoxButtons.OK);
                     return false;
                 }
                 if (!Regex.IsMatch(txtApellido.Text, @"^[a-zA-Z\s]+$"))
                 {
-                    MessageBox.Show("Debe ingresa un apellido valido", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show(language.GetString("MsgErrorApellido"), language.GetString("Error"), MessageBoxButtons.OK);
                     return false;
                 }
                 if (!Regex.IsMatch(txtDireccion.Text, @"^[A-Za-z0-9\s]+$"))
                 {
-                    MessageBox.Show("Debe ingresa una direccion valida", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show(language.GetString("MsgErrorDireccion"), language.GetString("Error"), MessageBoxButtons.OK);
                     return false;
                 }
                 if (!Regex.IsMatch(txtTelefono.Text, @"^[0-9\s]+$"))
                 {
-                    MessageBox.Show("Debe ingresa un telefono valido", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show(language.GetString("MsgErrorTelefono"), language.GetString("Error"), MessageBoxButtons.OK);
                     return false;
                 }
                 if (txtPassword.Text != txtPassword2.Text)
                 {
-                    MessageBox.Show("Las contraseñas no coinciden", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show(language.GetString("MsgErrorPassword"), language.GetString("Error"), MessageBoxButtons.OK);
                     return false;
                 }
                 bool userValidRegex = Regex.IsMatch(textBoxCodUsuario.Text, @"^[A-Za-z0-9]+$");
                 if (!userValidRegex)
                 {
-                    MessageBox.Show("Debe ingresa un codigo de usuario valido", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show(language.GetString("MsgErrorUser"), language.GetString("Error"), MessageBoxButtons.OK);
                     return false;
                 }
                 else {
@@ -179,29 +182,26 @@ namespace TC_Riveros_Paula
                     String[] filtros = new string[] { nombre };
                     IEnumerable<Usuario> usuarios = UsersManager.Current.ListarUsuariosFilter(filtros);
                     if (usuarios.Count() > 0) {
-                        MessageBox.Show("El usuario ya existe", "Error", MessageBoxButtons.OK);
+                        MessageBox.Show(language.GetString("MsgErrorUserExiste"), language.GetString("Error"), MessageBoxButtons.OK);
                         return false;
                     }
                 }
-                
             }
-
             return true;
-
         }
 
-        private static void RegistrarUsuario(Usuario usuario) {
+        private void RegistrarUsuario(Usuario usuario) {
             try
             {
                 int result = FacadeService.RegistrarUsuario(usuario);
                 if (result == 1)
                 {
                     RegistrarDVV(usuario.DVH);
-                    MessageBox.Show("El Usuario fue registrado exitosamente", "OK", MessageBoxButtons.OK);
+                    MessageBox.Show(language.GetString("MsgOkUserRegister"), "OK", MessageBoxButtons.OK);
                 }
                 else
                 {
-                    MessageBox.Show("El usuario no pudo registrarse","Error", MessageBoxButtons.OK);
+                    MessageBox.Show(language.GetString("MsgErrorUserRegister"), language.GetString("Error"), MessageBoxButtons.OK);
                 }
             }
             catch (Exception ex)

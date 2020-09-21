@@ -321,4 +321,103 @@
   <data name="TrackingToolStripMenuItem" xml:space="preserve">
     <value>Tracking de Base de datos</value>
   </data>
+  <data name="ActualizarUsuarioForm" xml:space="preserve">
+    <value>Actualizar Usuario</value>
+  </data>
+  <data name="btnActualizar" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
+  <data name="checkBoxHabilitado" xml:space="preserve">
+    <value>Habilitado</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="InicioSesionForm" xml:space="preserve">
+    <value>Iniciar sesion</value>
+  </data>
+  <data name="labelCantidad" xml:space="preserve">
+    <value>Cantidad en kilos</value>
+  </data>
+  <data name="labelMarca" xml:space="preserve">
+    <value>Marca</value>
+  </data>
+  <data name="labelVencimiento" xml:space="preserve">
+    <value>Fecha de vencimiento</value>
+  </data>
+  <data name="lblIdioma" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="lblRolActual" xml:space="preserve">
+    <value>Rol actual</value>
+  </data>
+  <data name="lblRoles" xml:space="preserve">
+    <value>Rol</value>
+  </data>
+  <data name="MenuItemActualizarUsuario" xml:space="preserve">
+    <value>Actualizar Usuario</value>
+  </data>
+  <data name="MsgErrorApellido" xml:space="preserve">
+    <value>Debe ingresa un apellido valido</value>
+  </data>
+  <data name="MsgErrorCamposObligatorios" xml:space="preserve">
+    <value>Debe completar todos los campos obligatorios</value>
+  </data>
+  <data name="MsgErrorCantidad" xml:space="preserve">
+    <value>Debe ingresar una cantidad valida</value>
+  </data>
+  <data name="MsgErrorCompletarLogin" xml:space="preserve">
+    <value>Debe ingresar usuario y contraseña para iniciar sesion en el sistema</value>
+  </data>
+  <data name="MsgErrorDireccion" xml:space="preserve">
+    <value>Debe ingresa una direccion valida</value>
+  </data>
+  <data name="MsgErrorEmail" xml:space="preserve">
+    <value>Debe ingresa un mail valido</value>
+  </data>
+  <data name="MsgErrorIntegridad" xml:space="preserve">
+    <value>Error de integridad en la base de datos. Comuniquese con el administrador del sistema.</value>
+  </data>
+  <data name="MsgErrorLogin" xml:space="preserve">
+    <value>El usuario y/o contraseña no son correctos</value>
+  </data>
+  <data name="MsgErrorMarca" xml:space="preserve">
+    <value>Debe ingresar una marca valida</value>
+  </data>
+  <data name="MsgErrorMPRegister" xml:space="preserve">
+    <value>Error al registrar la materia prima</value>
+  </data>
+  <data name="MsgErrorNombre" xml:space="preserve">
+    <value>Debe ingresa un nombre valido</value>
+  </data>
+  <data name="MsgErrorPassword" xml:space="preserve">
+    <value>Las contraseñas no coinciden</value>
+  </data>
+  <data name="MsgErrorProveedor" xml:space="preserve">
+    <value>Debe ingresar un proveedor valido</value>
+  </data>
+  <data name="MsgErrorTelefono" xml:space="preserve">
+    <value>Debe ingresa un telefono valido</value>
+  </data>
+  <data name="MsgErrorUser" xml:space="preserve">
+    <value>Debe ingresa un codigo de usuario valido</value>
+  </data>
+  <data name="MsgErrorUserActualizar" xml:space="preserve">
+    <value>El usuario no pudo actualizarse</value>
+  </data>
+  <data name="MsgErrorUserExiste" xml:space="preserve">
+    <value>El codigo de usuario ya existe.</value>
+  </data>
+  <data name="MsgErrorUserRegister" xml:space="preserve">
+    <value>El usuario no pudo registrarse</value>
+  </data>
+  <data name="MsgOkMPRegister" xml:space="preserve">
+    <value>Materia Prima registrada exitosamente</value>
+  </data>
+  <data name="MsgOkUserActualizar" xml:space="preserve">
+    <value>El Usuario fue actualizado exitosamente</value>
+  </data>
+  <data name="MsgOkUserRegister" xml:space="preserve">
+    <value>El Usuario fue registrado exitosamente</value>
+  </data>
 </root>

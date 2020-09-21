@@ -4,6 +4,7 @@ using DomainTest;
 using ServicesTest.Domain.Exceptions;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -100,16 +101,15 @@ namespace DALTest.Repositories.SQL
     
 
 
-        public IEnumerable<MateriaPrima> GetAll()
+        public List<MateriaPrima> GetAll()
         {
             try
             {
                 List<MateriaPrima> materiaPrimas = new List<MateriaPrima>();
-                string statement = SelectAllStatement;               
-
+                string statement = SelectAllStatement;
                 System.Console.WriteLine(statement);
 
-                using (var dr = SqlHelper.ExecuteReader(statement, System.Data.CommandType.Text, "security"))
+                using (SqlDataReader dr = SqlHelper.ExecuteReader(statement, System.Data.CommandType.Text, "security"))
                 {
                     Object[] values = new Object[dr.FieldCount];
                     while (dr.Read())
@@ -129,6 +129,7 @@ namespace DALTest.Repositories.SQL
                         materiaPrimas.Add(materiaPrima);
                     }
                 }
+                
                 return materiaPrimas;
             }
             catch (Exception ex)

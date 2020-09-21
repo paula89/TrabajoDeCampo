@@ -29,7 +29,9 @@ namespace TC_Riveros_Paula
             CargarTraducciones(idioma, permiso);
             RegistrarBackup();
        }
-
+        /// <summary>
+        /// Regiter a backup automatically when the system init 
+        /// </summary>
         private void RegistrarBackup() {
             FacadeService.ManageBackup();
         }
@@ -71,6 +73,7 @@ namespace TC_Riveros_Paula
                     BackupToolStripMenuItem.Text = idioma.GetString("BackupToolStripMenuItem");
                     MenuItemNuevoUsuario.Text = idioma.GetString("MenuItemNuevoUsuario"); 
                     MenuItemVerUsuarios.Text = idioma.GetString("MenuItemVerUsuarios");
+                    MenuItemActualizarUsuario.Text = idioma.GetString("MenuItemActualizarUsuario");
                     TrackingToolStripMenuItem.Text = idioma.GetString("TrackingToolStripMenuItem");
 
                 }
@@ -202,6 +205,11 @@ namespace TC_Riveros_Paula
         }
 
         private void herramientasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InicioForm_Load(object sender, EventArgs e)
         {
 
         }

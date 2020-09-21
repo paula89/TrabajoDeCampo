@@ -17,23 +17,25 @@ namespace TC_Riveros_Paula
 {
     public partial class ListarUsuariosForm : Form
     {
+        IEnumerable<Usuario> usuarios;
         public ListarUsuariosForm(ResourceManager idioma)
         {
             InitializeComponent();
             CargarTraducciones(idioma);
             this.Text = idioma.GetString("ListarUsuariosForm");
+            CargarTabla();
         }
 
         private void CargarTraducciones(ResourceManager idioma) {
-            this.lblHasta.Text = idioma.GetString("lblHasta");
-            this.lblDesde.Text = idioma.GetString("lblDesde");
+          //  this.lblHasta.Text = idioma.GetString("lblHasta");
+            this.lblUsuario.Text = idioma.GetString("lblUsuario");
             this.labelNombre.Text = idioma.GetString("labelNombre");
-            this.btnFiltrar.Text = idioma.GetString("btnFiltrar");
+         //   this.btnFiltrar.Text = idioma.GetString("btnFiltrar");
         }
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            string desde = this.dateTimePickerDesde.Value.ToString();
-            string hasta = this.dateTimePickerHasta.Value.ToString();
+            string desde = "";// this.dateTimePickerDesde.Value.ToString();
+            string hasta = "";// this.dateTimePickerHasta.Value.ToString();
             string nombre = this.textBoxNombre.Text;
             String[] filtros = new string[] { desde, hasta, nombre };
             CargarTabla(filtros);
@@ -43,7 +45,7 @@ namespace TC_Riveros_Paula
             
             try
             {
-                IEnumerable<Usuario> usuarios = UsersManager.Current.ListarUsuariosFilter(filtros);
+                usuarios = UsersManager.Current.ListarUsuariosFilter(filtros);
                 dataGridViewUsuarios.DataSource = usuarios.ToList();
                 dataGridViewUsuarios.Columns.Remove("Password");
                 dataGridViewUsuarios.Columns.Remove("DVH");
@@ -59,10 +61,11 @@ namespace TC_Riveros_Paula
 
             try
             {
-                IEnumerable<Usuario> usuarios = UsersManager.Current.ListarUsuarios();
+                usuarios = UsersManager.Current.ListarUsuarios();
                 dataGridViewUsuarios.DataSource = usuarios.ToList();
                 dataGridViewUsuarios.Columns.Remove("Password");
                 dataGridViewUsuarios.Columns.Remove("DVH");
+                dataGridViewUsuarios.Refresh();
             }
             catch (UIException ex)
             {
@@ -79,6 +82,51 @@ namespace TC_Riveros_Paula
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             CargarTabla();
+        }
+
+        private void textBoxNombre_TextChanged(object sender, EventArgs e)
+        {
+            string input = textBoxNombre.Text;
+
+            if (input.Length == 0)
+            {
+                dataGridViewUsuarios.DataSource = usuarios.ToList();
+                dataGridViewUsuarios.Columns.Remove("Password");
+                dataGridViewUsuarios.Columns.Remove("DVH");
+            }
+            else
+            {
+                dataGridViewUsuarios.DataSource = usuarios.Where(x => x.Nombre.Contains(input)).ToList();
+                dataGridViewUsuarios.Columns.Remove("Password");
+                dataGridViewUsuarios.Columns.Remove("DVH");
+            }
+
+            dataGridViewUsuarios.Refresh();
+        }
+
+        private void textBoxUsuario_TextChanged(object sender, EventArgs e)
+        {
+            string input = textBoxUsuario.Text.ToUpper();
+
+            if (input.Length == 0)
+            {
+                dataGridViewUsuarios.DataSource = usuarios.ToList();
+                dataGridViewUsuarios.Columns.Remove("Password");
+                dataGridViewUsuarios.Columns.Remove("DVH");
+            }
+            else
+            {
+                dataGridViewUsuarios.DataSource = usuarios.Where(x => x.Cod_Usuario.Contains(input)).ToList();
+                dataGridViewUsuarios.Columns.Remove("Password");
+                dataGridViewUsuarios.Columns.Remove("DVH");
+            }
+
+            dataGridViewUsuarios.Refresh();
+        }
+
+        private void ListarUsuariosForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -61,6 +61,15 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Update User.
+        /// </summary>
+        public static string ActualizarUsuarioForm {
+            get {
+                return ResourceManager.GetString("ActualizarUsuarioForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Help.
         /// </summary>
         public static string ayudaToolStripMenuItem {
@@ -102,6 +111,15 @@ namespace ServicesTest.DAL.i18n {
         public static string btnAceptar {
             get {
                 return ResourceManager.GetString("btnAceptar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Update.
+        /// </summary>
+        public static string btnActualizar {
+            get {
+                return ResourceManager.GetString("btnActualizar", resourceCulture);
             }
         }
         
@@ -214,6 +232,24 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Enabled.
+        /// </summary>
+        public static string checkBoxHabilitado {
+            get {
+                return ResourceManager.GetString("checkBoxHabilitado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error.
+        /// </summary>
+        public static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Binnacle.
         /// </summary>
         public static string FormBitacora {
@@ -241,11 +277,38 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Login.
+        /// </summary>
+        public static string InicioSesionForm {
+            get {
+                return ResourceManager.GetString("InicioSesionForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Quantity (Kg).
+        /// </summary>
+        public static string labelCantidad {
+            get {
+                return ResourceManager.GetString("labelCantidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Comment.
         /// </summary>
         public static string labelComentario {
             get {
                 return ResourceManager.GetString("labelComentario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Brand.
+        /// </summary>
+        public static string labelMarca {
+            get {
+                return ResourceManager.GetString("labelMarca", resourceCulture);
             }
         }
         
@@ -273,6 +336,15 @@ namespace ServicesTest.DAL.i18n {
         public static string labelStockHerramientas {
             get {
                 return ResourceManager.GetString("labelStockHerramientas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Due date.
+        /// </summary>
+        public static string labelVencimiento {
+            get {
+                return ResourceManager.GetString("labelVencimiento", resourceCulture);
             }
         }
         
@@ -340,6 +412,15 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Language.
+        /// </summary>
+        public static string lblIdioma {
+            get {
+                return ResourceManager.GetString("lblIdioma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Password.
         /// </summary>
         public static string lblPassword {
@@ -354,6 +435,24 @@ namespace ServicesTest.DAL.i18n {
         public static string lblPassword2 {
             get {
                 return ResourceManager.GetString("lblPassword2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Actual role.
+        /// </summary>
+        public static string lblRolActual {
+            get {
+                return ResourceManager.GetString("lblRolActual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Role.
+        /// </summary>
+        public static string lblRoles {
+            get {
+                return ResourceManager.GetString("lblRoles", resourceCulture);
             }
         }
         
@@ -408,6 +507,15 @@ namespace ServicesTest.DAL.i18n {
         public static string MateriaPrimaToolStripMenuItem {
             get {
                 return ResourceManager.GetString("MateriaPrimaToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Update User.
+        /// </summary>
+        public static string MenuItemActualizarUsuario {
+            get {
+                return ResourceManager.GetString("MenuItemActualizarUsuario", resourceCulture);
             }
         }
         
@@ -520,11 +628,200 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Invalid lastname.
+        /// </summary>
+        public static string MsgErrorApellido {
+            get {
+                return ResourceManager.GetString("MsgErrorApellido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You must complete all the required fields.
+        /// </summary>
+        public static string MsgErrorCamposObligatorios {
+            get {
+                return ResourceManager.GetString("MsgErrorCamposObligatorios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Invalid quantity.
+        /// </summary>
+        public static string MsgErrorCantidad {
+            get {
+                return ResourceManager.GetString("MsgErrorCantidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You must enter username and password to log into the system.
+        /// </summary>
+        public static string MsgErrorCompletarLogin {
+            get {
+                return ResourceManager.GetString("MsgErrorCompletarLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Invalid address.
+        /// </summary>
+        public static string MsgErrorDireccion {
+            get {
+                return ResourceManager.GetString("MsgErrorDireccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Invalid email.
+        /// </summary>
+        public static string MsgErrorEmail {
+            get {
+                return ResourceManager.GetString("MsgErrorEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Integrity error in the database. Contact your system administrator..
+        /// </summary>
+        public static string MsgErrorIntegridad {
+            get {
+                return ResourceManager.GetString("MsgErrorIntegridad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Incorrect user or password .
+        /// </summary>
+        public static string MsgErrorLogin {
+            get {
+                return ResourceManager.GetString("MsgErrorLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Invalid brand.
+        /// </summary>
+        public static string MsgErrorMarca {
+            get {
+                return ResourceManager.GetString("MsgErrorMarca", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error registering raw material.
+        /// </summary>
+        public static string MsgErrorMPRegister {
+            get {
+                return ResourceManager.GetString("MsgErrorMPRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Invalid name.
+        /// </summary>
+        public static string MsgErrorNombre {
+            get {
+                return ResourceManager.GetString("MsgErrorNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Passwords do not match.
+        /// </summary>
+        public static string MsgErrorPassword {
+            get {
+                return ResourceManager.GetString("MsgErrorPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Invalid Provider.
+        /// </summary>
+        public static string MsgErrorProveedor {
+            get {
+                return ResourceManager.GetString("MsgErrorProveedor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Invalid Phone.
+        /// </summary>
+        public static string MsgErrorTelefono {
+            get {
+                return ResourceManager.GetString("MsgErrorTelefono", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Invalid user code.
+        /// </summary>
+        public static string MsgErrorUser {
+            get {
+                return ResourceManager.GetString("MsgErrorUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The user could not updated.
+        /// </summary>
+        public static string MsgErrorUserActualizar {
+            get {
+                return ResourceManager.GetString("MsgErrorUserActualizar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a User code  already exists.
+        /// </summary>
+        public static string MsgErrorUserExiste {
+            get {
+                return ResourceManager.GetString("MsgErrorUserExiste", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The user could not register.
+        /// </summary>
+        public static string MsgErrorUserRegister {
+            get {
+                return ResourceManager.GetString("MsgErrorUserRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Restore completed successfully.
         /// </summary>
         public static string msgOk {
             get {
                 return ResourceManager.GetString("msgOk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Raw Material successfully registered.
+        /// </summary>
+        public static string MsgOkMPRegister {
+            get {
+                return ResourceManager.GetString("MsgOkMPRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Successfully updated user.
+        /// </summary>
+        public static string MsgOkUserActualizar {
+            get {
+                return ResourceManager.GetString("MsgOkUserActualizar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Successfully registered user.
+        /// </summary>
+        public static string MsgOkUserRegister {
+            get {
+                return ResourceManager.GetString("MsgOkUserRegister", resourceCulture);
             }
         }
         

@@ -4,6 +4,7 @@ using DomainTest;
 using ServicesTest.Domain.Exceptions;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,13 +58,13 @@ namespace BLLTest
             IEnumerable<MateriaPrima> materiasPrimas = new List<MateriaPrima>();
             try
             {
-                materiasPrimas = instancia.GetMateriaPrimaRepository().GetAll();
+                 materiasPrimas = instancia.GetMateriaPrimaRepository().GetAll();
                 return materiasPrimas.ToList();
             }
             catch (Exception ex)
             {
                 FacadeServiceBusiness.ManageException(new DALException(ex));
-                return materiasPrimas;
+                return null;
             }
 
         }

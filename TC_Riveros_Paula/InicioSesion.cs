@@ -28,7 +28,8 @@ namespace TC_Riveros_Paula
             InitializeComponent();
             idioma = FacadeService.Translate(cultureInfo);
             CargarComboIdioma();
-            CargarTraducciones(idioma);
+            this.Text = idioma.GetString("InicioSesionForm");
+            CargarTraducciones();
 
         }
 
@@ -67,16 +68,15 @@ namespace TC_Riveros_Paula
                         this.Dispose();
                     }
                     else {
-                        MessageBox.Show("El usuario y/o contraseña no son correctos", "Error", MessageBoxButtons.OK);
+                        MessageBox.Show(idioma.GetString("MsgErrorLogin"), idioma.GetString("Error"), MessageBoxButtons.OK);
                     }
                 }
                 else {
-                    MessageBox.Show("Inconsistencia de datos en la base de datos. Comuniquese con el administrador del sistema.");
+                    MessageBox.Show(idioma.GetString("MsgErrorIntegridad"), idioma.GetString("Error"), MessageBoxButtons.OK);
                 }
             }
             else {
-                // agregar traducciones
-                MessageBox.Show("Debe ingresar usuario y contraseña para iniciar sesion en el sistema", "Error", MessageBoxButtons.OK);
+                MessageBox.Show(idioma.GetString("MsgErrorCompletarLogin"), idioma.GetString("Error"), MessageBoxButtons.OK);
             }
         }
 
@@ -102,12 +102,13 @@ namespace TC_Riveros_Paula
         }
 
 
-        private void CargarTraducciones(ResourceManager idioma)
+        private void CargarTraducciones()
         {
             this.Text = idioma.GetString("usuarioSesionForm");
             btnAceptar.Text = idioma.GetString("btnLogin");
             lblUsuario.Text = idioma.GetString("lblUsuario");
             lblPassword.Text = idioma.GetString("lblPassword");
+            lblIdioma.Text = idioma.GetString("lblIdioma");
         }
 
         private IEnumerable<Usuario> VerificarDatos(String[] filtros) {

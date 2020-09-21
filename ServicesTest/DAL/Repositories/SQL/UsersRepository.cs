@@ -178,7 +178,7 @@ namespace ServicesTest.DAL.Repositories.SQL
 
 
         /// <summary>
-        ///  ok ok 
+        ///  Verify user login and if exist respond with the data about it
         /// </summary>
         /// <param name="filtros"></param>
         /// <returns></returns>
