@@ -18,7 +18,8 @@ namespace DALTest.Repositories.SQL
         #region Statements
         private string SelectAllStatement
         {
-            get => "SELECT * FROM [dbo].[MateriaPrima]";
+            get => "SELECT Nombre, Proveedor, Cantidad, Marca, Usuario, Comentario, FechaAlta, FechaVencimiento, Habilitada" +
+                " FROM [dbo].[MateriaPrima]";
         }
         private string InsertStatement
         {
@@ -116,16 +117,16 @@ namespace DALTest.Repositories.SQL
                     {
                         dr.GetValues(values);
                         MateriaPrima materiaPrima = new MateriaPrima();
-                        materiaPrima.IdMateriaPrima = new Guid(values[0].ToString());
-                        materiaPrima.nombre = values[1].ToString();
-                        materiaPrima.proveedor = values[2].ToString();
-                        materiaPrima.cantidad = Convert.ToInt32(values[3]);
-                        materiaPrima.marca = values[4].ToString();
-                        materiaPrima.usuario = values[5].ToString();
-                        materiaPrima.comentario = values[6].ToString();
-                        materiaPrima.fechaAlta = Convert.ToDateTime(values[7].ToString());
-                        materiaPrima.vencimiento = Convert.ToDateTime(values[8].ToString());
-                        materiaPrima.habilitada = Convert.ToBoolean(values[9]);
+                        //materiaPrima.IdMateriaPrima = new Guid(values[0].ToString());
+                        materiaPrima.nombre = values[0].ToString();
+                        materiaPrima.proveedor = values[1].ToString();
+                        materiaPrima.cantidad = Convert.ToInt32(values[2]);
+                        materiaPrima.marca = values[3].ToString();
+                        materiaPrima.usuario = values[4].ToString();
+                        materiaPrima.comentario = values[5].ToString();
+                        materiaPrima.fechaAlta = Convert.ToDateTime(values[6].ToString());
+                        materiaPrima.vencimiento = Convert.ToDateTime(values[7].ToString());
+                        materiaPrima.habilitada = Convert.ToBoolean(values[8]);
                         materiaPrimas.Add(materiaPrima);
                     }
                 }

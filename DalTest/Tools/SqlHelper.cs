@@ -67,7 +67,7 @@ namespace DALTest.DAL.Tools
                 catch (Exception ex)
                 {
                     System.Console.WriteLine(ex.Message);
-                    return 0;
+                    throw (new DALException(ex));
                 }
 
             }

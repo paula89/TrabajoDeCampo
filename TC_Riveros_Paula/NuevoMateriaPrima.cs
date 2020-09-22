@@ -62,7 +62,6 @@ namespace TC_Riveros_Paula
                 bool valido = ValidarCampos();
                 if (valido)
                 {
-                    GuardarMateriaPrima(materiaPrima);
                     materiaPrima.IdMateriaPrima = Guid.NewGuid();
                     materiaPrima.nombre = this.textBoxNombre.Text;
                     materiaPrima.proveedor = this.textBoxProveedor.Text;
@@ -72,6 +71,8 @@ namespace TC_Riveros_Paula
                     materiaPrima.comentario = textBoxComentario.Text;
                     materiaPrima.fechaAlta = Convert.ToDateTime(DateTime.Now);
                     materiaPrima.vencimiento = Convert.ToDateTime(dateTimePickerVencimiento.Value);
+
+                    GuardarMateriaPrima(materiaPrima);
                 }
             }
             catch (Exception ex) {

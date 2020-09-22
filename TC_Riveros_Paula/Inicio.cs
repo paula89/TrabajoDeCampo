@@ -16,7 +16,6 @@ namespace TC_Riveros_Paula
 {
     public partial class InicioForm : Form
     {
-        //string cultureInfo = Thread.CurrentThread.CurrentUICulture.Name; 
         ResourceManager idioma;
         string usuario;
 

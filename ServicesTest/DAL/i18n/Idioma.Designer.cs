@@ -502,6 +502,15 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Users.
+        /// </summary>
+        public static string ListarUsuariosForm {
+            get {
+                return ResourceManager.GetString("ListarUsuariosForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Raw material.
         /// </summary>
         public static string MateriaPrimaToolStripMenuItem {

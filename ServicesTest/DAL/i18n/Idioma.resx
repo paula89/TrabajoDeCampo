@@ -420,4 +420,7 @@
   <data name="MsgOkUserRegister" xml:space="preserve">
     <value>Successfully registered user</value>
   </data>
+  <data name="ListarUsuariosForm" xml:space="preserve">
+    <value>Users</value>
+  </data>
 </root>

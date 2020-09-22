@@ -71,6 +71,7 @@ namespace TC_Riveros_Paula
                 materiaPrimas = MateriaPrimaManager.Current.ListarMateriaPrima();
 
                 dataGridViewMateriaPrima.DataSource = materiaPrimas;
+                dataGridViewMateriaPrima.Columns["IdMateriaPrima"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -99,12 +100,14 @@ namespace TC_Riveros_Paula
             if (input.Length == 0)
             {
                 dataGridViewMateriaPrima.DataSource = materiaPrimas.ToList();
+                dataGridViewMateriaPrima.Columns["IdMateriaPrima"].Visible = false;
             }
             else
             {
                 dataGridViewMateriaPrima.DataSource = materiaPrimas.Where(x => x.nombre.Contains(input)).ToList();
+                dataGridViewMateriaPrima.Columns["IdMateriaPrima"].Visible = false;
             }
-              
+
             dataGridViewMateriaPrima.Refresh();
         }
 

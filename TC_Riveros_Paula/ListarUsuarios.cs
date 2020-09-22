@@ -27,10 +27,8 @@ namespace TC_Riveros_Paula
         }
 
         private void CargarTraducciones(ResourceManager idioma) {
-          //  this.lblHasta.Text = idioma.GetString("lblHasta");
             this.lblUsuario.Text = idioma.GetString("lblUsuario");
             this.labelNombre.Text = idioma.GetString("labelNombre");
-         //   this.btnFiltrar.Text = idioma.GetString("btnFiltrar");
         }
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
@@ -63,8 +61,9 @@ namespace TC_Riveros_Paula
             {
                 usuarios = UsersManager.Current.ListarUsuarios();
                 dataGridViewUsuarios.DataSource = usuarios.ToList();
-                dataGridViewUsuarios.Columns.Remove("Password");
-                dataGridViewUsuarios.Columns.Remove("DVH");
+                dataGridViewUsuarios.Columns["Password"].Visible = false;
+                dataGridViewUsuarios.Columns["DVH"].Visible = false;
+
                 dataGridViewUsuarios.Refresh();
             }
             catch (UIException ex)
