@@ -70,8 +70,8 @@ namespace TC_Riveros_Paula
                     materiaPrima.usuario = usuario;
                     materiaPrima.comentario = textBoxComentario.Text;
                     materiaPrima.fechaAlta = Convert.ToDateTime(DateTime.Now);
-                    materiaPrima.vencimiento = Convert.ToDateTime(dateTimePickerVencimiento.Value);
-
+                    materiaPrima.fechaVencimiento = Convert.ToDateTime(dateTimePickerVencimiento.Value);
+                    materiaPrima.habilitada = true;
                     GuardarMateriaPrima(materiaPrima);
                 }
             }

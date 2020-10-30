@@ -36,7 +36,7 @@ namespace TC_Riveros_Paula
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            try {
+           /* try {
                 MateriaPrima materiaPrima = new MateriaPrima();
                 string desde = "";//= this.dateTimePickerVencimientoHasta.Value.ToString();
                 String[] filtros = new string[] { desde };
@@ -45,7 +45,7 @@ namespace TC_Riveros_Paula
             catch (Exception ex) {
                 FacadeServiceBusiness.ManageException(new UIException(ex));
 
-            }
+            }*/
         }
 
         private void CargarTabla(String[] filtros) {
@@ -77,8 +77,7 @@ namespace TC_Riveros_Paula
                     MessageBox.Show("No hay materias primas", "", MessageBoxButtons.OK);
 
                 }
-                // dataGridViewMateriaPrima.DataSource = materiaPrimas;
-                // dataGridViewMateriaPrima.Columns["IdMateriaPrima"].Visible = false;
+                
             }
             catch (Exception ex)
             {

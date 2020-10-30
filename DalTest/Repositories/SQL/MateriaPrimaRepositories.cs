@@ -87,7 +87,7 @@ namespace DALTest.Repositories.SQL
                         materiaPrima.usuario = values[5].ToString();
                         materiaPrima.comentario = values[6].ToString();
                         materiaPrima.fechaAlta = Convert.ToDateTime(values[7].ToString());
-                        materiaPrima.vencimiento = Convert.ToDateTime(values[8].ToString());
+                        materiaPrima.fechaVencimiento = Convert.ToDateTime(values[8].ToString());
                         materiaPrima.habilitada = Convert.ToBoolean(values[9]);
                         materiaPrimas.Add(materiaPrima);
                     }
@@ -125,7 +125,7 @@ namespace DALTest.Repositories.SQL
                         materiaPrima.usuario = values[4].ToString();
                         materiaPrima.comentario = values[5].ToString();
                         materiaPrima.fechaAlta = Convert.ToDateTime(values[6].ToString());
-                        materiaPrima.vencimiento = Convert.ToDateTime(values[7].ToString());
+                        materiaPrima.fechaVencimiento = Convert.ToDateTime(values[7].ToString());
                         materiaPrima.habilitada = Convert.ToBoolean(values[8]);
                         materiaPrimas.Add(materiaPrima);
                     }

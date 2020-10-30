@@ -9,6 +9,7 @@ using System.Text;
 using System.Transactions;
 using System.Threading.Tasks;
 using DomainTest;
+using System.Reflection;
 
 namespace DALTest.DAL.Tools
 {
@@ -45,10 +46,19 @@ namespace DALTest.DAL.Tools
                 try
                 {
                     SqlConnection conn = getConnection(connection);
-
                     conn.Open();
                     var comm = new SqlCommand(commandText);
                     comm.Connection = conn;
+
+                    PropertyInfo[] properties = InformarPropiedades(parameters);
+                    String[] parametros = InformarParametros(parameters);
+                    int i = 0;
+                    foreach (PropertyInfo propiedad in properties)
+                    {
+                        comm.Parameters.AddWithValue(propiedad.Name, parametros[i]);
+                        i++;
+                    }
+                    /*
                     comm.Parameters.AddWithValue("IdMateriaPrima", parameters.IdMateriaPrima);
                     comm.Parameters.AddWithValue("Nombre", parameters.nombre);
                     comm.Parameters.AddWithValue("Proveedor", parameters.proveedor);
@@ -57,8 +67,8 @@ namespace DALTest.DAL.Tools
                     comm.Parameters.AddWithValue("Usuario", parameters.usuario);
                     comm.Parameters.AddWithValue("Comentario", parameters.comentario);
                     comm.Parameters.AddWithValue("FechaAlta", parameters.fechaAlta);
-                    comm.Parameters.AddWithValue("FechaVencimiento", parameters.vencimiento);
-                    comm.Parameters.AddWithValue("Habilitada", 1);
+                    comm.Parameters.AddWithValue("FechaVencimiento", parameters.vencimiento);*/
+                    //comm.Parameters.AddWithValue("Habilitada", 1);
                     var resultado = comm.ExecuteNonQuery();
                     trxScope.Complete();
 
@@ -69,7 +79,6 @@ namespace DALTest.DAL.Tools
                     System.Console.WriteLine(ex.Message);
                     throw (new DALException(ex));
                 }
-
             }
         }
 
@@ -93,5 +102,24 @@ namespace DALTest.DAL.Tools
                 throw (new DALException(ex));
             }
         }
+        public static string[] InformarParametros(object pObjeto) {
+            var parametros = pObjeto.GetType()
+                    .GetProperties()
+                    .Select(p =>
+                    {
+                        object value = p.GetValue(pObjeto, null);
+                        return value == null ? null : value.ToString();
+                    })
+                    .ToArray();
+            return parametros;
+        }
+
+        public static PropertyInfo[] InformarPropiedades(object pObjeto)
+        {
+            Type tipo = pObjeto.GetType();
+            PropertyInfo[] propiedades = tipo.GetProperties();
+            return propiedades;
+        }
+
     }
 }

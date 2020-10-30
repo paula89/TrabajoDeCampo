@@ -16,7 +16,7 @@ namespace DomainTest
         public string usuario { get; set; }
         public string comentario { get; set; }
         public DateTime fechaAlta { get; set; }
-        public DateTime vencimiento { get; set; }
+        public DateTime fechaVencimiento { get; set; }
         public bool habilitada { get; set; }
     }
 }
