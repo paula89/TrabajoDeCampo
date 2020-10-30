@@ -73,7 +73,7 @@ namespace ServicesTest.BLL
         }
         
 
-        public IEnumerable<Usuario> ListarUsuarios()
+        public IEnumerable<Object> ListarUsuarios()
         {
             var usuarioSesion = instancia.GetUsersRepository().GetAll();
             return usuarioSesion.ToList();

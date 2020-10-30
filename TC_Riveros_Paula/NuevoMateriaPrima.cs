@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace TC_Riveros_Paula
 {
-    public partial class NuevoMateriaPrimaForm : Form
+    public partial class NuevoMateriaPrimaForm : DevExpress.XtraEditors.XtraForm
     {
         string usuario;
         ResourceManager language;

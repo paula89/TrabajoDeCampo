@@ -34,6 +34,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -57,6 +58,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="DAL\Repositories\File\BitacoraSerialization.cs" />
     <Compile Include="DAL\Repositories\SQL\BackupRepository.cs" />
     <Compile Include="DAL\Repositories\SQL\BitacoraRepository.cs" />
     <Compile Include="DAL\Repositories\SQL\TrackingRepository.cs" />
@@ -82,6 +84,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Idioma.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

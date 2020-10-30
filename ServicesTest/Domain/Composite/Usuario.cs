@@ -25,5 +25,6 @@ namespace ServicesTest.Domain.Composite
 
 		public bool Habilitado { get; set; }
 		public decimal DVH { get; set; }
+		public string Idioma { get; set; }
 	}
 }

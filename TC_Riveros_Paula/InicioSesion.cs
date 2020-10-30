@@ -18,7 +18,7 @@ using ServicesTest.Tools;
 
 namespace TC_Riveros_Paula
 {
-    public partial class InicioSesionForm : Form
+    public partial class InicioSesionForm : DevExpress.XtraEditors.XtraForm
     {
         string cultureInfo = Thread.CurrentThread.CurrentUICulture.Name;
         ResourceManager idioma; 
@@ -27,28 +27,12 @@ namespace TC_Riveros_Paula
         {
             InitializeComponent();
             idioma = FacadeService.Translate(cultureInfo);
-            CargarComboIdioma();
             this.Text = idioma.GetString("InicioSesionForm");
             CargarTraducciones();
-
-        }
-
-        public void CargarComboIdioma() {
-            try {
-                IEnumerable<String> idiomas = UsersManager.Current.ObtenerIdiomas();
-                comboBoxIdioma.DataSource = idiomas.ToList();
-            }
-            catch (UIException ex)
-            {
-                FacadeService.ManageException(ex);
-            }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
-            idioma = FacadeService.Translate(comboBoxIdioma.SelectedItem.ToString());
-
             List<String> permiso = new List<string>();
             bool verificar = verificarCampos();
             if (verificar)
@@ -60,8 +44,11 @@ namespace TC_Riveros_Paula
                     if (usuarios.Any())
                     {
                         permiso = (List<string>)getPermisos(usuarios);
-
+                        idioma = FacadeService.Translate(getIdioma(usuarios));
                         this.Hide();
+                        BienvenidoForm bienvenido = new BienvenidoForm(txtUsuario.Text.ToUpper());
+                        bienvenido.ShowDialog();
+
                         InicioForm inicio = new InicioForm(permiso, txtUsuario.Text.ToUpper(), idioma);
                         inicio.ShowDialog();
                         this.Close();
@@ -108,7 +95,6 @@ namespace TC_Riveros_Paula
             btnAceptar.Text = idioma.GetString("btnLogin");
             lblUsuario.Text = idioma.GetString("lblUsuario");
             lblPassword.Text = idioma.GetString("lblPassword");
-            lblIdioma.Text = idioma.GetString("lblIdioma");
         }
 
         private IEnumerable<Usuario> VerificarDatos(String[] filtros) {
@@ -121,7 +107,14 @@ namespace TC_Riveros_Paula
             return usuarios;
         }
 
-
+        private string getIdioma(IEnumerable<Usuario> usuario) {
+            string languageUser = "";
+            foreach (var item in usuario)
+            {
+                languageUser = item.Idioma;
+            }
+            return languageUser;
+        }
 
 
         private IEnumerable<String> getPermisos(IEnumerable<Usuario> users) {
@@ -177,6 +170,16 @@ namespace TC_Riveros_Paula
         }
 
         private void comboBoxIdioma_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InicioSesionForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -18,7 +18,7 @@ using System.Windows.Forms;
 
 namespace TC_Riveros_Paula
 {
-    public partial class UsuariosForm : Form
+    public partial class UsuariosForm : DevExpress.XtraEditors.XtraForm
     {
         ResourceManager language;
         public UsuariosForm(ResourceManager idioma)
@@ -28,8 +28,21 @@ namespace TC_Riveros_Paula
             this.Text = language.GetString("UsuariosForm");
             CargarTraducciones();
             CargarRoles();
+            CargarIdiomas();
         }
 
+        private void CargarIdiomas() {
+            try
+            {
+                IEnumerable<String> idiomas = UsersManager.Current.ObtenerIdiomas();
+                comboBoxIdioma.DataSource = idiomas.ToList();
+            }
+            catch (UIException ex)
+            {
+                FacadeService.ManageException(ex);
+            }
+
+        }
         private void CargarRoles() 
         {
             try
@@ -59,6 +72,7 @@ namespace TC_Riveros_Paula
                 lblPassword2.Text = language.GetString("lblPassword2");
                 lblTelefono.Text = language.GetString("lblTelefono");
                 lblRoles.Text = language.GetString("lblRoles");
+                lblIdioma.Text = language.GetString("lblIdioma");
 
                 btnAceptar.Text = language.GetString("btnAceptar");
                 btnCancelar.Text = language.GetString("btnCancelar");
@@ -120,7 +134,7 @@ namespace TC_Riveros_Paula
                 usuario.Permisos.Add(familia);
                 usuario.FechaAlta = DateTime.Now;
                 usuario.DVH = Encrypt.DVHCalculate(usuario.Cod_Usuario + usuario.Nombre + usuario.FechaAlta);
-
+                usuario.Idioma = this.comboBoxIdioma.SelectedItem.ToString();
                 return usuario;
             }
             catch (Exception ex) {

@@ -40,7 +40,7 @@ namespace ServicesTest.DAL.Repositories.SQL
        
         private string SelectAllStatement
         {
-            get => "SELECT Fecha, Descripcion, Criticidad, Usuario FROM [dbo].[Bitacora] order by Fecha";
+            get => "SELECT Fecha, Descripcion, Criticidad, Usuario FROM [dbo].[Bitacora] order by Fecha Desc";
         }
         #endregion
         public void Delete(Guid id)
@@ -54,7 +54,7 @@ namespace ServicesTest.DAL.Repositories.SQL
             {
                 List<Bitacora> bitacora = new List<Bitacora>();
                 List<SqlParameter> parametros = new List<SqlParameter>();
-                string finalStatementString;
+              /*  string finalStatementString;
                 if (filtros.GetValue(0) != null)
                 {
                     finalStatementString = String.Concat(SelectFilterStatement, "and Criticidad = @Criticidad order by Fecha");
@@ -68,8 +68,8 @@ namespace ServicesTest.DAL.Repositories.SQL
                 parametros.Add(new SqlParameter("@hasta", Convert.ToDateTime(filtros.GetValue(2))));
                 System.Console.WriteLine(finalStatementString);
                 System.Console.WriteLine(parametros.ToArray().ToString());
-
-                using (var dr = SqlHelper.ExecuteReader(finalStatementString, System.Data.CommandType.Text, "security", parametros.ToArray()))
+              */
+                using (var dr = SqlHelper.ExecuteReader(SelectAllStatement, System.Data.CommandType.Text, "security", parametros.ToArray()))
                 {
                     Object[] values = new Object[dr.FieldCount];
 
@@ -79,17 +79,17 @@ namespace ServicesTest.DAL.Repositories.SQL
                         Bitacora bita = new Bitacora();
                         bita.Fecha = (DateTime)values[0];
                         bita.Descripcion = values[1].ToString();
-                          switch (values[2].ToString().Trim())
+                        switch (values[2].ToString().Trim())
                           {
                               case "Menor": 
                                   bita.Criticidad = Bitacora.CriticidadEnum.Menor;
-                                  break;
+                                break;
                               case "Medio":
                                   bita.Criticidad = Bitacora.CriticidadEnum.Medio;
-                                  break;
+                                break;
                               case "Mayor":
                                   bita.Criticidad = Bitacora.CriticidadEnum.Mayor;
-                                  break;
+                                break;
                           }                          
                         bita.Usuario = values[3].ToString();
                         bitacora.Add(bita);
@@ -107,8 +107,20 @@ namespace ServicesTest.DAL.Repositories.SQL
 
         public int Insert(Bitacora bitacora)
         {
-            int inserted = SqlHelper.ExecuteNonQueryBitacora(InsertStatement, System.Data.CommandType.Text, "security", bitacora);
+            int inserted;
+            if (Convert.ToString(bitacora.Criticidad) != "Mayor")
+            {
+                inserted = SqlHelper.ExecuteNonQueryBitacora(InsertStatement, System.Data.CommandType.Text, "security", bitacora);
+            }
+            else {
+                inserted = File.BitacoraSerialization.Guardar(bitacora);
+            }
             return inserted;            
+        }
+
+        public List<Bitacora> getCriticalErrors() {
+            List<Bitacora> lecturas = File.BitacoraSerialization.GetBitacora();
+            return lecturas;
         }
 
         public int Update(Bitacora o)

@@ -28,97 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxNombre = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBoxUsuario = new System.Windows.Forms.TextBox();
-            this.labelNombre = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.dataGridViewUsuarios = new System.Windows.Forms.DataGridView();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuarios)).BeginInit();
+            this.gridControlUsuarios = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBoxNombre
+            // gridControlUsuarios
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(242, 55);
-            this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(145, 20);
-            this.textBoxNombre.TabIndex = 3;
-            this.textBoxNombre.TextChanged += new System.EventHandler(this.textBoxNombre_TextChanged);
+            this.gridControlUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gridControlUsuarios.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridControlUsuarios.Location = new System.Drawing.Point(0, 0);
+            this.gridControlUsuarios.MainView = this.gridView1;
+            this.gridControlUsuarios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridControlUsuarios.Name = "gridControlUsuarios";
+            this.gridControlUsuarios.Size = new System.Drawing.Size(930, 511);
+            this.gridControlUsuarios.TabIndex = 0;
+            this.gridControlUsuarios.UseEmbeddedNavigator = true;
+            this.gridControlUsuarios.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
             // 
-            // groupBox1
+            // gridView1
             // 
-            this.groupBox1.Controls.Add(this.textBoxUsuario);
-            this.groupBox1.Controls.Add(this.labelNombre);
-            this.groupBox1.Controls.Add(this.lblUsuario);
-            this.groupBox1.Controls.Add(this.textBoxNombre);
-            this.groupBox1.Location = new System.Drawing.Point(31, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(733, 128);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
+            this.gridView1.DetailHeight = 431;
+            this.gridView1.GridControl = this.gridControlUsuarios;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             // 
-            // textBoxUsuario
+            // btnImprimir
             // 
-            this.textBoxUsuario.Location = new System.Drawing.Point(19, 55);
-            this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(145, 20);
-            this.textBoxUsuario.TabIndex = 7;
-            this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBoxUsuario_TextChanged);
-            // 
-            // labelNombre
-            // 
-            this.labelNombre.AutoSize = true;
-            this.labelNombre.Location = new System.Drawing.Point(239, 27);
-            this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(54, 13);
-            this.labelNombre.TabIndex = 6;
-            this.labelNombre.Text = "lblNombre";
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(16, 27);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(53, 13);
-            this.lblUsuario.TabIndex = 4;
-            this.lblUsuario.Text = "lblUsuario";
-            // 
-            // dataGridViewUsuarios
-            // 
-            this.dataGridViewUsuarios.AllowUserToAddRows = false;
-            this.dataGridViewUsuarios.AllowUserToDeleteRows = false;
-            this.dataGridViewUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUsuarios.Location = new System.Drawing.Point(37, 172);
-            this.dataGridViewUsuarios.Name = "dataGridViewUsuarios";
-            this.dataGridViewUsuarios.ReadOnly = true;
-            this.dataGridViewUsuarios.Size = new System.Drawing.Size(727, 250);
-            this.dataGridViewUsuarios.TabIndex = 5;
-            this.dataGridViewUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsuarios_CellContentClick);
+            this.btnImprimir.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnImprimir.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.Color.White;
+            this.btnImprimir.Location = new System.Drawing.Point(0, 518);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(930, 37);
+            this.btnImprimir.TabIndex = 1;
+            this.btnImprimir.Text = "btnImprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // ListarUsuariosForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Appearance.BackColor = System.Drawing.Color.OliveDrab;
+            this.Appearance.Options.UseBackColor = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridViewUsuarios);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(930, 555);
+            this.Controls.Add(this.btnImprimir);
+            this.Controls.Add(this.gridControlUsuarios);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ListarUsuariosForm";
             this.Text = "ListarUsuariosForm";
             this.Load += new System.EventHandler(this.ListarUsuariosForm_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBoxNombre;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label labelNombre;
-        private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.DataGridView dataGridViewUsuarios;
-        private System.Windows.Forms.TextBox textBoxUsuario;
+
+        private DevExpress.XtraGrid.GridControl gridControlUsuarios;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

@@ -23,10 +23,6 @@ namespace ServicesTest.DAL.Repositories.SQL
         private string DoBackup {
             get => "BACKUP DATABASE TCSecurity TO DISK =" + @"C:\Users\Paula\Desktop\log";
         }
-        private string SelectLimitStatement
-        {
-            get => "SELECT Fecha, Descripcion, Path FROM [dbo].[Backup] order by Fecha desc limit 100";
-        }
         private string SelectFilterStatement
         {
             get => "SELECT Fecha, Descripcion, Path FROM [dbo].[Backup] " +
@@ -55,14 +51,14 @@ namespace ServicesTest.DAL.Repositories.SQL
             {
                 List<Backup> backup = new List<Backup>();
 
-                List<SqlParameter> parametros = new List<SqlParameter>();
-
+                /*List<SqlParameter> parametros = new List<SqlParameter>();
+                
                 parametros.Add(new SqlParameter("@desde", Convert.ToDateTime(filtros.GetValue(0))));
                 parametros.Add(new SqlParameter("@hasta", Convert.ToDateTime(filtros.GetValue(1))));
                 System.Console.WriteLine(SelectFilterStatement);
                 System.Console.WriteLine(parametros.ToArray().ToString());
-
-                using (var dr = SqlHelper.ExecuteReader(SelectFilterStatement, System.Data.CommandType.Text, "security",parametros.ToArray()))
+                */
+                using (var dr = SqlHelper.ExecuteReader(SelectAllStatement, System.Data.CommandType.Text, "security"))//,parametros.ToArray()))
                 {
                     Object[] values = new Object[dr.FieldCount];
 

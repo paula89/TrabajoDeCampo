@@ -31,6 +31,17 @@ namespace TC_Riveros_Paula
         /// </summary>
         private void InitializeComponent(List<String> permiso)
         {
+            this.SuspendLayout();
+            // 
+            // InicioForm
+            // 
+            this.Appearance.BackColor = System.Drawing.Color.OliveDrab;
+            this.Appearance.Options.UseBackColor = true;
+
+            this.Appearance.Options.UseFont = true;
+            this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemNuevoProducto = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,7 +64,8 @@ namespace TC_Riveros_Paula
             this.CalcularPerdidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 
-            if (isAdmin(permiso)) {
+            if (isAdmin(permiso))
+            {
                 this.UsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
                 this.MenuItemNuevoUsuario = new System.Windows.Forms.ToolStripMenuItem();
                 this.MenuItemVerUsuarios = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +75,7 @@ namespace TC_Riveros_Paula
                 this.BackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
                 this.TrackingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             }
-           
+
 
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -256,7 +268,8 @@ namespace TC_Riveros_Paula
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(154, 20);
             this.ayudaToolStripMenuItem.Text = "ayudaToolStripMenuItem";
 
-            if (isAdmin(permiso)) {
+            if (isAdmin(permiso))
+            {
                 //
                 //UsuariosToolStripMenuItem
                 //
@@ -281,7 +294,7 @@ namespace TC_Riveros_Paula
                 this.MenuItemActualizarUsuario.Text = "MenuItemActualizarUsuario";
                 this.MenuItemActualizarUsuario.Click += new System.EventHandler(this.MenuItemActualizarUsuario_Click);
 
-                
+
                 // 
                 // SeguridadToolStripMenuItem
                 // 
@@ -328,6 +341,9 @@ namespace TC_Riveros_Paula
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
+
+
 
         }
 

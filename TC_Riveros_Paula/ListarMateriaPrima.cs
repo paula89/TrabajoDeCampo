@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace TC_Riveros_Paula
 {
-    public partial class ListarMateriaPrimaForm : Form
+    public partial class ListarMateriaPrimaForm : DevExpress.XtraEditors.XtraForm
     {
         IEnumerable<MateriaPrima> materiaPrimas;
         public ListarMateriaPrimaForm(ResourceManager idioma)
@@ -27,8 +27,7 @@ namespace TC_Riveros_Paula
         }
 
         private void CargarTraducciones(ResourceManager idioma) {
-            lblNombre.Text = idioma.GetString("labelNombre");
-            lblProveedor.Text = idioma.GetString("labelProveedor");
+            btnImprimir.Text = idioma.GetString("btnImprimir");
         }
         private void ListarMateriaPrimaForm_Load(object sender, EventArgs e)
         {
@@ -40,9 +39,7 @@ namespace TC_Riveros_Paula
             try {
                 MateriaPrima materiaPrima = new MateriaPrima();
                 string desde = "";//= this.dateTimePickerVencimientoHasta.Value.ToString();
-                string nombre = textBoxNombre.Text.Trim();
-                string proveedor = textBoxProveedor.Text.Trim();
-                String[] filtros = new string[] { desde, nombre, proveedor };
+                String[] filtros = new string[] { desde };
                 CargarTabla(filtros);
             }
             catch (Exception ex) {
@@ -52,7 +49,7 @@ namespace TC_Riveros_Paula
         }
 
         private void CargarTabla(String[] filtros) {
-            
+          /*  
             try
             {
                 IEnumerable<MateriaPrima> materiaPrimas = MateriaPrimaManager.Current.ListarMateriaPrimaFilters(filtros);
@@ -61,7 +58,7 @@ namespace TC_Riveros_Paula
             catch (Exception ex) {
                 FacadeServiceBusiness.ManageException(new UIException(ex));
             }
-        
+        */
         }
 
         private void CargarTabla()
@@ -69,9 +66,19 @@ namespace TC_Riveros_Paula
             try
             {
                 materiaPrimas = MateriaPrimaManager.Current.ListarMateriaPrima();
+                if (materiaPrimas.Any())
+                {
+                    gridControlMateriaPrima.DataSource = materiaPrimas;
+                    gridView1.Columns["IdMateriaPrima"].Visible = false;
+                    btnImprimir.Enabled = true;
+                }
+                else {
+                    btnImprimir.Enabled = false;
+                    MessageBox.Show("No hay materias primas", "", MessageBoxButtons.OK);
 
-                dataGridViewMateriaPrima.DataSource = materiaPrimas;
-                dataGridViewMateriaPrima.Columns["IdMateriaPrima"].Visible = false;
+                }
+                // dataGridViewMateriaPrima.DataSource = materiaPrimas;
+                // dataGridViewMateriaPrima.Columns["IdMateriaPrima"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -95,7 +102,7 @@ namespace TC_Riveros_Paula
 
         private void textBoxNombre_TextChanged(object sender, EventArgs e)
         {
-            string input = textBoxNombre.Text;
+         /*   string input = textBoxNombre.Text;
           
             if (input.Length == 0)
             {
@@ -108,12 +115,12 @@ namespace TC_Riveros_Paula
                 dataGridViewMateriaPrima.Columns["IdMateriaPrima"].Visible = false;
             }
 
-            dataGridViewMateriaPrima.Refresh();
+            dataGridViewMateriaPrima.Refresh();*/
         }
 
         private void textBoxProveedor_TextChanged(object sender, EventArgs e)
         {
-            string input = textBoxProveedor.Text;
+          /*  string input = textBoxProveedor.Text;
 
             if (input.Length == 0)
             {
@@ -124,7 +131,12 @@ namespace TC_Riveros_Paula
                 dataGridViewMateriaPrima.DataSource = materiaPrimas.Where(x => x.proveedor.Contains(input)).ToList();
             }
 
-            dataGridViewMateriaPrima.Refresh();
+            dataGridViewMateriaPrima.Refresh();*/
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            gridControlMateriaPrima.ShowPrintPreview();
         }
     }
 }

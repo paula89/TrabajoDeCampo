@@ -28,97 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewMateriaPrima = new System.Windows.Forms.DataGridView();
-            this.textBoxProveedor = new System.Windows.Forms.TextBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblProveedor = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBoxNombre = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMateriaPrima)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.gridControlMateriaPrima = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlMateriaPrima)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridViewMateriaPrima
+            // gridControlMateriaPrima
             // 
-            this.dataGridViewMateriaPrima.AllowUserToAddRows = false;
-            this.dataGridViewMateriaPrima.AllowUserToDeleteRows = false;
-            this.dataGridViewMateriaPrima.AllowUserToOrderColumns = true;
-            this.dataGridViewMateriaPrima.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMateriaPrima.Location = new System.Drawing.Point(28, 182);
-            this.dataGridViewMateriaPrima.Name = "dataGridViewMateriaPrima";
-            this.dataGridViewMateriaPrima.Size = new System.Drawing.Size(739, 244);
-            this.dataGridViewMateriaPrima.TabIndex = 0;
+            this.gridControlMateriaPrima.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gridControlMateriaPrima.Location = new System.Drawing.Point(0, 0);
+            this.gridControlMateriaPrima.MainView = this.gridView1;
+            this.gridControlMateriaPrima.Name = "gridControlMateriaPrima";
+            this.gridControlMateriaPrima.Size = new System.Drawing.Size(930, 511);
+            this.gridControlMateriaPrima.TabIndex = 8;
+            this.gridControlMateriaPrima.UseEmbeddedNavigator = true;
+            this.gridControlMateriaPrima.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
             // 
-            // textBoxProveedor
+            // gridView1
             // 
-            this.textBoxProveedor.Location = new System.Drawing.Point(301, 59);
-            this.textBoxProveedor.Name = "textBoxProveedor";
-            this.textBoxProveedor.Size = new System.Drawing.Size(138, 20);
-            this.textBoxProveedor.TabIndex = 3;
-            this.textBoxProveedor.TextChanged += new System.EventHandler(this.textBoxProveedor_TextChanged);
+            this.gridView1.GridControl = this.gridControlMateriaPrima;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             // 
-            // lblNombre
+            // btnImprimir
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(18, 32);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(54, 13);
-            this.lblNombre.TabIndex = 5;
-            this.lblNombre.Text = "lblNombre";
-            // 
-            // lblProveedor
-            // 
-            this.lblProveedor.AutoSize = true;
-            this.lblProveedor.Location = new System.Drawing.Point(298, 32);
-            this.lblProveedor.Name = "lblProveedor";
-            this.lblProveedor.Size = new System.Drawing.Size(66, 13);
-            this.lblProveedor.TabIndex = 6;
-            this.lblProveedor.Text = "lblProveedor";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.textBoxNombre);
-            this.groupBox1.Controls.Add(this.lblProveedor);
-            this.groupBox1.Controls.Add(this.lblNombre);
-            this.groupBox1.Controls.Add(this.textBoxProveedor);
-            this.groupBox1.Location = new System.Drawing.Point(28, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(739, 127);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            // 
-            // textBoxNombre
-            // 
-            this.textBoxNombre.Location = new System.Drawing.Point(21, 59);
-            this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(143, 20);
-            this.textBoxNombre.TabIndex = 8;
-            this.textBoxNombre.TextChanged += new System.EventHandler(this.textBoxNombre_TextChanged);
+            this.btnImprimir.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnImprimir.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.Color.White;
+            this.btnImprimir.Location = new System.Drawing.Point(0, 517);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(930, 38);
+            this.btnImprimir.TabIndex = 9;
+            this.btnImprimir.Text = "btnImprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // ListarMateriaPrimaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Appearance.BackColor = System.Drawing.Color.OliveDrab;
+            this.Appearance.Options.UseBackColor = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 481);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridViewMateriaPrima);
+            this.ClientSize = new System.Drawing.Size(930, 555);
+            this.Controls.Add(this.btnImprimir);
+            this.Controls.Add(this.gridControlMateriaPrima);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ListarMateriaPrimaForm";
             this.Text = "ListarMateriaPrimaForm";
             this.Load += new System.EventHandler(this.ListarMateriaPrimaForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMateriaPrima)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlMateriaPrima)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridViewMateriaPrima;
-        private System.Windows.Forms.TextBox textBoxProveedor;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblProveedor;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBoxNombre;
+        private DevExpress.XtraGrid.GridControl gridControlMateriaPrima;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

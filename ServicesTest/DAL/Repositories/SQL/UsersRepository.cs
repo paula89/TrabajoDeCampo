@@ -17,7 +17,7 @@ namespace ServicesTest.DAL.Repositories.SQL
         #region Statements
         private string SelectAllStatement
         {
-            get => "SELECT Usuario, Nombre, Apellido, Direccion, Telefono, Email, Permisos, FechaAlta, Habilitado, DVH " +
+            get => "SELECT Usuario, Nombre, Apellido, Direccion, Telefono, Email, Permisos, FechaAlta, Habilitado, Idioma " +
                 "FROM [dbo].[Usuarios]";
         }
         private string SelectAllDVHStatement
@@ -27,8 +27,8 @@ namespace ServicesTest.DAL.Repositories.SQL
         }
         private string InsertStatement
         {
-            get => "INSERT INTO [dbo].[Usuarios] (Usuario, Nombre, Apellido, Direccion, Telefono, Email, Contraseña, Permisos, FechaAlta, Habilitado, DVH)" +
-                " VALUES (@Usuario, @Nombre, @Apellido, @Direccion, @Telefono, @Email, @Contraseña, @Permisos, @FechaAlta, @Habilitado, @DVH)";
+            get => "INSERT INTO [dbo].[Usuarios] (Usuario, Nombre, Apellido, Direccion, Telefono, Email, Contraseña, Permisos, FechaAlta, Habilitado, DVH, Idioma)" +
+                " VALUES (@Usuario, @Nombre, @Apellido, @Direccion, @Telefono, @Email, @Contraseña, @Permisos, @FechaAlta, @Habilitado, @DVH, @Idioma)";
         }
         private string UpdateUserStatement
         {
@@ -46,7 +46,7 @@ namespace ServicesTest.DAL.Repositories.SQL
         }
         private string LoginSelectStatement
         {
-            get => "SELECT Usuario, Nombre, Permisos, FechaAlta, DVH FROM [dbo].[Usuarios] " +
+            get => "SELECT Usuario, Nombre, Permisos, FechaAlta, DVH, Idioma FROM [dbo].[Usuarios] " +
                 "WHERE Usuario = @Usuario " +
                 "AND Contraseña = @Contraseña " +
                 "AND Habilitado = 1";
@@ -211,7 +211,7 @@ namespace ServicesTest.DAL.Repositories.SQL
                         usuario.Permisos.Add(familia);
                         usuario.FechaAlta = Convert.ToDateTime(values[3].ToString());
                         usuario.DVH = Convert.ToDecimal(values[4].ToString());
-
+                        usuario.Idioma = values[5].ToString();
                         usuarios.Add(usuario);
                     }
                 }
@@ -364,7 +364,7 @@ namespace ServicesTest.DAL.Repositories.SQL
             }
         }
     
-    public IEnumerable<Usuario> GetAll()
+    public IEnumerable<Object> GetAll()
         {
             try
             {
@@ -391,10 +391,10 @@ namespace ServicesTest.DAL.Repositories.SQL
                         Patente permisoUsuario = new Patente();
                         permisoUsuario.Nombre = values[6].ToString();
                         familia.Permisos.Add(permisoUsuario);
-                        usuario.Permisos.Add(familia);
+                        //usuario.Permisos.Add(familia);
                         usuario.FechaAlta = Convert.ToDateTime(values[7].ToString());
                         usuario.Habilitado = Convert.ToBoolean(values[8]);
-                        usuario.DVH = Convert.ToDecimal(values[9]);
+                        usuario.Idioma = values[9].ToString();
                         usuarios.Add(usuario);
                     }
                 }

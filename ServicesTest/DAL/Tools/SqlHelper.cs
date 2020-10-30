@@ -7,16 +7,22 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
 
 namespace ServicesTest.DAL.Tools
 {
     internal static class SqlHelper
     {
         static string conString, segString, bkpString, bkpStringPath;
+        static BinaryFormatter _formateadorBinario = new BinaryFormatter();
+
         static SqlHelper()
         {
             conString = ConfigurationManager.ConnectionStrings["MainConString"].ConnectionString;
@@ -179,6 +185,7 @@ namespace ServicesTest.DAL.Tools
                     comm.Parameters.AddWithValue("FechaAlta", parameters.FechaAlta);
                     comm.Parameters.AddWithValue("Habilitado", 1);
                     comm.Parameters.AddWithValue("DVH", parameters.DVH);
+                    comm.Parameters.AddWithValue("Idioma", parameters.Idioma);
 
                     String permiso = "";
                     foreach (var item in parameters.Permisos)
@@ -201,10 +208,13 @@ namespace ServicesTest.DAL.Tools
             }
         }
 
-
-            public static Int32 ExecuteNonQueryBitacora(String commandText,
+        public static Int32 ExecuteNonQueryBitacora(String commandText,
             CommandType commandType, string connection, Bitacora parameters)
         {
+            /*if (Convert.ToString(parameters.Criticidad) == "Mayor") {
+                parameters.Descripcion = Serializar<string>(parameters.Descripcion.Substring(0, 512));
+
+            } */
             using (var trxScope = new TransactionScope())
             {
                 SqlConnection conn = getConnection(connection);

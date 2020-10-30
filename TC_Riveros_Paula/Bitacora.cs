@@ -10,44 +10,43 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ServicesTest;
 using ServicesTest.Domain.Exceptions;
 using ServicesTest.Facade;
 
 namespace TC_Riveros_Paula
 {
-    public partial class FormBitacora : Form
+    public partial class FormBitacora : DevExpress.XtraEditors.XtraForm
     {
         public FormBitacora(ResourceManager idioma)
         {
             InitializeComponent();
             this.Text = idioma.GetString("FormBitacora");
             this.CargarTraducciones(idioma);
+            this.CargarTabla();
         }
 
         public void CargarTraducciones(ResourceManager idioma) 
         {
-            this.btnBuscar.Text = idioma.GetString("btnBuscar");
-            this.lblCriticidad.Text = idioma.GetString("lblCriticidad");
-            this.lblHasta.Text = idioma.GetString("lblHasta");
-            this.lblDesde.Text = idioma.GetString("lblDesde");
-
-            this.comboBoxCriticidad.Items.Add(Bitacora.CriticidadEnum.Menor);
-            this.comboBoxCriticidad.Items.Add(Bitacora.CriticidadEnum.Medio);
-            this.comboBoxCriticidad.Items.Add(Bitacora.CriticidadEnum.Mayor);
+            this.btnImprimir.Text = idioma.GetString("btnImprimir");
         }
         public void CargarTabla() {
             try
             {
-                string criticidad = (this.comboBoxCriticidad.Text != "") ?
-                   this.comboBoxCriticidad.Text: null ;
-                string desde = this.dateTimePickerDesde.Value.ToString();
-                string hasta = this.dateTimePickerHasta.Value.ToString();
-                String[] filtros = new string[] { criticidad, desde, hasta };
-            
+                String[] filtros = new string[] { };
+                IEnumerable<Bitacora> allBitacora;
 
                 IEnumerable<Bitacora> bitacora = BitacoraManager.Current.ObtenerBitacoras(filtros);
-                BitacoraDataGridView.DataSource = bitacora.ToList();
+                IEnumerable<Bitacora> criticos = BitacoraManager.Current.ObtenerBitacorasFile();
+                if (criticos.Any()) { allBitacora = bitacora.Concat(criticos); } else { allBitacora = bitacora.ToList(); };
+                if (bitacora.Any())
+                {
+                    gridControlBitacora.DataSource = allBitacora.ToList();
+                    btnImprimir.Enabled = true;
+                }
+                else {
+                    btnImprimir.Enabled = false;
+                    MessageBox.Show("La bitacora esta vacia", "", MessageBoxButtons.OK);
+                }
             }
             catch (UIException ex) {
                 FacadeService.ManageException(ex);
@@ -66,7 +65,11 @@ namespace TC_Riveros_Paula
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            CargarTabla();
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            gridControlBitacora.ShowPrintPreview();
         }
     }
 }

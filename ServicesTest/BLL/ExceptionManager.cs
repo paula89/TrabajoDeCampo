@@ -3,7 +3,9 @@ using ServicesTest.Domain.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,6 +29,7 @@ namespace ServicesTest.BLL
             {
             }
             #endregion
+
 
             /// <summary>
             /// Manager de exceptions...
@@ -59,7 +62,7 @@ namespace ServicesTest.BLL
                 if (ex.InnerException is DALException)
                 {
                 //Es una BLL Exception que en realidad viene desde una DALException
-                Bitacora bitacora = CrearBitacora("Error accediendo a los datos: LLame a X ::: " + ex, System.Diagnostics.Tracing.EventLevel.Critical);
+                Bitacora bitacora = CrearBitacora("Error accediendo a los datos: LLame a X ::: " + ex, System.Diagnostics.Tracing.EventLevel.Error);
                 BitacoraManager.Current.Registrar(bitacora);
                 }
                 else if (ex.IsBusinessException)
@@ -89,7 +92,8 @@ namespace ServicesTest.BLL
             Console.WriteLine($"[Exception] Fecha: { DateTime.Now.ToString() }, {ex.Message}, { ex.StackTrace } ");
             }
 
-             private Bitacora CrearBitacora(string descripcion, EventLevel level)
+       
+        private Bitacora CrearBitacora(string descripcion, EventLevel level)
              {
                     Bitacora bitacora = new Bitacora();
                     bitacora.Fecha = DateTime.Now;

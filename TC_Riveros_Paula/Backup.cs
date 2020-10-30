@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace TC_Riveros_Paula
 {
-    public partial class BackupForm : Form
+    public partial class BackupForm : DevExpress.XtraEditors.XtraForm
     {
         private string msgConfirm, titleConfirm, msgOk, msgError;
         public BackupForm(ResourceManager idioma)
@@ -23,13 +23,11 @@ namespace TC_Riveros_Paula
             InitializeComponent();
             this.Text = idioma.GetString("FormBitacora");
             this.CargarTraducciones(idioma);
+            CargarTabla();
         }
 
         public void CargarTraducciones(ResourceManager idioma) 
         {
-            this.btnFiltrar.Text = idioma.GetString("btnFiltrar");
-            this.lblHasta.Text = idioma.GetString("lblHasta");
-            this.lblDesde.Text = idioma.GetString("lblDesde");
             this.btnRestaurar.Text = idioma.GetString("btnRestaurar");
             this.msgConfirm = idioma.GetString("msgConfirm");
             this.titleConfirm = idioma.GetString("titleConfirm");
@@ -41,15 +39,18 @@ namespace TC_Riveros_Paula
         {
             try
             {
-                string desde = this.dateTimePickerDesde.Value.ToString();
-                string hasta = this.dateTimePickerHasta.Value.ToString();
-                String[] filtros = new string[] { desde, hasta };
+                /*string desde = this.dateTimePickerDesde.Value.ToString();
+                string hasta = this.dateTimePickerHasta.Value.ToString();*/
+                String[] filtros = new string[] { };//desde, hasta };
 
                 IEnumerable<Backup> backup = BackupManager.Current.ObtenerBackup(filtros);
-                BackupDataGridView.DataSource = backup.ToList();
-
-                if (backup.ToList().Count > 0) {
+                gridControlBackup.DataSource = backup.ToList();
+                if (backup.ToList().Count > 0)
+                {
                     this.btnRestaurar.Enabled = true;
+                }
+                else {
+                    this.btnRestaurar.Enabled = false;
                 }
 
             }
@@ -72,7 +73,6 @@ namespace TC_Riveros_Paula
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            CargarTabla();
         }
 
         private void btnRestaurar_Click(object sender, EventArgs e)
@@ -81,8 +81,12 @@ namespace TC_Riveros_Paula
             System.Console.WriteLine("Response ::: " + response);
 
             if (response == DialogResult.OK) {
-                this.Restaurar(BackupDataGridView.CurrentRow.Cells[2].Value.ToString());                
-            } 
+                Backup backup = new Backup();
+                backup = (Backup)this.gridView1.GetFocusedRow();
+                System.Console.WriteLine("seleccion ::: " + backup.Path);
+                this.Restaurar(backup.Path);
+                //  this.Restaurar(gridControlBackup);//.Cells[2].Value.ToString());                
+            }
         }
 
         private void Restaurar(string path) {

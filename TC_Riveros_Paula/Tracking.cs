@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Resources;
@@ -15,23 +16,26 @@ using System.Windows.Forms;
 
 namespace TC_Riveros_Paula
 {
-    public partial class TrackingForm : Form
+    public partial class TrackingForm : DevExpress.XtraEditors.XtraForm
     {
         public TrackingForm(ResourceManager idioma)
         {
             InitializeComponent();
             CargarTraducciones(idioma);
             this.Text = idioma.GetString("TrackingForm");
+            CargarTabla();
 
         }
         private void CargarTraducciones(ResourceManager idioma)
         {
-            this.btnBuscar.Text = idioma.GetString("btnBuscar");
+            this.btnImprimir.Text = idioma.GetString("btnImprimir");
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            CargarTabla();
+
+            gridControlTracking.ShowPrintPreview();
+
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
@@ -47,9 +51,13 @@ namespace TC_Riveros_Paula
 
                 if (tracking.Any())
                 {
-                    dataGridViewTracking.DataSource = tracking.ToList();
+                    gridControlTracking.DataSource = tracking.ToList();
+                    btnImprimir.Enabled = true;
+                    
+                   // dataGridViewTracking.DataSource = tracking.ToList();
                 }
                 else {
+                    btnImprimir.Enabled = false;
                     MessageBox.Show("No hay tracking en la base de datos.","",MessageBoxButtons.OK);
                 }
             }

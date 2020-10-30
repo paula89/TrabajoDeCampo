@@ -17,7 +17,7 @@ using System.Windows.Forms;
 
 namespace TC_Riveros_Paula
 {
-    public partial class ActualizarUsuarioForm : Form
+    public partial class ActualizarUsuarioForm : DevExpress.XtraEditors.XtraForm
     {
         static decimal actualDVH;
         IEnumerable<Usuario> usuarios;
@@ -30,6 +30,20 @@ namespace TC_Riveros_Paula
             CargarTraducciones();
             this.Text = language.GetString("ActualizarUsuarioForm");
             btnActualizar.Enabled = false;
+        }
+
+        private void CargarIdiomas()
+        {
+            try
+            {
+                IEnumerable<String> idiomas = UsersManager.Current.ObtenerIdiomas();
+                comboBoxIdioma.DataSource = idiomas.ToList();
+            }
+            catch (UIException ex)
+            {
+                FacadeService.ManageException(ex);
+            }
+
         }
         private void CargarTraducciones()
         {
@@ -82,6 +96,7 @@ namespace TC_Riveros_Paula
                         actualDVH = item.DVH;
                     }
                     CargarRoles();
+                    CargarIdiomas();
                     btnActualizar.Enabled = true;
                 }
             }

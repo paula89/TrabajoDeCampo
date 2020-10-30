@@ -1,4 +1,5 @@
-﻿using ServicesTest.BLL;
+﻿using DevExpress.Mvvm.Native;
+using ServicesTest.BLL;
 using ServicesTest.Domain.Composite;
 using ServicesTest.Domain.Exceptions;
 using ServicesTest.Facade;
@@ -15,9 +16,9 @@ using System.Windows.Forms;
 
 namespace TC_Riveros_Paula
 {
-    public partial class ListarUsuariosForm : Form
+    public partial class ListarUsuariosForm : DevExpress.XtraEditors.XtraForm
     {
-        IEnumerable<Usuario> usuarios;
+        IEnumerable<Object> usuarios;
         public ListarUsuariosForm(ResourceManager idioma)
         {
             InitializeComponent();
@@ -27,14 +28,13 @@ namespace TC_Riveros_Paula
         }
 
         private void CargarTraducciones(ResourceManager idioma) {
-            this.lblUsuario.Text = idioma.GetString("lblUsuario");
-            this.labelNombre.Text = idioma.GetString("labelNombre");
+           this.btnImprimir.Text = idioma.GetString("btnImprimir");
         }
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
             string desde = "";// this.dateTimePickerDesde.Value.ToString();
             string hasta = "";// this.dateTimePickerHasta.Value.ToString();
-            string nombre = this.textBoxNombre.Text;
+            string nombre = "";// this.textBoxNombre.Text;
             String[] filtros = new string[] { desde, hasta, nombre };
             CargarTabla(filtros);
         }
@@ -44,9 +44,9 @@ namespace TC_Riveros_Paula
             try
             {
                 usuarios = UsersManager.Current.ListarUsuariosFilter(filtros);
-                dataGridViewUsuarios.DataSource = usuarios.ToList();
-                dataGridViewUsuarios.Columns.Remove("Password");
-                dataGridViewUsuarios.Columns.Remove("DVH");
+              //  dataGridViewUsuarios.DataSource = usuarios.ToList();
+              //  dataGridViewUsuarios.Columns.Remove("Password");
+              //  dataGridViewUsuarios.Columns.Remove("DVH");
             }
             catch (UIException ex) {
                 FacadeService.ManageException(ex);
@@ -60,11 +60,18 @@ namespace TC_Riveros_Paula
             try
             {
                 usuarios = UsersManager.Current.ListarUsuarios();
-                dataGridViewUsuarios.DataSource = usuarios.ToList();
-                dataGridViewUsuarios.Columns["Password"].Visible = false;
-                dataGridViewUsuarios.Columns["DVH"].Visible = false;
+                gridControlUsuarios.DataSource = usuarios.ToList();
+                //gridControlUsuarios.bin
+                gridView1.Columns["Password"].Visible = false;
+                gridView1.Columns["DVH"].Visible = false;
+               // gridView1.Columns["Permisos"].Visible = false;
 
-                dataGridViewUsuarios.Refresh();
+
+                //dataGridViewUsuarios.DataSource = usuarios.ToList();
+                // dataGridViewUsuarios.Columns["Password"].Visible = false;
+                // dataGridViewUsuarios.Columns["DVH"].Visible = false;
+
+                // dataGridViewUsuarios.Refresh();
             }
             catch (UIException ex)
             {
@@ -72,7 +79,22 @@ namespace TC_Riveros_Paula
 
             }
         }
-
+        private void RecorrerListado(List<FamiliaComponent> permisos, string separator = "")
+        {
+            separator = separator + "-";
+            foreach (var item in permisos)
+            {
+                if (item.GetChilds() == 0)
+                {
+                    // = item.Nombre;
+                }
+                else
+                {
+                    dynamic value = item;
+                    RecorrerListado(value.Permisos, separator);
+                }
+            }
+        }
         private void dataGridViewUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -85,7 +107,7 @@ namespace TC_Riveros_Paula
 
         private void textBoxNombre_TextChanged(object sender, EventArgs e)
         {
-            string input = textBoxNombre.Text;
+         /*   string input = textBoxNombre.Text;
 
             if (input.Length == 0)
             {
@@ -100,12 +122,12 @@ namespace TC_Riveros_Paula
                 dataGridViewUsuarios.Columns.Remove("DVH");
             }
 
-            dataGridViewUsuarios.Refresh();
+            dataGridViewUsuarios.Refresh();*/
         }
 
         private void textBoxUsuario_TextChanged(object sender, EventArgs e)
         {
-            string input = textBoxUsuario.Text.ToUpper();
+          /*  string input = textBoxUsuario.Text.ToUpper();
 
             if (input.Length == 0)
             {
@@ -120,12 +142,17 @@ namespace TC_Riveros_Paula
                 dataGridViewUsuarios.Columns.Remove("DVH");
             }
 
-            dataGridViewUsuarios.Refresh();
+            dataGridViewUsuarios.Refresh();*/
         }
 
         private void ListarUsuariosForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            gridControlUsuarios.ShowPrintPreview();
         }
     }
 }

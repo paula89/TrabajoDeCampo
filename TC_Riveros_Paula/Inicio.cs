@@ -14,7 +14,7 @@ using ServicesTest.Facade;
 
 namespace TC_Riveros_Paula
 {
-    public partial class InicioForm : Form
+    public partial class InicioForm : DevExpress.XtraEditors.XtraForm
     {
         ResourceManager idioma;
         string usuario;
@@ -24,7 +24,7 @@ namespace TC_Riveros_Paula
             InitializeComponent(permiso);
             idioma = idiomaElegido;
             usuario = Cod_Usuario;
-            this.Text = idioma.GetString("InicioForm");
+            this.Text = "CookerSoft";
             CargarTraducciones(idioma, permiso);
             RegistrarBackup();
        }
@@ -209,6 +209,11 @@ namespace TC_Riveros_Paula
         }
 
         private void InicioForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InicioForm_Load_1(object sender, EventArgs e)
         {
 
         }

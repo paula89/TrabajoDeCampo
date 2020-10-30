@@ -46,128 +46,165 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(574, 415);
+            this.btnAceptar.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
+            this.btnAceptar.Location = new System.Drawing.Point(482, 443);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(112, 28);
             this.btnAceptar.TabIndex = 0;
             this.btnAceptar.Text = "btnAceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(682, 415);
+            this.btnCancelar.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(650, 443);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(112, 28);
             this.btnCancelar.TabIndex = 1;
             this.btnCancelar.Text = "btnCancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // textBoxNombre
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(32, 33);
+            this.textBoxNombre.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBoxNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNombre.Location = new System.Drawing.Point(37, 41);
+            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(170, 20);
+            this.textBoxNombre.Size = new System.Drawing.Size(198, 27);
             this.textBoxNombre.TabIndex = 2;
             // 
             // textBoxProveedor
             // 
-            this.textBoxProveedor.Location = new System.Drawing.Point(32, 97);
+            this.textBoxProveedor.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBoxProveedor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxProveedor.Location = new System.Drawing.Point(37, 119);
+            this.textBoxProveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxProveedor.Name = "textBoxProveedor";
-            this.textBoxProveedor.Size = new System.Drawing.Size(170, 20);
+            this.textBoxProveedor.Size = new System.Drawing.Size(198, 27);
             this.textBoxProveedor.TabIndex = 3;
             // 
             // textBoxComentario
             // 
-            this.textBoxComentario.Location = new System.Drawing.Point(32, 237);
+            this.textBoxComentario.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBoxComentario.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.textBoxComentario.Location = new System.Drawing.Point(37, 292);
+            this.textBoxComentario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxComentario.MaxLength = 100;
             this.textBoxComentario.Multiline = true;
             this.textBoxComentario.Name = "textBoxComentario";
-            this.textBoxComentario.Size = new System.Drawing.Size(170, 94);
+            this.textBoxComentario.Size = new System.Drawing.Size(198, 115);
             this.textBoxComentario.TabIndex = 4;
             // 
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
-            this.labelNombre.Location = new System.Drawing.Point(240, 40);
+            this.labelNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.labelNombre.Location = new System.Drawing.Point(280, 49);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(66, 13);
+            this.labelNombre.Size = new System.Drawing.Size(93, 17);
             this.labelNombre.TabIndex = 5;
             this.labelNombre.Text = "labelNombre";
             // 
             // labelProveedor
             // 
             this.labelProveedor.AutoSize = true;
-            this.labelProveedor.Location = new System.Drawing.Point(240, 100);
+            this.labelProveedor.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.labelProveedor.Location = new System.Drawing.Point(280, 123);
             this.labelProveedor.Name = "labelProveedor";
-            this.labelProveedor.Size = new System.Drawing.Size(78, 13);
+            this.labelProveedor.Size = new System.Drawing.Size(107, 17);
             this.labelProveedor.TabIndex = 6;
             this.labelProveedor.Text = "labelProveedor";
             // 
             // labelComentario
             // 
             this.labelComentario.AutoSize = true;
-            this.labelComentario.Location = new System.Drawing.Point(240, 240);
+            this.labelComentario.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.labelComentario.Location = new System.Drawing.Point(280, 295);
             this.labelComentario.Name = "labelComentario";
-            this.labelComentario.Size = new System.Drawing.Size(82, 13);
+            this.labelComentario.Size = new System.Drawing.Size(119, 17);
             this.labelComentario.TabIndex = 7;
             this.labelComentario.Text = "labelComentario";
             this.labelComentario.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBoxCantidad
             // 
-            this.textBoxCantidad.Location = new System.Drawing.Point(413, 33);
+            this.textBoxCantidad.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBoxCantidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCantidad.Location = new System.Drawing.Point(482, 41);
+            this.textBoxCantidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxCantidad.Name = "textBoxCantidad";
-            this.textBoxCantidad.Size = new System.Drawing.Size(200, 20);
+            this.textBoxCantidad.Size = new System.Drawing.Size(233, 27);
             this.textBoxCantidad.TabIndex = 8;
             // 
             // labelCantidad
             // 
             this.labelCantidad.AutoSize = true;
-            this.labelCantidad.Location = new System.Drawing.Point(645, 36);
+            this.labelCantidad.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.labelCantidad.Location = new System.Drawing.Point(752, 44);
             this.labelCantidad.Name = "labelCantidad";
-            this.labelCantidad.Size = new System.Drawing.Size(71, 13);
+            this.labelCantidad.Size = new System.Drawing.Size(103, 17);
             this.labelCantidad.TabIndex = 10;
             this.labelCantidad.Text = "labelCantidad";
             // 
             // labelMarca
             // 
             this.labelMarca.AutoSize = true;
-            this.labelMarca.Location = new System.Drawing.Point(240, 171);
+            this.labelMarca.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.labelMarca.Location = new System.Drawing.Point(280, 210);
             this.labelMarca.Name = "labelMarca";
-            this.labelMarca.Size = new System.Drawing.Size(59, 13);
+            this.labelMarca.Size = new System.Drawing.Size(81, 17);
             this.labelMarca.TabIndex = 11;
             this.labelMarca.Text = "labelMarca";
             // 
             // dateTimePickerVencimiento
             // 
-            this.dateTimePickerVencimiento.Location = new System.Drawing.Point(413, 100);
+            this.dateTimePickerVencimiento.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.dateTimePickerVencimiento.Location = new System.Drawing.Point(482, 123);
+            this.dateTimePickerVencimiento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimePickerVencimiento.Name = "dateTimePickerVencimiento";
-            this.dateTimePickerVencimiento.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerVencimiento.Size = new System.Drawing.Size(233, 22);
             this.dateTimePickerVencimiento.TabIndex = 12;
             // 
             // labelVencimiento
             // 
             this.labelVencimiento.AutoSize = true;
-            this.labelVencimiento.Location = new System.Drawing.Point(645, 107);
+            this.labelVencimiento.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.labelVencimiento.Location = new System.Drawing.Point(752, 132);
             this.labelVencimiento.Name = "labelVencimiento";
-            this.labelVencimiento.Size = new System.Drawing.Size(87, 13);
+            this.labelVencimiento.Size = new System.Drawing.Size(122, 17);
             this.labelVencimiento.TabIndex = 13;
             this.labelVencimiento.Text = "labelVencimiento";
             // 
             // textBoxMarca
             // 
-            this.textBoxMarca.Location = new System.Drawing.Point(32, 164);
+            this.textBoxMarca.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBoxMarca.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMarca.Location = new System.Drawing.Point(37, 202);
+            this.textBoxMarca.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxMarca.Name = "textBoxMarca";
-            this.textBoxMarca.Size = new System.Drawing.Size(170, 20);
+            this.textBoxMarca.Size = new System.Drawing.Size(198, 27);
             this.textBoxMarca.TabIndex = 14;
             // 
             // NuevoMateriaPrimaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Appearance.BackColor = System.Drawing.Color.OliveDrab;
+            this.Appearance.Options.UseBackColor = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(930, 555);
             this.Controls.Add(this.textBoxMarca);
             this.Controls.Add(this.labelVencimiento);
             this.Controls.Add(this.dateTimePickerVencimiento);
@@ -182,6 +219,8 @@
             this.Controls.Add(this.textBoxNombre);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "NuevoMateriaPrimaForm";
             this.Text = "NuevoMateriaPrimaForm";
             this.ResumeLayout(false);

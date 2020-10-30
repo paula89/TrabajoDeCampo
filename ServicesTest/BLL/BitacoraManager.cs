@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ServicesTest.DAL.Factory;
+using ServicesTest.DAL.Repositories.File;
 
 namespace ServicesTest.BLL
 {
@@ -37,6 +38,11 @@ namespace ServicesTest.BLL
         public IEnumerable<Bitacora> ObtenerBitacoras(string[] filtros)
         {
             return FactoryDAL.Current.GetBitacoraRepository().GetAll(filtros);
+        }
+
+        public IEnumerable<Bitacora> ObtenerBitacorasFile()
+        {
+            return BitacoraSerialization.GetBitacora();
         }
     }
 }

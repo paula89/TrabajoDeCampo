@@ -28,122 +28,73 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BitacoraDataGridView = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.comboBoxCriticidad = new System.Windows.Forms.ComboBox();
-            this.lblDesde = new System.Windows.Forms.Label();
-            this.lblHasta = new System.Windows.Forms.Label();
-            this.lblCriticidad = new System.Windows.Forms.Label();
-            this.dateTimePickerHasta = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerDesde = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.BitacoraDataGridView)).BeginInit();
+            this.gridControlBitacora = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlBitacora)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // BitacoraDataGridView
+            // gridControlBitacora
             // 
-            this.BitacoraDataGridView.AllowUserToAddRows = false;
-            this.BitacoraDataGridView.AllowUserToDeleteRows = false;
-            this.BitacoraDataGridView.AllowUserToOrderColumns = true;
-            this.BitacoraDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.BitacoraDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.BitacoraDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.BitacoraDataGridView.Location = new System.Drawing.Point(55, 141);
-            this.BitacoraDataGridView.Name = "BitacoraDataGridView";
-            this.BitacoraDataGridView.ReadOnly = true;
-            this.BitacoraDataGridView.Size = new System.Drawing.Size(704, 345);
-            this.BitacoraDataGridView.TabIndex = 0;
-            this.BitacoraDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BitacoraDataGridView_CellContentClick);
+            this.gridControlBitacora.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gridControlBitacora.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridControlBitacora.Location = new System.Drawing.Point(0, 0);
+            this.gridControlBitacora.MainView = this.gridView1;
+            this.gridControlBitacora.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridControlBitacora.Name = "gridControlBitacora";
+            this.gridControlBitacora.Size = new System.Drawing.Size(930, 511);
+            this.gridControlBitacora.TabIndex = 11;
+            this.gridControlBitacora.UseEmbeddedNavigator = true;
+            this.gridControlBitacora.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
             // 
-            // btnBuscar
+            // gridView1
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(684, 97);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.Text = "btnBuscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            this.gridView1.DetailHeight = 431;
+            this.gridView1.GridControl = this.gridControlBitacora;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             // 
-            // comboBoxCriticidad
+            // btnImprimir
             // 
-            this.comboBoxCriticidad.FormattingEnabled = true;
-            this.comboBoxCriticidad.Location = new System.Drawing.Point(560, 68);
-            this.comboBoxCriticidad.Name = "comboBoxCriticidad";
-            this.comboBoxCriticidad.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxCriticidad.TabIndex = 3;
-            // 
-            // lblDesde
-            // 
-            this.lblDesde.AutoSize = true;
-            this.lblDesde.Location = new System.Drawing.Point(52, 41);
-            this.lblDesde.Name = "lblDesde";
-            this.lblDesde.Size = new System.Drawing.Size(48, 13);
-            this.lblDesde.TabIndex = 6;
-            this.lblDesde.Text = "lblDesde";
-            // 
-            // lblHasta
-            // 
-            this.lblHasta.AutoSize = true;
-            this.lblHasta.Location = new System.Drawing.Point(295, 41);
-            this.lblHasta.Name = "lblHasta";
-            this.lblHasta.Size = new System.Drawing.Size(45, 13);
-            this.lblHasta.TabIndex = 7;
-            this.lblHasta.Text = "lblHasta";
-            // 
-            // lblCriticidad
-            // 
-            this.lblCriticidad.AutoSize = true;
-            this.lblCriticidad.Location = new System.Drawing.Point(557, 41);
-            this.lblCriticidad.Name = "lblCriticidad";
-            this.lblCriticidad.Size = new System.Drawing.Size(60, 13);
-            this.lblCriticidad.TabIndex = 8;
-            this.lblCriticidad.Text = "lblCriticidad";
-            // 
-            // dateTimePickerHasta
-            // 
-            this.dateTimePickerHasta.Location = new System.Drawing.Point(298, 69);
-            this.dateTimePickerHasta.Name = "dateTimePickerHasta";
-            this.dateTimePickerHasta.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerHasta.TabIndex = 9;
-            // 
-            // dateTimePickerDesde
-            // 
-            this.dateTimePickerDesde.Location = new System.Drawing.Point(55, 69);
-            this.dateTimePickerDesde.Name = "dateTimePickerDesde";
-            this.dateTimePickerDesde.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerDesde.TabIndex = 10;
+            this.btnImprimir.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnImprimir.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnImprimir.FlatAppearance.BorderColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.Color.White;
+            this.btnImprimir.Location = new System.Drawing.Point(0, 517);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(930, 38);
+            this.btnImprimir.TabIndex = 12;
+            this.btnImprimir.Text = "btnImprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // FormBitacora
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Appearance.BackColor = System.Drawing.Color.OliveDrab;
+            this.Appearance.Options.UseBackColor = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 525);
-            this.Controls.Add(this.dateTimePickerDesde);
-            this.Controls.Add(this.dateTimePickerHasta);
-            this.Controls.Add(this.lblCriticidad);
-            this.Controls.Add(this.lblHasta);
-            this.Controls.Add(this.lblDesde);
-            this.Controls.Add(this.comboBoxCriticidad);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.BitacoraDataGridView);
+            this.ClientSize = new System.Drawing.Size(930, 555);
+            this.Controls.Add(this.btnImprimir);
+            this.Controls.Add(this.gridControlBitacora);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormBitacora";
             this.Text = "BitacoraForm";
             this.Load += new System.EventHandler(this.FormBitacora_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.BitacoraDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlBitacora)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView BitacoraDataGridView;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.ComboBox comboBoxCriticidad;
-        private System.Windows.Forms.Label lblDesde;
-        private System.Windows.Forms.Label lblHasta;
-        private System.Windows.Forms.Label lblCriticidad;
-        private System.Windows.Forms.DateTimePicker dateTimePickerHasta;
-        private System.Windows.Forms.DateTimePicker dateTimePickerDesde;
+        private DevExpress.XtraGrid.GridControl gridControlBitacora;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

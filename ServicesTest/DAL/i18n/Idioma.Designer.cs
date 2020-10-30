@@ -160,6 +160,15 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Print or export.
+        /// </summary>
+        public static string btnImprimir {
+            get {
+                return ResourceManager.GetString("btnImprimir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Enter.
         /// </summary>
         public static string btnLogin {
@@ -471,6 +480,15 @@ namespace ServicesTest.DAL.i18n {
         public static string lblUsuario {
             get {
                 return ResourceManager.GetString("lblUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Welcome.
+        /// </summary>
+        public static string lblWelcome {
+            get {
+                return ResourceManager.GetString("lblWelcome", resourceCulture);
             }
         }
         
@@ -939,6 +957,15 @@ namespace ServicesTest.DAL.i18n {
         public static string titleConfirm {
             get {
                 return ResourceManager.GetString("titleConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tracking.
+        /// </summary>
+        public static string TrackingForm {
+            get {
+                return ResourceManager.GetString("TrackingForm", resourceCulture);
             }
         }
         

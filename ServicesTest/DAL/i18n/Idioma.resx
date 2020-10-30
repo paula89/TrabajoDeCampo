@@ -423,4 +423,13 @@
   <data name="ListarUsuariosForm" xml:space="preserve">
     <value>Users</value>
   </data>
+  <data name="lblWelcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="btnImprimir" xml:space="preserve">
+    <value>Print or export</value>
+  </data>
+  <data name="TrackingForm" xml:space="preserve">
+    <value>Tracking</value>
+  </data>
 </root>
