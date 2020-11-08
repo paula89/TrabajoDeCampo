@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ServicesTest.Domain
 {
+    /// <summary>
+    /// backup class 
+    /// </summary>
     public class Backup
     {
         public DateTime Fecha { get; set; }

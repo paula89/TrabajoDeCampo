@@ -92,7 +92,12 @@ namespace ServicesTest.BLL
             Console.WriteLine($"[Exception] Fecha: { DateTime.Now.ToString() }, {ex.Message}, { ex.StackTrace } ");
             }
 
-       
+       /// <summary>
+       /// create a new bitacora object
+       /// </summary>
+       /// <param name="descripcion"></param>
+       /// <param name="level"></param>
+       /// <returns></returns>
         private Bitacora CrearBitacora(string descripcion, EventLevel level)
              {
                     Bitacora bitacora = new Bitacora();

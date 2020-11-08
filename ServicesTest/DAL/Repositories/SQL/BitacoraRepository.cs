@@ -14,6 +14,9 @@ namespace ServicesTest.DAL.Repositories.SQL
 {
     public class BitacoraRepository : IGenericRepository<Bitacora>
     {
+        /// <summary>
+        /// statements region
+        /// </summary>
         #region Statements
         private string InsertStatement
         {
@@ -47,7 +50,11 @@ namespace ServicesTest.DAL.Repositories.SQL
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// get all the bitacora by filters
+        /// </summary>
+        /// <param name="filtros"></param>
+        /// <returns></returns>
         public IEnumerable<Bitacora> GetAll(Array filtros)
         {
             try
@@ -104,7 +111,11 @@ namespace ServicesTest.DAL.Repositories.SQL
                 return null;
             }
         }
-
+        /// <summary>
+        /// insert a new bitacora row
+        /// </summary>
+        /// <param name="bitacora"></param>
+        /// <returns></returns>
         public int Insert(Bitacora bitacora)
         {
             int inserted;
@@ -117,7 +128,10 @@ namespace ServicesTest.DAL.Repositories.SQL
             }
             return inserted;            
         }
-
+        /// <summary>
+        /// get the critical errors
+        /// </summary>
+        /// <returns></returns>
         public List<Bitacora> getCriticalErrors() {
             List<Bitacora> lecturas = File.BitacoraSerialization.GetBitacora();
             return lecturas;

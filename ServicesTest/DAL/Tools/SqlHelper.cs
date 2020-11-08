@@ -23,6 +23,9 @@ namespace ServicesTest.DAL.Tools
         static string conString, segString, bkpString, bkpStringPath;
         static BinaryFormatter _formateadorBinario = new BinaryFormatter();
 
+        /// <summary>
+        /// set all the connections database
+        /// </summary>
         static SqlHelper()
         {
             conString = ConfigurationManager.ConnectionStrings["MainConString"].ConnectionString;
@@ -31,7 +34,11 @@ namespace ServicesTest.DAL.Tools
             bkpStringPath = bkpString + "TC" + DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString()+DateTime.Now.Day.ToString() 
                 + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + ".bak";
         }
-
+        /// <summary>
+        /// get the differents connections
+        /// </summary>
+        /// <param name="connection"></param>
+        /// <returns></returns>
         public static SqlConnection getConnection(string connection)
         {
             SqlConnection conn;
@@ -52,8 +59,14 @@ namespace ServicesTest.DAL.Tools
                 return null;
             }
         }
-
-        // restore
+        /// <summary>
+        /// restore the backup
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <param name="commandType"></param>
+        /// <param name="connection"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public static Int32 ExecuteNonQueryRestore(String commandText,
             CommandType commandType, string connection, SqlParameter[] parameters)           
         {
@@ -84,6 +97,14 @@ namespace ServicesTest.DAL.Tools
             }
             
         }
+        /// <summary>
+        /// update the user
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <param name="commandType"></param>
+        /// <param name="connection"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public static Int32 ExecuteNonQueryUpdateUser(String commandText,
             CommandType commandType, string connection, Usuario parameters)
         {
@@ -131,6 +152,14 @@ namespace ServicesTest.DAL.Tools
             }
 
         }
+        /// <summary>
+        /// update the DVV
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <param name="commandType"></param>
+        /// <param name="connection"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public static Int32 ExecuteNonQueryUpdateDVV(String commandText,
             CommandType commandType, string connection, string parameters)
         {
@@ -162,7 +191,14 @@ namespace ServicesTest.DAL.Tools
 
         }
 
-
+        /// <summary>
+        /// Insert a new user
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <param name="commandType"></param>
+        /// <param name="connection"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public static Int32 ExecuteNonQueryUsers(String commandText,
             CommandType commandType, string connection, Usuario parameters)
         {
@@ -207,7 +243,14 @@ namespace ServicesTest.DAL.Tools
 
             }
         }
-
+        /// <summary>
+        /// insert a new bitacora row
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <param name="commandType"></param>
+        /// <param name="connection"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public static Int32 ExecuteNonQueryBitacora(String commandText,
             CommandType commandType, string connection, Bitacora parameters)
         {
@@ -241,7 +284,14 @@ namespace ServicesTest.DAL.Tools
                 }
             }
         }
-        // do backup
+        /// <summary>
+        /// do a backup
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <param name="commandType"></param>
+        /// <param name="connection"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public static Int32 ExecuteNonQueryBackup(String commandText,
            CommandType commandType, string connection, Backup parameters)
         {
@@ -300,7 +350,14 @@ namespace ServicesTest.DAL.Tools
                 }
             }
         }
-
+        /// <summary>
+        /// get data from the database. Use to differents objects
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <param name="commandType"></param>
+        /// <param name="connection"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public static SqlDataReader ExecuteReader(String commandText,
             CommandType commandType, string connection, params SqlParameter[] parameters)
         {

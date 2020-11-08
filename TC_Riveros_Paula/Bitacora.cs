@@ -24,11 +24,17 @@ namespace TC_Riveros_Paula
             this.CargarTraducciones(idioma);
             this.CargarTabla();
         }
-
+        /// <summary>
+        /// load translations
+        /// </summary>
+        /// <param name="idioma"></param>
         public void CargarTraducciones(ResourceManager idioma) 
         {
             this.btnImprimir.Text = idioma.GetString("btnImprimir");
         }
+        /// <summary>
+        /// load the table
+        /// </summary>
         public void CargarTabla() {
             try
             {
@@ -66,7 +72,11 @@ namespace TC_Riveros_Paula
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
         }
-
+        /// <summary>
+        /// print the table
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             gridControlBitacora.ShowPrintPreview();

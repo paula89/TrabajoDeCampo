@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace TC_Riveros_Paula
 {
@@ -114,6 +115,10 @@ namespace TC_Riveros_Paula
             this.menuStrip1.Size = new System.Drawing.Size(762, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.menuStrip1.Dock = DockStyle.Top;
+            this.menuStrip1.Stretch = true;
+
             // 
             // productosToolStripMenuItem
             // 
@@ -123,6 +128,7 @@ namespace TC_Riveros_Paula
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
             this.productosToolStripMenuItem.Size = new System.Drawing.Size(176, 20);
             this.productosToolStripMenuItem.Text = "productosToolStripMenuItem";
+            this.productosToolStripMenuItem.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
             // 
             // MenuItemNuevoProducto
@@ -130,6 +136,7 @@ namespace TC_Riveros_Paula
             this.MenuItemNuevoProducto.Name = "MenuItemNuevoProducto";
             this.MenuItemNuevoProducto.Size = new System.Drawing.Size(213, 22);
             this.MenuItemNuevoProducto.Text = "MenuItemNuevoProducto";
+            this.MenuItemNuevoProducto.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.MenuItemNuevoProducto.Click += new System.EventHandler(this.nuevoToolStripMenuItem1_Click);
             // 
             // MenuItemCatalogo
@@ -137,6 +144,7 @@ namespace TC_Riveros_Paula
             this.MenuItemCatalogo.Name = "MenuItemCatalogo";
             this.MenuItemCatalogo.Size = new System.Drawing.Size(213, 22);
             this.MenuItemCatalogo.Text = "MenuItemCatalogo";
+            this.MenuItemCatalogo.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.MenuItemCatalogo.Click += new System.EventHandler(this.MenuItemCatalogo_Click);
             // 
             // MateriaPrimaToolStripMenuItem
@@ -146,6 +154,7 @@ namespace TC_Riveros_Paula
             this.MenuItemVerMateriaPrima});
             this.MateriaPrimaToolStripMenuItem.Name = "MateriaPrimaToolStripMenuItem";
             this.MateriaPrimaToolStripMenuItem.Size = new System.Drawing.Size(193, 20);
+            this.MateriaPrimaToolStripMenuItem.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.MateriaPrimaToolStripMenuItem.Text = "MateriaPrimaToolStripMenuItem";
             // 
             // MenuItemNuevoMateriaPrima
@@ -154,6 +163,7 @@ namespace TC_Riveros_Paula
             this.MenuItemNuevoMateriaPrima.Size = new System.Drawing.Size(235, 22);
             this.MenuItemNuevoMateriaPrima.Text = "MenuItemNuevoMateriaPrima";
             this.MenuItemNuevoMateriaPrima.Click += new System.EventHandler(this.MenuItemNuevoStock_Click);
+            this.MenuItemNuevoMateriaPrima.BackColor = System.Drawing.Color.DarkOliveGreen;
             // 
             // MenuItemVerMateriaPrima
             // 
@@ -161,6 +171,7 @@ namespace TC_Riveros_Paula
             this.MenuItemVerMateriaPrima.Size = new System.Drawing.Size(235, 22);
             this.MenuItemVerMateriaPrima.Text = "MenuItemVerMateriaPrima";
             this.MenuItemVerMateriaPrima.Click += new System.EventHandler(this.MenuItemVerStock_Click);
+            this.MenuItemVerMateriaPrima.BackColor = System.Drawing.Color.DarkOliveGreen;
             // 
             // herramientasToolStripMenuItem
             // 
@@ -170,6 +181,7 @@ namespace TC_Riveros_Paula
             this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
             this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(191, 20);
             this.herramientasToolStripMenuItem.Text = "herramientasToolStripMenuItem";
+            this.herramientasToolStripMenuItem.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.herramientasToolStripMenuItem.Click += new System.EventHandler(this.herramientasToolStripMenuItem_Click);
             // 
             // nuevaHerramientaToolStripMenuItem
@@ -177,6 +189,7 @@ namespace TC_Riveros_Paula
             this.nuevaHerramientaToolStripMenuItem.Name = "nuevaHerramientaToolStripMenuItem";
             this.nuevaHerramientaToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
             this.nuevaHerramientaToolStripMenuItem.Text = "nuevaHerramientaToolStripMenuItem";
+            this.nuevaHerramientaToolStripMenuItem.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.nuevaHerramientaToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
             // listarHerramientasToolStripMenuItem
@@ -184,6 +197,7 @@ namespace TC_Riveros_Paula
             this.listarHerramientasToolStripMenuItem.Name = "listarHerramientasToolStripMenuItem";
             this.listarHerramientasToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
             this.listarHerramientasToolStripMenuItem.Text = "listarHerramientasToolStripMenuItem";
+            this.listarHerramientasToolStripMenuItem.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.listarHerramientasToolStripMenuItem.Click += new System.EventHandler(this.listarHerramientasToolStripMenuItem_Click);
             // 
             // promocionesToolStripMenuItem
@@ -193,6 +207,7 @@ namespace TC_Riveros_Paula
             this.MenuItemVerPromociones});
             this.promocionesToolStripMenuItem.Name = "promocionesToolStripMenuItem";
             this.promocionesToolStripMenuItem.Size = new System.Drawing.Size(192, 20);
+            this.promocionesToolStripMenuItem.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.promocionesToolStripMenuItem.Text = "promocionesToolStripMenuItem";
             // 
             // MenuItemNuevaPromocion
@@ -200,6 +215,7 @@ namespace TC_Riveros_Paula
             this.MenuItemNuevaPromocion.Name = "MenuItemNuevaPromocion";
             this.MenuItemNuevaPromocion.Size = new System.Drawing.Size(222, 22);
             this.MenuItemNuevaPromocion.Text = "MenuItemNuevaPromocion";
+            this.MenuItemNuevaPromocion.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.MenuItemNuevaPromocion.Click += new System.EventHandler(this.MenuItemNuevaPromocion_Click);
             // 
             // MenuItemVerPromociones
@@ -207,6 +223,7 @@ namespace TC_Riveros_Paula
             this.MenuItemVerPromociones.Name = "MenuItemVerPromociones";
             this.MenuItemVerPromociones.Size = new System.Drawing.Size(222, 22);
             this.MenuItemVerPromociones.Text = "MenuItemVerPromociones";
+            this.MenuItemVerPromociones.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.MenuItemVerPromociones.Click += new System.EventHandler(this.MenuItemVerPromociones_Click);
             // 
             // ventasToolStripMenuItem
@@ -215,6 +232,7 @@ namespace TC_Riveros_Paula
             this.nuevaVentaToolStripMenuItem});
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
             this.ventasToolStripMenuItem.Size = new System.Drawing.Size(156, 20);
+            this.ventasToolStripMenuItem.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.ventasToolStripMenuItem.Text = "ventasToolStripMenuItem";
             // 
             // nuevaVentaToolStripMenuItem
@@ -222,6 +240,7 @@ namespace TC_Riveros_Paula
             this.nuevaVentaToolStripMenuItem.Name = "nuevaVentaToolStripMenuItem";
             this.nuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
             this.nuevaVentaToolStripMenuItem.Text = "nuevaVentaToolStripMenuItem";
+            this.nuevaVentaToolStripMenuItem.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.nuevaVentaToolStripMenuItem.Click += new System.EventHandler(this.nuevaVentaToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
@@ -230,6 +249,7 @@ namespace TC_Riveros_Paula
             this.MenuItemReportesVentas});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(165, 20);
+            this.reportesToolStripMenuItem.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.reportesToolStripMenuItem.Text = "reportesToolStripMenuItem";
             // 
             // MenuItemReportesVentas
@@ -237,6 +257,7 @@ namespace TC_Riveros_Paula
             this.MenuItemReportesVentas.Name = "MenuItemReportesVentas";
             this.MenuItemReportesVentas.Size = new System.Drawing.Size(210, 22);
             this.MenuItemReportesVentas.Text = "MenuItemReportesVentas";
+            this.MenuItemReportesVentas.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.MenuItemReportesVentas.Click += new System.EventHandler(this.MenuItemReportesVentas_Click);
             // 
             // calcularToolStripMenuItem
@@ -246,6 +267,7 @@ namespace TC_Riveros_Paula
             this.CalcularPerdidasToolStripMenuItem});
             this.calcularToolStripMenuItem.Name = "calcularToolStripMenuItem";
             this.calcularToolStripMenuItem.Size = new System.Drawing.Size(163, 20);
+            this.calcularToolStripMenuItem.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.calcularToolStripMenuItem.Text = "calcularToolStripMenuItem";
             // 
             // MenuItemCalcularPresupuesto
@@ -253,6 +275,7 @@ namespace TC_Riveros_Paula
             this.MenuItemCalcularPresupuesto.Name = "MenuItemCalcularPresupuesto";
             this.MenuItemCalcularPresupuesto.Size = new System.Drawing.Size(265, 22);
             this.MenuItemCalcularPresupuesto.Text = "MenuItemCalcularPresupuesto";
+            this.MenuItemCalcularPresupuesto.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.MenuItemCalcularPresupuesto.Click += new System.EventHandler(this.MenuItemCalcularPresupuesto_Click);
             // 
             // CalcularPerdidasToolStripMenuItem
@@ -260,6 +283,7 @@ namespace TC_Riveros_Paula
             this.CalcularPerdidasToolStripMenuItem.Name = "CalcularPerdidasToolStripMenuItem";
             this.CalcularPerdidasToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.CalcularPerdidasToolStripMenuItem.Text = "CalcularPerdidasToolStripMenuItem";
+            this.CalcularPerdidasToolStripMenuItem.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.CalcularPerdidasToolStripMenuItem.Click += new System.EventHandler(this.CalcularPerdidasToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
@@ -267,6 +291,7 @@ namespace TC_Riveros_Paula
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(154, 20);
             this.ayudaToolStripMenuItem.Text = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.BackColor = System.Drawing.Color.DarkOliveGreen;
 
             if (isAdmin(permiso))
             {
@@ -277,21 +302,25 @@ namespace TC_Riveros_Paula
                 this.MenuItemNuevoUsuario, this.MenuItemVerUsuarios, this.MenuItemActualizarUsuario });
                 this.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem";
                 this.UsuariosToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+                this.UsuariosToolStripMenuItem.BackColor = System.Drawing.Color.DarkOliveGreen;
                 this.UsuariosToolStripMenuItem.Text = "UsuariosToolStripMenuItem";
 
                 this.MenuItemNuevoUsuario.Name = "NuevoUsuarioToolStripMenuItem";
                 this.MenuItemNuevoUsuario.Size = new System.Drawing.Size(196, 22);
                 this.MenuItemNuevoUsuario.Text = "NuevoUsuarioStripMenuItem";
+                this.MenuItemNuevoUsuario.BackColor = System.Drawing.Color.DarkOliveGreen;
                 this.MenuItemNuevoUsuario.Click += new System.EventHandler(this.UsuariosToolStripMenuItem_Click);
 
                 this.MenuItemVerUsuarios.Name = "VerUsuarioToolStripMenuItem";
                 this.MenuItemVerUsuarios.Size = new System.Drawing.Size(196, 22);
                 this.MenuItemVerUsuarios.Text = "VerUsuarioStripMenuItem";
+                this.MenuItemVerUsuarios.BackColor = System.Drawing.Color.DarkOliveGreen;
                 this.MenuItemVerUsuarios.Click += new System.EventHandler(this.VerUsuariosToolStripMenuItem_Click);
 
                 this.MenuItemActualizarUsuario.Name = "MenuItemActualizarUsuario";
                 this.MenuItemActualizarUsuario.Size = new System.Drawing.Size(196, 22);
                 this.MenuItemActualizarUsuario.Text = "MenuItemActualizarUsuario";
+                this.MenuItemActualizarUsuario.BackColor = System.Drawing.Color.DarkOliveGreen;
                 this.MenuItemActualizarUsuario.Click += new System.EventHandler(this.MenuItemActualizarUsuario_Click);
 
 
@@ -302,6 +331,7 @@ namespace TC_Riveros_Paula
                 this.BitacoraToolStripMenuItem, this.BackupToolStripMenuItem,this.TrackingToolStripMenuItem});
                 this.SeguridadToolStripMenuItem.Name = "SeguridadToolStripMenuItem";
                 this.SeguridadToolStripMenuItem.Size = new System.Drawing.Size(151, 20);
+                this.SeguridadToolStripMenuItem.BackColor = System.Drawing.Color.DarkOliveGreen;
                 this.SeguridadToolStripMenuItem.Text = "SeguridadStripMenuItem";
                 // 
                 // BitacoraToolStripMenuItem
@@ -309,6 +339,7 @@ namespace TC_Riveros_Paula
                 this.BitacoraToolStripMenuItem.Name = "BitacoraToolStripMenuItem";
                 this.BitacoraToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
                 this.BitacoraToolStripMenuItem.Text = "BitacoraStripMenuItem";
+                this.BitacoraToolStripMenuItem.BackColor = System.Drawing.Color.DarkOliveGreen;
                 this.BitacoraToolStripMenuItem.Click += new System.EventHandler(this.BitacoraToolStripMenuItem_Click);
                 //
                 //Backup
@@ -316,6 +347,7 @@ namespace TC_Riveros_Paula
                 this.BackupToolStripMenuItem.Name = "BackupToolStripMenuItem";
                 this.BackupToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
                 this.BackupToolStripMenuItem.Text = "BackupStripMenuItem";
+                this.BackupToolStripMenuItem.BackColor = System.Drawing.Color.DarkOliveGreen;
                 this.BackupToolStripMenuItem.Click += new System.EventHandler(this.BackupToolStripMenuItem_Click);
                 //
                 //Tracking
@@ -323,6 +355,7 @@ namespace TC_Riveros_Paula
                 this.TrackingToolStripMenuItem.Name = "TrackingToolStripMenuItem";
                 this.TrackingToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
                 this.TrackingToolStripMenuItem.Text = "TrackingStripMenuItem";
+                this.TrackingToolStripMenuItem.BackColor = System.Drawing.Color.DarkOliveGreen;
                 this.TrackingToolStripMenuItem.Click += new System.EventHandler(this.TrackingToolStripMenuItem_Click);
             }
 

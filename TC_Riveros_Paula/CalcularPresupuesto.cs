@@ -11,12 +11,17 @@ using System.Windows.Forms;
 
 namespace TC_Riveros_Paula
 {
-    public partial class CalcularPresupuestoForm : Form
+    public partial class CalcularPresupuestoForm : DevExpress.XtraEditors.XtraForm
     {
         public CalcularPresupuestoForm(ResourceManager idioma)
         {
             InitializeComponent();
             this.Text = idioma.GetString("CalcularPresupuestoForm");
+        }
+
+        private void CalcularPresupuestoForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

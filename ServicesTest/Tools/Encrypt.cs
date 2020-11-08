@@ -11,6 +11,11 @@ namespace ServicesTest.Tools
 {
     public static class Encrypt
     {
+        /// <summary>
+        /// encrypt the password before to save it
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
         public static string encryptPass(String message) {
             byte[] hashValue;
 
@@ -31,7 +36,11 @@ namespace ServicesTest.Tools
             return passEncrypted;
         }
 
-
+        /// <summary>
+        /// calculate the DVH
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
         public static decimal DVHCalculate(string message) {
             byte[] hashValue;
             //Convierto desde codificación UTF8
@@ -51,7 +60,11 @@ namespace ServicesTest.Tools
 
 
         }
-
+        /// <summary>
+        /// Calculate the DVH
+        /// </summary>
+        /// <param name="DVH"></param>
+        /// <returns></returns>
         public static decimal DVVCalculate(decimal DVH)
         {
             decimal DVV_Original = UsersManager.Current.GetDVV();

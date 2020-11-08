@@ -36,7 +36,11 @@ namespace ServicesTest.BLL
 
 
 
-
+        /// <summary>
+        /// return the language to start the application
+        /// </summary>
+        /// <param name="cultureInfo"></param>
+        /// <returns></returns>
         public ResourceManager Translate(string cultureInfo)
         {
             try

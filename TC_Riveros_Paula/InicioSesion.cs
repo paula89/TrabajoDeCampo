@@ -30,7 +30,11 @@ namespace TC_Riveros_Paula
             this.Text = idioma.GetString("InicioSesionForm");
             CargarTraducciones();
         }
-
+        /// <summary>
+        /// init the login
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             List<String> permiso = new List<string>();
@@ -66,7 +70,10 @@ namespace TC_Riveros_Paula
                 MessageBox.Show(idioma.GetString("MsgErrorCompletarLogin"), idioma.GetString("Error"), MessageBoxButtons.OK);
             }
         }
-
+        /// <summary>
+        /// verify the DVV
+        /// </summary>
+        /// <returns></returns>
         private bool VerificarDV() {
             bool verificar = true;
             decimal DVV = 0;
@@ -88,7 +95,9 @@ namespace TC_Riveros_Paula
 
         }
 
-
+        /// <summary>
+        /// load translations
+        /// </summary>
         private void CargarTraducciones()
         {
             this.Text = idioma.GetString("usuarioSesionForm");
@@ -96,17 +105,29 @@ namespace TC_Riveros_Paula
             lblUsuario.Text = idioma.GetString("lblUsuario");
             lblPassword.Text = idioma.GetString("lblPassword");
         }
-
+        /// <summary>
+        /// search the user data
+        /// </summary>
+        /// <param name="filtros"></param>
+        /// <returns></returns>
         private IEnumerable<Usuario> VerificarDatos(String[] filtros) {
             var usuarios = UsersManager.Current.GetLogin(filtros);
             return usuarios;
         }
-
+        /// <summary>
+        /// get the data user by filters
+        /// </summary>
+        /// <param name="filtros"></param>
+        /// <returns></returns>
         private IEnumerable<Usuario> getUsuario(String[] filtros) {
             var usuarios = UsersManager.Current.ObtenerUsuariosLogin(filtros);
             return usuarios;
         }
-
+        /// <summary>
+        /// get user language
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
         private string getIdioma(IEnumerable<Usuario> usuario) {
             string languageUser = "";
             foreach (var item in usuario)
@@ -116,7 +137,11 @@ namespace TC_Riveros_Paula
             return languageUser;
         }
 
-
+        /// <summary>
+        /// get user permissions
+        /// </summary>
+        /// <param name="users"></param>
+        /// <returns></returns>
         private IEnumerable<String> getPermisos(IEnumerable<Usuario> users) {
             //bool existe = UsersManager.Current.ObtenerUsuariosLogin(filtros);
 
@@ -132,7 +157,11 @@ namespace TC_Riveros_Paula
             return permiso;
         }
 
-
+        /// <summary>
+        /// get through permissions
+        /// </summary>
+        /// <param name="permisos"></param>
+        /// <returns></returns>
         private static IEnumerable<String> RecorrerListado(List<FamiliaComponent> permisos)
         {
             List<String> permiso = new List<string>();
@@ -149,7 +178,10 @@ namespace TC_Riveros_Paula
             }
             return permiso;
          }
-       
+       /// <summary>
+       /// verify fields
+       /// </summary>
+       /// <returns></returns>
         private bool verificarCampos() {
             if ((txtUsuario.Text.Length == 0) || (txtPassword.Text.Length == 0))
             {

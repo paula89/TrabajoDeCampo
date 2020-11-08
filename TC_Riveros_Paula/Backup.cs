@@ -25,7 +25,10 @@ namespace TC_Riveros_Paula
             this.CargarTraducciones(idioma);
             CargarTabla();
         }
-
+        /// <summary>
+        /// load the translations
+        /// </summary>
+        /// <param name="idioma"></param>
         public void CargarTraducciones(ResourceManager idioma) 
         {
             this.btnRestaurar.Text = idioma.GetString("btnRestaurar");
@@ -35,6 +38,9 @@ namespace TC_Riveros_Paula
             this.msgError = idioma.GetString("msgError");
             this.btnRestaurar.Enabled = false;
         }
+        /// <summary>
+        /// load the table with the backups
+        /// </summary>
         public void CargarTabla()
         {
             try
@@ -74,7 +80,11 @@ namespace TC_Riveros_Paula
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
         }
-
+        /// <summary>
+        /// restore the backup selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRestaurar_Click(object sender, EventArgs e)
         {
            DialogResult response = MessageBox.Show(msgConfirm, titleConfirm, MessageBoxButtons.OKCancel);
@@ -88,7 +98,10 @@ namespace TC_Riveros_Paula
                 //  this.Restaurar(gridControlBackup);//.Cells[2].Value.ToString());                
             }
         }
-
+        /// <summary>
+        /// show a message to confirm the restore
+        /// </summary>
+        /// <param name="path"></param>
         private void Restaurar(string path) {
             try
             {

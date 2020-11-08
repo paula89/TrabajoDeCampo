@@ -9,6 +9,10 @@ namespace ServicesTest.Domain.Exceptions
 {
     public class UIException: Exception
     {
+        /// <summary>
+        /// UI exception customized
+        /// </summary>
+        /// <param name="ex"></param>
         public UIException(Exception ex): base("UI Exception", ex) {
       
         }

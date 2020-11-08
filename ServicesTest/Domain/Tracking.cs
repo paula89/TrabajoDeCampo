@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ServicesTest.Domain
-{
+{   
+    /// <summary>
+    /// tracking class
+    /// </summary>
     public class Tracking
     {
         public int SYS_CHANGE_VERSION { get; set; }

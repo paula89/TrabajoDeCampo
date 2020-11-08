@@ -26,7 +26,10 @@ namespace TC_Riveros_Paula
             this.Text = idioma.GetString("ListarUsuariosForm");
             CargarTabla();
         }
-
+        /// <summary>
+        /// load translations
+        /// </summary>
+        /// <param name="idioma"></param>
         private void CargarTraducciones(ResourceManager idioma) {
            this.btnImprimir.Text = idioma.GetString("btnImprimir");
         }
@@ -38,7 +41,10 @@ namespace TC_Riveros_Paula
             String[] filtros = new string[] { desde, hasta, nombre };
             CargarTabla(filtros);
         }
-
+        /// <summary>
+        /// load table by filters
+        /// </summary>
+        /// <param name="filtros"></param>
         private void CargarTabla(String[] filtros) {
             
             try
@@ -53,7 +59,9 @@ namespace TC_Riveros_Paula
 
             }
         }
-
+        /// <summary>
+        /// load table
+        /// </summary>
         private void CargarTabla()
         {
 
@@ -79,6 +87,11 @@ namespace TC_Riveros_Paula
 
             }
         }
+        /// <summary>
+        /// get throuth permissions
+        /// </summary>
+        /// <param name="permisos"></param>
+        /// <param name="separator"></param>
         private void RecorrerListado(List<FamiliaComponent> permisos, string separator = "")
         {
             separator = separator + "-";
@@ -149,7 +162,11 @@ namespace TC_Riveros_Paula
         {
 
         }
-
+        /// <summary>
+        /// print table
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             gridControlUsuarios.ShowPrintPreview();

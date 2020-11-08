@@ -25,7 +25,10 @@ namespace TC_Riveros_Paula
             CargarTraducciones(idioma);
             CargarTabla();        
         }
-
+        /// <summary>
+        /// load translations
+        /// </summary>
+        /// <param name="idioma"></param>
         private void CargarTraducciones(ResourceManager idioma) {
             btnImprimir.Text = idioma.GetString("btnImprimir");
         }
@@ -60,7 +63,9 @@ namespace TC_Riveros_Paula
             }
         */
         }
-
+        /// <summary>
+        /// load the table
+        /// </summary>
         private void CargarTabla()
         {
             try
@@ -85,20 +90,7 @@ namespace TC_Riveros_Paula
             }
 
         }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                CargarTabla();
-            }
-            catch (Exception ex)
-            {
-                FacadeServiceBusiness.ManageException(new UIException(ex));
-
-            }
-        }
-
+        
         private void textBoxNombre_TextChanged(object sender, EventArgs e)
         {
          /*   string input = textBoxNombre.Text;
@@ -132,7 +124,11 @@ namespace TC_Riveros_Paula
 
             dataGridViewMateriaPrima.Refresh();*/
         }
-
+        /// <summary>
+        /// print the table
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             gridControlMateriaPrima.ShowPrintPreview();

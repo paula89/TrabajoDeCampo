@@ -24,7 +24,11 @@ namespace ServicesTest.BLL
         {
         }
         #endregion
-
+        /// <summary>
+        /// Write by console a new exception
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="level"></param>
         public void Write(string message, EventLevel level )
         {
             Console.WriteLine($"[Exception] Fecha: { DateTime.Now.ToString() }, {message}, {level} ");

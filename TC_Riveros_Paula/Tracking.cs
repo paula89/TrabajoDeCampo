@@ -26,11 +26,19 @@ namespace TC_Riveros_Paula
             CargarTabla();
 
         }
+        /// <summary>
+        /// loas translations
+        /// </summary>
+        /// <param name="idioma"></param>
         private void CargarTraducciones(ResourceManager idioma)
         {
             this.btnImprimir.Text = idioma.GetString("btnImprimir");
         }
-
+        /// <summary>
+        /// print the table
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBuscar_Click(object sender, EventArgs e)
         {
 
@@ -42,7 +50,9 @@ namespace TC_Riveros_Paula
         {
             
         }
-
+        /// <summary>
+        /// load the table
+        /// </summary>
         private void CargarTabla()
         {
             try

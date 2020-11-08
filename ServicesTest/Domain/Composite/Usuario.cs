@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ServicesTest.Domain.Composite
 {
+	/// <summary>
+	/// class user with all the parameters and permissions 
+	/// </summary>
     public class Usuario
     {
 		public Usuario()

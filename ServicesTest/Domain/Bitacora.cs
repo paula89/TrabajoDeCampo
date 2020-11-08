@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ServicesTest.Domain
-{   [Serializable()]
+{   /// <summary>
+    /// Bitacora serializable class
+    /// </summary>
+    [Serializable()]
     public class Bitacora
     {
         public enum CriticidadEnum

@@ -29,7 +29,10 @@ namespace ServicesTest.DAL.Factory
             //Implement here the initialization code
         }
 #endregion
-
+        /// <summary>
+        /// get the bitacora's path repository
+        /// </summary>
+        /// <returns></returns>
         public IGenericRepository<Bitacora> GetBitacoraRepository()
         {
             try
@@ -45,8 +48,11 @@ namespace ServicesTest.DAL.Factory
                 return null;
             }
         }
-
-               public IGenericRepository<Backup> GetBackupRepository() {
+        /// <summary>
+        /// get the backup's path repository
+        /// </summary>
+        /// <returns></returns>
+        public IGenericRepository<Backup> GetBackupRepository() {
             try {
                 string nombreNamespaceClaseAccesoDatos = ConfigurationManager.AppSettings["AccesoDatos"] + ".BackupRepository";
                 object instancia = Activator.CreateInstance(Type.GetType(nombreNamespaceClaseAccesoDatos));
@@ -60,7 +66,10 @@ namespace ServicesTest.DAL.Factory
             }
         
         }
-
+        /// <summary>
+        /// get the backup's restore repository
+        /// </summary>
+        /// <returns></returns>
         public BackupRepository GetBackupRestoreRepository()
         {
             try
@@ -78,13 +87,20 @@ namespace ServicesTest.DAL.Factory
             }
 
         }
-
+        /// <summary>
+        /// get the users path repository
+        /// </summary>
+        /// <returns></returns>
         public UsersRepository GetUsersRepository() {
             string nombreNamespaceClaseAccesoDatos = ConfigurationManager.AppSettings["AccesoDatos"] + ".UsersRepository";
             object instancia = Activator.CreateInstance(Type.GetType(nombreNamespaceClaseAccesoDatos));
 
             return instancia as UsersRepository;
         }
+        /// <summary>
+        /// get the tracking's path repository
+        /// </summary>
+        /// <returns></returns>
         public TrackingRepository GetTrackingRepository()
         {
             string nombreNamespaceClaseAccesoDatos = ConfigurationManager.AppSettings["AccesoDatos"] + ".TrackingRepository";

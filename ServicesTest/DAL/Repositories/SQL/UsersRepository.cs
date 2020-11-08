@@ -88,7 +88,10 @@ namespace ServicesTest.DAL.Repositories.SQL
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// get all the languages
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<String> GetAllIdiomas()
         {
             try
@@ -120,6 +123,10 @@ namespace ServicesTest.DAL.Repositories.SQL
             }
 
         }
+        /// <summary>
+        /// get all roles
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<String> GetAllRoles() {
             try { 
                 List<String> roles = new List<String>();
@@ -148,6 +155,10 @@ namespace ServicesTest.DAL.Repositories.SQL
 
         }
 
+        /// <summary>
+        /// get the DVV
+        /// </summary>
+        /// <returns></returns>
         public decimal GetDVV() {
 
             try
@@ -225,7 +236,12 @@ namespace ServicesTest.DAL.Repositories.SQL
             }
         }
 
-        
+        /// <summary>
+        /// cycle permissions in the composite pattern
+        /// </summary>
+        /// <param name="permisos"></param>
+        /// <param name="separator"></param>
+        /// <returns></returns>
         public List<FamiliaComponent> recorrerPermisos(List<FamiliaComponent> permisos, string separator = "") {
             separator = separator + "-";
             List<FamiliaComponent> permisoUsuario = new List<FamiliaComponent>();
@@ -242,30 +258,43 @@ namespace ServicesTest.DAL.Repositories.SQL
                     recorrerPermisos(value.Permisos, separator);
                 }
             }
-
             return permisoUsuario;
-
-
         }
-
+        /// <summary>
+        /// insert a new user
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
         public int Insert(Usuario usuario)
         {
             int inserted = SqlHelper.ExecuteNonQueryUsers(InsertStatement, System.Data.CommandType.Text, "security", usuario);
             return inserted;
         }
-
+        /// <summary>
+        /// updte the DVV
+        /// </summary>
+        /// <param name="DVV"></param>
+        /// <returns></returns>
         public int UpdateDVV(decimal DVV)
         {
             int updated = SqlHelper.ExecuteNonQueryUpdateDVV(UpdateDVVStatement, System.Data.CommandType.Text, "security", DVV.ToString());
             return updated;
         }
-
+        /// <summary>
+        /// update users
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
         public int Update(Usuario usuario)
         {
             int updated = SqlHelper.ExecuteNonQueryUpdateUser(UpdateUserStatement, System.Data.CommandType.Text, "security",usuario);
             return updated;
         }
-
+        /// <summary>
+        /// get all about users
+        /// </summary>
+        /// <param name="filtros"></param>
+        /// <returns></returns>
         public IEnumerable<Usuario> GetAll(Array filtros)
         {
             try
@@ -330,7 +359,10 @@ namespace ServicesTest.DAL.Repositories.SQL
                 return null;
             }
         }
-
+        /// <summary>
+        /// get all the DVHs
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Usuario> GetAllDVH()
         {
             try
@@ -363,7 +395,10 @@ namespace ServicesTest.DAL.Repositories.SQL
                 return null;
             }
         }
-    
+    /// <summary>
+    /// get all the users
+    /// </summary>
+    /// <returns></returns>
     public IEnumerable<Object> GetAll()
         {
             try

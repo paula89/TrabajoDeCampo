@@ -28,6 +28,9 @@ namespace TC_Riveros_Paula
             CargarTraducciones();
 
         }
+        /// <summary>
+        /// load the translations
+        /// </summary>
         private void CargarTraducciones()
         {
             try
@@ -53,7 +56,11 @@ namespace TC_Riveros_Paula
         {
 
         }
-
+        /// <summary>
+        /// create a new materiaPrima object
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             MateriaPrima materiaPrima = new MateriaPrima();
@@ -79,7 +86,10 @@ namespace TC_Riveros_Paula
                 FacadeServiceBusiness.ManageException(new UIException(ex));
             }
         }
-
+        /// <summary>
+        /// validate fields
+        /// </summary>
+        /// <returns></returns>
         private bool ValidarCampos() {
             if (textBoxNombre.Text.Length == 0 || textBoxProveedor.Text.Length == 0 || textBoxMarca.Text.Length == 0 ||
                    textBoxCantidad.Text.Length == 0)
@@ -115,7 +125,10 @@ namespace TC_Riveros_Paula
 
             return true;
         }
-
+        /// <summary>
+        /// save the materiaPrima
+        /// </summary>
+        /// <param name="materiaPrima"></param>
         private void GuardarMateriaPrima(MateriaPrima materiaPrima) {
             try
             {
@@ -134,7 +147,11 @@ namespace TC_Riveros_Paula
 
             }
         }
-
+        /// <summary>
+        /// close the screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();

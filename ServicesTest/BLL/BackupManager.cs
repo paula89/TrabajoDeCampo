@@ -29,18 +29,28 @@ namespace ServicesTest.BLL
         }
         #endregion
 
-
+        /// <summary>
+        /// This method register a new backup
+        /// </summary>
         public void Registrar()
         {
             Backup backup = new Backup();
             instancia.GetBackupRepository().Insert(backup);
         }
-
+        /// <summary>
+        /// This function get all the backups by filters
+        /// </summary>
+        /// <param name="filtros"></param>
+        /// <returns></returns>
         public IEnumerable<Backup> ObtenerBackup(string[] filtros)
         {
             return instancia.GetBackupRepository().GetAll(filtros);
         }
-
+        /// <summary>
+        /// this function restore a backup
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         public int RestaurarBackup(string path) {
             return instancia.GetBackupRestoreRepository().RestoreBackup(path);
         }

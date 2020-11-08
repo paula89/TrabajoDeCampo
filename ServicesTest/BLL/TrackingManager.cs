@@ -26,8 +26,10 @@ namespace ServicesTest.BLL
         }
         #endregion
 
-
-        
+        /// <summary>
+        /// get all the tracking database
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Tracking> ObtenerTracking()
         {
             return FactoryDAL.Current.GetTrackingRepository().GetAll();

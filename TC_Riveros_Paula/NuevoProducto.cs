@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace TC_Riveros_Paula
 {
-    public partial class NuevoProductoForm : Form
+    public partial class NuevoProductoForm : DevExpress.XtraEditors.XtraForm
     {
         public NuevoProductoForm(ResourceManager idioma)
         {
@@ -19,7 +19,10 @@ namespace TC_Riveros_Paula
             this.Text = idioma.GetString("NuevoProductoForm");
             CargarTraducciones(idioma);
         }
-
+        /// <summary>
+        /// load translations
+        /// </summary>
+        /// <param name="idioma"></param>
         private void CargarTraducciones(ResourceManager idioma)
         {
             labelComentario.Text = idioma.GetString("labelComentario");
@@ -48,6 +51,20 @@ namespace TC_Riveros_Paula
         private void btnCancelar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// close the screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

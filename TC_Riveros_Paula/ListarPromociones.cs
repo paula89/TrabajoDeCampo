@@ -11,12 +11,22 @@ using System.Windows.Forms;
 
 namespace TC_Riveros_Paula
 {
-    public partial class ListarPromocionesForm : Form
+    public partial class ListarPromocionesForm : DevExpress.XtraEditors.XtraForm
     {
         public ListarPromocionesForm(ResourceManager idioma)
         {
             InitializeComponent();
             this.Text = idioma.GetString("ListarPromocionesForm");
+            this.btnImprimir.Text = idioma.GetString("btnImprimir");
+        }
+        /// <summary>
+        /// print table
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            gridControl1.ShowPrintPreview();
         }
     }
 }

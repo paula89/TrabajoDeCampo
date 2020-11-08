@@ -13,7 +13,9 @@ using System.Threading.Tasks;
 namespace ServicesTest.DAL.Repositories.SQL
 {
     public class BackupRepository: IGenericRepository<Backup>
-    {
+    {   /// <summary>
+        /// statements region 
+        /// </summary>
         #region Statements
         private string InsertStatement
         {
@@ -44,7 +46,11 @@ namespace ServicesTest.DAL.Repositories.SQL
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// get the backups by filters
+        /// </summary>
+        /// <param name="filtros"></param>
+        /// <returns></returns>
         public IEnumerable<Backup> GetAll(Array filtros)
         {
             try
@@ -82,14 +88,22 @@ namespace ServicesTest.DAL.Repositories.SQL
                 return null;
             }
         }
-
+        /// <summary>
+        /// create a new backup
+        /// </summary>
+        /// <param name="backup"></param>
+        /// <returns></returns>
         public int Insert(Backup backup)
         {
             int inserted = SqlHelper.ExecuteNonQueryBackup(InsertStatement, System.Data.CommandType.Text, "security", backup);
             return inserted;
         }
 
-
+        /// <summary>
+        /// restore a backup from a path
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         public int RestoreBackup(string path) {
 
             List<SqlParameter> parametros = new List<SqlParameter>();

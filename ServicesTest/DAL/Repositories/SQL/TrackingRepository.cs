@@ -28,7 +28,10 @@ namespace ServicesTest.DAL.Repositories.SQL
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// get all about tracking database
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Tracking> GetAll()
         {
             try
@@ -60,7 +63,7 @@ namespace ServicesTest.DAL.Repositories.SQL
                 return null;
             }
         }
-
+       
         public IEnumerable<Tracking> GetAll(Array filtros)
         {
             throw new NotImplementedException();

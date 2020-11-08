@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace TC_Riveros_Paula
 {
-    public partial class CalcularPerdidasForm : Form
+    public partial class CalcularPerdidasForm : DevExpress.XtraEditors.XtraForm
     {
         public CalcularPerdidasForm(ResourceManager idioma)
         {

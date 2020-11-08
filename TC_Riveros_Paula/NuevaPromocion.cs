@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLLTest.Facade;
+using ServicesTest.Domain.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,12 +13,51 @@ using System.Windows.Forms;
 
 namespace TC_Riveros_Paula
 {
-    public partial class NuevaPromocionForm : Form
+    public partial class NuevaPromocionForm : DevExpress.XtraEditors.XtraForm
     {
+        ResourceManager language;
         public NuevaPromocionForm(ResourceManager idioma)
         {
             InitializeComponent();
+            language = idioma;
             this.Text = idioma.GetString("NuevaPromocionForm");
+            CargarTraducciones();
+        }
+
+        private void NuevaPromocionForm_Load(object sender, EventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// close the screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        /// <summary>
+        /// load translations
+        /// </summary>
+        private void CargarTraducciones()
+        {
+            try
+            {
+                labelNombre.Text = language.GetString("labelNombre");
+                labelComentario.Text = language.GetString("labelComentario");
+                labelDescuento.Text = language.GetString("labelCantidad");
+                labelVigencia.Text = language.GetString("labelVencimiento");
+
+                btnAceptar.Text = language.GetString("btnAceptar");
+                btnCancelar.Text = language.GetString("btnCancelar");
+
+            }
+            catch (UIException ex)
+            {
+                FacadeServiceBusiness.ManageException(ex);
+                System.Console.WriteLine("Error al cargar las traducciones : " + ex.Message);
+            }
         }
     }
 }

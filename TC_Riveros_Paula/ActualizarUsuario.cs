@@ -31,7 +31,9 @@ namespace TC_Riveros_Paula
             this.Text = language.GetString("ActualizarUsuarioForm");
             btnActualizar.Enabled = false;
         }
-
+        /// <summary>
+        /// Get the languages to complete the languages combobox
+        /// </summary>
         private void CargarIdiomas()
         {
             try
@@ -45,6 +47,9 @@ namespace TC_Riveros_Paula
             }
 
         }
+        /// <summary>
+        /// load translations
+        /// </summary>
         private void CargarTraducciones()
         {
             try
@@ -71,12 +76,21 @@ namespace TC_Riveros_Paula
                 System.Console.WriteLine("Error al cargar las traducciones : " + ex.Message);
             }
         }
+        /// <summary>
+        /// init the search
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string usuario = this.textBoxUsuario.Text;
             String[] filtros = new string[] { usuario };
             CargarTabla(filtros);
         }
+        /// <summary>
+        /// complete the fields
+        /// </summary>
+        /// <param name="filtros"></param>
         private void CargarTabla(String[] filtros)
         {
             try
@@ -105,6 +119,11 @@ namespace TC_Riveros_Paula
                 FacadeService.ManageException(ex);
             }
         }
+        /// <summary>
+        /// go through the permissions list
+        /// </summary>
+        /// <param name="permisos"></param>
+        /// <param name="separator"></param>
         private void RecorrerListado(List<FamiliaComponent> permisos, string separator = "")
         {
             separator = separator + "-";
@@ -120,6 +139,9 @@ namespace TC_Riveros_Paula
                 }
             }
         }
+        /// <summary>
+        /// load the roles combobox
+        /// </summary>
         private void CargarRoles()
         {
             try
@@ -134,12 +156,20 @@ namespace TC_Riveros_Paula
                 System.Console.WriteLine("Error al cargar los roles : " + ex.Message);
             }
         }
-
+        /// <summary>
+        /// close the screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// validate the user before save it
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             bool valido = ValidarUsuario();
@@ -150,6 +180,10 @@ namespace TC_Riveros_Paula
                 this.Close();
             }
         }
+        /// <summary>
+        /// update the user and DVV
+        /// </summary>
+        /// <param name="usuario"></param>
         private void ActualizarUsuario(Usuario usuario)
         {
             try
@@ -170,6 +204,11 @@ namespace TC_Riveros_Paula
                 FacadeService.ManageException(new UIException(ex));
             }
         }
+        /// <summary>
+        /// Register the new DVV
+        /// </summary>
+        /// <param name="DVH"></param>
+        /// <returns></returns>
         private static int RegistrarDVV(decimal DVH)
         {
             try
@@ -184,6 +223,10 @@ namespace TC_Riveros_Paula
                 return 0;
             }
         }
+        /// <summary>
+        /// Validate the users field screen
+        /// </summary>
+        /// <returns></returns>
         private bool ValidarUsuario()
         {
             if (textBoxNombre.Text.Length == 0 || textBoxApellido.Text.Length == 0 || textBoxDireccion.Text.Length == 0 ||
@@ -230,6 +273,10 @@ namespace TC_Riveros_Paula
             return true;
 
         }
+        /// <summary>
+        /// create an user object
+        /// </summary>
+        /// <returns></returns>
         public Usuario CrearUsuario()
         {
             Usuario usuario = new Usuario();
@@ -275,7 +322,11 @@ namespace TC_Riveros_Paula
                 return usuario;
             }
         }
-
+        /// <summary>
+        /// upper the user code field
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBoxUsuario_TextChanged(object sender, EventArgs e)
         {
             textBoxUsuario.CharacterCasing = CharacterCasing.Upper;

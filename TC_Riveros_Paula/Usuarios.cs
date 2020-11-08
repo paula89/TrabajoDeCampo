@@ -30,7 +30,9 @@ namespace TC_Riveros_Paula
             CargarRoles();
             CargarIdiomas();
         }
-
+        /// <summary>
+        /// load languages combobox
+        /// </summary>
         private void CargarIdiomas() {
             try
             {
@@ -43,6 +45,9 @@ namespace TC_Riveros_Paula
             }
 
         }
+        /// <summary>
+        /// load roles combobox
+        /// </summary>
         private void CargarRoles() 
         {
             try
@@ -59,6 +64,9 @@ namespace TC_Riveros_Paula
         
         
         }
+        /// <summary>
+        /// load translations
+        /// </summary>
         private void CargarTraducciones()
         {
             try
@@ -98,7 +106,11 @@ namespace TC_Riveros_Paula
         {
 
         }
-
+        /// <summary>
+        /// init the user creation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             Usuario usuario = CrearUsuario();
@@ -111,7 +123,10 @@ namespace TC_Riveros_Paula
             }
         }
 
-
+        /// <summary>
+        /// create a new user object
+        /// </summary>
+        /// <returns></returns>
         public Usuario CrearUsuario() {
             Usuario usuario = new Usuario();
 
@@ -142,6 +157,10 @@ namespace TC_Riveros_Paula
                 return usuario;
             }
         }
+        /// <summary>
+        /// validate fields screen
+        /// </summary>
+        /// <returns></returns>
         private bool ValidarUsuario()
         {
             if (textBoxCodUsuario.Text.Length == 0 || txtNombre.Text.Length == 0 || txtApellido.Text.Length == 0 || txtDireccion.Text.Length == 0 ||
@@ -203,7 +222,10 @@ namespace TC_Riveros_Paula
             }
             return true;
         }
-
+        /// <summary>
+        /// Register a new user
+        /// </summary>
+        /// <param name="usuario"></param>
         private void RegistrarUsuario(Usuario usuario) {
             try
             {
@@ -224,7 +246,11 @@ namespace TC_Riveros_Paula
             }
 
         }
-
+        /// <summary>
+        /// register the new DVV
+        /// </summary>
+        /// <param name="DVH"></param>
+        /// <returns></returns>
         private static int RegistrarDVV(decimal DVH) {
             try
             {
@@ -236,6 +262,11 @@ namespace TC_Riveros_Paula
                 return 0;
             }
         }
+        /// <summary>
+        /// get throught permissions
+        /// </summary>
+        /// <param name="permisos"></param>
+        /// <param name="separator"></param>
         private static void RecorrerListado(List<FamiliaComponent> permisos, string separator = "")
         {
             separator = separator + "-";
@@ -250,12 +281,20 @@ namespace TC_Riveros_Paula
                 }
             }
         }
-
+        /// <summary>
+        /// close the screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// upper the user code field
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBoxCodUsuario_TextChanged(object sender, EventArgs e)
         {
             textBoxCodUsuario.CharacterCasing = CharacterCasing.Upper;

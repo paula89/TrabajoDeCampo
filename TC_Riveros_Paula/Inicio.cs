@@ -34,7 +34,11 @@ namespace TC_Riveros_Paula
         private void RegistrarBackup() {
             FacadeService.ManageBackup();
         }
-
+        /// <summary>
+        /// load translations
+        /// </summary>
+        /// <param name="idioma"></param>
+        /// <param name="permiso"></param>
         private void CargarTraducciones(ResourceManager idioma, List<String> permiso) {
             //idioma = Services.BLL.LanguageManager.Current.Translate.Translate("en-US");
             try
@@ -84,113 +88,189 @@ namespace TC_Riveros_Paula
             }
         }
 
-        
 
-        //nuevo producto
+
+        /// <summary>
+        /// load the NuevoProductoForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void nuevoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             NuevoProductoForm nuevoProducto = new NuevoProductoForm(idioma);
             nuevoProducto.ShowDialog();
         }
-
+        /// <summary>
+        /// load the CatalogoForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItemCatalogo_Click(object sender, EventArgs e)
         {
             CatalogoForm catalogo = new CatalogoForm(idioma);
             catalogo.ShowDialog();
         }
-
+        /// <summary>
+        /// load the NuevoMateriaPrimaForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItemNuevoStock_Click(object sender, EventArgs e)
         {
             NuevoMateriaPrimaForm nuevoStock = new NuevoMateriaPrimaForm(idioma, usuario);
             nuevoStock.ShowDialog();
         }
-
+        /// <summary>
+        /// load the ListarMateriaPrimaForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItemVerStock_Click(object sender, EventArgs e)
         {
             ListarMateriaPrimaForm listarMateriaPrima = new ListarMateriaPrimaForm(idioma);
             listarMateriaPrima.ShowDialog();
         }
-
+        /// <summary>
+        /// load the NuevaPromocionForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItemNuevaPromocion_Click(object sender, EventArgs e)
         {
             NuevaPromocionForm nuevaPromocion = new NuevaPromocionForm(idioma);
             nuevaPromocion.ShowDialog();
         }
-
+        /// <summary>
+        /// load the ListarPromocionesForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItemVerPromociones_Click(object sender, EventArgs e)
         {
             ListarPromocionesForm listarPromociones = new ListarPromocionesForm(idioma);
             listarPromociones.ShowDialog();
         }
-
+        /// <summary>
+        /// load the ReporteVentasForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItemReportesVentas_Click(object sender, EventArgs e)
         {
             ReporteVentasForm reporteVentas = new ReporteVentasForm(idioma);
             reporteVentas.ShowDialog();
         }
-
+        /// <summary>
+        /// load the CalcularPresupuestoForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItemCalcularPresupuesto_Click(object sender, EventArgs e)
         {
             CalcularPresupuestoForm calcularPresupuesto = new CalcularPresupuestoForm(idioma);
             calcularPresupuesto.ShowDialog();
         }
-
+        
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
-        //nueva herramienta
+
+        /// <summary>
+        /// load the NuevaHerramientaForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NuevaHerramientaForm nuevaHerramienta = new NuevaHerramientaForm(idioma);
             nuevaHerramienta.ShowDialog();
         }
-
+        /// <summary>
+        /// load the ListarHerramientasForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listarHerramientasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ListarHerramientasForm listarHerramientas = new ListarHerramientasForm(idioma);
             listarHerramientas.ShowDialog();
         }
-
+        /// <summary>
+        /// load the CalcularPerdidasForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CalcularPerdidasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CalcularPerdidasForm calcularPerdidas = new CalcularPerdidasForm(idioma);
             calcularPerdidas.ShowDialog();
         }
-
+        /// <summary>
+        /// load the NuevaVentaForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void nuevaVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NuevaVentaForm nuevaVenta = new NuevaVentaForm(idioma);
             nuevaVenta.ShowDialog();
         }
+        /// <summary>
+        /// load the UsuariosForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UsuariosForm usuarios = new UsuariosForm(idioma);
             usuarios.ShowDialog();
         }
+        /// <summary>
+        /// load the ListarUsuariosForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void VerUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ListarUsuariosForm usuarios = new ListarUsuariosForm(idioma);
             usuarios.ShowDialog();
         }
+        /// <summary>
+        /// load the ActualizarUsuarioForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItemActualizarUsuario_Click(object sender, EventArgs e)
         {
             ActualizarUsuarioForm actualizarUsuarios = new ActualizarUsuarioForm(idioma);
             actualizarUsuarios.ShowDialog();
         }
-        
+        /// <summary>
+        /// load the FormBitacora
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BitacoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormBitacora bitacora = new FormBitacora(idioma);
             bitacora.ShowDialog();
         }
-
+        /// <summary>
+        /// load the BackupForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BackupToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BackupForm backup = new BackupForm(idioma);
             backup.ShowDialog();
         }
-
+        /// <summary>
+        /// load the TrackingForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TrackingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TrackingForm tracking = new TrackingForm(idioma);

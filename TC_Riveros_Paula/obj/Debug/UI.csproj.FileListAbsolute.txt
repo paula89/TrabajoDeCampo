@@ -158,3 +158,4 @@ C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\de\DevExp
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\es\DevExpress.Office.v20.1.Core.resources.dll
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\ja\DevExpress.Office.v20.1.Core.resources.dll
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\ru\DevExpress.Office.v20.1.Core.resources.dll
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DalTest.dll.config

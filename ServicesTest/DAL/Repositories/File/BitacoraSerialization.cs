@@ -14,14 +14,18 @@ namespace ServicesTest.DAL.Repositories.File
     internal static class BitacoraSerialization
     {
         private static String archivo = "C:\\Users\\paula\\Documents\\git\\TrabajoDeCampo\\Files\\criticos.bin";
-
-        public static int Guardar(object obj)
+        /// <summary>
+        /// save in a file the critical errors by serialization
+        /// </summary>
+        /// <param name="critico"></param>
+        /// <returns></returns>
+        public static int Guardar(object critico)
         {
             try
             {
                 Stream stream = new FileStream(archivo, FileMode.Append, FileAccess.Write);
                 BinaryFormatter formatter = new BinaryFormatter();
-                formatter.Serialize(stream, obj);
+                formatter.Serialize(stream, critico);
                 stream.Close();
                 return 1;
             } catch (Exception ex) {
@@ -29,7 +33,10 @@ namespace ServicesTest.DAL.Repositories.File
                 return 0;
             }
         }
-
+        /// <summary>
+        /// get from a file the critical errors deserealized 
+        /// </summary>
+        /// <returns></returns>
         public static List<Bitacora> GetBitacora()
         {
             List<Bitacora> lecturas = new List<Bitacora>();
