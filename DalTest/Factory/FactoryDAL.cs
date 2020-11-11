@@ -45,7 +45,21 @@ namespace DALTest.Factory
                 return null;
             }
         }
+        public HerramientasRepositories GetHerramientasRepository()
+        {
+            try
+            {
+                string nombreNamespaceClaseAccesoDatos = ConfigurationManager.AppSettings["AccesoDatosBusiness"] + ".HerramientasRepositories";
+                object instancia = Activator.CreateInstance(Type.GetType(nombreNamespaceClaseAccesoDatos));
 
-        
+                return instancia as HerramientasRepositories;
+            }
+            catch (Exception exc)
+            {
+                System.Console.WriteLine("exc :::" + exc.Message);
+                return null;
+            }
+        }
+
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Resources;
@@ -57,12 +58,16 @@ namespace TC_Riveros_Paula
 
                 MenuItemNuevoProducto.Text = idioma.GetString("MenuItemNuevoProducto");
                 MenuItemCatalogo.Text = idioma.GetString("MenuItemCatalogo");
+                MenuItemActualizarProducto.Text = idioma.GetString("MenuItemActualizarProducto");//
                 MenuItemNuevoMateriaPrima.Text = idioma.GetString("MenuItemNuevoMateriaPrima");
                 MenuItemVerMateriaPrima.Text = idioma.GetString("MenuItemVerMateriaPrima");
+                MenuItemActualizarMateriaPrima.Text = idioma.GetString("MenuItemActualizarMateriaPrima");//
                 nuevaHerramientaToolStripMenuItem.Text = idioma.GetString("nuevaHerramientaToolStripMenuItem");
                 listarHerramientasToolStripMenuItem.Text = idioma.GetString("listarHerramientasToolStripMenuItem");
+                actualizarHerramientaToolStripMenuItem.Text = idioma.GetString("actualizarHerramientaToolStripMenuItem");//
                 MenuItemNuevaPromocion.Text = idioma.GetString("MenuItemNuevaPromocion");
                 MenuItemVerPromociones.Text = idioma.GetString("MenuItemVerPromociones");
+                MenuItemActualizarPromocion.Text = idioma.GetString("MenuItemActualizarPromocion");//
                 nuevaVentaToolStripMenuItem.Text = idioma.GetString("nuevaVentaToolStripMenuItem");
                 MenuItemReportesVentas.Text = idioma.GetString("MenuItemReportesVentas");
                 MenuItemCalcularPresupuesto.Text = idioma.GetString("MenuItemCalcularPresupuesto");
@@ -109,6 +114,46 @@ namespace TC_Riveros_Paula
         {
             CatalogoForm catalogo = new CatalogoForm(idioma);
             catalogo.ShowDialog();
+        }
+        /// <summary>
+        /// load the ActualizarProductoForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuItemActualizarProducto_Click(object sender, EventArgs e)
+        {
+          //  CatalogoForm catalogo = new CatalogoForm(idioma);
+          //  catalogo.ShowDialog();
+        }
+        /// <summary>
+        /// load the ActualizarProductoForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuItemActualizarMateriaPrima_Click(object sender, EventArgs e)
+        {
+            //  CatalogoForm catalogo = new CatalogoForm(idioma);
+            //  catalogo.ShowDialog();
+        }
+        /// <summary>
+        /// load the ActualizarHerramientaForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void actualizarHerramientaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //  CatalogoForm catalogo = new CatalogoForm(idioma);
+            //  catalogo.ShowDialog();
+        }
+        /// <summary>
+        /// load the ActualizarPromocionForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuItemActualizarPromocion_Click(object sender, EventArgs e)
+        {
+            //  CatalogoForm catalogo = new CatalogoForm(idioma);
+            //  catalogo.ShowDialog();
         }
         /// <summary>
         /// load the NuevoMateriaPrimaForm
@@ -276,6 +321,16 @@ namespace TC_Riveros_Paula
             TrackingForm tracking = new TrackingForm(idioma);
             tracking.ShowDialog();
         }
+        /// <summary>
+        /// Open the help pdf
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("CookerSoft.pdf");
+        }
+        
 
 
         private void Inicio_Load(object sender, EventArgs e)

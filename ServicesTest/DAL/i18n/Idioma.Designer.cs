@@ -61,6 +61,15 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Update tool.
+        /// </summary>
+        public static string actualizarHerramientaToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("actualizarHerramientaToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Update User.
         /// </summary>
         public static string ActualizarUsuarioForm {
@@ -295,11 +304,20 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Quantity (Kg).
+        ///   Busca una cadena traducida similar a Quantity.
         /// </summary>
         public static string labelCantidad {
             get {
                 return ResourceManager.GetString("labelCantidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Quantity (Kg).
+        /// </summary>
+        public static string labelCantidadKG {
+            get {
+                return ResourceManager.GetString("labelCantidadKG", resourceCulture);
             }
         }
         
@@ -534,6 +552,33 @@ namespace ServicesTest.DAL.i18n {
         public static string MateriaPrimaToolStripMenuItem {
             get {
                 return ResourceManager.GetString("MateriaPrimaToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Update raw material.
+        /// </summary>
+        public static string MenuItemActualizarMateriaPrima {
+            get {
+                return ResourceManager.GetString("MenuItemActualizarMateriaPrima", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Update product.
+        /// </summary>
+        public static string MenuItemActualizarProducto {
+            get {
+                return ResourceManager.GetString("MenuItemActualizarProducto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Update promotion.
+        /// </summary>
+        public static string MenuItemActualizarPromocion {
+            get {
+                return ResourceManager.GetString("MenuItemActualizarPromocion", resourceCulture);
             }
         }
         

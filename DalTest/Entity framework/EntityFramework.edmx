@@ -4,19 +4,10 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'TC.dbo.Herramientas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+    <Schema Namespace="TCModelHerramientas.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Herramientas">
           <Key>
             <PropertyRef Name="IdHerramienta" />
-            <PropertyRef Name="Nombre" />
-            <PropertyRef Name="Cantidad" />
-            <PropertyRef Name="Marca" />
-            <PropertyRef Name="Proveedor" />
-            <PropertyRef Name="FechaAlta" />
-            <PropertyRef Name="TiempoDeUso" />
-            <PropertyRef Name="Habilitado" />
           </Key>
           <Property Name="IdHerramienta" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -28,36 +19,16 @@ advertencia 6002: La tabla o vista 'TC.dbo.Herramientas' no tiene definida ningu
           <Property Name="TiempoDeUso" Type="float" Nullable="false" />
           <Property Name="Habilitado" Type="bit" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="TCModelStoreContainer">
-          <EntitySet Name="Herramientas" EntityType="Self.Herramientas" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Herramientas].[IdHerramienta] AS [IdHerramienta], 
-    [Herramientas].[Nombre] AS [Nombre], 
-    [Herramientas].[Cantidad] AS [Cantidad], 
-    [Herramientas].[Marca] AS [Marca], 
-    [Herramientas].[Proveedor] AS [Proveedor], 
-    [Herramientas].[Comentario] AS [Comentario], 
-    [Herramientas].[FechaAlta] AS [FechaAlta], 
-    [Herramientas].[TiempoDeUso] AS [TiempoDeUso], 
-    [Herramientas].[Habilitado] AS [Habilitado]
-    FROM [dbo].[Herramientas] AS [Herramientas]</DefiningQuery>
-          </EntitySet>
+        <EntityContainer Name="TCModelHerramientasStoreContainer">
+          <EntitySet Name="Herramientas" EntityType="Self.Herramientas" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="TCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="TCModelHerramientas" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Herramientas">
           <Key>
             <PropertyRef Name="IdHerramienta" />
-            <PropertyRef Name="Nombre" />
-            <PropertyRef Name="Cantidad" />
-            <PropertyRef Name="Marca" />
-            <PropertyRef Name="Proveedor" />
-            <PropertyRef Name="FechaAlta" />
-            <PropertyRef Name="TiempoDeUso" />
-            <PropertyRef Name="Habilitado" />
           </Key>
           <Property Name="IdHerramienta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -69,7 +40,7 @@ advertencia 6002: La tabla o vista 'TC.dbo.Herramientas' no tiene definida ningu
           <Property Name="TiempoDeUso" Type="Double" Nullable="false" />
           <Property Name="Habilitado" Type="Boolean" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="TCEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="TCEntitiesHerramientas" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Herramientas" EntityType="Self.Herramientas" />
         </EntityContainer>
       </Schema>
@@ -77,9 +48,9 @@ advertencia 6002: La tabla o vista 'TC.dbo.Herramientas' no tiene definida ningu
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="TCModelStoreContainer" CdmEntityContainer="TCEntities">
+        <EntityContainerMapping StorageEntityContainer="TCModelHerramientasStoreContainer" CdmEntityContainer="TCEntitiesHerramientas">
           <EntitySetMapping Name="Herramientas">
-            <EntityTypeMapping TypeName="TCModel.Herramientas">
+            <EntityTypeMapping TypeName="TCModelHerramientas.Herramientas">
               <MappingFragment StoreEntitySet="Herramientas">
                 <ScalarProperty Name="IdHerramienta" ColumnName="IdHerramienta" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />

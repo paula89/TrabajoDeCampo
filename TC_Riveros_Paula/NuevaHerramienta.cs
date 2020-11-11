@@ -1,4 +1,6 @@
 ﻿using BLLTest.Facade;
+using DevExpress.XtraBars.Navigation;
+using DomainTest;
 using ServicesTest.Domain.Exceptions;
 using System;
 using System.Collections.Generic;
@@ -59,6 +61,42 @@ namespace TC_Riveros_Paula
             {
                 FacadeServiceBusiness.ManageException(ex);
                 System.Console.WriteLine("Error al cargar las traducciones : " + ex.Message);
+            }
+        }
+
+        private void btnAceptar_Click_1(object sender, EventArgs e)
+        {
+            Herramientas herramienta = new Herramientas();
+            herramienta.nombre = textBoxNombre.Text;
+            herramienta.marca = textBoxMarca.Text;
+            herramienta.habilitado = true;
+            herramienta.cantidad = Convert.ToInt32(textBoxCantidad.Text);
+            herramienta.comentario = textBoxComentario.Text;
+            herramienta.proveedor = textBoxProveedor.Text;
+            herramienta.tiempoDeUso = 0;
+            herramienta.IdHerramienta = Guid.NewGuid();
+            herramienta.fechaAlta = Convert.ToDateTime(DateTime.Now);
+            GuardarHerramienta(herramienta);
+        }
+
+        private void GuardarHerramienta(Herramientas herramienta)
+        {
+            try
+            {
+                int guardado = FacadeServiceBusiness.RegistrarHerramienta(herramienta);
+                if (guardado == 1)
+                {
+                    MessageBox.Show(language.GetString("MsgOkMPRegister"), "Ok", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show(language.GetString("MsgErrorMPRegister"), language.GetString("Error"), MessageBoxButtons.OK);
+                }
+            }
+            catch (Exception ex)
+            {
+                FacadeServiceBusiness.ManageException(new UIException(ex));
+
             }
         }
     }

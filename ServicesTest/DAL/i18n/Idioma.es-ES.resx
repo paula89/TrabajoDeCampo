@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="MenuItemNuevoProducto" xml:space="preserve">
-    <value>Nuevo</value>
+    <value>Nuevo producto</value>
   </data>
   <data name="btnCancelar" xml:space="preserve">
     <value>Cancelar</value>
@@ -133,7 +133,7 @@
     <value>Catalogo</value>
   </data>
   <data name="MenuItemVerMateriaPrima" xml:space="preserve">
-    <value>Listar</value>
+    <value>Listar Materia Prima</value>
   </data>
   <data name="InicioForm" xml:space="preserve">
     <value>Inicio</value>
@@ -145,13 +145,13 @@
     <value>Herramientas</value>
   </data>
   <data name="listarHerramientasToolStripMenuItem" xml:space="preserve">
-    <value>Listar</value>
+    <value>Listar herramientas</value>
   </data>
   <data name="MateriaPrimaToolStripMenuItem" xml:space="preserve">
     <value>Materia Prima</value>
   </data>
   <data name="MenuItemNuevaPromocion" xml:space="preserve">
-    <value>Nuevo</value>
+    <value>Nueva promocion</value>
   </data>
   <data name="MenuItemReportesVentas" xml:space="preserve">
     <value>Reporte de ventas</value>
@@ -181,13 +181,13 @@
     <value>Calcular Presupuesto</value>
   </data>
   <data name="MenuItemNuevoMateriaPrima" xml:space="preserve">
-    <value>Nuevo</value>
+    <value>Nueva materia prima</value>
   </data>
   <data name="ayudaToolStripMenuItem" xml:space="preserve">
     <value>Ayuda</value>
   </data>
   <data name="MenuItemVerPromociones" xml:space="preserve">
-    <value>Listar</value>
+    <value>Listar promociones</value>
   </data>
   <data name="labelStockHerramientas" xml:space="preserve">
     <value>Elija la materia prima y las herramientas necesarias para realizar el producto</value>
@@ -337,7 +337,7 @@
     <value>Iniciar sesion</value>
   </data>
   <data name="labelCantidad" xml:space="preserve">
-    <value>Cantidad en kilos</value>
+    <value>Cantidad</value>
   </data>
   <data name="labelMarca" xml:space="preserve">
     <value>Marca</value>
@@ -431,5 +431,20 @@
   </data>
   <data name="TrackingForm" xml:space="preserve">
     <value>Tracking</value>
+  </data>
+  <data name="labelCantidadKG" xml:space="preserve">
+    <value>Cantidad en kilos</value>
+  </data>
+  <data name="actualizarHerramientaToolStripMenuItem" xml:space="preserve">
+    <value>Actualizar herramienta</value>
+  </data>
+  <data name="MenuItemActualizarMateriaPrima" xml:space="preserve">
+    <value>Actualizar Materia Prima</value>
+  </data>
+  <data name="MenuItemActualizarPromocion" xml:space="preserve">
+    <value>Actualizar promoción</value>
+  </data>
+  <data name="MenuItemActualizarProducto" xml:space="preserve">
+    <value>Actualizar producto</value>
   </data>
 </root>

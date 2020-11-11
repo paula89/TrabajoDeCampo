@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Diagnostics.Tracing;
 using ServicesTest.BLL;
 using DomainTest;
+using BLLTest.Managers;
 
 namespace BLLTest.Facade
 {
@@ -23,6 +24,11 @@ namespace BLLTest.Facade
         public static int RegistrarMateriaPrima(MateriaPrima materiaPrima)
         {
             return MateriaPrimaManager.Current.RegistrarMateriaPrima(materiaPrima);
+        }
+
+        public static int RegistrarHerramienta(Herramientas herramienta)
+        {
+            return HerramientasManager.Current.RegistrarHerramienta(herramienta);
         }
     }
 }

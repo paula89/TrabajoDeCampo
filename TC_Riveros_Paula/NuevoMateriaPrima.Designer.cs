@@ -37,7 +37,7 @@
             this.labelProveedor = new System.Windows.Forms.Label();
             this.labelComentario = new System.Windows.Forms.Label();
             this.textBoxCantidad = new System.Windows.Forms.TextBox();
-            this.labelCantidad = new System.Windows.Forms.Label();
+            this.labelCantidadKG = new System.Windows.Forms.Label();
             this.labelMarca = new System.Windows.Forms.Label();
             this.dateTimePickerVencimiento = new System.Windows.Forms.DateTimePicker();
             this.labelVencimiento = new System.Windows.Forms.Label();
@@ -149,15 +149,15 @@
             this.textBoxCantidad.Size = new System.Drawing.Size(233, 27);
             this.textBoxCantidad.TabIndex = 8;
             // 
-            // labelCantidad
+            // labelCantidadKG
             // 
-            this.labelCantidad.AutoSize = true;
-            this.labelCantidad.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.labelCantidad.Location = new System.Drawing.Point(752, 44);
-            this.labelCantidad.Name = "labelCantidad";
-            this.labelCantidad.Size = new System.Drawing.Size(103, 17);
-            this.labelCantidad.TabIndex = 10;
-            this.labelCantidad.Text = "labelCantidad";
+            this.labelCantidadKG.AutoSize = true;
+            this.labelCantidadKG.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.labelCantidadKG.Location = new System.Drawing.Point(752, 44);
+            this.labelCantidadKG.Name = "labelCantidadKG";
+            this.labelCantidadKG.Size = new System.Drawing.Size(122, 17);
+            this.labelCantidadKG.TabIndex = 10;
+            this.labelCantidadKG.Text = "labelCantidadKG";
             // 
             // labelMarca
             // 
@@ -209,7 +209,7 @@
             this.Controls.Add(this.labelVencimiento);
             this.Controls.Add(this.dateTimePickerVencimiento);
             this.Controls.Add(this.labelMarca);
-            this.Controls.Add(this.labelCantidad);
+            this.Controls.Add(this.labelCantidadKG);
             this.Controls.Add(this.textBoxCantidad);
             this.Controls.Add(this.labelComentario);
             this.Controls.Add(this.labelProveedor);
@@ -239,7 +239,7 @@
         private System.Windows.Forms.Label labelProveedor;
         private System.Windows.Forms.Label labelComentario;
         private System.Windows.Forms.TextBox textBoxCantidad;
-        private System.Windows.Forms.Label labelCantidad;
+        private System.Windows.Forms.Label labelCantidadKG;
         private System.Windows.Forms.Label labelMarca;
         private System.Windows.Forms.DateTimePicker dateTimePickerVencimiento;
         private System.Windows.Forms.Label labelVencimiento;

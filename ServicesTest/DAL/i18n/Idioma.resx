@@ -337,7 +337,7 @@
     <value>Login</value>
   </data>
   <data name="labelCantidad" xml:space="preserve">
-    <value>Quantity (Kg)</value>
+    <value>Quantity</value>
   </data>
   <data name="labelMarca" xml:space="preserve">
     <value>Brand</value>
@@ -431,5 +431,20 @@
   </data>
   <data name="TrackingForm" xml:space="preserve">
     <value>Tracking</value>
+  </data>
+  <data name="labelCantidadKG" xml:space="preserve">
+    <value>Quantity (Kg)</value>
+  </data>
+  <data name="actualizarHerramientaToolStripMenuItem" xml:space="preserve">
+    <value>Update tool</value>
+  </data>
+  <data name="MenuItemActualizarMateriaPrima" xml:space="preserve">
+    <value>Update raw material</value>
+  </data>
+  <data name="MenuItemActualizarProducto" xml:space="preserve">
+    <value>Update product</value>
+  </data>
+  <data name="MenuItemActualizarPromocion" xml:space="preserve">
+    <value>Update promotion</value>
   </data>
 </root>

@@ -39,7 +39,7 @@ namespace TC_Riveros_Paula
                 labelMarca.Text = language.GetString("labelMarca");
                 labelProveedor.Text = language.GetString("labelProveedor");
                 labelComentario.Text = language.GetString("labelComentario");
-                labelCantidad.Text = language.GetString("labelCantidad");
+                labelCantidadKG.Text = language.GetString("labelCantidad");
                 labelVencimiento.Text = language.GetString("labelVencimiento");
                 
                 btnAceptar.Text = language.GetString("btnAceptar");
