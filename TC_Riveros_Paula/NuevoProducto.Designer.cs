@@ -36,7 +36,11 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.labelNombre = new System.Windows.Forms.Label();
             this.labelComentario = new System.Windows.Forms.Label();
+            this.helpProviderNuevoProducto = new System.Windows.Forms.HelpProvider();
+            this.dataGridViewMateriaPrima = new System.Windows.Forms.DataGridView();
+            this.labelStockMateriaPrima = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListarStockHerramientas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMateriaPrima)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxNombre
@@ -50,7 +54,7 @@
             // 
             // textBoxComentario
             // 
-            this.textBoxComentario.Location = new System.Drawing.Point(34, 170);
+            this.textBoxComentario.Location = new System.Drawing.Point(467, 32);
             this.textBoxComentario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxComentario.Multiline = true;
             this.textBoxComentario.Name = "textBoxComentario";
@@ -60,17 +64,17 @@
             // dataGridViewListarStockHerramientas
             // 
             this.dataGridViewListarStockHerramientas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewListarStockHerramientas.Location = new System.Drawing.Point(467, 52);
+            this.dataGridViewListarStockHerramientas.Location = new System.Drawing.Point(467, 190);
             this.dataGridViewListarStockHerramientas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridViewListarStockHerramientas.Name = "dataGridViewListarStockHerramientas";
-            this.dataGridViewListarStockHerramientas.Size = new System.Drawing.Size(422, 423);
+            this.dataGridViewListarStockHerramientas.Size = new System.Drawing.Size(422, 279);
             this.dataGridViewListarStockHerramientas.TabIndex = 16;
             // 
             // labelStockHerramientas
             // 
             this.labelStockHerramientas.AutoSize = true;
             this.labelStockHerramientas.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStockHerramientas.Location = new System.Drawing.Point(463, 30);
+            this.labelStockHerramientas.Location = new System.Drawing.Point(464, 170);
             this.labelStockHerramientas.Name = "labelStockHerramientas";
             this.labelStockHerramientas.Size = new System.Drawing.Size(135, 16);
             this.labelStockHerramientas.TabIndex = 17;
@@ -107,6 +111,7 @@
             this.btnGuardar.TabIndex = 19;
             this.btnGuardar.Text = "btnGuardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
             // labelNombre
             // 
@@ -122,11 +127,30 @@
             // 
             this.labelComentario.AutoSize = true;
             this.labelComentario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelComentario.Location = new System.Drawing.Point(291, 172);
+            this.labelComentario.Location = new System.Drawing.Point(718, 32);
             this.labelComentario.Name = "labelComentario";
             this.labelComentario.Size = new System.Drawing.Size(142, 21);
             this.labelComentario.TabIndex = 21;
             this.labelComentario.Text = "labelComentario";
+            // 
+            // dataGridViewMateriaPrima
+            // 
+            this.dataGridViewMateriaPrima.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMateriaPrima.Location = new System.Drawing.Point(12, 190);
+            this.dataGridViewMateriaPrima.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridViewMateriaPrima.Name = "dataGridViewMateriaPrima";
+            this.dataGridViewMateriaPrima.Size = new System.Drawing.Size(422, 279);
+            this.dataGridViewMateriaPrima.TabIndex = 22;
+            // 
+            // labelStockMateriaPrima
+            // 
+            this.labelStockMateriaPrima.AutoSize = true;
+            this.labelStockMateriaPrima.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStockMateriaPrima.Location = new System.Drawing.Point(12, 170);
+            this.labelStockMateriaPrima.Name = "labelStockMateriaPrima";
+            this.labelStockMateriaPrima.Size = new System.Drawing.Size(137, 16);
+            this.labelStockMateriaPrima.TabIndex = 23;
+            this.labelStockMateriaPrima.Text = "labelStockMateriaPrima";
             // 
             // NuevoProductoForm
             // 
@@ -135,6 +159,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 555);
+            this.Controls.Add(this.labelStockMateriaPrima);
+            this.Controls.Add(this.dataGridViewMateriaPrima);
             this.Controls.Add(this.labelComentario);
             this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.btnGuardar);
@@ -148,6 +174,7 @@
             this.Name = "NuevoProductoForm";
             this.Text = "NuevoProductoForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListarStockHerramientas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMateriaPrima)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +189,8 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label labelNombre;
         private System.Windows.Forms.Label labelComentario;
+        private System.Windows.Forms.HelpProvider helpProviderNuevoProducto;
+        private System.Windows.Forms.DataGridView dataGridViewMateriaPrima;
+        private System.Windows.Forms.Label labelStockMateriaPrima;
     }
 }

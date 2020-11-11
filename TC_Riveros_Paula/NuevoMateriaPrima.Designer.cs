@@ -42,6 +42,7 @@
             this.dateTimePickerVencimiento = new System.Windows.Forms.DateTimePicker();
             this.labelVencimiento = new System.Windows.Forms.Label();
             this.textBoxMarca = new System.Windows.Forms.TextBox();
+            this.helpProviderCrearMP = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // btnAceptar
@@ -244,5 +245,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerVencimiento;
         private System.Windows.Forms.Label labelVencimiento;
         private System.Windows.Forms.TextBox textBoxMarca;
+        private System.Windows.Forms.HelpProvider helpProviderCrearMP;
     }
 }

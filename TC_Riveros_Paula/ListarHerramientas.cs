@@ -25,7 +25,21 @@ namespace TC_Riveros_Paula
             this.Text = idioma.GetString("ListarHerramientasForm");
             this.btnImprimir.Text = idioma.GetString("btnImprimir");
             CargarTabla();
+            cargarAyuda();
         }
+        /// <summary>
+        /// load the help when the user press the F1 key
+        /// </summary>
+        public void cargarAyuda()
+        {
+            helpProviderListarHerramientas.HelpNamespace = Application.StartupPath + "/CookerSoft.chm";
+            helpProviderListarHerramientas.SetHelpString(this, "Listar herramientas");
+            // helpProviderCrearMP.SetHelpKeyword(this, "Crear Materia Prima");
+            // helpProviderCrearMP.SetHelpNavigator(this,helpProviderCrearMP.);
+        }
+        /// <summary>
+        /// load the table with the Herramientas
+        /// </summary>
         private void CargarTabla()
         {
             try

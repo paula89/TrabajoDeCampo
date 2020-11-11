@@ -54,6 +54,7 @@
             this.lblRolActual = new System.Windows.Forms.Label();
             this.comboBoxIdioma = new System.Windows.Forms.ComboBox();
             this.lblIdioma = new System.Windows.Forms.Label();
+            this.helpProviderActUsuario = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // btnBuscar
@@ -410,5 +411,6 @@
         private System.Windows.Forms.Label lblRolActual;
         private System.Windows.Forms.ComboBox comboBoxIdioma;
         private System.Windows.Forms.Label lblIdioma;
+        private System.Windows.Forms.HelpProvider helpProviderActUsuario;
     }
 }

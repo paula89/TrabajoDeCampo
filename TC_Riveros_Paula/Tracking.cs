@@ -24,7 +24,17 @@ namespace TC_Riveros_Paula
             CargarTraducciones(idioma);
             this.Text = idioma.GetString("TrackingForm");
             CargarTabla();
-
+            cargarAyuda();
+        }
+        /// <summary>
+        /// load the help when the user press the F1 key
+        /// </summary>
+        public void cargarAyuda()
+        {
+            helpProviderTracking.HelpNamespace = Application.StartupPath + "/CookerSoft.chm";
+            helpProviderTracking.SetHelpString(this, "Tracking");
+            // helpProviderCrearMP.SetHelpKeyword(this, "Crear Materia Prima");
+            // helpProviderCrearMP.SetHelpNavigator(this,helpProviderCrearMP.);
         }
         /// <summary>
         /// loas translations

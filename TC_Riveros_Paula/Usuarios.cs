@@ -29,6 +29,17 @@ namespace TC_Riveros_Paula
             CargarTraducciones();
             CargarRoles();
             CargarIdiomas();
+            cargarAyuda();
+        }
+        /// <summary>
+        /// load the help when the user press the F1 key
+        /// </summary>
+        public void cargarAyuda()
+        {
+            helpProviderUsuarios.HelpNamespace = Application.StartupPath + "/CookerSoft.chm";
+            helpProviderUsuarios.SetHelpString(this, "Usuarios");
+            // helpProviderCrearMP.SetHelpKeyword(this, "Crear Materia Prima");
+            // helpProviderCrearMP.SetHelpNavigator(this,helpProviderCrearMP.);
         }
         /// <summary>
         /// load languages combobox

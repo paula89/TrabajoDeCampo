@@ -22,8 +22,18 @@ namespace TC_Riveros_Paula
             language = idioma;
             this.Text = idioma.GetString("NuevaPromocionForm");
             CargarTraducciones();
+            cargarAyuda();
         }
-
+        /// <summary>
+        /// load the help when the user press the F1 key
+        /// </summary>
+        public void cargarAyuda()
+        {
+            helpProviderCrearPromocion.HelpNamespace = Application.StartupPath + "/CookerSoft.chm";
+            helpProviderCrearPromocion.SetHelpString(this, "Crear promocion");
+            // helpProviderCrearMP.SetHelpKeyword(this, "Crear Materia Prima");
+            // helpProviderCrearMP.SetHelpNavigator(this,helpProviderCrearMP.);
+        }
         private void NuevaPromocionForm_Load(object sender, EventArgs e)
         {
 
@@ -46,7 +56,7 @@ namespace TC_Riveros_Paula
             {
                 labelNombre.Text = language.GetString("labelNombre");
                 labelComentario.Text = language.GetString("labelComentario");
-                labelDescuento.Text = language.GetString("labelCantidad");
+                labelDescuento.Text = language.GetString("labelDescuento");
                 labelVigencia.Text = language.GetString("labelVencimiento");
 
                 btnAceptar.Text = language.GetString("btnAceptar");
@@ -58,6 +68,15 @@ namespace TC_Riveros_Paula
                 FacadeServiceBusiness.ManageException(ex);
                 System.Console.WriteLine("Error al cargar las traducciones : " + ex.Message);
             }
+        }
+        /// <summary>
+        /// create the Promocion object
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

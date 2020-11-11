@@ -23,7 +23,18 @@ namespace TC_Riveros_Paula
             InitializeComponent();
             this.Text = idioma.GetString("ListarMateriaPrimaForm");
             CargarTraducciones(idioma);
-            CargarTabla();        
+            CargarTabla();
+            cargarAyuda();
+        }
+        /// <summary>
+        /// load the help when the user press the F1 key
+        /// </summary>
+        public void cargarAyuda()
+        {
+            helpProviderListarMateriaPrima.HelpNamespace = Application.StartupPath + "/CookerSoft.chm";
+            helpProviderListarMateriaPrima.SetHelpString(this, "Listar materia prima");
+            // helpProviderCrearMP.SetHelpKeyword(this, "Crear Materia Prima");
+            // helpProviderCrearMP.SetHelpNavigator(this,helpProviderCrearMP.);
         }
         /// <summary>
         /// load translations

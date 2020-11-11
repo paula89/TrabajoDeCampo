@@ -25,8 +25,19 @@ namespace TC_Riveros_Paula
             language = idioma;
             this.Text = idioma.GetString("NuevaHerramientaForm");
             CargarTraducciones();
+            cargarAyuda();
         }
 
+        /// <summary>
+        /// load the help when the user press the F1 key
+        /// </summary>
+        public void cargarAyuda()
+        {
+            helpProviderH.HelpNamespace = Application.StartupPath + "/CookerSoft.chm";
+            helpProviderH.SetHelpString(this, "Crear Herramienta");
+            // helpProviderCrearMP.SetHelpKeyword(this, "Crear Materia Prima");
+            // helpProviderCrearMP.SetHelpNavigator(this,helpProviderCrearMP.);
+        }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
 
@@ -63,7 +74,11 @@ namespace TC_Riveros_Paula
                 System.Console.WriteLine("Error al cargar las traducciones : " + ex.Message);
             }
         }
-
+        /// <summary>
+        /// create the Herramienta object
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
             Herramientas herramienta = new Herramientas();
@@ -78,7 +93,10 @@ namespace TC_Riveros_Paula
             herramienta.fechaAlta = Convert.ToDateTime(DateTime.Now);
             GuardarHerramienta(herramienta);
         }
-
+        /// <summary>
+        /// Save the Herramienta and show confirmation message
+        /// </summary>
+        /// <param name="herramienta"></param>
         private void GuardarHerramienta(Herramientas herramienta)
         {
             try

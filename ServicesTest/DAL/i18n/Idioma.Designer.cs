@@ -63,6 +63,15 @@ namespace ServicesTest.DAL.i18n {
         /// <summary>
         ///   Busca una cadena traducida similar a Update tool.
         /// </summary>
+        public static string ActualizarHerramientaForm {
+            get {
+                return ResourceManager.GetString("ActualizarHerramientaForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Update tool.
+        /// </summary>
         public static string actualizarHerramientaToolStripMenuItem {
             get {
                 return ResourceManager.GetString("actualizarHerramientaToolStripMenuItem", resourceCulture);
@@ -133,6 +142,15 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Add.
+        /// </summary>
+        public static string btnAgregar {
+            get {
+                return ResourceManager.GetString("btnAgregar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Search.
         /// </summary>
         public static string btnBuscar {
@@ -142,11 +160,29 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Calculate.
+        /// </summary>
+        public static string btnCalcular {
+            get {
+                return ResourceManager.GetString("btnCalcular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cancel.
         /// </summary>
         public static string btnCancelar {
             get {
                 return ResourceManager.GetString("btnCancelar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Confirm.
+        /// </summary>
+        public static string btnConfirmar {
+            get {
+                return ResourceManager.GetString("btnConfirmar", resourceCulture);
             }
         }
         
@@ -331,6 +367,15 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Discount.
+        /// </summary>
+        public static string labelDescuento {
+            get {
+                return ResourceManager.GetString("labelDescuento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Brand.
         /// </summary>
         public static string labelMarca {
@@ -349,6 +394,24 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Products.
+        /// </summary>
+        public static string labelProducto {
+            get {
+                return ResourceManager.GetString("labelProducto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Choose the products.
+        /// </summary>
+        public static string labelProductosPresupuesto {
+            get {
+                return ResourceManager.GetString("labelProductosPresupuesto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Provider.
         /// </summary>
         public static string labelProveedor {
@@ -358,11 +421,20 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Choose the raw material and tools necessary to make the product.
+        ///   Busca una cadena traducida similar a Choose the tools necessary to make the product.
         /// </summary>
         public static string labelStockHerramientas {
             get {
                 return ResourceManager.GetString("labelStockHerramientas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Choose the raw material necessary to make the product.
+        /// </summary>
+        public static string labelStockMateriaPrima {
+            get {
+                return ResourceManager.GetString("labelStockMateriaPrima", resourceCulture);
             }
         }
         

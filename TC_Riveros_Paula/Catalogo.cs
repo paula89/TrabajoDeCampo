@@ -18,8 +18,18 @@ namespace TC_Riveros_Paula
             InitializeComponent();
             this.Text = idioma.GetString("CatalogoForm");
             this.btnImprimir.Text = idioma.GetString("btnImprimir");
+            cargarAyuda();
         }
-
+        /// <summary>
+        /// load the help when the user press the F1 key
+        /// </summary>
+        public void cargarAyuda()
+        {
+            helpProviderCatalogo.HelpNamespace = Application.StartupPath + "/CookerSoft.chm";
+            helpProviderCatalogo.SetHelpString(this, "Listar productos");
+            // helpProviderCrearMP.SetHelpKeyword(this, "Crear Materia Prima");
+            // helpProviderCrearMP.SetHelpNavigator(this,helpProviderCrearMP.);
+        }
         private void CatalogoForm_Load(object sender, EventArgs e)
         {
 
@@ -29,7 +39,11 @@ namespace TC_Riveros_Paula
         {
 
         }
-
+        /// <summary>
+        /// print the table
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             gridControl1.ShowPrintPreview();

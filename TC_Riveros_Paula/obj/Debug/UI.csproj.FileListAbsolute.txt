@@ -163,3 +163,7 @@ C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\UI.csproj
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\UI.csproj.CopyComplete
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.exe
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.pdb
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ActualizarHerramientaForm.resources
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ActualizarMateriaPrimaForm.resources
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ActualizarPromocion.resources
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ActualizarProducto.resources

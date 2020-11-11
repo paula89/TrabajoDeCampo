@@ -38,6 +38,7 @@
             this.labelDescuento = new System.Windows.Forms.Label();
             this.calendarControl1 = new DevExpress.XtraEditors.Controls.CalendarControl();
             this.labelVigencia = new System.Windows.Forms.Label();
+            this.helpProviderCrearPromocion = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.calendarControl1.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,6 +72,7 @@
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "btnAceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // textBoxNombre
             // 
@@ -140,7 +142,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calendarControl1.Location = new System.Drawing.Point(568, 90);
             this.calendarControl1.Name = "calendarControl1";
-            this.calendarControl1.Size = new System.Drawing.Size(296, 249);
+            this.calendarControl1.Size = new System.Drawing.Size(303, 249);
             this.calendarControl1.TabIndex = 12;
             // 
             // labelVigencia
@@ -193,5 +195,6 @@
         private System.Windows.Forms.Label labelDescuento;
         private DevExpress.XtraEditors.Controls.CalendarControl calendarControl1;
         private System.Windows.Forms.Label labelVigencia;
+        private System.Windows.Forms.HelpProvider helpProviderCrearPromocion;
     }
 }

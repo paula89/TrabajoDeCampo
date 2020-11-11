@@ -196,7 +196,7 @@
     <value>Name</value>
   </data>
   <data name="labelStockHerramientas" xml:space="preserve">
-    <value>Choose the raw material and tools necessary to make the product</value>
+    <value>Choose the tools necessary to make the product</value>
   </data>
   <data name="NuevoProductoForm" xml:space="preserve">
     <value>New Product</value>
@@ -446,5 +446,29 @@
   </data>
   <data name="MenuItemActualizarPromocion" xml:space="preserve">
     <value>Update promotion</value>
+  </data>
+  <data name="labelStockMateriaPrima" xml:space="preserve">
+    <value>Choose the raw material necessary to make the product</value>
+  </data>
+  <data name="btnConfirmar" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="btnCalcular" xml:space="preserve">
+    <value>Calculate</value>
+  </data>
+  <data name="labelProductosPresupuesto" xml:space="preserve">
+    <value>Choose the products</value>
+  </data>
+  <data name="ActualizarHerramientaForm" xml:space="preserve">
+    <value>Update tool</value>
+  </data>
+  <data name="btnAgregar" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="labelDescuento" xml:space="preserve">
+    <value>Discount</value>
+  </data>
+  <data name="labelProducto" xml:space="preserve">
+    <value>Products</value>
   </data>
 </root>

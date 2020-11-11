@@ -1,4 +1,5 @@
 ﻿using BLLTest.Facade;
+using DevExpress.Mvvm.Native;
 using DomainTest;
 using ServicesTest.Domain.Exceptions;
 using System;
@@ -26,8 +27,18 @@ namespace TC_Riveros_Paula
             this.Text = language.GetString("NuevoMateriaPrimaForm");
             usuario = user;
             CargarTraducciones();
-
+            cargarAyuda();
         }
+        /// <summary>
+        /// load the help when the user press the F1 key
+        /// </summary>
+        public void cargarAyuda() {
+            helpProviderCrearMP.HelpNamespace = Application.StartupPath + "/CookerSoft.chm";
+            helpProviderCrearMP.SetHelpString(this, "Crear Materia Prima");
+           // helpProviderCrearMP.SetHelpKeyword(this, "Crear Materia Prima");
+           // helpProviderCrearMP.SetHelpNavigator(this,helpProviderCrearMP.);
+        }
+
         /// <summary>
         /// load the translations
         /// </summary>

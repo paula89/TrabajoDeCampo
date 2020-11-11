@@ -40,6 +40,7 @@
             this.labelComentario = new System.Windows.Forms.Label();
             this.textBoxCantidad = new System.Windows.Forms.TextBox();
             this.labelCantidad = new System.Windows.Forms.Label();
+            this.helpProviderH = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // btnAceptar
@@ -217,5 +218,6 @@
         private System.Windows.Forms.Label labelComentario;
         private System.Windows.Forms.TextBox textBoxCantidad;
         private System.Windows.Forms.Label labelCantidad;
+        private System.Windows.Forms.HelpProvider helpProviderH;
     }
 }

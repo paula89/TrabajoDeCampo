@@ -23,6 +23,17 @@ namespace TC_Riveros_Paula
             this.Text = idioma.GetString("FormBitacora");
             this.CargarTraducciones(idioma);
             this.CargarTabla();
+            this.cargarAyuda();
+        }
+        /// <summary>
+        /// load the help when the user press the F1 key
+        /// </summary>
+        public void cargarAyuda()
+        {
+            helpProviderBitacora.HelpNamespace = Application.StartupPath + "/CookerSoft.chm";
+            helpProviderBitacora.SetHelpString(this, "Bitacora");
+            // helpProviderCrearMP.SetHelpKeyword(this, "Crear Materia Prima");
+            // helpProviderCrearMP.SetHelpNavigator(this,helpProviderCrearMP.);
         }
         /// <summary>
         /// load translations

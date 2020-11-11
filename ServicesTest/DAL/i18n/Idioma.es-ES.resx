@@ -190,7 +190,7 @@
     <value>Listar promociones</value>
   </data>
   <data name="labelStockHerramientas" xml:space="preserve">
-    <value>Elija la materia prima y las herramientas necesarias para realizar el producto</value>
+    <value>Elija las herramientas necesarias para realizar el producto</value>
   </data>
   <data name="labelProveedor" xml:space="preserve">
     <value>Proveedor</value>
@@ -446,5 +446,29 @@
   </data>
   <data name="MenuItemActualizarProducto" xml:space="preserve">
     <value>Actualizar producto</value>
+  </data>
+  <data name="labelStockMateriaPrima" xml:space="preserve">
+    <value>Elija la materia prima necesaria para realizar el producto</value>
+  </data>
+  <data name="btnConfirmar" xml:space="preserve">
+    <value>Confirmar</value>
+  </data>
+  <data name="btnCalcular" xml:space="preserve">
+    <value>Calcular</value>
+  </data>
+  <data name="labelProductosPresupuesto" xml:space="preserve">
+    <value>Elija los productos</value>
+  </data>
+  <data name="ActualizarHerramientaForm" xml:space="preserve">
+    <value>Actualizar herramienta</value>
+  </data>
+  <data name="btnAgregar" xml:space="preserve">
+    <value>Agregar</value>
+  </data>
+  <data name="labelDescuento" xml:space="preserve">
+    <value>Descuento</value>
+  </data>
+  <data name="labelProducto" xml:space="preserve">
+    <value>Productos</value>
   </data>
 </root>

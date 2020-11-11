@@ -22,6 +22,18 @@ namespace TC_Riveros_Paula
             this.Text = idioma.GetString("NuevaVentaForm");
             language = idioma;
             CargarTraducciones();
+            cargarAyuda();
+            CargarTabla();
+        }
+        /// <summary>
+        /// load the help when the user press the F1 key
+        /// </summary>
+        public void cargarAyuda()
+        {
+            helpProviderVentas.HelpNamespace = Application.StartupPath + "/CookerSoft.chm";
+            helpProviderVentas.SetHelpString(this, "Crear venta");
+            // helpProviderCrearMP.SetHelpKeyword(this, "Crear Materia Prima");
+            // helpProviderCrearMP.SetHelpNavigator(this,helpProviderCrearMP.);
         }
         /// <summary>
         /// load translations
@@ -31,8 +43,7 @@ namespace TC_Riveros_Paula
             try
             {
                 
-                btnAceptar.Text = language.GetString("btnAceptar");
-                btnCancelar.Text = language.GetString("btnCancelar");
+                btnAceptar.Text = language.GetString("btnConfirmar");
 
             }
             catch (UIException ex)
@@ -41,17 +52,18 @@ namespace TC_Riveros_Paula
                 System.Console.WriteLine("Error al cargar las traducciones : " + ex.Message);
             }
         }
-
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-
+        /// <summary>
+        /// load the Presupuestos table
+        /// </summary>
+        public void CargarTabla() { 
+        
         }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-
-        }
-
+           
+        /// <summary>
+        /// create the venta object since a Presupuesto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
 

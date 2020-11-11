@@ -18,8 +18,18 @@ namespace TC_Riveros_Paula
             InitializeComponent();
             this.Text = idioma.GetString("ReporteVentasForm");
             this.btnImprimir.Text = idioma.GetString("btnImprimir");
+            cargarAyuda();
         }
-
+        /// <summary>
+        /// load the help when the user press the F1 key
+        /// </summary>
+        public void cargarAyuda()
+        {
+            helpProviderReporte.HelpNamespace = Application.StartupPath + "/CookerSoft.chm";
+            helpProviderReporte.SetHelpString(this, "Listar ventas");
+            // helpProviderCrearMP.SetHelpKeyword(this, "Crear Materia Prima");
+            // helpProviderCrearMP.SetHelpNavigator(this,helpProviderCrearMP.);
+        }
         private void ReporteVentasForm_Load(object sender, EventArgs e)
         {
 

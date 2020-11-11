@@ -84,6 +84,30 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActualizarHerramienta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActualizarHerramienta.Designer.cs">
+      <DependentUpon>ActualizarHerramienta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActualizarMateriaPrima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActualizarMateriaPrima.Designer.cs">
+      <DependentUpon>ActualizarMateriaPrima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActualizarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActualizarProducto.Designer.cs">
+      <DependentUpon>ActualizarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActualizarPromocion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActualizarPromocion.Designer.cs">
+      <DependentUpon>ActualizarPromocion.cs</DependentUpon>
+    </Compile>
     <Compile Include="ActualizarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +236,18 @@
     <Compile Include="Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ActualizarHerramienta.resx">
+      <DependentUpon>ActualizarHerramienta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActualizarMateriaPrima.resx">
+      <DependentUpon>ActualizarMateriaPrima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActualizarProducto.resx">
+      <DependentUpon>ActualizarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActualizarPromocion.resx">
+      <DependentUpon>ActualizarPromocion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ActualizarUsuario.resx">
       <DependentUpon>ActualizarUsuario.cs</DependentUpon>
     </EmbeddedResource>

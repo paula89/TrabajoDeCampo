@@ -122,8 +122,8 @@ namespace TC_Riveros_Paula
         /// <param name="e"></param>
         private void MenuItemActualizarProducto_Click(object sender, EventArgs e)
         {
-          //  CatalogoForm catalogo = new CatalogoForm(idioma);
-          //  catalogo.ShowDialog();
+            ActualizarProducto actualizarProducto = new ActualizarProducto(idioma);
+            actualizarProducto.ShowDialog();
         }
         /// <summary>
         /// load the ActualizarProductoForm
@@ -132,8 +132,8 @@ namespace TC_Riveros_Paula
         /// <param name="e"></param>
         private void MenuItemActualizarMateriaPrima_Click(object sender, EventArgs e)
         {
-            //  CatalogoForm catalogo = new CatalogoForm(idioma);
-            //  catalogo.ShowDialog();
+            ActualizarMateriaPrimaForm actualizarMateriaPrima = new ActualizarMateriaPrimaForm(idioma);
+            actualizarMateriaPrima.ShowDialog();
         }
         /// <summary>
         /// load the ActualizarHerramientaForm
@@ -142,8 +142,8 @@ namespace TC_Riveros_Paula
         /// <param name="e"></param>
         private void actualizarHerramientaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //  CatalogoForm catalogo = new CatalogoForm(idioma);
-            //  catalogo.ShowDialog();
+            ActualizarHerramientaForm actualizarHerramienta = new ActualizarHerramientaForm(idioma);
+            actualizarHerramienta.ShowDialog();
         }
         /// <summary>
         /// load the ActualizarPromocionForm
@@ -152,8 +152,8 @@ namespace TC_Riveros_Paula
         /// <param name="e"></param>
         private void MenuItemActualizarPromocion_Click(object sender, EventArgs e)
         {
-            //  CatalogoForm catalogo = new CatalogoForm(idioma);
-            //  catalogo.ShowDialog();
+              ActualizarPromocion actualizarPromocion = new ActualizarPromocion(idioma);
+              actualizarPromocion.ShowDialog();
         }
         /// <summary>
         /// load the NuevoMateriaPrimaForm

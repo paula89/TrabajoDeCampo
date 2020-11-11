@@ -31,6 +31,7 @@
             this.btnRestaurar = new System.Windows.Forms.Button();
             this.gridControlBackup = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.helpProviderBackup = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlBackup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
@@ -94,5 +95,6 @@
         private System.Windows.Forms.Button btnRestaurar;
         private DevExpress.XtraGrid.GridControl gridControlBackup;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.HelpProvider helpProviderBackup;
     }
 }

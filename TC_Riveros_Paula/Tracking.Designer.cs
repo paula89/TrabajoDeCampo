@@ -31,6 +31,7 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.gridControlTracking = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.helpProviderTracking = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTracking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
@@ -96,5 +97,6 @@
         private System.Windows.Forms.Button btnImprimir;
         private DevExpress.XtraGrid.GridControl gridControlTracking;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.HelpProvider helpProviderTracking;
     }
 }
