@@ -14,8 +14,8 @@ namespace DomainTest
         List<Herramientas> herramientas { get; set; }
         List<MateriaPrima> materiasPrimas { get; set; }
         string nombre { get; set; }
-        int nroProducto { get; set; }
-
-
+        int IdProducto { get; set; }
+        DateTime FechaAlta { get; set; }
+        string usuario { get; set; }
     }
 }

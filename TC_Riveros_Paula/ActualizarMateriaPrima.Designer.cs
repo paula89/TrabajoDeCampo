@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxMateriaPrima = new System.Windows.Forms.ComboBox();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.textBoxMarca = new System.Windows.Forms.TextBox();
@@ -47,13 +47,13 @@
             this.helpProviderActMP = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // comboBoxMateriaPrima
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(44, 55);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(198, 24);
-            this.comboBox1.TabIndex = 0;
+            this.comboBoxMateriaPrima.FormattingEnabled = true;
+            this.comboBoxMateriaPrima.Location = new System.Drawing.Point(44, 55);
+            this.comboBoxMateriaPrima.Name = "comboBoxMateriaPrima";
+            this.comboBoxMateriaPrima.Size = new System.Drawing.Size(198, 24);
+            this.comboBoxMateriaPrima.TabIndex = 0;
             // 
             // btnActualizar
             // 
@@ -247,7 +247,7 @@
             this.Controls.Add(this.textBoxProveedor);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnActualizar);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxMateriaPrima);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ActualizarMateriaPrimaForm";
@@ -260,7 +260,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxMateriaPrima;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox textBoxMarca;

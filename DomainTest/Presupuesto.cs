@@ -10,8 +10,8 @@ namespace DomainTest
     {
         int nroDetalle { get; set; }
         int nroFichaPedido { get; set; }
-        int nroPresupuesto { get; set; }
-        int vigencia { get; set; } // nro de dias de vigencia
+        int IdPresupuesto { get; set; }
+        DateTime vigencia { get; set; } // nro de dias de vigencia
 
     }
 }

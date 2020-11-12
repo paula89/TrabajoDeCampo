@@ -12,7 +12,10 @@ namespace DomainTest
         int descuento { get; set; }
         bool estado { get; set; }
         string nombre { get; set; }
-        int nroPromocion { get; set; }
-        int vigencia { get; set; } // nro de dias de vigencia
+        int IdPromocion { get; set; }
+        DateTime vigencia { get; set; } // fecha de vencimiento
+        string usuario { get; set; }
+        DateTime FechaAlta { get; set; }
+
     }
 }

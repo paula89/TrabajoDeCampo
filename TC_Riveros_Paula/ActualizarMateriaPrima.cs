@@ -1,4 +1,6 @@
-﻿using BLLTest.Facade;
+﻿using BLLTest;
+using BLLTest.Facade;
+using DomainTest;
 using ServicesTest.Domain.Exceptions;
 using System;
 using System.Collections.Generic;
@@ -73,13 +75,56 @@ namespace TC_Riveros_Paula
 
         }
         /// <summary>
-        /// update the materia prima information
+        /// create the new MateriaPrima object
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            MateriaPrima materiaPrima = new MateriaPrima();
 
+            try
+            {
+                materiaPrima.IdMateriaPrima = new Guid(comboBoxMateriaPrima.SelectedIndex.ToString());
+                materiaPrima.proveedor = this.textBoxProveedor.Text;
+                materiaPrima.cantidad = Convert.ToInt32(this.textBoxCantidad.Text);
+                materiaPrima.marca = textBoxMarca.Text;
+                materiaPrima.comentario = textBoxComentario.Text;
+                materiaPrima.fechaVencimiento = Convert.ToDateTime(dateTimePickerVencimiento.Value);
+                materiaPrima.habilitada = true;
+
+                ActualizarMateriaPrima(materiaPrima);
+
+            }
+            catch (Exception ex)
+            {
+                FacadeServiceBusiness.ManageException(new UIException(ex));
+            }
+        }
+        /// <summary>
+        /// update the materia prima information
+        /// </summary>
+        /// <param name="materiaPrima"></param>
+        private void ActualizarMateriaPrima(MateriaPrima materiaPrima)
+        {
+            try
+            {
+                int guardado = 1;// MateriaPrimaManager.Current.ActualizarMateriaPrima(materiaPrima);
+
+                if (guardado == 1)
+                {
+                    MessageBox.Show(language.GetString("MsgOkMPRegister"), "Ok", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show(language.GetString("MsgErrorMPRegister"), language.GetString("Error"), MessageBoxButtons.OK);
+                }
+            }
+            catch (Exception ex)
+            {
+                FacadeServiceBusiness.ManageException(new UIException(ex));
+
+            }
         }
         /// <summary>
         /// close the screen

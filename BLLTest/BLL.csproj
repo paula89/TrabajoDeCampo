@@ -41,11 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL.cs" />
     <Compile Include="Exceptions\ExceptionManagerBusiness.cs" />
     <Compile Include="Facade\FacadeServiceBusiness.cs" />
+    <Compile Include="Managers\CalculosManager.cs" />
     <Compile Include="Managers\HerramientasManager.cs" />
     <Compile Include="Managers\MateriaPrimaManager.cs" />
+    <Compile Include="Managers\ProductoManager.cs" />
+    <Compile Include="Managers\PromocionManager.cs" />
+    <Compile Include="Managers\VentaManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

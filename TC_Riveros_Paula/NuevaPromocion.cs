@@ -1,4 +1,5 @@
 ﻿using BLLTest.Facade;
+using DomainTest;
 using ServicesTest.Domain.Exceptions;
 using System;
 using System.Collections.Generic;
@@ -76,7 +77,39 @@ namespace TC_Riveros_Paula
         /// <param name="e"></param>
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            Promocion promocion = new Promocion();
+
+            GuardarPromocion(promocion);
+
 
         }
+        /// <summary>
+        /// save the promotion
+        /// </summary>
+        /// <param name="promocion"></param>
+        private void GuardarPromocion(Promocion promocion)
+        {
+            try
+            {
+                int guardado = 1;// FacadeServiceBusiness.RegistrarPromocion(promocion);
+                if (guardado == 1)
+                {
+                    MessageBox.Show(language.GetString("MsgOkMPRegister"), "Ok", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show(language.GetString("MsgErrorMPRegister"), language.GetString("Error"), MessageBoxButtons.OK);
+                }
+            }
+            catch (Exception ex)
+            {
+                FacadeServiceBusiness.ManageException(new UIException(ex));
+
+            }
+        }
+
+
+
+
     }
 }

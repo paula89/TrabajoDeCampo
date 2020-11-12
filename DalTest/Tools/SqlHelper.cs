@@ -13,6 +13,9 @@ using System.Reflection;
 
 namespace DALTest.DAL.Tools
 {
+    /// <summary>
+    /// this class has the connections to the database and MateriaPrima table
+    /// </summary>
     internal static class SqlHelper
     {
         static string conString;
@@ -21,7 +24,11 @@ namespace DALTest.DAL.Tools
             conString = ConfigurationManager.ConnectionStrings["MainConString"].ConnectionString;
             
         }
-
+        /// <summary>
+        /// return the connection 
+        /// </summary>
+        /// <param name="connection"></param>
+        /// <returns></returns>
         public static SqlConnection getConnection(string connection)
         {
             SqlConnection conn;
@@ -37,7 +44,14 @@ namespace DALTest.DAL.Tools
             }
         }
 
-        
+        /// <summary>
+        /// insert a new MateriaPrima
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <param name="commandType"></param>
+        /// <param name="connection"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public static Int32 ExecuteNonQueryMateriaPrima(String commandText,
             CommandType commandType, string connection, MateriaPrima parameters)
         {
@@ -81,7 +95,14 @@ namespace DALTest.DAL.Tools
                 }
             }
         }
-
+        /// <summary>
+        /// Select the MateriaPrima
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <param name="commandType"></param>
+        /// <param name="connection"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public static SqlDataReader ExecuteReader(String commandText,
             CommandType commandType, string connection, params SqlParameter[] parameters)
         {
@@ -102,6 +123,11 @@ namespace DALTest.DAL.Tools
                 throw (new DALException(ex));
             }
         }
+        /// <summary>
+        /// reflection to know the parameters
+        /// </summary>
+        /// <param name="pObjeto"></param>
+        /// <returns></returns>
         public static string[] InformarParametros(object pObjeto) {
             var parametros = pObjeto.GetType()
                     .GetProperties()
@@ -113,7 +139,11 @@ namespace DALTest.DAL.Tools
                     .ToArray();
             return parametros;
         }
-
+        /// <summary>
+        /// reflection to know the properties
+        /// </summary>
+        /// <param name="pObjeto"></param>
+        /// <returns></returns>
         public static PropertyInfo[] InformarPropiedades(object pObjeto)
         {
             Type tipo = pObjeto.GetType();

@@ -1,4 +1,5 @@
 ﻿using BLLTest.Facade;
+using BLLTest.Managers;
 using DomainTest;
 using ServicesTest.Domain.Exceptions;
 using System;
@@ -94,8 +95,25 @@ namespace TC_Riveros_Paula
         /// update the Promocion
         /// </summary>
         /// <param name="promocion"></param>
-        public void Actualizar(Promocion promocion) { 
-            
+        public void Actualizar(Promocion promocion) {
+            try
+            {
+                int guardado = 1;// PromocionManager.Current.ActualizarPromocion(promocion);
+                
+                if (guardado == 1)
+                {
+                    MessageBox.Show(language.GetString("MsgOkMPRegister"), "Ok", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show(language.GetString("MsgErrorMPRegister"), language.GetString("Error"), MessageBoxButtons.OK);
+                }
+            }
+            catch (Exception ex)
+            {
+                FacadeServiceBusiness.ManageException(new UIException(ex));
+
+            }
         }
         /// <summary>
         /// close the screen

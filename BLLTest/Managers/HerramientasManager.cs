@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace BLLTest.Managers
 {
+    /// <summary>
+    /// this class manage the Herramientas
+    /// </summary>
     public class HerramientasManager
     {
         #region Singleton
@@ -30,13 +33,29 @@ namespace BLLTest.Managers
         }
         #endregion
 
-
+        /// <summary>
+        /// save the Herramientas
+        /// </summary>
+        /// <param name="herramienta"></param>
+        /// <returns></returns>
         public int RegistrarHerramienta(Herramientas herramienta)
         {
             return instancia.GetHerramientasRepository().Insert(herramienta);
         }
-
-
+        /// <summary>
+        /// update the Herramientas
+        /// </summary>
+        /// <param name="herramienta"></param>
+        /// <returns></returns>
+        public int ActualizarHerramienta(Herramientas herramienta)
+        {
+            return instancia.GetHerramientasRepository().Update(herramienta);
+        }
+        /// <summary>
+        /// get the Herramientas by filters
+        /// </summary>
+        /// <param name="filtros"></param>
+        /// <returns></returns>
         public IEnumerable<Herramientas> ListarHerramientaFilters(string[] filtros)
         {
             IEnumerable<Herramientas> herramientas = new List<Herramientas>();
@@ -52,7 +71,10 @@ namespace BLLTest.Managers
             }
 
         }
-
+        /// <summary>
+        /// get all the Herramientas
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Herramientas> ListarHerramientas()
         {
             IEnumerable<Herramientas> herramientas = new List<Herramientas>();

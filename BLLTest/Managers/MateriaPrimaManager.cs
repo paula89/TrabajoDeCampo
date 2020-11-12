@@ -37,7 +37,10 @@ namespace BLLTest
             return instancia.GetMateriaPrimaRepository().Insert(materiaPrima);
         }
 
-
+        public int ActualizarMateriaPrima(MateriaPrima materiaPrima)
+        {
+            return instancia.GetMateriaPrimaRepository().Update(materiaPrima);
+        }
         public IEnumerable<MateriaPrima> ListarMateriaPrimaFilters(string[] filtros)
         {
             IEnumerable<MateriaPrima> materiasPrimas = new List<MateriaPrima>();

@@ -12,6 +12,9 @@ using System.Threading.Tasks;
 
 namespace DALTest.Repositories.SQL
 {
+    /// <summary>
+    /// this class implements the interface IGenericRepository to create the differents transactions to the Materia Prima
+    /// </summary>
     public class MateriaPrimaRepositories : IGenericRepository<MateriaPrima>
     {
 
@@ -34,18 +37,29 @@ namespace DALTest.Repositories.SQL
 
 
         #endregion
-
+        /// <summary>
+        /// delete a MateriaPrima
+        /// </summary>
+        /// <param name="id"></param>
         public void Delete(Guid id)
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// insert a new MateriaPrima
+        /// </summary>
+        /// <param name="materiaPrima"></param>
+        /// <returns></returns>
         public int Insert(MateriaPrima materiaPrima)
         {
             int inserted = SqlHelper.ExecuteNonQueryMateriaPrima(InsertStatement, System.Data.CommandType.Text, "business", materiaPrima);
             return inserted;
         }
-
+        /// <summary>
+        /// Retuen all the MateriaPrima by filters
+        /// </summary>
+        /// <param name="filtros"></param>
+        /// <returns></returns>
         public IEnumerable<MateriaPrima> GetAll(Array filtros)
         {
             try
@@ -101,7 +115,10 @@ namespace DALTest.Repositories.SQL
         }
     
 
-
+        /// <summary>
+        /// return all the materiaPrima
+        /// </summary>
+        /// <returns></returns>
         public List<MateriaPrima> GetAll()
         {
             try
@@ -142,8 +159,17 @@ namespace DALTest.Repositories.SQL
 
 
      
+        /// <summary>
+        /// update a MateriaPrima
+        /// </summary>
+        /// <param name="o"></param>
+        /// <returns></returns>
+        public int Update(MateriaPrima o)
+        {
+            throw new NotImplementedException();
+        }
 
-        public void Update(MateriaPrima o)
+        void IGenericRepository<MateriaPrima>.Update(MateriaPrima o)
         {
             throw new NotImplementedException();
         }

@@ -1,4 +1,5 @@
 ﻿using BLLTest.Facade;
+using BLLTest.Managers;
 using DomainTest;
 using ServicesTest.Domain.Exceptions;
 using System;
@@ -64,7 +65,7 @@ namespace TC_Riveros_Paula
         }
         private void ActualizarHerramienta_Load(object sender, EventArgs e)
         {
-
+            
         }
         /// <summary>
         /// create the new Herramienta object
@@ -74,14 +75,38 @@ namespace TC_Riveros_Paula
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             Herramientas herramienta = new Herramientas();
+            herramienta.nombre = comboBoxHerramientas.SelectedItem.ToString();
+            herramienta.marca = textBoxMarca.Text;
+            herramienta.habilitado = checkBoxHabilitado.Checked;
+            herramienta.cantidad = Convert.ToInt32(textBoxCantidad.Text);
+            herramienta.comentario = textBoxComentario.Text;
+            herramienta.proveedor = textBoxProveedor.Text;
+            herramienta.IdHerramienta = new Guid(comboBoxHerramientas.SelectedIndex.ToString());
+
             Actualizar(herramienta);
         }
         /// <summary>
         /// update the Herramienta
         /// </summary>
         /// <param name="herramienta"></param>
-        public void Actualizar(Herramientas herramienta) { 
-        
+        public void Actualizar(Herramientas herramienta) {
+            try
+            {
+                int guardado = 1;// HerramientasManager.Current.ActualizarHerramienta(herramienta);
+                if (guardado == 1)
+                {
+                    MessageBox.Show(language.GetString("MsgOkMPRegister"), "Ok", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show(language.GetString("MsgErrorMPRegister"), language.GetString("Error"), MessageBoxButtons.OK);
+                }
+            }
+            catch (Exception ex)
+            {
+                FacadeServiceBusiness.ManageException(new UIException(ex));
+
+            }
         }
         /// <summary>
         /// close the screen
@@ -104,8 +129,13 @@ namespace TC_Riveros_Paula
         /// <summary>
         /// search the data since the Herramienta selected
         /// </summary>
-        public void BuscarHerramienta() { 
-            
+        public void BuscarHerramienta() {
+            try
+            {
+                // HerramientasManager.Current.ListarHerramientaFilters();
+            }
+            catch (Exception ex) { 
+            }
         }
         /// <summary>
         /// load the Herramientas combobox

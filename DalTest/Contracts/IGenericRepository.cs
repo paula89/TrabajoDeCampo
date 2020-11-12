@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace DALTest.Contracts
 {
-    
+    /// <summary>
+    /// interface to the differents repositories
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
         public interface IGenericRepository<T> where T : class, new()
         {
             int Insert(T o);
