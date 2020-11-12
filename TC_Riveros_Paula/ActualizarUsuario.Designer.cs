@@ -375,8 +375,11 @@
             this.Controls.Add(this.lblCodUsuario);
             this.Controls.Add(this.btnBuscar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.helpProviderActUsuario.SetHelpKeyword(this, "Crear Materia Prima");
+            this.helpProviderActUsuario.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.Topic);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ActualizarUsuarioForm";
+            this.helpProviderActUsuario.SetShowHelp(this, true);
             this.Text = "ActualizarUsuarioForm";
             this.ResumeLayout(false);
             this.PerformLayout();

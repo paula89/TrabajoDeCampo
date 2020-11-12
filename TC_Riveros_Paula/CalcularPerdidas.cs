@@ -48,8 +48,8 @@ namespace TC_Riveros_Paula
         {
             helpProviderCalculoPerdidas.HelpNamespace = Application.StartupPath + "/CookerSoft.chm";
             helpProviderCalculoPerdidas.SetHelpString(this, "Calculos");
-            // helpProviderCrearMP.SetHelpKeyword(this, "Crear Materia Prima");
-            // helpProviderCrearMP.SetHelpNavigator(this,helpProviderCrearMP.);
+            helpProviderCalculoPerdidas.SetHelpKeyword(this, "Calculos");
+            helpProviderCalculoPerdidas.SetHelpNavigator(this, HelpNavigator.KeywordIndex);
         }
         private void CalcularPerdidasForm_Load(object sender, EventArgs e)
         {

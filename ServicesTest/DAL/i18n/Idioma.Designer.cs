@@ -187,6 +187,15 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Delete.
+        /// </summary>
+        public static string btnEliminar {
+            get {
+                return ResourceManager.GetString("btnEliminar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Filter.
         /// </summary>
         public static string btnFiltrar {
@@ -403,11 +412,20 @@ namespace ServicesTest.DAL.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Choose the products.
+        ///   Busca una cadena traducida similar a Budget&apos;s Products .
         /// </summary>
         public static string labelProductosPresupuesto {
             get {
                 return ResourceManager.GetString("labelProductosPresupuesto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Promotions.
+        /// </summary>
+        public static string labelPromociones {
+            get {
+                return ResourceManager.GetString("labelPromociones", resourceCulture);
             }
         }
         

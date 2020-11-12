@@ -42,6 +42,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.helpProviderActHerramienta = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // labelCantidad
@@ -250,5 +251,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.HelpProvider helpProviderActHerramienta;
     }
 }

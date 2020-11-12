@@ -40,6 +40,7 @@
             this.checkBoxHabilitado = new System.Windows.Forms.CheckBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.helpProviderActPromocion = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.calendarControl1.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calendarControl1.Location = new System.Drawing.Point(567, 92);
             this.calendarControl1.Name = "calendarControl1";
-            this.calendarControl1.Size = new System.Drawing.Size(303, 249);
+            this.calendarControl1.Size = new System.Drawing.Size(289, 249);
             this.calendarControl1.TabIndex = 20;
             // 
             // labelDescuento
@@ -225,5 +226,6 @@
         private System.Windows.Forms.CheckBox checkBoxHabilitado;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.HelpProvider helpProviderActPromocion;
     }
 }

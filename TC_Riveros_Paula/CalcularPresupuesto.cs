@@ -38,7 +38,9 @@ namespace TC_Riveros_Paula
                 btnAgregar.Text = language.GetString("btnAgregar");
                 btnCalcular.Text = language.GetString("btnCalcular");
                 btnGuardar.Text = language.GetString("btnGuardar");
-
+                btnAgregar2.Text = language.GetString("btnAgregar");
+                btnEliminar.Text = language.GetString("btnEliminar");
+                labelPromociones.Text = language.GetString("labelPromociones");
             }
             catch (UIException ex)
             {
@@ -53,8 +55,8 @@ namespace TC_Riveros_Paula
         {
             helpProviderCalcularPresupuesto.HelpNamespace = Application.StartupPath + "/CookerSoft.chm";
             helpProviderCalcularPresupuesto.SetHelpString(this, "Calculos");
-            // helpProviderCrearMP.SetHelpKeyword(this, "Crear Materia Prima");
-            // helpProviderCrearMP.SetHelpNavigator(this,helpProviderCrearMP.);
+            helpProviderCalcularPresupuesto.SetHelpKeyword(this, "Calculos");
+            helpProviderCalcularPresupuesto.SetHelpNavigator(this, HelpNavigator.KeywordIndex);
         }
 
         private void CalcularPresupuestoForm_Load(object sender, EventArgs e)
@@ -92,6 +94,24 @@ namespace TC_Riveros_Paula
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// Add a promotion to the table
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAgregar2_Click(object sender, EventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// delete a row in the table
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
 
         }

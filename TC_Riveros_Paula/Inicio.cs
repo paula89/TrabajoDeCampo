@@ -328,7 +328,8 @@ namespace TC_Riveros_Paula
         /// <param name="e"></param>
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start("CookerSoft.pdf");
+            Help.ShowHelp(this,Application.StartupPath + "/CookerSoft.chm");
+            //Process.Start("CookerSoft.pdf");
         }
         
 

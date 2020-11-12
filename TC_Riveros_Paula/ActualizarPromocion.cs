@@ -24,6 +24,17 @@ namespace TC_Riveros_Paula
             CargarTraducciones();
             CargarPromociones();
             btnActualizar.Enabled = false;
+            cargarAyuda();
+        }
+        /// <summary>
+        /// load the help when the user press the F1 key
+        /// </summary>
+        public void cargarAyuda()
+        {
+            helpProviderActPromocion.HelpNamespace = Application.StartupPath + "/CookerSoft.chm";
+            helpProviderActPromocion.SetHelpString(this, "Crear Promocion");
+            helpProviderActPromocion.SetHelpKeyword(this, "Crear Promocion");
+            helpProviderActPromocion.SetHelpNavigator(this, HelpNavigator.KeywordIndex);
         }
         /// <summary>
         /// load translations

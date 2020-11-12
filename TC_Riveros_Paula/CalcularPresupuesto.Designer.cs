@@ -39,6 +39,10 @@
             this.labelCantidad = new System.Windows.Forms.Label();
             this.labelProductosPresupuesto = new System.Windows.Forms.Label();
             this.labelPresupuesto = new System.Windows.Forms.Label();
+            this.comboBoxPromociones = new System.Windows.Forms.ComboBox();
+            this.btnAgregar2 = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.labelPromociones = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +53,7 @@
             this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalcular.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalcular.ForeColor = System.Drawing.Color.White;
-            this.btnCalcular.Location = new System.Drawing.Point(569, 491);
+            this.btnCalcular.Location = new System.Drawing.Point(40, 514);
             this.btnCalcular.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(112, 28);
@@ -83,7 +87,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(40, 216);
+            this.btnAgregar.Location = new System.Drawing.Point(40, 202);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(98, 31);
             this.btnAgregar.TabIndex = 7;
@@ -98,7 +102,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(815, 491);
+            this.btnGuardar.Location = new System.Drawing.Point(223, 514);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(112, 28);
@@ -147,6 +151,44 @@
             this.labelPresupuesto.TabIndex = 12;
             this.labelPresupuesto.Text = "Total :";
             // 
+            // comboBoxPromociones
+            // 
+            this.comboBoxPromociones.FormattingEnabled = true;
+            this.comboBoxPromociones.Location = new System.Drawing.Point(40, 287);
+            this.comboBoxPromociones.Name = "comboBoxPromociones";
+            this.comboBoxPromociones.Size = new System.Drawing.Size(237, 24);
+            this.comboBoxPromociones.TabIndex = 13;
+            // 
+            // btnAgregar2
+            // 
+            this.btnAgregar2.Location = new System.Drawing.Point(317, 287);
+            this.btnAgregar2.Name = "btnAgregar2";
+            this.btnAgregar2.Size = new System.Drawing.Size(98, 31);
+            this.btnAgregar2.TabIndex = 14;
+            this.btnAgregar2.Text = "btnAgregar";
+            this.btnAgregar2.UseVisualStyleBackColor = true;
+            this.btnAgregar2.Click += new System.EventHandler(this.btnAgregar2_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(569, 442);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(98, 31);
+            this.btnEliminar.TabIndex = 15;
+            this.btnEliminar.Text = "btnEliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // labelPromociones
+            // 
+            this.labelPromociones.AutoSize = true;
+            this.labelPromociones.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.labelPromociones.Location = new System.Drawing.Point(37, 267);
+            this.labelPromociones.Name = "labelPromociones";
+            this.labelPromociones.Size = new System.Drawing.Size(124, 17);
+            this.labelPromociones.TabIndex = 16;
+            this.labelPromociones.Text = "labelPromociones";
+            // 
             // CalcularPresupuestoForm
             // 
             this.Appearance.BackColor = System.Drawing.Color.OliveDrab;
@@ -154,6 +196,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 555);
+            this.Controls.Add(this.labelPromociones);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnAgregar2);
+            this.Controls.Add(this.comboBoxPromociones);
             this.Controls.Add(this.labelPresupuesto);
             this.Controls.Add(this.labelProductosPresupuesto);
             this.Controls.Add(this.labelCantidad);
@@ -188,5 +234,9 @@
         private System.Windows.Forms.Label labelCantidad;
         private System.Windows.Forms.Label labelProductosPresupuesto;
         private System.Windows.Forms.Label labelPresupuesto;
+        private System.Windows.Forms.ComboBox comboBoxPromociones;
+        private System.Windows.Forms.Button btnAgregar2;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Label labelPromociones;
     }
 }

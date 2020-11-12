@@ -44,6 +44,7 @@
             this.textBoxProveedor = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.checkBoxHabilitado = new System.Windows.Forms.CheckBox();
+            this.helpProviderActMP = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -275,5 +276,6 @@
         private System.Windows.Forms.TextBox textBoxProveedor;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.CheckBox checkBoxHabilitado;
+        private System.Windows.Forms.HelpProvider helpProviderActMP;
     }
 }

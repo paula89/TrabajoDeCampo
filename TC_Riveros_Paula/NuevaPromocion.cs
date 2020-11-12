@@ -30,9 +30,9 @@ namespace TC_Riveros_Paula
         public void cargarAyuda()
         {
             helpProviderCrearPromocion.HelpNamespace = Application.StartupPath + "/CookerSoft.chm";
-            helpProviderCrearPromocion.SetHelpString(this, "Crear promocion");
-            // helpProviderCrearMP.SetHelpKeyword(this, "Crear Materia Prima");
-            // helpProviderCrearMP.SetHelpNavigator(this,helpProviderCrearMP.);
+            helpProviderCrearPromocion.SetHelpString(this, "Crear Promocion");
+            helpProviderCrearPromocion.SetHelpKeyword(this, "Crear Promocion");
+            helpProviderCrearPromocion.SetHelpNavigator(this, HelpNavigator.KeywordIndex);
         }
         private void NuevaPromocionForm_Load(object sender, EventArgs e)
         {

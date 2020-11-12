@@ -457,7 +457,7 @@
     <value>Calculate</value>
   </data>
   <data name="labelProductosPresupuesto" xml:space="preserve">
-    <value>Choose the products</value>
+    <value>Budget's Products </value>
   </data>
   <data name="ActualizarHerramientaForm" xml:space="preserve">
     <value>Update tool</value>
@@ -465,10 +465,16 @@
   <data name="btnAgregar" xml:space="preserve">
     <value>Add</value>
   </data>
+  <data name="btnEliminar" xml:space="preserve">
+    <value>Delete</value>
+  </data>
   <data name="labelDescuento" xml:space="preserve">
     <value>Discount</value>
   </data>
   <data name="labelProducto" xml:space="preserve">
     <value>Products</value>
+  </data>
+  <data name="labelPromociones" xml:space="preserve">
+    <value>Promotions</value>
   </data>
 </root>

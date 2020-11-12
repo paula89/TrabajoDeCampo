@@ -33,9 +33,9 @@ namespace TC_Riveros_Paula
         public void cargarAyuda()
         {
             helpProviderListarUsuarios.HelpNamespace = Application.StartupPath + "/CookerSoft.chm";
-            helpProviderListarUsuarios.SetHelpString(this, "Usuarios");
-            // helpProviderCrearMP.SetHelpKeyword(this, "Crear Materia Prima");
-            // helpProviderCrearMP.SetHelpNavigator(this,helpProviderCrearMP.);
+            helpProviderListarUsuarios.SetHelpString(this, "Usuaarios");
+            helpProviderListarUsuarios.SetHelpKeyword(this, "Usuarios");
+            helpProviderListarUsuarios.SetHelpNavigator(this, HelpNavigator.KeywordIndex);
         }
         /// <summary>
         /// load translations
@@ -119,16 +119,7 @@ namespace TC_Riveros_Paula
                 }
             }
         }
-        private void dataGridViewUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            CargarTabla();
-        }
-
+        
         private void textBoxNombre_TextChanged(object sender, EventArgs e)
         {
          /*   string input = textBoxNombre.Text;

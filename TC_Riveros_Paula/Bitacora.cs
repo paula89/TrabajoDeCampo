@@ -32,8 +32,8 @@ namespace TC_Riveros_Paula
         {
             helpProviderBitacora.HelpNamespace = Application.StartupPath + "/CookerSoft.chm";
             helpProviderBitacora.SetHelpString(this, "Bitacora");
-            // helpProviderCrearMP.SetHelpKeyword(this, "Crear Materia Prima");
-            // helpProviderCrearMP.SetHelpNavigator(this,helpProviderCrearMP.);
+            helpProviderBitacora.SetHelpKeyword(this, "Bitacora");
+            helpProviderBitacora.SetHelpNavigator(this, HelpNavigator.KeywordIndex);
         }
         /// <summary>
         /// load translations

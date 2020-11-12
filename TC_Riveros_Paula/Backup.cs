@@ -33,8 +33,8 @@ namespace TC_Riveros_Paula
         {
             helpProviderBackup.HelpNamespace = Application.StartupPath + "/CookerSoft.chm";
             helpProviderBackup.SetHelpString(this, "Backup");
-            // helpProviderCrearMP.SetHelpKeyword(this, "Crear Materia Prima");
-            // helpProviderCrearMP.SetHelpNavigator(this,helpProviderCrearMP.);
+            helpProviderBackup.SetHelpKeyword(this, "Backup");
+            helpProviderBackup.SetHelpNavigator(this, HelpNavigator.KeywordIndex);
         }
         /// <summary>
         /// load the translations

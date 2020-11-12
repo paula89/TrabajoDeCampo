@@ -40,6 +40,7 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.textBoxComentario = new System.Windows.Forms.TextBox();
             this.checkBoxHabilitado = new System.Windows.Forms.CheckBox();
+            this.helpProviderActProducto = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMateriaPrima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListarStockHerramientas)).BeginInit();
             this.SuspendLayout();
@@ -226,5 +227,6 @@
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.TextBox textBoxComentario;
         private System.Windows.Forms.CheckBox checkBoxHabilitado;
+        private System.Windows.Forms.HelpProvider helpProviderActProducto;
     }
 }

@@ -35,8 +35,8 @@ namespace TC_Riveros_Paula
         {
             helpProviderH.HelpNamespace = Application.StartupPath + "/CookerSoft.chm";
             helpProviderH.SetHelpString(this, "Crear Herramienta");
-            // helpProviderCrearMP.SetHelpKeyword(this, "Crear Materia Prima");
-            // helpProviderCrearMP.SetHelpNavigator(this,helpProviderCrearMP.);
+            helpProviderH.SetHelpKeyword(this, "Crear Herramienta");
+            helpProviderH.SetHelpNavigator(this, HelpNavigator.KeywordIndex);
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {

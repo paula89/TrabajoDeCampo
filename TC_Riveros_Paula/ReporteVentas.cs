@@ -27,8 +27,8 @@ namespace TC_Riveros_Paula
         {
             helpProviderReporte.HelpNamespace = Application.StartupPath + "/CookerSoft.chm";
             helpProviderReporte.SetHelpString(this, "Listar ventas");
-            // helpProviderCrearMP.SetHelpKeyword(this, "Crear Materia Prima");
-            // helpProviderCrearMP.SetHelpNavigator(this,helpProviderCrearMP.);
+            helpProviderReporte.SetHelpKeyword(this, "Listar ventas");
+            helpProviderReporte.SetHelpNavigator(this, HelpNavigator.KeywordIndex);
         }
         private void ReporteVentasForm_Load(object sender, EventArgs e)
         {
