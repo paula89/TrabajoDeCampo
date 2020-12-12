@@ -67,8 +67,8 @@ namespace TC_Riveros_Paula
             }
             catch (UIException ex) {
                 FacadeService.ManageException(ex);
+                MessageBox.Show("Ha ocurrido un error, contacte al administrador del sistema", "Error", MessageBoxButtons.OK);
             }
-
         }
         private void BitacoraDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

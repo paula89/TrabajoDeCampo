@@ -92,12 +92,12 @@ namespace TC_Riveros_Paula
 
                 // dataGridViewUsuarios.Refresh();
             }
-            catch (UIException ex)
+            catch (Exception ex)
             {
-                FacadeService.ManageException(ex);
-
+                FacadeService.ManageException(new UIException(ex));
+                MessageBox.Show("Ha ocurrido un error, contacte al administrador del sistema", "Error", MessageBoxButtons.OK);
             }
-        }
+    }
         /// <summary>
         /// get throuth permissions
         /// </summary>

@@ -1,4 +1,4 @@
-﻿using ServicesTest.DAL.i18n;
+﻿using ServicesTest.DAL.Factory;
 using ServicesTest.Domain.Exceptions;
 using ServicesTest.Facade;
 using System;
@@ -10,14 +10,12 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-
 namespace ServicesTest.BLL
 {
     public sealed class LanguageManager
     {
         #region Singleton
         public readonly static LanguageManager _instance = new LanguageManager();
-        //public string cultureInfo;
 
         public static LanguageManager Current
         {
@@ -43,12 +41,26 @@ namespace ServicesTest.BLL
         /// <returns></returns>
         public ResourceManager Translate(string cultureInfo)
         {
+            string pathLanguage = FactoryDAL.Current.GetTranslateRepository();
+            string file;             
             try
             {
-                Idioma.Culture = new CultureInfo(cultureInfo);
+                // Idioma.Culture = new CultureInfo(cultureInfo);
+                switch (cultureInfo)
+                {
+                    case "En-US":
+                        file = "Idioma";
+                        break;
+                    default:
+                        file = "Idioma." + cultureInfo;
+                        break;
+                }
+
+                ResourceManager Idioma = ResourceManager.CreateFileBasedResourceManager(file, pathLanguage, null);
+
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultureInfo);
 
-                return Idioma.ResourceManager;
+                return Idioma;
             }
             catch(BLLException ex) {
                 FacadeService.ManageException(ex);

@@ -2,11 +2,8 @@
 using ServicesTest.DAL.Repositories.SQL;
 using ServicesTest.Domain;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 
 namespace ServicesTest.DAL.Factory
 {
@@ -41,6 +38,24 @@ namespace ServicesTest.DAL.Factory
                 object instancia = Activator.CreateInstance(Type.GetType(nombreNamespaceClaseAccesoDatos));
 
                 return instancia as IGenericRepository<Bitacora>;
+            }
+            catch (Exception exc)
+            {
+                System.Console.WriteLine("exc :::" + exc.Message);
+                return null;
+            }
+        }
+        /// <summary>
+        /// return the file path with the tranlations
+        /// </summary>
+        /// <returns></returns>
+        public string GetTranslateRepository() {
+            try
+            {
+                string language = System.IO.Directory.GetCurrentDirectory() + @"\idiomas";
+                //string language = ConfigurationManager.ConnectionStrings["languages"].ConnectionString;
+                              
+                return language;
             }
             catch (Exception exc)
             {

@@ -102,18 +102,23 @@ namespace ServicesTest.DAL.Repositories.SQL
 
                 using (var dr = SqlHelper.ExecuteReader(SelectConfigurationStatement, System.Data.CommandType.Text, "security", parametros.ToArray()))
                 {
-                    Object[] values = new Object[dr.FieldCount];
-
-                    while (dr.Read())
+                    if (dr != null)
                     {
-                        dr.GetValues(values);
-                        String idioma = values[0].ToString();
+                        Object[] values = new Object[dr.FieldCount];
 
-                        idiomas.Add(idioma);
+                        while (dr.Read())
+                        {
+                            dr.GetValues(values);
+                            String idioma = values[0].ToString();
+
+                            idiomas.Add(idioma);
+                        }
+
+
+                        return idiomas;
                     }
+                    else { throw new Exception("Error de conexion a la base de datos"); }
                 }
-
-                return idiomas;
             }
             catch (Exception ex)
             {
@@ -133,22 +138,27 @@ namespace ServicesTest.DAL.Repositories.SQL
 
                 using (var dr = SqlHelper.ExecuteReader(SelectRolesStatement, System.Data.CommandType.Text, "security"))
                 {
-                    Object[] values = new Object[dr.FieldCount];
-
-                    while (dr.Read())
+                    if (dr != null)
                     {
-                        dr.GetValues(values);
-                        String nombreRol = values[1].ToString();
-                        
-                        roles.Add(nombreRol);
+                        Object[] values = new Object[dr.FieldCount];
+
+                        while (dr.Read())
+                        {
+                            dr.GetValues(values);
+                            String nombreRol = values[1].ToString();
+
+                            roles.Add(nombreRol);
+                        }
+                        return roles;
+                    }
+                    else {
+                        throw new Exception("Error de conexion a la base de datos");
                     }
                 }
 
-                return roles;
             }
             catch (Exception ex)
             {
-
                 FacadeService.ManageException(new DALException(ex));
                 return null;
             }
@@ -169,16 +179,22 @@ namespace ServicesTest.DAL.Repositories.SQL
 
                 using (var dr = SqlHelper.ExecuteReader(SelectConfigurationStatement, System.Data.CommandType.Text, "security", parametros.ToArray()))
                 {
-                    Object[] values = new Object[dr.FieldCount];
-                    while (dr.Read())
+                    if (dr != null)
                     {
-                        dr.GetValues(values);
-                        dvv =  Convert.ToDecimal(values[0]);
+                        Object[] values = new Object[dr.FieldCount];
+                        while (dr.Read())
+                        {
+                            dr.GetValues(values);
+                            dvv = Convert.ToDecimal(values[0]);
 
+                        }
+                        return dvv;
                     }
+                    else {
+                        throw new Exception("Error de conexion a la base de datos");
+                    }
+                    
                 }
-
-                return dvv;
             }
             catch (Exception ex)
             {
@@ -208,26 +224,30 @@ namespace ServicesTest.DAL.Repositories.SQL
 
                 using (var dr = SqlHelper.ExecuteReader(LoginSelectStatement, System.Data.CommandType.Text, "security", parametros.ToArray()))
                 {
-                    Object[] values = new Object[dr.FieldCount];
-                    Usuario usuario = new Usuario();
-                    while (dr.Read())
+                    if (dr != null)
                     {
-                        dr.GetValues(values);
-                        usuario.Cod_Usuario = values[0].ToString();
-                        usuario.Nombre = values[1].ToString();
-                        Patente permisoUsuario = new Patente();
-                        Familia familia = new Familia();
-                        permisoUsuario.Nombre = values[2].ToString();
-                        familia.Permisos.Add(permisoUsuario);
-                        usuario.Permisos.Add(familia);
-                        usuario.FechaAlta = Convert.ToDateTime(values[3].ToString());
-                        usuario.DVH = Convert.ToDecimal(values[4].ToString());
-                        usuario.Idioma = values[5].ToString();
-                        usuarios.Add(usuario);
+                        Object[] values = new Object[dr.FieldCount];
+                        Usuario usuario = new Usuario();
+                        while (dr.Read())
+                        {
+                            dr.GetValues(values);
+                            usuario.Cod_Usuario = values[0].ToString();
+                            usuario.Nombre = values[1].ToString();
+                            Patente permisoUsuario = new Patente();
+                            Familia familia = new Familia();
+                            permisoUsuario.Nombre = values[2].ToString();
+                            familia.Permisos.Add(permisoUsuario);
+                            usuario.Permisos.Add(familia);
+                            usuario.FechaAlta = Convert.ToDateTime(values[3].ToString());
+                            usuario.DVH = Convert.ToDecimal(values[4].ToString());
+                            usuario.Idioma = values[5].ToString();
+                            usuarios.Add(usuario);
+                        }
+                        return usuarios;
                     }
+                    else { throw new Exception("Error de conexion a la base de datos"); }
                 }
 
-                return usuarios;
             }
             catch (Exception ex)
             {
@@ -327,31 +347,36 @@ namespace ServicesTest.DAL.Repositories.SQL
             
                 using (var dr = SqlHelper.ExecuteReader(statement, System.Data.CommandType.Text, "security", parametros.ToArray()))
                 {
-                    Object[] values = new Object[dr.FieldCount];
-                    while (dr.Read())
+                    if (dr != null)
                     {
-                        dr.GetValues(values);
-                        Usuario usuario = new Usuario();
-                        Familia familia = new Familia();
-                        usuario.Cod_Usuario = values[0].ToString();
-                        usuario.Nombre = values[1].ToString();
-                        usuario.Apellido = values[2].ToString();
-                        usuario.Direccion = values[3].ToString();
-                        usuario.Telefono = values[4].ToString();
-                        usuario.Email = values[5].ToString();
-                        Patente permisoUsuario = new Patente();
-                        permisoUsuario.Nombre = values[6].ToString();
-                        familia.Permisos.Add(permisoUsuario);
-                        usuario.Permisos.Add(familia);
-                        usuario.FechaAlta = Convert.ToDateTime(values[7].ToString());
-                        usuario.Habilitado = Convert.ToBoolean(values[8]);
-                        usuario.DVH = Convert.ToDecimal(values[9]);
-                        usuario.Password = values[10].ToString();
-                        usuarios.Add(usuario);
+                        Object[] values = new Object[dr.FieldCount];
+                        while (dr.Read())
+                        {
+                            dr.GetValues(values);
+                            Usuario usuario = new Usuario();
+                            Familia familia = new Familia();
+                            usuario.Cod_Usuario = values[0].ToString();
+                            usuario.Nombre = values[1].ToString();
+                            usuario.Apellido = values[2].ToString();
+                            usuario.Direccion = values[3].ToString();
+                            usuario.Telefono = values[4].ToString();
+                            usuario.Email = values[5].ToString();
+                            Patente permisoUsuario = new Patente();
+                            permisoUsuario.Nombre = values[6].ToString();
+                            familia.Permisos.Add(permisoUsuario);
+                            usuario.Permisos.Add(familia);
+                            usuario.FechaAlta = Convert.ToDateTime(values[7].ToString());
+                            usuario.Habilitado = Convert.ToBoolean(values[8]);
+                            usuario.DVH = Convert.ToDecimal(values[9]);
+                            usuario.Password = values[10].ToString();
+                            usuarios.Add(usuario);
+                        }
+                        return usuarios;
                     }
-
+                    else {
+                        throw new Exception("Error de conexion a la base de datos");
+                    }
                 }
-                return usuarios;
             }
             catch (Exception ex)
             {
@@ -375,19 +400,27 @@ namespace ServicesTest.DAL.Repositories.SQL
 
                 using (var dr = SqlHelper.ExecuteReader(statement, System.Data.CommandType.Text, "security"))
                 {
-                    Object[] values = new Object[dr.FieldCount];
-                    while (dr.Read())
+                    if (dr != null)
                     {
-                        dr.GetValues(values);
-                        Usuario usuario = new Usuario();
-                        usuario.Cod_Usuario = values[0].ToString();
-                        usuario.Nombre = values[1].ToString();
-                        usuario.FechaAlta = Convert.ToDateTime(values[2]);
-                        usuario.DVH = Convert.ToDecimal(values[3]);
-                        usuarios.Add(usuario);
+                        Object[] values = new Object[dr.FieldCount];
+                        while (dr.Read())
+                        {
+                            dr.GetValues(values);
+                            Usuario usuario = new Usuario();
+                            usuario.Cod_Usuario = values[0].ToString();
+                            usuario.Nombre = values[1].ToString();
+                            usuario.FechaAlta = Convert.ToDateTime(values[2]);
+                            usuario.DVH = Convert.ToDecimal(values[3]);
+                            usuarios.Add(usuario);
+                        }
+
+                        return usuarios;
+                    }
+                    else
+                    {
+                        throw new Exception("Error en la conexion a la base de datos");
                     }
                 }
-                return usuarios;
             }
             catch (Exception ex)
             {
@@ -411,29 +444,36 @@ namespace ServicesTest.DAL.Repositories.SQL
 
                 using (var dr = SqlHelper.ExecuteReader(statement, System.Data.CommandType.Text, "security"))
                 {
-                    Object[] values = new Object[dr.FieldCount];
-                    while (dr.Read())
+                    if (dr != null)
                     {
-                        dr.GetValues(values);
-                        Usuario usuario = new Usuario();
-                        Familia familia = new Familia();
-                        usuario.Cod_Usuario = values[0].ToString();
-                        usuario.Nombre = values[1].ToString();
-                        usuario.Apellido = values[2].ToString();
-                        usuario.Direccion = values[3].ToString();
-                        usuario.Telefono = values[4].ToString();
-                        usuario.Email = values[5].ToString();
-                        Patente permisoUsuario = new Patente();
-                        permisoUsuario.Nombre = values[6].ToString();
-                        familia.Permisos.Add(permisoUsuario);
-                        //usuario.Permisos.Add(familia);
-                        usuario.FechaAlta = Convert.ToDateTime(values[7].ToString());
-                        usuario.Habilitado = Convert.ToBoolean(values[8]);
-                        usuario.Idioma = values[9].ToString();
-                        usuarios.Add(usuario);
+                        Object[] values = new Object[dr.FieldCount];
+                        while (dr.Read())
+                        {
+                            dr.GetValues(values);
+                            Usuario usuario = new Usuario();
+                            Familia familia = new Familia();
+                            usuario.Cod_Usuario = values[0].ToString();
+                            usuario.Nombre = values[1].ToString();
+                            usuario.Apellido = values[2].ToString();
+                            usuario.Direccion = values[3].ToString();
+                            usuario.Telefono = values[4].ToString();
+                            usuario.Email = values[5].ToString();
+                            Patente permisoUsuario = new Patente();
+                            permisoUsuario.Nombre = values[6].ToString();
+                            familia.Permisos.Add(permisoUsuario);
+                            //usuario.Permisos.Add(familia);
+                            usuario.FechaAlta = Convert.ToDateTime(values[7].ToString());
+                            usuario.Habilitado = Convert.ToBoolean(values[8]);
+                            usuario.Idioma = values[9].ToString();
+                            usuarios.Add(usuario);
+                        }
+
+                        return usuarios;
+                    }
+                    else {
+                        throw new Exception("Error dde conexion a la base de datos");
                     }
                 }
-                return usuarios;
             }
             catch (Exception ex)
             {

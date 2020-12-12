@@ -1,4 +1,9 @@
-﻿using System;
+﻿using BLLTest;
+using BLLTest.Facade;
+using BLLTest.Managers;
+using DomainTest;
+using ServicesTest.Domain.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +18,9 @@ namespace TC_Riveros_Paula
 {
     public partial class NuevoProductoForm : DevExpress.XtraEditors.XtraForm
     {
+        IEnumerable<MateriaPrima> materiaPrimas;
+        IEnumerable<Herramientas> herramientas;
+
         public NuevoProductoForm(ResourceManager idioma)
         {
             InitializeComponent();
@@ -49,9 +57,30 @@ namespace TC_Riveros_Paula
         /// <summary>
         /// load the Herramienta and MateriaPrima tables
         /// </summary>
-        public void CargarTabla() { 
-        
-        }
+        public void CargarTabla() {
+            try
+            {
+                materiaPrimas = MateriaPrimaManager.Current.ListarMateriaPrima();
+                herramientas = HerramientasManager.Current.ListarHerramientas();
+
+                if (materiaPrimas.Any())
+                {
+                    dataGridViewMateriaPrima.DataSource = materiaPrimas;
+                    dataGridViewMateriaPrima.Columns["IdMateriaPrima"].Visible = false;
+                }
+                if (herramientas.Any()) { 
+                    dataGridViewListarStockHerramientas.DataSource = herramientas;
+                    dataGridViewListarStockHerramientas.Columns["IdHerramienta"].Visible = false;
+                }
+                
+
+            }
+            catch (Exception ex)
+            {
+                FacadeServiceBusiness.ManageException(new UIException(ex));
+                MessageBox.Show("Ha ocurrido un error, contacte al administrador del sistema", "Error", MessageBoxButtons.OK);
+            }
+    }
         private void label5_Click(object sender, EventArgs e)
         {
 

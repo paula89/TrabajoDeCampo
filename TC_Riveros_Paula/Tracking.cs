@@ -81,12 +81,12 @@ namespace TC_Riveros_Paula
                     MessageBox.Show("No hay tracking en la base de datos.","",MessageBoxButtons.OK);
                 }
             }
-            catch (UIException ex)
+            catch (Exception ex)
             {
-                FacadeService.ManageException(ex);
-
+                FacadeService.ManageException(new UIException(ex));
+                MessageBox.Show("Ha ocurrido un error, contacte al administrador del sistema", "Error", MessageBoxButtons.OK);
             }
-        }
+    }
 
 
 

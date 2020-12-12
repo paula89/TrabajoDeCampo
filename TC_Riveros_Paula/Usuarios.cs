@@ -124,15 +124,22 @@ namespace TC_Riveros_Paula
         /// <param name="e"></param>
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Usuario usuario = CrearUsuario();
-
-            bool valido = ValidarUsuario();
-            if (valido)
+            try
             {
-                RegistrarUsuario(usuario);
-                this.Close();
+                Usuario usuario = CrearUsuario();
+
+                bool valido = ValidarUsuario();
+                if (valido)
+                {
+                    RegistrarUsuario(usuario);
+                    this.Close();
+                }
             }
-        }
+            catch (Exception ex) {
+                FacadeService.ManageException(new UIException(ex));
+                MessageBox.Show("Ha ocurrido un error, contacte al administrador del sistema", "Error", MessageBoxButtons.OK);
+            }
+    }
 
         /// <summary>
         /// create a new user object

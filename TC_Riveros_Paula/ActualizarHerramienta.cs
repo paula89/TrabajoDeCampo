@@ -105,7 +105,7 @@ namespace TC_Riveros_Paula
             catch (Exception ex)
             {
                 FacadeServiceBusiness.ManageException(new UIException(ex));
-
+                MessageBox.Show("Ha ocurrido un error, contacte al administrador del sistema","Error",MessageBoxButtons.OK);
             }
         }
         /// <summary>

@@ -68,9 +68,9 @@ namespace TC_Riveros_Paula
                 btnCancelar.Text = language.GetString("btnCancelar");
 
             }
-            catch (UIException ex)
+            catch (Exception ex)
             {
-                FacadeServiceBusiness.ManageException(ex);
+                FacadeServiceBusiness.ManageException(new UIException(ex));
                 System.Console.WriteLine("Error al cargar las traducciones : " + ex.Message);
             }
         }
@@ -81,18 +81,24 @@ namespace TC_Riveros_Paula
         /// <param name="e"></param>
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
-            Herramientas herramienta = new Herramientas();
-            herramienta.nombre = textBoxNombre.Text;
-            herramienta.marca = textBoxMarca.Text;
-            herramienta.habilitado = true;
-            herramienta.cantidad = Convert.ToInt32(textBoxCantidad.Text);
-            herramienta.comentario = textBoxComentario.Text;
-            herramienta.proveedor = textBoxProveedor.Text;
-            herramienta.tiempoDeUso = 0;
-            herramienta.IdHerramienta = Guid.NewGuid();
-            herramienta.fechaAlta = Convert.ToDateTime(DateTime.Now);
-            GuardarHerramienta(herramienta);
-        }
+            try
+            {
+                Herramientas herramienta = new Herramientas();
+                herramienta.nombre = textBoxNombre.Text;
+                herramienta.marca = textBoxMarca.Text;
+                herramienta.habilitado = true;
+                herramienta.cantidad = Convert.ToInt32(textBoxCantidad.Text);
+                herramienta.comentario = textBoxComentario.Text;
+                herramienta.proveedor = textBoxProveedor.Text;
+                herramienta.tiempoDeUso = 0;
+                herramienta.IdHerramienta = Guid.NewGuid();
+                herramienta.fechaAlta = Convert.ToDateTime(DateTime.Now);
+                GuardarHerramienta(herramienta);
+            }
+            catch (Exception ex) {
+                MessageBox.Show("Ha ocurrido un error, contacte al administrador del sistema", "Error", MessageBoxButtons.OK);
+            }
+    }
         /// <summary>
         /// Save the Herramienta and show confirmation message
         /// </summary>

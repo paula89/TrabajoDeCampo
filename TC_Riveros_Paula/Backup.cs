@@ -74,9 +74,10 @@ namespace TC_Riveros_Paula
             catch (Exception ex)
             {
                 FacadeService.ManageException((UIException)ex);
+                MessageBox.Show("Ha ocurrido un error, contacte al administrador del sistema", "Error", MessageBoxButtons.OK);
             }
 
-        }
+    }
 
         private void BackupForm_Load(object sender, EventArgs e)
         {
@@ -100,14 +101,20 @@ namespace TC_Riveros_Paula
         {
            DialogResult response = MessageBox.Show(msgConfirm, titleConfirm, MessageBoxButtons.OKCancel);
             System.Console.WriteLine("Response ::: " + response);
-
-            if (response == DialogResult.OK) {
-                Backup backup = new Backup();
-                backup = (Backup)this.gridView1.GetFocusedRow();
-                System.Console.WriteLine("seleccion ::: " + backup.Path);
-                this.Restaurar(backup.Path);
-                //  this.Restaurar(gridControlBackup);//.Cells[2].Value.ToString());                
+            try
+            {
+                if (response == DialogResult.OK)
+                {
+                    Backup backup = new Backup();
+                    backup = (Backup)this.gridView1.GetFocusedRow();
+                    System.Console.WriteLine("seleccion ::: " + backup.Path);
+                    this.Restaurar(backup.Path);
+                    //  this.Restaurar(gridControlBackup);//.Cells[2].Value.ToString());                
+                }
             }
+            catch (Exception ex) {
+                
+                MessageBox.Show("Ha ocurrido un error, contacte al administrador del sistema","Error",MessageBoxButtons.OK); }
         }
         /// <summary>
         /// show a message to confirm the restore

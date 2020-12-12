@@ -91,15 +91,13 @@ namespace TC_Riveros_Paula
                 else {
                     btnImprimir.Enabled = false;
                     MessageBox.Show("No hay materias primas", "", MessageBoxButtons.OK);
-
-                }
-                
+                }                
             }
             catch (Exception ex)
             {
                 FacadeServiceBusiness.ManageException(new UIException(ex));
+                MessageBox.Show("Ha ocurrido un error, contacte al administrador del sistema", "Error", MessageBoxButtons.OK);
             }
-
         }
         
         private void textBoxNombre_TextChanged(object sender, EventArgs e)

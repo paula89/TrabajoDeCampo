@@ -128,6 +128,8 @@ namespace TC_Riveros_Paula
             catch (UIException ex)
             {
                 FacadeService.ManageException(ex);
+                MessageBox.Show("Ha ocurrido un error, contacte al administrador del sistema", "Error", MessageBoxButtons.OK);
+
             }
         }
         /// <summary>
@@ -183,12 +185,18 @@ namespace TC_Riveros_Paula
         /// <param name="e"></param>
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            bool valido = ValidarUsuario();
-            if (valido)
+            try
             {
-                Usuario usuario = CrearUsuario();
-                ActualizarUsuario(usuario);
-                this.Close();
+                bool valido = ValidarUsuario();
+                if (valido)
+                {
+                    Usuario usuario = CrearUsuario();
+                    ActualizarUsuario(usuario);
+                    this.Close();
+                }
+            }
+            catch (Exception ex) { 
+                MessageBox.Show("Ha ocurrido un error, contacte al administrador del sistema", "Error", MessageBoxButtons.OK);
             }
         }
         /// <summary>

@@ -20,10 +20,16 @@ namespace DALTest.Repositories.SQL
         /// <param name="id"></param>
         public void Delete(Guid id)
         {
-            using (TCEntitiesHerramientas db = new TCEntitiesHerramientas())
+            try
             {
-                DalTest.Entity_framework.Herramientas herramienta = db.Herramientas.Find(id);
-                db.Herramientas.Remove(herramienta);
+                using (TCEntitiesHerramientas db = new TCEntitiesHerramientas())
+                {
+                    DalTest.Entity_framework.Herramientas herramienta = db.Herramientas.Find(id);
+                    db.Herramientas.Remove(herramienta);
+                }
+            } catch (Exception ex)
+            {
+                throw (new DALException(ex));
             }
         }
         /// <summary>
@@ -33,27 +39,33 @@ namespace DALTest.Repositories.SQL
         public IEnumerable<DomainTest.Herramientas> GetAll()
         {
             List<DomainTest.Herramientas> HerramientasList = new List<DomainTest.Herramientas>();
-
-            using (TCEntitiesHerramientas db = new TCEntitiesHerramientas())
+            try
             {
-                var tool = new DomainTest.Herramientas();
-                var herramientas = db.Herramientas;
-                foreach (var oHerramienta in herramientas)
+                using (TCEntitiesHerramientas db = new TCEntitiesHerramientas())
                 {
-                    tool.IdHerramienta = new Guid(oHerramienta.IdHerramienta);
-                    tool.nombre = oHerramienta.Nombre;
-                    tool.proveedor = oHerramienta.Proveedor;
-                    tool.habilitado = oHerramienta.Habilitado;
-                    tool.marca = oHerramienta.Marca;
-                    tool.tiempoDeUso = (float)oHerramienta.TiempoDeUso;
-                    tool.cantidad = oHerramienta.Cantidad;
-                    tool.comentario = oHerramienta.Comentario;
-                    tool.fechaAlta = oHerramienta.FechaAlta;
-                    HerramientasList.Add(tool);
-                }
+                    var tool = new DomainTest.Herramientas();
+                    var herramientas = db.Herramientas;
+                    foreach (var oHerramienta in herramientas)
+                    {
+                        tool.IdHerramienta = new Guid(oHerramienta.IdHerramienta);
+                        tool.nombre = oHerramienta.Nombre;
+                        tool.proveedor = oHerramienta.Proveedor;
+                        tool.habilitado = oHerramienta.Habilitado;
+                        tool.marca = oHerramienta.Marca;
+                        tool.tiempoDeUso = (float)oHerramienta.TiempoDeUso;
+                        tool.cantidad = oHerramienta.Cantidad;
+                        tool.comentario = oHerramienta.Comentario;
+                        tool.fechaAlta = oHerramienta.FechaAlta;
+                        HerramientasList.Add(tool);
+                    }
 
+                }
+                return HerramientasList;
             }
-            return HerramientasList;
+            catch (Exception ex)
+            {
+                throw (new DALException(ex));
+            }
         }
         /// <summary>
         /// return all the Herramientas by filters
@@ -63,27 +75,33 @@ namespace DALTest.Repositories.SQL
         public IEnumerable<DomainTest.Herramientas> GetAll(Array filtros)
         {
             List<DomainTest.Herramientas> HerramientasList = new List<DomainTest.Herramientas>();
-
-            using (TCEntitiesHerramientas db = new TCEntitiesHerramientas())
+            try
             {
-                var tool = new DomainTest.Herramientas();
-                var herramientas = db.Herramientas;
-                foreach (var oHerramienta in herramientas)
+                using (TCEntitiesHerramientas db = new TCEntitiesHerramientas())
                 {
-                    tool.IdHerramienta = new Guid(oHerramienta.IdHerramienta);
-                    tool.nombre = oHerramienta.Nombre;
-                    tool.proveedor = oHerramienta.Proveedor;
-                    tool.habilitado = oHerramienta.Habilitado;
-                    tool.marca = oHerramienta.Marca;
-                    tool.tiempoDeUso = (float)oHerramienta.TiempoDeUso;
-                    tool.cantidad = oHerramienta.Cantidad;
-                    tool.comentario = oHerramienta.Comentario;
-                    tool.fechaAlta = oHerramienta.FechaAlta;
-                    HerramientasList.Add(tool);
-                }
+                    var tool = new DomainTest.Herramientas();
+                    var herramientas = db.Herramientas;
+                    foreach (var oHerramienta in herramientas)
+                    {
+                        tool.IdHerramienta = new Guid(oHerramienta.IdHerramienta);
+                        tool.nombre = oHerramienta.Nombre;
+                        tool.proveedor = oHerramienta.Proveedor;
+                        tool.habilitado = oHerramienta.Habilitado;
+                        tool.marca = oHerramienta.Marca;
+                        tool.tiempoDeUso = (float)oHerramienta.TiempoDeUso;
+                        tool.cantidad = oHerramienta.Cantidad;
+                        tool.comentario = oHerramienta.Comentario;
+                        tool.fechaAlta = oHerramienta.FechaAlta;
+                        HerramientasList.Add(tool);
+                    }
 
+                }
+                return HerramientasList;
             }
-            return HerramientasList;
+            catch (Exception ex)
+            {
+                throw (new DALException(ex));
+            }
         }
 
         /// <summary>
@@ -123,12 +141,19 @@ namespace DALTest.Repositories.SQL
         /// <returns></returns>
         public int Update(DomainTest.Herramientas herramienta)
         {
-            using (TCEntitiesHerramientas db = new TCEntitiesHerramientas())
+            try
             {
-                db.Entry(herramienta).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
+                using (TCEntitiesHerramientas db = new TCEntitiesHerramientas())
+                {
+                    db.Entry(herramienta).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+                return 1;
             }
-            return 1;
+            catch (Exception ex)
+            {
+                throw (new DALException(ex));
+            }
         }
 
         void IGenericRepository<DomainTest.Herramientas>.Update(DomainTest.Herramientas o)

@@ -61,6 +61,7 @@ C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCam
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.BackupForm.resources
 C:\Users\Paula\Desktop\UAI\Trabajo de campo\git\repo Proyecto Final\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.StartForm.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\TC_Riveros_Paula.exe.config
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\TC_Riveros_Paula.xml
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\TC_Riveros_Paula.exe
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\TC_Riveros_Paula.pdb
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\BLLTest.dll
@@ -81,8 +82,10 @@ C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DevExpres
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DevExpress.XtraTreeList.v20.1.dll
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DevExpress.Office.v20.1.Core.dll
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\BLLTest.pdb
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\BLLTest.xml
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DomainTest.pdb
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\ServicesTest.pdb
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\ServicesTest.xml
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DevExpress.Mvvm.v20.1.xml
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DevExpress.Printing.v20.1.Core.xml
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DevExpress.Xpf.Core.v20.1.xml
@@ -93,6 +96,7 @@ C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DevExpres
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\EntityFramework.xml
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DalTest.pdb
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DalTest.xml
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DalTest.dll.config
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DevExpress.RichEdit.v20.1.Core.xml
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\DevExpress.XtraTreeList.v20.1.xml
@@ -135,6 +139,10 @@ C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\es\DevExp
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\ja\DevExpress.Office.v20.1.Core.resources.dll
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\ru\DevExpress.Office.v20.1.Core.resources.dll
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\UI.csprojAssemblyReference.cache
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ActualizarHerramientaForm.resources
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ActualizarMateriaPrimaForm.resources
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ActualizarProducto.resources
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ActualizarPromocion.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ActualizarUsuarioForm.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.BackupForm.resources
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.FormBitacora.resources
@@ -163,7 +171,7 @@ C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\UI.csproj
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\UI.csproj.CopyComplete
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.exe
 C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.pdb
-C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ActualizarHerramientaForm.resources
-C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ActualizarMateriaPrimaForm.resources
-C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ActualizarPromocion.resources
-C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.ActualizarProducto.resources
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\TC_Riveros_Paula.exe.manifest
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\bin\Debug\TC_Riveros_Paula.application
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.exe.manifest
+C:\Users\paula\Documents\git\TrabajoDeCampo\TC_Riveros_Paula\obj\Debug\TC_Riveros_Paula.application

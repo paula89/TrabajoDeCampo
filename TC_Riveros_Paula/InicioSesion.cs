@@ -38,36 +38,47 @@ namespace TC_Riveros_Paula
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             List<String> permiso = new List<string>();
-            bool verificar = verificarCampos();
-            if (verificar)
+            try
             {
-                if (VerificarDV())
+                bool verificar = verificarCampos();
+                if (verificar)
                 {
-                    String[] filtros = new string[] { this.txtUsuario.Text.ToUpper(), Encrypt.encryptPass(this.txtPassword.Text) };
-                    IEnumerable<Usuario> usuarios = VerificarDatos(filtros);
-                    if (usuarios.Any())
-                    {
-                        permiso = (List<string>)getPermisos(usuarios);
-                        idioma = FacadeService.Translate(getIdioma(usuarios));
-                        this.Hide();
-                        BienvenidoForm bienvenido = new BienvenidoForm(txtUsuario.Text.ToUpper());
-                        bienvenido.ShowDialog();
 
-                        InicioForm inicio = new InicioForm(permiso, txtUsuario.Text.ToUpper(), idioma);
-                        inicio.ShowDialog();
-                        this.Close();
-                        this.Dispose();
+                    if (VerificarDV())
+                    {
+                        String[] filtros = new string[] { this.txtUsuario.Text.ToUpper(), Encrypt.encryptPass(this.txtPassword.Text) };
+                        IEnumerable<Usuario> usuarios = VerificarDatos(filtros);
+                        if (usuarios.Any())
+                        {
+                            permiso = (List<string>)getPermisos(usuarios);
+                            idioma = FacadeService.Translate(getIdioma(usuarios));
+                            this.Hide();
+                            BienvenidoForm bienvenido = new BienvenidoForm(txtUsuario.Text.ToUpper());
+                            bienvenido.ShowDialog();
+
+                            InicioForm inicio = new InicioForm(permiso, txtUsuario.Text.ToUpper(), idioma);
+                            inicio.ShowDialog();
+                            this.Close();
+                            this.Dispose();
+                        }
+                        else
+                        {
+                            MessageBox.Show(idioma.GetString("MsgErrorLogin"), idioma.GetString("Error"), MessageBoxButtons.OK);
+                        }
                     }
-                    else {
-                        MessageBox.Show(idioma.GetString("MsgErrorLogin"), idioma.GetString("Error"), MessageBoxButtons.OK);
+                    else
+                    {
+                        MessageBox.Show(idioma.GetString("MsgErrorIntegridad"), idioma.GetString("Error"), MessageBoxButtons.OK);
                     }
                 }
-                else {
-                    MessageBox.Show(idioma.GetString("MsgErrorIntegridad"), idioma.GetString("Error"), MessageBoxButtons.OK);
+                else
+                {
+                    MessageBox.Show(idioma.GetString("MsgErrorCompletarLogin"), idioma.GetString("Error"), MessageBoxButtons.OK);
                 }
             }
-            else {
-                MessageBox.Show(idioma.GetString("MsgErrorCompletarLogin"), idioma.GetString("Error"), MessageBoxButtons.OK);
+            catch (Exception ex) {
+                FacadeService.ManageException(new UIException(ex));
+                MessageBox.Show("Ha ocurrido un error, contacte al administrador del sistema", "Error", MessageBoxButtons.OK);
             }
         }
         /// <summary>
@@ -77,21 +88,30 @@ namespace TC_Riveros_Paula
         private bool VerificarDV() {
             bool verificar = true;
             decimal DVV = 0;
-            decimal currentDVV = UsersManager.Current.GetDVV();
-            IEnumerable<Usuario> usuarios = UsersManager.Current.ListarDVH();
-
-            foreach (var item in usuarios)
+            try
             {
-                decimal DVH = Encrypt.DVHCalculate(item.Cod_Usuario.Trim() + item.Nombre.Trim() + item.FechaAlta);
-                DVV = DVV + DVH;
-                if (item.DVH != DVH) {
+                decimal currentDVV = UsersManager.Current.GetDVV();
+                IEnumerable<Usuario> usuarios = UsersManager.Current.ListarDVH();
+
+                foreach (var item in usuarios)
+                {
+                    decimal DVH = Encrypt.DVHCalculate(item.Cod_Usuario.Trim() + item.Nombre.Trim() + item.FechaAlta);
+                    DVV = DVV + DVH;
+                    if (item.DVH != DVH)
+                    {
+                        verificar = false;
+                    }
+                }
+                if (DVV != currentDVV)
+                {
                     verificar = false;
                 }
+                return verificar;
             }
-            if (DVV != currentDVV) {
-                verificar = false;
+            catch (Exception ex) {
+                FacadeService.ManageException(new UIException(ex));
+                return false;
             }
-            return verificar;
 
         }
 
@@ -111,8 +131,15 @@ namespace TC_Riveros_Paula
         /// <param name="filtros"></param>
         /// <returns></returns>
         private IEnumerable<Usuario> VerificarDatos(String[] filtros) {
-            var usuarios = UsersManager.Current.GetLogin(filtros);
-            return usuarios;
+            try
+            {
+                var usuarios = UsersManager.Current.GetLogin(filtros);
+                return usuarios;
+            }
+            catch (Exception ex) {
+                FacadeService.ManageException(new UIException(ex));
+                return null;
+            }
         }
         /// <summary>
         /// get the data user by filters
@@ -120,8 +147,15 @@ namespace TC_Riveros_Paula
         /// <param name="filtros"></param>
         /// <returns></returns>
         private IEnumerable<Usuario> getUsuario(String[] filtros) {
-            var usuarios = UsersManager.Current.ObtenerUsuariosLogin(filtros);
-            return usuarios;
+            try
+            {
+                var usuarios = UsersManager.Current.ObtenerUsuariosLogin(filtros);
+                return usuarios;
+            }
+            catch (Exception ex) {
+                FacadeService.ManageException(new UIException(ex));
+                return null;
+            }
         }
         /// <summary>
         /// get user language

@@ -70,11 +70,12 @@ namespace ServicesTest.DAL.Tools
         public static Int32 ExecuteNonQueryRestore(String commandText,
             CommandType commandType, string connection, SqlParameter[] parameters)           
         {
-            SqlConnection conn = getConnection(connection);
+            SqlConnection conn; 
             int response = 0;
 
             try
             {
+                conn = getConnection(connection);
                 SqlCommand cmd = new SqlCommand();
 
                 conn.Open();
@@ -108,11 +109,12 @@ namespace ServicesTest.DAL.Tools
         public static Int32 ExecuteNonQueryUpdateUser(String commandText,
             CommandType commandType, string connection, Usuario parameters)
         {
-            SqlConnection conn = getConnection(connection);
+            SqlConnection conn; 
             int response = 0;
 
             try
             {
+                conn = getConnection(connection);
                 SqlCommand cmd = new SqlCommand();
 
                 conn.Open();
@@ -163,11 +165,12 @@ namespace ServicesTest.DAL.Tools
         public static Int32 ExecuteNonQueryUpdateDVV(String commandText,
             CommandType commandType, string connection, string parameters)
         {
-            SqlConnection conn = getConnection(connection);
+            SqlConnection conn;
             int response = 0;
 
             try
             {
+                conn = getConnection(connection);
                 SqlCommand cmd = new SqlCommand();
 
                 conn.Open();
@@ -204,9 +207,10 @@ namespace ServicesTest.DAL.Tools
         {
             using (var trxScope = new TransactionScope())
             {
-                SqlConnection conn = getConnection(connection);
+                SqlConnection conn;
                 try
                 {
+                    conn = getConnection(connection);
                     conn.Open();
                     var comm = new SqlCommand(commandText);
                     comm.Connection = conn;
@@ -260,9 +264,10 @@ namespace ServicesTest.DAL.Tools
             } */
             using (var trxScope = new TransactionScope())
             {
-                SqlConnection conn = getConnection(connection);
+                SqlConnection conn;
                 try
                 {
+                    conn = getConnection(connection);
                     conn.Open();
                     var comm = new SqlCommand(commandText);
                     comm.Connection = conn;
@@ -296,10 +301,11 @@ namespace ServicesTest.DAL.Tools
            CommandType commandType, string connection, Backup parameters)
         {
             SqlCommand cmd;
-            SqlConnection conn = getConnection(connection);
+            SqlConnection conn;
             // crea el .bak
             try
             {
+                conn = getConnection(connection);
                 conn.Open();
                 cmd = new SqlCommand();
                 cmd.Connection = conn;
@@ -361,9 +367,10 @@ namespace ServicesTest.DAL.Tools
         public static SqlDataReader ExecuteReader(String commandText,
             CommandType commandType, string connection, params SqlParameter[] parameters)
         {
-            SqlConnection conn = getConnection(connection);
+            SqlConnection conn;
             try
             {
+                conn = getConnection(connection);
                 using (SqlCommand cmd = new SqlCommand(commandText, conn))
                 {
                     cmd.CommandType = commandType;
